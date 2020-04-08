@@ -16,7 +16,6 @@ $booleano = true;
 echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de linea <br> Var1: $var1 <br> booleano: $booleano</p>";
 
 #Probar comandos
-echo "<p style="text-align:center;">aca coloque style=text align center</p>"
 
 #Control de flujo
 if ($booleano){
