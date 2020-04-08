@@ -18,7 +18,8 @@ echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de lin
 #Control de flujo
 if ($booleano){
     echo "<h4> Dentro del if: la variable era TRUE.</h4>";
-    echo "<p> Era True pero sin negrita </p>"
+    echo "<p> Era True pero sin negrita </p>";
+    echo "<h3> este tamaño corresponde a h3, no elvides el ;</h3>";
 } else {
     echo "<h4> Dentro del if: la variable era FALSE.</h4>";
 }
