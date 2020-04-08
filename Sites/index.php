@@ -8,12 +8,26 @@
 
 <h1 align="center">Página para consultas</h1>
 <p>esto está fuera de la etiqueta ?php</p>
+<br>
+<h3 align="center">Multiplicador de números</h3>
+<form align="center">
+  Primer Número:
+  <input type="text" name="valor 1">
+  <br>
+  Segundo Número:
+  <input type="text" name="valor 2">
+</form>
+<br>
+
+
+
 <?php
 #Para definir variables que pueda ser utilizada en todo el HTML se deben anteceder con $
 $var1 = 20;
 $booleano = true;
 
 #Para imprimir en el HTML ocupamos echo
+echo "<p>aqui estamos en php</p>";
 echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de linea <br> Var1: $var1 <br> booleano: $booleano</p>";
 
 #Probar comandos
