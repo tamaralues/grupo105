@@ -13,11 +13,12 @@ $var1 = 20;
 $booleano = true;
 
 #Para imprimir en el HTML ocupamos echo
-echo "<p> Las variables son:<br> Var1: $var1 <br> booleano: $booleano</p>";
+echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de linea <br> Var1: $var1 <br> booleano: $booleano</p>";
 
 #Control de flujo
 if ($booleano){
     echo "<h4> Dentro del if: la variable era TRUE.</h4>";
+    echo "<p> Era True pero sin negrita </p>"
 } else {
     echo "<h4> Dentro del if: la variable era FALSE.</h4>";
 }
