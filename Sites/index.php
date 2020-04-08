@@ -7,7 +7,7 @@
 <body>
 
 <h1 align="center">Página para consultas</h1>
-<p>input random pa saber que coloqué uno</p>
+<p>estas consultas si funcionan</p>
 <h3 align="center">Multiplicador de números</h3>
 <form align="center" action="multiplicador.php" method="post"> 
   Primer Número:
@@ -19,41 +19,17 @@
   <input type="submit" value="Generar resultado">
 </form>
 <br>
-
-
-
-<?php
-#Para definir variables que pueda ser utilizada en todo el HTML se deben anteceder con $
-$var1 = 20;
-$booleano = true;
-
-#Para imprimir en el HTML ocupamos echo
-echo "<p>aqui estamos en php</p>";
-echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de linea <br> Var1: $var1 <br> booleano: $booleano</p>";
-
-#Probar comandos
-
-#Control de flujo
-if ($booleano){
-    echo "<h4> Dentro del if: la variable era TRUE.</h4>";
-    echo "<p> Era True pero sin negrita </p>";
-    echo "<h3> este tamaño corresponde a h3, no elvides el ;</h3>";
-} else {
-    echo "<h4> Dentro del if: la variable era FALSE.</h4>";
-}
-
-#Looping. Hay varios tipos de looping. Investigar!
-echo "<h3>For Loop:</h3>";
-for($i = 0; $i<10; $i++) {
-  echo "<p> i: $i </p>";
-}
-
-echo "<h3>Foreach Loop:</h3>";
-$array = array( 1, 2, 3, 4, 5);
-foreach( $array as $v ) {
-   echo "<p> Value is: $v </p>";
-}
-?>
+<p>acá solo es el front-end</p>
+<h3 align="center">username y correo asociado</h3>
+<form align="center" action="consultas/username_correo.php" method="post"> 
+  <input type="submit" value="Ver consulta">
+</form>
+<br>
+<h3 align="center">ciudades de algún país</h3>
+<form align="center" action="consultas/ciudades_del_pais.php" method="post"> 
+  <input type="text" name="pais">
+  <input type="submit" value="Ver consulta">
+</form>
 
 </body>
 </html>
