@@ -7,15 +7,15 @@
 <body>
 
 <h1 align="center">Página para consultas</h1>
-<p>esto está fuera de la etiqueta ?php</p>
-<br>
+<p>input random pa saber que coloqué uno</p>
 <h3 align="center">Multiplicador de números</h3>
-<form align="center">
+<form align="center" action="multiplicador.php" method="post"> 
   Primer Número:
   <input type="text" name="valor 1">
   <br>
   Segundo Número:
   <input type="text" name="valor 2">
+  <input type="submit" value="Generar resultado">
 </form>
 <br>
 
