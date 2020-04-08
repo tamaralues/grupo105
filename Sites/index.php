@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Hola</h1>
+<h1 align="center">Página para consultas</h1>
 
 <?php
 #Para definir variables que pueda ser utilizada en todo el HTML se deben anteceder con $
