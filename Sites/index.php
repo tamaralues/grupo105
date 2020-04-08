@@ -15,6 +15,7 @@
   <br>
   Segundo Número:
   <input type="text" name="valor 2">
+  <br>
   <input type="submit" value="Generar resultado">
 </form>
 <br>
