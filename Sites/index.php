@@ -6,7 +6,7 @@
 <body>
 
 <h1 align="center">Página para consultas</h1>
-
+<p>esto está fuera de la etiqueta ?php</p>
 <?php
 #Para definir variables que pueda ser utilizada en todo el HTML se deben anteceder con $
 $var1 = 20;
@@ -14,6 +14,9 @@ $booleano = true;
 
 #Para imprimir en el HTML ocupamos echo
 echo "<p> aqui pruebo un print:<br> supongo que esta etiqueta es un salto de linea <br> Var1: $var1 <br> booleano: $booleano</p>";
+
+#Probar comandos
+echo "<p style="text-align:center;">aca coloque style=text align center</p>"
 
 #Control de flujo
 if ($booleano){
