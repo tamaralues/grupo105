@@ -11,10 +11,10 @@
 <h3 align="center">Multiplicador de números</h3>
 <form align="center" action="multiplicador.php" method="post"> 
   Primer Número:
-  <input type="text" name="valor 1">
+  <input type="text" name="valor_1">
   <br>
   Segundo Número:
-  <input type="text" name="valor 2">
+  <input type="text" name="valor_2">
   <br>
   <input type="submit" value="Generar resultado">
 </form>
