@@ -20,7 +20,7 @@
 </form>
 <br>
 <p>acá solo es el front-end</p>
-<h3 align="center"><i>username</i> y correo asociado</h3>
+<h3 align="center">Todos los <i>username</i> y sus correos asociados</h3>
 <form align="center" action="consultas/username_correo.php" method="post"> 
   <input type="submit" value="Ver consulta">
 </form>
@@ -50,8 +50,11 @@
 </form>
 <h3 align="center">Dinero gastado por usuarios entre 2 fechas</h3>
 <form align="center" action="consultas/dinero_gastado_entre_fechas.php" method="post"> 
+  fecha inicial:
   <input type="text" name="fecha_inicio">
+  fecha final:
   <input type="text" name="fecha_final">
+  <br>
   <input type="submit" value="Ver consulta">
 </body>
 </html>
