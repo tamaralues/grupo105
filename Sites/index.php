@@ -52,6 +52,7 @@
 <form align="center" action="consultas/dinero_gastado_entre_fechas.php" method="post"> 
   fecha inicial:
   <input type="text" name="fecha_inicio">
+  <br>
   fecha final:
   <input type="text" name="fecha_final">
   <br>
