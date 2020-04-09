@@ -57,5 +57,10 @@
   <input type="text" name="fecha_final">
   <br>
   <input type="submit" value="Ver consulta">
+</form>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
