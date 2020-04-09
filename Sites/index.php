@@ -20,7 +20,7 @@
 </form>
 <br>
 <p>acá solo es el front-end</p>
-<h3 align="center">username y correo asociado</h3>
+<h3 align="center"><i>username</i> y correo asociado</h3>
 <form align="center" action="consultas/username_correo.php" method="post"> 
   <input type="submit" value="Ver consulta">
 </form>
@@ -30,6 +30,28 @@
   <input type="text" name="pais">
   <input type="submit" value="Ver consulta">
 </form>
-
+<br>
+<h3 align="center">Países en que se ha hospedado el usuario</h3>
+<form align="center" action="consultas/username_hospedajes.php" method="post"> 
+  <input type="text" name="username">
+  <input type="submit" value="Ver consulta">
+</form>
+  <br>
+<h3 align="center">Dinero gastado en tickets por el usuario según su ID</h3>
+<form align="center" action="consultas/uid_dinero_gastado_tickets.php" method="post"> 
+  <input type="text" name="username">
+  <input type="submit" value="Ver consulta">
+  <br>
+</form>
+<h3 align="center">Retornar reservas entre enero y marzo del 2020</h3>
+<form align="center" action="consultas/reservas_enero_marzo.php" method="post"> 
+  <input type="submit" value="Ver consulta">
+  <br>
+</form>
+<h3 align="center">Dinero gastado por usuarios entre 2 fechas</h3>
+<form align="center" action="consultas/dinero_gastado_entre_fechas.php" method="post"> 
+  <input type="text" name="fecha_inicio">
+  <input type="text" name="fecha_final">
+  <input type="submit" value="Ver consulta">
 </body>
 </html>
