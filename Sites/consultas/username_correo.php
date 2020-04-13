@@ -1,7 +1,7 @@
 <body>
 <?php
 #crea el PDO para realizar las consultas
-require("configuracion/conexion_db.php");
+require("../configuracion/conexion_db.php");
 
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT username, correo FROM usuarios;";
