@@ -5,9 +5,9 @@
   <title>Consultas E2</title>
 </head>
 <body>
-<!--
+
 <h1 align="center">Página para consultas</h1>
-<p>estas consultas si funcionan</p>
+<!--
 <h3 align="center">Multiplicador de números</h3>
 <form align="center" action="multiplicador.php" method="post"> 
   Primer Número:
