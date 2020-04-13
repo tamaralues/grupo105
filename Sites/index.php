@@ -5,7 +5,7 @@
   <title>Consultas E2</title>
 </head>
 <body>
-
+<!--
 <h1 align="center">Página para consultas</h1>
 <p>estas consultas si funcionan</p>
 <h3 align="center">Multiplicador de números</h3>
@@ -18,7 +18,7 @@
   <br>
   <input type="submit" value="Generar resultado">
 </form>
-<br>
+<br> -->
 
 
 <h3 align="center">Todos los <i>username</i> y sus correos asociados</h3>
