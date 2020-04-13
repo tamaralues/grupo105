@@ -5,7 +5,7 @@ require("../configuracion/conexion_db.php");
 
 $pais = $_POST["pais"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT nombreciudad FROM ciudades WHERE nombrepais = '%$pais%';";
+$query = "SELECT cid, nombreciudad FROM ciudades WHERE nombrepais = '$pais';";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -19,6 +19,6 @@ $ciudades = $result -> fetchAll();
   
       <?php
         foreach ($ciudades as $p) {
-          echo "<tr><td>$p[0]</td></tr>";
+          echo "<tr><td>$p[0]</td><tr><td>$p[1]</td></tr>";
       }
       ?>
