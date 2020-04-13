@@ -19,18 +19,23 @@
   <input type="submit" value="Generar resultado">
 </form>
 <br>
-<p>acá solo es el front-end</p>
+
+
 <h3 align="center">Todos los <i>username</i> y sus correos asociados</h3>
 <form align="center" action="consultas/username_correo.php" method="post"> 
   <input type="submit" value="Ver consulta">
 </form>
 <br>
+
+
 <h3 align="center">ciudades de algún país</h3>
 <form align="center" action="consultas/ciudades_del_pais.php" method="post"> 
   <input type="text" name="pais">
   <input type="submit" value="Ver consulta">
 </form>
 <br>
+
+
 <h3 align="center">Países en que se ha hospedado el usuario</h3>
 <form align="center" action="consultas/username_hospedajes.php" method="post"> 
   <input type="text" name="username">
