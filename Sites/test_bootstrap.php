@@ -55,7 +55,7 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 1</h4>
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
