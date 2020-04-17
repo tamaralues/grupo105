@@ -57,6 +57,9 @@
       </div>
       <div class="card-body">
         <h4 class="my-0 font-weight-normal"> probando texto</h4>
+        <h3 class="my-0 font-weight-normal"> probando texto</h3>
+        <br>
+
 
         <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
