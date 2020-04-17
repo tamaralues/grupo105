@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -60,6 +61,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
+        <p>  </p>
         <br>
         <br>
         <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
@@ -102,49 +104,55 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Free</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 4</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <h3 class="card-title pricing-card-title"><b>Dinero gastado</h3>
+        <br>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>10 users included</li>
-          <li>2 GB of storage</li>
-          <li>Email support</li>
-          <li>Help center access</li>
+          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los gastos realizados por el usuario y el monto total</h6></li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Sign up for free</button>
+        <form align="center" action="consultas/uid_dinero_gastado_ticketa.php" method="post">
+          <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el ID del usuario">
+          <br>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Pro</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <h3 class="card-title pricing-card-title">Ciudades por país</h3>
+        <br>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>20 users included</li>
-          <li>10 GB of storage</li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h6></li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+        <form align="center" action="consultas/uid_dinero_gastado_tickets.php" method="post">
+          <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
+          <br>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Enterprise</h4>
-      </div>
+        <h4 class="my-0 font-weight-normal">Consulta 6</h4>
+        </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+        <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>30 users included</li>
-          <li>15 GB of storage</li>
-          <li>Phone and email support</li>
-          <li>Help center access</li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h6></li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+        <form align="center" action="consultas/username_hospedajes.php" method="post">
+          <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el username">
+          <br>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
   </div>
-
 </div>
 </body>
 </html>
