@@ -46,7 +46,6 @@
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Consultas Entrega 2</h1>
-  <p class="lead">Aqui puede ir un texto random</p>
 </div>
 
 <div class="container">
@@ -56,7 +55,7 @@
         <h4 class="my-0 font-weight-normal">Consulta 1</h4>
       </div>
       <div class="card-body">
-        <h3 class="my-0 font-weight-normal"> <i>username</i></h3>
+        <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
         <ul class="list-unstyled mt-3 mb-4">
           <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5></li>
         </ul>
@@ -72,10 +71,14 @@
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Ciudades por país</h3>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>ingrese el nombre del país</li>
+        <li><h5 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h5></li>
         </ul>
-
-        <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        <br>
+        <form align="center" action="consultas/ciudades_del_pais.php" method="post"> 
+          <input type="text" name="pais">
+        <br>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
