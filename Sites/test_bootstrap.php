@@ -77,7 +77,7 @@
           <h6 class="my-0 font-weight-normal"> ingrese el pais: </h6>
           <input type="text" name="pais">
           <br>
-          <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
     </div>
