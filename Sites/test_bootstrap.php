@@ -139,7 +139,7 @@
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 6</h4>
-        </div>
+      </div>
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
         <ul class="list-unstyled mt-3 mb-4">
