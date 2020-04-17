@@ -61,11 +61,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
-        <br>
-        <br>
-        <form align="center" action="consultas/username_correo.php" method="post">
-          <button type="submit" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Consultar</button>
-        </form>
+        <a href="consultas/username_correo.php"><button type="submit" class="btn btn-lg btn-block btn-primary mt-auto" style="margin-top: auto;">Consultar</button></a>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -125,15 +121,14 @@
         <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
       <form align="center" action="consultas/username_hospedajes.php" method="post">
-        <div class="card-body d-flex flex-column">
-          <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
-          <br>
-          <ul class="list-unstyled mt-3 mb-4">
-          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
-          </ul>
-          <button type="submit" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
-        </div>
-      </form>
+      <div class="card-body d-flex flex-column">
+        <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
+        <br>
+        <ul class="list-unstyled mt-3 mb-4">
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
+        </ul>
+        <a href="consultas/reservas.php"><button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+      </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
