@@ -104,18 +104,19 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 1</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 4</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
+        <h3 class="card-title pricing-card-title">Dinero gastado</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
-          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
+          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos gastos realizados por un usuario y el monto total</h6></li>
         </ul>
-        <p>  </p>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        <form align="center" action="consultas/uid_dinero_gastado_tickets.php" method="post">
+          <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el ID del usuario">
+          <br>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
