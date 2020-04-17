@@ -141,7 +141,7 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 6</h4>
         </div>
-      <div class="card-body d-flex flex-column">
+      <div class="card-body">
         <h3 class="card-title pricing-card-title">Dinero gastado entre fechas</h3>
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con el dinero gastado por cada usuario registrado entre las 2 fechas ingresadas</h6></li>
