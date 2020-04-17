@@ -56,7 +56,7 @@
         <h4 class="my-0 font-weight-normal">Consultar <i>username</i><br>y correo electrónico</h4>
       </div>
       <div class="card-body">
-      <!--  <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>-->
+        <h4 class="my-0 font-weight-normal"> probando texto</h4>
 
         <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
