@@ -62,9 +62,12 @@
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
         <p>  </p>
+        <p>  </p>
         <br>
         <br>
-        <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        <form align="center" action="consultas/username_correo.php" method="post">
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -107,7 +110,7 @@
         <h4 class="my-0 font-weight-normal">Consulta 4</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title">Dinero gastado</h3>
+        <h3 class="card-title pricing-card-title">Dinero gastado por Usuario</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos gastos realizados por un usuario y el monto total</h6></li>
@@ -121,32 +124,32 @@
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 2</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title">Ciudades por país</h3>
+        <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
-        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h6></li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
         </ul>
-        <form align="center" action="consultas/ciudades_del_pais.php" method="post">
-          <input type="text" class="form-control" name="pais" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
-          <br>
+        <form align="center" action="consultas/reservas_enero_marzo.php" method="post">
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 3</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 6</h4>
         </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
+        <h3 class="card-title pricing-card-title">Dinero gastado entre fechas</h3>
         <ul class="list-unstyled mt-3 mb-4">
-        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h6></li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con el dinero gastado por cada usuario registrado entre las 2 fechas ingresadas</h6></li>
         </ul>
         <form align="center" action="consultas/username_hospedajes.php" method="post">
-          <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el username">
+          <input type="text" class="form-control" name="fecha_incicio" aria-describedby="emailHelp" placeholder="fecha inicial (YYYY-MM-DD)">
+          <br>
+          <input type="text" class="form-control" name="fecha_termino" aria-describedby="emailHelp" placeholder="fecha final (YYYY-MM-DD)">
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
