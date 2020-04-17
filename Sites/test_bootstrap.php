@@ -108,7 +108,7 @@
         <br>
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos gastos realizados por un usuario y el monto total</h6></li>
-          <br>
+          <li><h6 class="my-0 font-weight-normal"> </h6></li>
           <li><h6 class="my-0 font-weight-normal">(solo acepta ID)</h6></li>
         </ul>
         <form action="consultas/uid_dinero_gastado_tickets.php" method="post">
