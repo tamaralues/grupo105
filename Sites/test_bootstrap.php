@@ -61,7 +61,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
-        <a href="consultas/username_correo.php"><button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button></a>
+        <button type="button" action="consultas/usuarios_correo.php" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
