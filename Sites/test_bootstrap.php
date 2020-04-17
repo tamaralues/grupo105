@@ -61,7 +61,6 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
-        <!--<form action="consultas/username_correo.php" method="post">-->
         <a href="consultas/username_correo.php" class="btn btn-lg btn-block btn-primary mt-auto" role="button">Consultar</a>
       </div>
     </div>
@@ -110,7 +109,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos gastos realizados por un usuario y el monto total</h6></li>
         </ul>
-        <form align="center" action="consultas/uid_dinero_gastado_tickets.php" method="post">
+        <form action="consultas/uid_dinero_gastado_tickets.php" method="post">
           <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el ID del usuario">
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
