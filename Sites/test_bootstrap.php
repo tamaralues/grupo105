@@ -141,7 +141,7 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 6</h4>
         </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h3 class="card-title pricing-card-title">Dinero gastado entre fechas</h3>
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con el dinero gastado por cada usuario registrado entre las 2 fechas ingresadas</h6></li>
@@ -151,7 +151,7 @@
           <br>
           <input type="text" class="form-control" name="fecha_termino" aria-describedby="emailHelp" placeholder="fecha final (YYYY-MM-DD)">
           <br>
-          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+          <button type="submit" class="btn btn-lg btn-block btn-primary d-flex align-items-end">Consultar</button>
         </form>
       </div>
     </div>
