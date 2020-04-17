@@ -74,8 +74,7 @@
         <li><h5 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h5></li>
         </ul>
         <form align="center" action="consultas/ciudades_del_pais.php" method="post">
-          <h6 class="my-0 font-weight-normal"> ingrese el pais: </h6>
-          <input type="text" name="pais">
+          <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
