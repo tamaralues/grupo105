@@ -87,8 +87,8 @@
         <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>30 users included</li>
-          <li>15 GB of storage</li>
-          <li>Phone and email support</li>
+          <li><h2>15 GB of storage</h2></li>
+          <li><h1>Phone and email support</h1></li>
         </ul>
         <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
       </div>
