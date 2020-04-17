@@ -124,7 +124,7 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
@@ -132,7 +132,7 @@
         </ul>
       <div class= "card-footer">
         <form align="center" action="consultas/reservas_enero_marzo.php" method="post">
-          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+          <button type="submit" class="align-self-end btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
       </div>
