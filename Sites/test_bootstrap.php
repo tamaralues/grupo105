@@ -59,9 +59,9 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5></li>
         </ul>
-        
         <br>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        <br>
+        <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -82,14 +82,18 @@
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Enterprise</h4>
-      </div>
+        <h4 class="my-0 font-weight-normal">Consulta 3</h4>
+        </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+        <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>30 users included</li>
+        <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h5></li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+        <form align="center" action="consultas/username_hospedajes.php" method="post">
+          <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el username">
+          <br>
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
   </div>
