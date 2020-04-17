@@ -73,10 +73,10 @@
         <ul class="list-unstyled mt-3 mb-4">
         <li><h5 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h5></li>
         </ul>
-        <br>
-        <form align="center" action="consultas/ciudades_del_pais.php" method="post"> 
+        <form align="center" action="consultas/ciudades_del_pais.php" method="post">
+          <h6 class="my-0 font-weight-normal"> ingrese el pais: </h6>
           <input type="text" name="pais">
-        <br>
+          <br>
           <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
