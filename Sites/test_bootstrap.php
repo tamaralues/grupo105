@@ -61,7 +61,7 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
-        <button type="button" action="consultas/usuarios_correo.php" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        <button type="submit" action="consultas/usuarios_correo.php" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -135,7 +135,6 @@
       </div>
       <div class="card-body d-flex flex-column">
         <h3 class="card-title pricing-card-title">Dinero gastado entre fechas</h3>
-        <br>
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con los gastos de todos los usuarios entre las fechas dadas </h6></li>
         </ul>
