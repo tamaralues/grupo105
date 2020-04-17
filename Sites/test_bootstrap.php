@@ -130,7 +130,9 @@
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
         </ul>
-        <button type="submit" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        <form align="center" action="consultas/username_hospedajes.php" method="post">
+          <button type="submit" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -147,6 +149,7 @@
           <br>
           <input type="text" class="form-control" name="fecha_termino" aria-describedby="emailHelp" placeholder="fecha final (YYYY-MM-DD)">
           <br>
+          
           <button type="submit" class="align-self-end btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
