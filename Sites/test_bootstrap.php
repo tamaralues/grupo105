@@ -104,24 +104,23 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 4</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 1</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title"><b>Dinero gastado</h3>
+        <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
-          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los gastos realizados por el usuario y el monto total</h6></li>
+          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
-        <form align="center" action="consultas/uid_dinero_gastado_ticketa.php" method="post">
-          <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el ID del usuario">
-          <br>
-          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
-        </form>
+        <p>  </p>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 5</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 2</h4>
       </div>
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Ciudades por país</h3>
@@ -129,8 +128,8 @@
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h6></li>
         </ul>
-        <form align="center" action="consultas/uid_dinero_gastado_tickets.php" method="post">
-          <input type="text" class="form-control" name="uid" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
+        <form align="center" action="consultas/ciudades_del_pais.php" method="post">
+          <input type="text" class="form-control" name="pais" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
@@ -138,8 +137,8 @@
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 6</h4>
-      </div>
+        <h4 class="my-0 font-weight-normal">Consulta 3</h4>
+        </div>
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
         <ul class="list-unstyled mt-3 mb-4">
