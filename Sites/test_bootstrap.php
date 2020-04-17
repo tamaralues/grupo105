@@ -53,23 +53,24 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 1</h4>
       </div>
       <div class="card-body">
-        <h5 class="my-0 font-weight-normal"> <i>username</i></h5>
-        <h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5>
+        <h3 class="my-0 font-weight-normal"> <i>username</i></h3>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5></li>
+        </ul>
+        
         <br>
-
+        <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Ciudades por pais</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 2</h4>
       </div>
       <div class="card-body">
-      <!--
-        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                -->
+        <h3 class="card-title pricing-card-title">Ciudades por país</h3>
         <ul class="list-unstyled mt-3 mb-4">
           <li>ingrese el nombre del país</li>
         </ul>
