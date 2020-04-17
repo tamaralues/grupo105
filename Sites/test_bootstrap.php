@@ -124,16 +124,16 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
-      <div class="card-body d-flex flex-column">
-        <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
-        <br>
-        <ul class="list-unstyled mt-3 mb-4">
-        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
-        </ul>
-        <form align="center" action="consultas/username_hospedajes.php" method="post">
+      <form align="center" action="consultas/username_hospedajes.php" method="post">
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
+          <br>
+          <ul class="list-unstyled mt-3 mb-4">
+          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
+          </ul>
           <button type="submit" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
