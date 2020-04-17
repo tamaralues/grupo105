@@ -127,7 +127,9 @@
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
         </ul>
-        <button type="button" action="consultas/reservas_enero_marzo.php" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        <form align="center" action="consultas/reservas_enero_marzo.php" method="post">
+          <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
+        </form>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -139,6 +141,7 @@
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con los gastos de todos los usuarios entre las fechas dadas </h6></li>
         </ul>
+
         <input type="text" class="form-control" name="fecha_inicial" aria-describedby="emailHelp" placeholder="ingrese fecha inicial">
         <br>
         <input type="text" class="form-control" name="fecha_final" aria-describedby="emailHelp" placeholder="ingrese fecha final">
