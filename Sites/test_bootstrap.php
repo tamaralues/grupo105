@@ -120,28 +120,30 @@
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">Consulta 5</h4>
       </div>
-      <form align="center" action="consultas/username_hospedajes.php" method="post">
       <div class="card-body d-flex flex-column">
         <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
         </ul>
-        <a href="consultas/reservas.php"><button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        <button type="button" action="consultas/reservas_enero_marzo.php" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consulta 5</h4>
+        <h4 class="my-0 font-weight-normal">Consulta 6</h4>
       </div>
-      <form align="center" action="consultas/username_hospedajes.php" method="post">
       <div class="card-body d-flex flex-column">
-        <h3 class="card-title pricing-card-title">Reservas enero ~ marzo</h3>
+        <h3 class="card-title pricing-card-title">Dinero gastado entre fechas</h3>
         <br>
         <ul class="list-unstyled mt-3 mb-4">
-        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las reservas hechas para los meses de enero a marzo del 2020 </h6></li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con los gastos de todos los usuarios entre las fechas dadas </h6></li>
         </ul>
-        <a href="consultas/reservas.php"><button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+        <input type="text" class="form-control" name="fecha_inicial" aria-describedby="emailHelp" placeholder="ingrese fecha inicial">
+        <br>
+        <input type="text" class="form-control" name="fecha_final" aria-describedby="emailHelp" placeholder="ingrese fecha final">
+        <br>
+        <button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
       </div>
     </div>
   </div>
