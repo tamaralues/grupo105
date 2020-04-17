@@ -57,7 +57,7 @@
       <div class="card-body">
         <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
         <ul class="list-unstyled mt-3 mb-4">
-          <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5></li>
+          <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
         <br>
         <br>
@@ -71,10 +71,10 @@
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Ciudades por país</h3>
         <ul class="list-unstyled mt-3 mb-4">
-        <li><h5 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h5></li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h6></li>
         </ul>
         <form align="center" action="consultas/ciudades_del_pais.php" method="post">
-          <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
+          <input type="text" class="form-control" name="pais" aria-describedby="emailHelp" placeholder="ingrese el nombre del pais">
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
@@ -87,7 +87,7 @@
       <div class="card-body">
         <h3 class="card-title pricing-card-title">Paises visitados por Usuario</h3>
         <ul class="list-unstyled mt-3 mb-4">
-        <li><h5 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h5></li>
+        <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h6></li>
         </ul>
         <form align="center" action="consultas/username_hospedajes.php" method="post">
           <input type="text" class="form-control" name="pais_enviado" aria-describedby="emailHelp" placeholder="ingrese el username">
