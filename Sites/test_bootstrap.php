@@ -56,24 +56,24 @@
         <h4 class="my-0 font-weight-normal">Consultar <i>username</i><br>y correo electrónico</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+      <!--  <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>-->
 
         <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Pro</h4>
+        <h4 class="my-0 font-weight-normal">Ciudades por pais</h4>
       </div>
       <div class="card-body">
+      <!--
         <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                -->
         <ul class="list-unstyled mt-3 mb-4">
-          <li>20 users included</li>
-          <li>10 GB of storage</li>
-          <li>Priority email support</li>
-          <li>Help center access</li>
+          <li>ingrese el nombre del país</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+
+        <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
