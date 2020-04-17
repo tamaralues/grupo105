@@ -132,7 +132,7 @@
         </ul>
       <div class= "card-footer">
         <form align="center" action="consultas/reservas_enero_marzo.php" method="post">
-          <button type="submit" class="align-self-end btn btn-lg btn-block btn-primary">Consultar</button>
+          <button type="submit" class="mt-auto btn btn-lg btn-block btn-primary">Consultar</button>
         </form>
       </div>
       </div>
