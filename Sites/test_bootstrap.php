@@ -53,17 +53,13 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Consultar <i>username</i><br>y correo electrónico</h4>
+        <h4 class="my-0 font-weight-normal">Consulta</h4>
       </div>
       <div class="card-body">
-        <h4 class="my-0 font-weight-normal"> probando texto</h4>
-        <h3 class="my-0 font-weight-normal"> probando texto</h3>
+        <h5 class="my-0 font-weight-normal"> <i>username</i></h5>
+        <h5 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h5>
         <br>
-        <form align="center" action="consultas/ciudades_del_pais.php" method="post"> 
-         <input type="text" name="pais">
-         <input type="submit" value="Ver consulta">
-          <button type="button" class="btn btn-lg btn-block btn-primary">Consultar</button>
-        </form>
+
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -119,8 +115,6 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li>20 users included</li>
           <li>10 GB of storage</li>
-          <li>Priority email support</li>
-          <li>Help center access</li>
         </ul>
         <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
       </div>
