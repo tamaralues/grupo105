@@ -55,7 +55,7 @@
         <h4 class="my-0 font-weight-normal">Consulta 1</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title"><b><i>username</i></b></h3>
+        <h3 class="card-title pricing-card-title"><b><i>username</i></b><br></h3>
         <ul class="list-unstyled mt-3 mb-4">
           <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los <i>username</i> y su correo asociado</h6></li>
         </ul>
@@ -69,7 +69,7 @@
         <h4 class="my-0 font-weight-normal">Consulta 2</h4>
       </div>
       <div class="card-body">
-        <h3 class="card-title pricing-card-title">Ciudades por país</h3>
+        <h3 class="card-title pricing-card-title">Ciudades por país<br></h3>
         <ul class="list-unstyled mt-3 mb-4">
         <li><h6 class="my-0 font-weight-normal"> retorna una lista con todas las ciudades del país ingresado</h6></li>
         </ul>
