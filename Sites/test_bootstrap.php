@@ -64,7 +64,7 @@
         <br>
         <br>
         <form align="center" action="consultas/username_correo.php" method="post">
-          <button type="submit" class="btn btn-lg btn-block btn-primary" style="margin-top: auto;">Consultar</button>
+          <button type="submit" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Consultar</button>
         </form>
       </div>
     </div>
