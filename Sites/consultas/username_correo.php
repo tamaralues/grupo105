@@ -46,6 +46,7 @@
   <body>
   <div>
     <table class="table">
+      <thead class="table">
         <tr>
           <th>username</th>
           <th>correo</th>
@@ -54,6 +55,7 @@
           <td>pelpi</td>
           <td>01</td>
         </tr>
+      </thread>
     </table>
   <div>
     <?php
