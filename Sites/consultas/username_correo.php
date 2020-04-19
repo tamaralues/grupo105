@@ -43,7 +43,7 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   </head>
-  <table class="table table-light">
+  <table class="table table-light table-condensed">
     <thead>
       <tr>
         <th scope="col">#</th>
