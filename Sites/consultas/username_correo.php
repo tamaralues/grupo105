@@ -44,6 +44,12 @@
     <link href="pricing.css" rel="stylesheet">
   </head>
   <body>
+  <table class="table">
+      <tr>
+        <th>username</th>
+        <th>correo</th>
+      </tr>
+  </table>
     <?php
     #crea el PDO para realizar las consultas
     require("../configuracion/conexion_db.php");
