@@ -55,17 +55,19 @@
     $result -> execute();
     $username_y_correo = $result -> fetchAll();
     ?>
-    <table class="table table-striped table-bordered">
-      <thead class="thread-dark">
-        <tr>
-          <th>username</th>
-          <th>correo</th>
-        </tr>
-      </thead>
-      <?php
-        foreach ($username_y_correo as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-      }
-      ?>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="thread-dark">
+          <tr>
+            <th>username</th>
+            <th>correo</th>
+          </tr>
+        </thead>
+        <?php
+          foreach ($username_y_correo as $p) {
+            echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+        }
+        ?>
+      </table>
+    </div>
   </body>
