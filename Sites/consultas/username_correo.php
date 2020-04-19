@@ -43,7 +43,7 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   </head>
-  <table class="table-dark">
+  <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">#</th>
