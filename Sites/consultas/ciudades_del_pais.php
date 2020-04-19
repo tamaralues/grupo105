@@ -5,7 +5,7 @@ require("../configuracion/conexion_db.php");
 
 $pais = $_POST["pais"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT cid, nombreciudad FROM ciudades, paises WHERE nombrepais ~* '$pais';";
+$query = "SELECT cid, nombreciudad FROM ciudades natural join paises WHERE nombrepais ~* '$pais';";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
