@@ -43,8 +43,8 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   </head>
-  <table class="table table-light table-condensed">
-    <thead>
+  <table class="table table-striped table-bordered">
+    <thead class="thread-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">First</th>
