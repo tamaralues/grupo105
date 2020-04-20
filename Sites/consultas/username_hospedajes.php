@@ -48,9 +48,9 @@
 #crea el PDO para realizar las consultas
 require("../configuracion/conexion_db.php");
 
-$pais = $_POST["username"];
+$username = $_POST["username"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT nombrehotel, username, fechainicio FROM usuarios natural join reservas natural join hoteles WHERE username  ~* '$pais' AND fechainicio < current_date;";
+$query = "SELECT nombrepais, username, fechainicio FROM usuarios natural join reservas natural join hoteles natural join ciudades natural join paises WHERE username  ~* '$username' AND hoteles.cid = ciudades.cid AND fechainicio < current_date;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -63,7 +63,7 @@ $ciudades = $result -> fetchAll();
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>Ciudad </th>
+      <th>Pais </th>
       <th><i>username</i></th>
       <th>Fecha Inicio</th>
     </tr>
