@@ -48,8 +48,8 @@
 #crea el PDO para realizar las consultas
 require("../configuracion/conexion_db.php");
 
-$fecha_inicio= to_date($_POST["fecha_inicial"]);
-$fecha_termino =to_date($_POST["fecha_final"]);
+$fecha_inicio= to_date($_POST["fecha_inicial"],'YYYYMMDD');
+$fecha_termino =to_date($_POST["fecha_final"],'YYYYMMDD');
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje WHERE fechainicio >= $fecha_inicio and fechatermino <= $fechatermino;";
 
