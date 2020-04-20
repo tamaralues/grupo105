@@ -50,7 +50,7 @@ require("../configuracion/conexion_db.php");
 
 $id = (int)$_POST["uid"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT  username, tid, precio FROM tickets_comprados natural join datos_viaje natural join usuarios where tid=$id;";
+$query = "SELECT  uid, tid, precio FROM tickets_comprados natural join datos_viaje natural join usuarios where uid=$id;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
