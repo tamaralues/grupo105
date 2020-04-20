@@ -50,12 +50,8 @@ require("../configuracion/conexion_db.php");
 
 $username = $_POST["username"];
 #se realiza la consulta, esta no tiene inputs
-<<<<<<< HEAD
-$query = "SELECT nombrepais, username
-     FROM usuarios natural join reservas natural join hoteles natural join ciudades natural join paises WHERE username  ~* '$pais' AND fechainicio < current_date;";
-=======
 $query = "SELECT nombrepais, username, fechainicio FROM usuarios natural join reservas natural join hoteles natural join ciudades natural join paises WHERE username  ~* '$username' AND fechainicio < current_date;";
->>>>>>> ac5388388b212ce4935412f10b4b1bf9b56ea1df
+
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -74,7 +70,7 @@ $ciudades = $result -> fetchAll();
 
       <?php
         foreach ($ciudades as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
       ?>
   </table>
