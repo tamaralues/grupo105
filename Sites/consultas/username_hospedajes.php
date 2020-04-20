@@ -62,7 +62,7 @@ $ciudades = $result -> fetchAll();
   <h3 class="display-4">Resultado consulta 3</h3>
 </div>
 <div class="container">
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped table-bordered" style="width:70%; margin:auto">
     <tr>
       <th>Pais </th>
       <th><i>username</i></th>
