@@ -50,7 +50,7 @@ require("../configuracion/conexion_db.php");
 
 $pais = $_POST["username"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT nombrehotel, username FROM usuarios natural join reservas natural join hoteles WHERE uid=$pais;";
+$query = "SELECT nombrehotel, username FROM usuarios natural join reservas natural join hoteles WHERE username  ~* '$pais';";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -58,13 +58,13 @@ $result -> execute();
 $ciudades = $result -> fetchAll();
 ?>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h3 class="display-4">Resultado consulta 2</h3>
+  <h3 class="display-4">Resultado consulta 3</h3>
 </div>
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
       <th>Ciudad </th>
-      <th><i>username</i> </th>
+      <th>Pais </th>
     </tr>
 
       <?php
