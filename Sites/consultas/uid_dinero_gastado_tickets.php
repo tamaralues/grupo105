@@ -50,7 +50,7 @@ require("../configuracion/conexion_db.php");
 
 $id = (int)$_POST["uid"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT tid, precio FROM tickets_comprados natural join datos_viaje natural join usuarios;";
+$query = "SELECT tid, precio, username FROM tickets_comprados natural join datos_viaje natural join usuarios;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -63,13 +63,14 @@ $consulta = $result -> fetchAll();
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>tid2 </th>
+      <th>tid1 </th>
       <th>precio </th>
+      <th>username </th>
     </tr>
 
       <?php
         foreach ($consulta as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
       ?>
   </table>
