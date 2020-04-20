@@ -68,12 +68,13 @@ $ciudades = $result -> fetchAll();
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>$fecha_inicio </th>
-      <th>$inicio </th>
+      <th>ID del usuario </th>
+      <th>username </th>
       <th>precio ticket </th>
     </tr>
 
       <?php
+        echo "$fecha_inicio, $inicio"
         foreach ($ciudades as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
