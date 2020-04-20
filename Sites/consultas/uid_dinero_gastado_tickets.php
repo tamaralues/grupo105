@@ -65,7 +65,7 @@ $consulta_total = $result_total -> fetchAll();
   <h3 class="display-4">Resultado consulta 4</h3>
 </div>
 <div class="container">
-  <table class="table table-striped table-bordered">
+  <table class="table table-striped table-bordered" style="width:50%; margin:auto">
     <tr>
       <th>cid </th>
       <th>precio </th>
