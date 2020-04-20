@@ -144,7 +144,7 @@
           <br>
           <input type="text" class="form-control" name="fecha_final" aria-describedby="emailHelp" placeholder="ingrese fecha final">
           <br>
-          <button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
+          <button type="submit" class="btn btn-lg btn-block btn-primary mt-auto">Consultar</button>
         </form>
       </div>
     </div>
