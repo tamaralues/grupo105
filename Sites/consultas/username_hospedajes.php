@@ -65,11 +65,12 @@ $ciudades = $result -> fetchAll();
     <tr>
       <th>Ciudad </th>
       <th>Pais </th>
+      <th>Fecha Inicio</th>
     </tr>
 
       <?php
         foreach ($ciudades as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
       ?>
   </table>
