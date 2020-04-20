@@ -50,7 +50,7 @@ require("../configuracion/conexion_db.php");
 
 $pais = $_POST["username"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT nombrehotel, username FROM usuarios natural join reservas natural join hoteles WHERE username  ~* '$pais';";
+$query = "SELECT nombrehotel, username, fechainicio FROM usuarios natural join reservas natural join hoteles WHERE username  ~* '$pais' AND fechainicio < current_date;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
