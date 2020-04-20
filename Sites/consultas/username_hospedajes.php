@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Pricing example · Bootstrap</title>
+    <title>Consulta 3</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
 
@@ -66,12 +66,11 @@ $ciudades = $result -> fetchAll();
     <tr>
       <th>Pais </th>
       <th><i>username</i></th>
-      <th><i>Fecha inicio</i></th>
     </tr>
 
       <?php
         foreach ($ciudades as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
       }
       ?>
   </table>
