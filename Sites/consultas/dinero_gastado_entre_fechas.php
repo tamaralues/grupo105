@@ -52,8 +52,8 @@ $fecha_inicio= $_POST["fecha_inicial"];
 $fecha_termino =$_POST["fecha_final"];
 
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje 
-WHERE fechacompra >='$fecha_inicio 00:00:00' and fechacompra <= '$fecha_termino 23:59:59';";
+$query = "SELECT uid, username, SUM(precio) FROM usuarios natural join tickets_comprados natural join datos_viaje 
+WHERE fechacompra >='$fecha_inicio 00:00:00' and fechacompra <= '$fecha_termino 23:59:59' GROUP BY uid;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -72,7 +72,6 @@ $ciudades = $result -> fetchAll();
     </tr>
 
       <?php
-        echo "$fecha_inicio, $fecha_termino, $inicio, $termino";
         foreach ($ciudades as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
