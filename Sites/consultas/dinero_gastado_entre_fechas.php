@@ -74,7 +74,7 @@ $ciudades = $result -> fetchAll();
     </tr>
 
       <?php
-        echo "$fecha_inicio, $inicio"
+        echo "$fecha_inicio, $inicio";
         foreach ($ciudades as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
