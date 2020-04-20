@@ -48,9 +48,11 @@
 #crea el PDO para realizar las consultas
 require("../configuracion/conexion_db.php");
 
-$pais = $_POST["pais"];
+$fecha_inicio= $_POST["fecha_inicial"];
+$fecha_termino =$_POST["fecha_final"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT nombreciudad, nombrepais FROM ciudades natural join paises WHERE nombrepais ~* '$pais';";
+$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join paises
+     WHERE fechainicio >= $fecha_inicio and fechatermino <= $fechatermino;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -58,18 +60,19 @@ $result -> execute();
 $ciudades = $result -> fetchAll();
 ?>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h3 class="display-4">Resultado consulta 2</h3>
+  <h3 class="display-4">Resultado consulta 6</h3>
 </div>
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>Ciudad </th>
-      <th>Pais </th>
+      <th>ID del usuario </th>
+      <th><i>username</i> </th>
+      <th>precio ticket </th>
     </tr>
 
       <?php
         foreach ($ciudades as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
       ?>
   </table>
