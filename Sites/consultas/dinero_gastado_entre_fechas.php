@@ -68,8 +68,8 @@ $ciudades = $result -> fetchAll();
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>ID del usuario </th>
-      <th>username </th>
+      <th>$fecha_inicio </th>
+      <th>$inicio </th>
       <th>precio ticket </th>
     </tr>
 
