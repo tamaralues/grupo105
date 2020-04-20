@@ -68,7 +68,7 @@ $ciudades = $result -> fetchAll();
     <tr>
       <th>ID del usuario </th>
       <th>username </th>
-      <th>precio ticket </th>
+      <th>Dinero gastado en tickets </th>
     </tr>
 
       <?php
