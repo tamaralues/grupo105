@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
 
     <!-- Bootstrap core CSS -->
-<link href="../css/main.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="../css/main_query.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="icon/apple-touch-icon.png" sizes="180x180">
@@ -56,24 +56,20 @@
     $username_y_correo = $result -> fetchAll();
     ?>
     <div class="container">
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 shadow-sm">
-          <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-              <thead class="thread-dark">
-                <tr>
-                  <th>username</th>
-                  <th>correo</th>
-                </tr>
-              </thead>
-              <?php
-                foreach ($username_y_correo as $p) {
-                  echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-              }
-              ?>
-            </table>
-          </div>
-        </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="thread-dark">
+            <tr>
+              <th>username</th>
+              <th>correo</th>
+            </tr>
+          </thead>
+          <?php
+            foreach ($username_y_correo as $p) {
+              echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+          }
+          ?>
+        </table>
       </div>
     </div>
   </body>
