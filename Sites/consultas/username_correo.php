@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Pricing example · Bootstrap</title>
+    <title>Consulta 1</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/pricing/">
 
@@ -61,17 +61,17 @@
     </div>
 
     <div class="container">
-      <div class="table-responsive">
+      <div">
         <table class="table table-striped table-bordered">
           <thead class="thread-dark">
-            <tr style="width: 720 px">
+            <tr style="width: 640 px">
               <th>username</th>
               <th>correo</th>
             </tr>
           </thead>
           <?php
             foreach ($username_y_correo as $p) {
-              echo "<tr style=\"width: 720 px\"><td>$p[0]</td><td>$p[1]</td></tr>";
+              echo "<tr style=\"width: 640 px\"><td>$p[0]</td><td>$p[1]</td></tr>";
           }
           ?>
         </table>
