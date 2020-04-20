@@ -48,7 +48,7 @@
 #crea el PDO para realizar las consultas
 require("../configuracion/conexion_db.php");
 
-$id = $_POST["uid"];
+$id = (int)$_POST["uid"];
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT uid, tid, precio FROM usuario natural join tickets_comprados natural join datos_viaje WHERE uid=$id;";
 
