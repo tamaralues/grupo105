@@ -65,13 +65,13 @@
         <table class="table table-striped table-bordered">
           <thead class="thread-dark">
             <tr style="width: 640 px">
-              <th>username</th>
-              <th>correo</th>
+              <th style="width: 300 px">username</th>
+              <th style="width: 300 px">correo</th>
             </tr>
           </thead>
           <?php
             foreach ($username_y_correo as $p) {
-              echo "<tr style=\"width: 640 px\"><td>$p[0]</td><td>$p[1]</td></tr>";
+              echo "<tr style=\"width: 640 px\"><td style=\"width: 300 px\">$p[0]</td><td style=\"width: 300 px\">$p[1]</td></tr>";
           }
           ?>
         </table>
