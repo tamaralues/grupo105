@@ -63,7 +63,7 @@
     <div class="container">
       <div class="card-deck mb-3 text-center">
         <div class="table-responsive">
-          <table class="table table-striped table-bordered" style=" width:75%">
+          <table class="table table-striped table-bordered" style=" width:75% align-self:center">
             <thead class="thread-dark">
               <tr>
                 <th>username</th>
