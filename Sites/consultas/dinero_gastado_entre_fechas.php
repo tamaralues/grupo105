@@ -51,11 +51,9 @@ require("../configuracion/conexion_db.php");
 $fecha_inicio= $_POST["fecha_inicial"];
 $fecha_termino =$_POST["fecha_final"];
 
-$inicio=strtotime($fecha_inicio);
-$termino=strtotime($fecha_termino);
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje 
-WHERE fechaviaje >= '2019-01-01' and fechaviaje <= '2020-11-11';";
+WHERE fechaviaje >=$fecha_inicio and fechaviaje <= '2020-11-11';";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
@@ -74,7 +72,7 @@ $ciudades = $result -> fetchAll();
     </tr>
 
       <?php
-        echo "$fecha_inicio, $inicio";
+        echo "$fecha_inicio, $fecha_termino, $inicio, $termino";
         foreach ($ciudades as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
       }
