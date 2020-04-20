@@ -62,8 +62,8 @@
 
     <div class="container">
       <div class="card-deck mb-3 text-center" style="align-self:center">
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered" style=" width:75%; overflow-x: auto;">
+        <div class="table-responsive" style="align-self:center">
+          <table class="table table-striped table-bordered" style=" width:75%">
             <thead class="thread-dark">
               <tr>
                 <th>username</th>
