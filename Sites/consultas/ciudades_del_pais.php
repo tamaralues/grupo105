@@ -57,6 +57,9 @@ $result = $db -> prepare($query);
 $result -> execute();
 $ciudades = $result -> fetchAll();
 ?>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h3 class="display-4">Resultado consulta 2</h3>
+</div>
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
@@ -71,4 +74,4 @@ $ciudades = $result -> fetchAll();
       ?>
   </table>
 </div>
-
+</body>

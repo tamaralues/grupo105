@@ -56,6 +56,10 @@
     $result -> execute();
     $username_y_correo = $result -> fetchAll();
     ?>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h3 class="display-4">Resultado consulta 1</h3>
+    </div>
+
     <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-bordered">
