@@ -54,7 +54,7 @@ $fecha_termino =$_POST["fecha_final"];
 $inicio=strtotime($fecha_inicio);
 $termino=strtotime($fecha_termino);
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje WHERE fechacompra >= $inicio and fechacompra <= $termino;";
+$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje WHERE fechacompra::date >= $inicio and fechacompra::date <= $termino;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
