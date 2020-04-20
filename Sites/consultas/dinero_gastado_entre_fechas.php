@@ -50,8 +50,9 @@ require("../configuracion/conexion_db.php");
 
 $fecha_inicio= $_POST["fecha_inicial"];
 $fecha_termino =$_POST["fecha_final"];
-$inicio=to_date($fecha_inicio, 'YYYYMMDD');
-$termino=to_date($fecha_termino, 'YYYYMMDD');
+
+$inicio=strtotime($fecha_inicio);
+$termino=strtotime($fecha_termino);
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje WHERE fechainicio >= $inicio and fechatermino <= $termino;";
 
