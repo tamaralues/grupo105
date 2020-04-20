@@ -51,8 +51,7 @@ require("../configuracion/conexion_db.php");
 $fecha_inicio= $_POST["fecha_inicial"];
 $fecha_termino =$_POST["fecha_final"];
 #se realiza la consulta, esta no tiene inputs
-$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje
-     WHERE fechainicio >= $fecha_inicio and fechatermino <= $fechatermino;";
+$query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje;";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
