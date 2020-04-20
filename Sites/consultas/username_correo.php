@@ -62,7 +62,7 @@
 
     <div class="container">
       <div class="table-responsive">
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered width:75%">
           <thead class="thread-dark">
             <tr>
               <th>username</th>
