@@ -55,7 +55,7 @@
     $result -> execute();
     $username_y_correo = $result -> fetchAll();
     ?>
-    <div class="container">
+    <div class="container container-sm">
       <div class="table-responsive">
         <table class="table table-striped table-bordered">
           <thead class="thread-dark">
