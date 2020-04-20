@@ -61,7 +61,7 @@
     </div>
 
     <div class="container">
-      <div class="card-deck mb-3 text-center  align-self:center">
+      <div class="card-deck mb-3 text-center" style="align-self:center">
         <div class="table-responsive">
           <table class="table table-striped table-bordered" style=" width:75%">
             <thead class="thread-dark">
