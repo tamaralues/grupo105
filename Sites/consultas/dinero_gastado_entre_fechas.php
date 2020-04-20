@@ -55,7 +55,7 @@ $inicio=strtotime($fecha_inicio);
 $termino=strtotime($fecha_termino);
 #se realiza la consulta, esta no tiene inputs
 $query = "SELECT uid, username, precio FROM usuarios natural join tickets_comprados natural join datos_viaje 
-WHERE fechaviaje >= $fecha_inicio and fechaviaje <= $fecha_termino;";
+WHERE fechaviaje >= '2019-01-01' and fechaviaje <= '2020-11-11';";
 
 #se asocia la consulta a una db, se ejecuta y el resultado se guarda en una variable
 $result = $db -> prepare($query);
