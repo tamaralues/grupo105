@@ -63,14 +63,13 @@ $consulta = $result -> fetchAll();
 <div class="container">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>cid </th>
       <th>tid </th>
       <th>precio </th>
     </tr>
 
       <?php
         foreach ($consulta as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
+          echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
       }
       ?>
   </table>
