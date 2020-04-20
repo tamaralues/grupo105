@@ -43,6 +43,7 @@
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   </head>
+  <body>
     <?php
     #crea el PDO para realizar las consultas
     require("../configuracion/conexion_db.php");
@@ -55,7 +56,7 @@
     $result -> execute();
     $username_y_correo = $result -> fetchAll();
     ?>
-    <div class="container container-sm">
+    <div class="container">
       <div class="table-responsive">
         <table class="table table-striped table-bordered">
           <thead class="thread-dark">
