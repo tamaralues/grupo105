@@ -66,6 +66,7 @@ $ciudades = $result -> fetchAll();
     <tr>
       <th>Pais </th>
       <th><i>username</i></th>
+      <th><i>Fecha inicio</i></th>
     </tr>
 
       <?php
