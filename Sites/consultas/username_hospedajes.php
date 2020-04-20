@@ -64,7 +64,7 @@ $ciudades = $result -> fetchAll();
   <table class="table table-striped table-bordered">
     <tr>
       <th>Ciudad </th>
-      <th>Pais </th>
+      <th><i>username</i></th>
       <th>Fecha Inicio</th>
     </tr>
 
