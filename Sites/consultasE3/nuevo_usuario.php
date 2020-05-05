@@ -1,7 +1,7 @@
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../configuracion/conexion_db.php");
+  require("../configuracion/conexion_db_stored2.php");
 
   #Se obtiene el valor del input del usuario
   $usuario = $_POST["usuario"];
@@ -9,26 +9,12 @@
   $pwd = $_POST["pwd"];
 
   #Se construye la consulta como un string
- 	$query = "SELECT id, nombre, altura FROM ejercicio_ayudantia where altura>=$altura order by altura desc;";
+     $query_usuario = "SELECT anadir_usuario($usuario, $correo, $pwd);";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result = $db -> prepare($query);
-	$result -> execute();
-	$pokemones = $result -> fetchAll();
-  ?>
-
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Altura</th>
-    </tr>
-  
-      <?php
-        foreach ($pokemones as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
-      }
-      ?>
-      
-  </table>
+	$result_usuario = $db -> prepare($query_usuario);
+	$result_usuario -> execute();
+    $usuario_repetido = $result -> fetchAll();
+    
+?>
 </body>
