@@ -51,8 +51,8 @@
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result_usuario = $db -> prepare($query_usuario);
-    $result_usuario -> execute();
-    $catch_usuario = $result -> fetchAll();
+    $bool_usuario = $result_usuario -> execute();
+    $catch_usuario = $result_usuario -> fetchAll();
 ?>
 <p> por insertar </p>
 <table>
@@ -68,6 +68,6 @@
 ?>
 </table>
 <?php
-    echo (string) $result_usuario;
+    echo (string) $bool_usuario;
 ?>
 </body>
