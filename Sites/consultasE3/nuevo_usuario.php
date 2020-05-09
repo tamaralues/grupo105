@@ -53,13 +53,6 @@
 	$result_usuario = $db -> prepare($query_usuario);
     $result_usuario -> execute();
     $catch_usuario = $result -> fetchAll();
-
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-      } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-      }
-      
 ?>
 <p> por insertar </p>
 <table>
