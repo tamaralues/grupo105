@@ -25,11 +25,12 @@
     </tr>
   
       <?php
-        $last_uid=0;
+        $last_uid = 0;
         foreach ($pokemones as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
-          if $last_uid<$p[0]:
-            $last_uid=$p[0]
+          if ($last_uid < $p[0]){
+            $last_uid=$p[0];
+          }
       }
       ?>
       
