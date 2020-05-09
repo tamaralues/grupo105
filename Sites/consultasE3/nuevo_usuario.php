@@ -51,7 +51,8 @@
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result_usuario = $db -> prepare($query_usuario);
-	$result_usuario -> execute();
+    $result_usuario -> execute();
+    $catch_usuario = $result -> fetchAll();
 
 ?>
 <p> por insertar </p>
@@ -65,6 +66,7 @@
   
 <?php
     echo "<tr><td>$last_uid</td><td>$usuario</td><td>$correo</td><td>$pwd</td></tr>";
+    echo "$catch_usuario";
 ?>
 </table>
 </body>
