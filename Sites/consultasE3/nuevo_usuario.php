@@ -68,7 +68,7 @@
 ?>
 </table>
 <?php
-    echo (string) $bool_usuario + 'original';
-    echo (string) !$bool_usuario +'negado';
+    echo "original: $bool_usuario";
+    echo "negado: !$bool_usuario";
 ?>
 </body>
