@@ -68,7 +68,11 @@
 ?>
 </table>
 <?php
-    echo "original: $bool_usuario";
-    echo "negado: !$bool_usuario";
+    if ($bool_usuario==True){
+        echo "True";
+    }
+    else {
+        echo "False";
+    }
 ?>
 </body>
