@@ -68,6 +68,6 @@
 ?>
 </table>
 <?php
-    echo "$result_usuario";
+    echo (string) $result_usuario;
 ?>
 </body>
