@@ -5,7 +5,13 @@
   <h3 align="center">ingresar nuevo usuario</h3>
 
   <form align="center" action="consultasE3/nuevo_usuario.php" method="post">
-    Nombre usuario:
+    Nombre y apellido:
+    <input type="text" name="nombre">
+    <br/>
+    direccion:
+    <input type="text" name="direccion">
+    <br/>
+    username:
     <input type="text" name="usuario">
     <br/>
     Correo:
