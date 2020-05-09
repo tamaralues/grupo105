@@ -47,7 +47,7 @@
   $pwd = $_POST["pwd"];
 
   #Se construye la consulta como un string
-     $query_usuario = "INSERT INTO usuarios(uid, username, correo, password) VALUES ($last_uid, $usuario, $correo, $pwd);";
+     $query_usuario = "INSERT INTO usuarios(uid, username, correo, password) VALUES ('$last_uid', '$usuario', '$correo', '$pwd');";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result_usuario = $db -> prepare($query_usuario);
