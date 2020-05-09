@@ -8,7 +8,7 @@
   $altura = intval($altura);
 
   #Se construye la consulta como un string
- 	$query = "SELECT uid, username, correo, password FROM usuarios;";
+ 	$query = "SELECT uid, username, correo, password FROM usuarios order by uid desc;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
@@ -19,14 +19,17 @@
   <table>
     <tr>
       <th>UID</th>
-      <th>Usernmae</th>
+      <th>Username</th>
       <th>correo</th>
       <th>password</th>
     </tr>
   
       <?php
+        $last_uid=0;
         foreach ($pokemones as $p) {
           echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
+          if $last_uid<$p[0]:
+            $last_uid=$p[0]
       }
       ?>
       
@@ -39,7 +42,7 @@
   $pwd = $_POST["pwd"];
 
   #Se construye la consulta como un string
-     $query_usuario = "SELECT anadir_usuario($usuario, $correo, $pwd);";
+     $query_usuario = "INSERT INTO usuarios(uid, username, correo, password) VALUES ($last_uid, $usuario, $correo, $pwd);";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result_usuario = $db -> prepare($query_usuario);
@@ -48,4 +51,17 @@
     
     
 ?>
+<p> por insertar </p>
+<table>
+    <tr>
+      <th>UID</th>
+      <th>Usernmae</th>
+      <th>correo</th>
+      <th>password</th>
+    </tr>
+  
+<?php
+    echo "<tr><td>$last_uid</td><td>$usuario</td><td>$correo</td><td>$pwd</td></tr>";
+?>
+</table>
 </body>
