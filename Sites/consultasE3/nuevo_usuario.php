@@ -54,6 +54,12 @@
     $result_usuario -> execute();
     $catch_usuario = $result -> fetchAll();
 
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+      
 ?>
 <p> por insertar </p>
 <table>
@@ -66,7 +72,9 @@
   
 <?php
     echo "<tr><td>$last_uid</td><td>$usuario</td><td>$correo</td><td>$pwd</td></tr>";
-    echo "$catch_usuario";
 ?>
 </table>
+<?php
+    echo "$result_usuario";
+?>
 </body>
