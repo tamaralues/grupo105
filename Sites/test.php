@@ -1,10 +1,7 @@
 
 <body>
   <h1 align="center">test </h1>
-  <p style="text-align:center;">algo random</p>
-
   <br>
-
   <h3 align="center">ingresar nuevo usuario</h3>
 
   <form align="center" action="nuevo_usuario.php" method="post">
