@@ -4,7 +4,7 @@
   <br>
   <h3 align="center">ingresar nuevo usuario</h3>
 
-  <form align="center" action="nuevo_usuario.php" method="post">
+  <form align="center" action="consultasE3/nuevo_usuario.php" method="post">
     Nombre usuario:
     <input type="text" name="usuario">
     <br/>
