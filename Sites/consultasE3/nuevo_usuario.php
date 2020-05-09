@@ -64,7 +64,7 @@
 <table>
     <tr>
       <th>UID</th>
-      <th>Usernmae</th>
+      <th>Username</th>
       <th>correo</th>
       <th>password</th>
     </tr>
