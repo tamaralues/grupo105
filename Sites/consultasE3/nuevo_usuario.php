@@ -8,7 +8,7 @@
   $altura = intval($altura);
 
   #Se construye la consulta como un string
- 	$query = "SELECT uid, username, correo, password FROM usuarios order by uid desc;";
+ 	$query = "SELECT uid, username, correo, password FROM usuarios order by uid;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
@@ -32,11 +32,15 @@
             $last_uid=$p[0];
           }
       }
+      $last_uid +=1;
       ?>
+
       
   </table>
 <?php
-
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+  require("../configuracion/conexion_db_stored2.php");
+  
   #Se obtiene el valor del input del usuario
   $usuario = $_POST["usuario"];
   $correo = $_POST["correo"];
