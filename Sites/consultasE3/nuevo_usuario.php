@@ -16,9 +16,9 @@
                 <h2 class="text-center">Regístrate</h2>
                 <img class="img-fluid mx-auto d-block rounded" style="width: 40%;"
                     src="https://www.simplyhealth.co.uk/shcore/sh/furniture/images/svgs/top-nav-account-icon.svg" />
-                <form action="consultas/confirmacion_registro.php" method="post">
+                <form action="confirmacion_registro.php" method="post">
                     <div class="form-group">
-                        <label for="user">Nombre de usuario</label>
+                        <label for="user"><b>Nombre de usuario</b></label>
                         <input id="user" name="user"
                             class="form-control" type="text"
                             placeholder="User_123">
@@ -35,13 +35,13 @@
                             class="form-control" type="text"
                             placeholder="pais, ciudad, #domicilio">
                     <div class="form-group">
-                        <label for="correo">Correo</label>
+                        <label for="correo"><b>Correo</b></label>
                         <input id="correo" name="correo"
                             class="form-control" type="email"
                             placeholder="correo_electronico@uc.cl">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Contraseña</label>
+                        <label for="pwd"><b>Contraseña</b></label>
                         <input id="pwd" name="pwd"
                             class="form-control" type="password"
                             placeholder="password">
