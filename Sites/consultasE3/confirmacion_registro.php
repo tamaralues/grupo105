@@ -16,7 +16,7 @@
  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
    $result_uid = $db -> prepare($query);
    $result_uid -> execute();
-   $fetch_uid = $result -> fetchAll();
+   $fetch_uid = $result_uid -> fetchAll();
 
    $last_uid = 0;
    $correo = FALSE;

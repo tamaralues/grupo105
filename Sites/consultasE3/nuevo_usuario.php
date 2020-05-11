@@ -14,7 +14,7 @@
             <div id="login" class="col-sm-8 offset-sm-2
                 col-12">
                 <h2 class="text-center">Regístrate</h2>
-                <img class="img-fluid mx-auto d-block rounded" style="width: 40%;"
+                <img class="img-fluid mx-auto d-block rounded" style="width: 35%;"
                     src="https://www.simplyhealth.co.uk/shcore/sh/furniture/images/svgs/top-nav-account-icon.svg" />
                 <form action="confirmacion_registro.php" method="post">
                     <div class="form-group">
