@@ -80,10 +80,19 @@ if (!$bool_username && !$bool_correo) {
     }
     echo "\n";
     if ($bool_cuentas==True){
-        echo "bool_query: True";
+        echo "bool_cuentas: True";
     }
     else {
-        echo "bool_query: False";
+        echo "bool_cuentas: False";
     }
+    if ($bool_usuario==True){
+        echo "bool_usuarios: True";
+    }
+    else {
+        echo "bool_usuarios: False";
+    }
+    header("Location: ../test.php");
+    die();
 ?>
+
 </body>
