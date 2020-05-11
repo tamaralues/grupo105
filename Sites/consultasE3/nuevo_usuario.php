@@ -16,27 +16,32 @@
                 <h2 class="text-center">Regístrate</h2>
                 <img class="img-fluid mx-auto d-block rounded" style="width: 40%;"
                     src="https://www.simplyhealth.co.uk/shcore/sh/furniture/images/svgs/top-nav-account-icon.svg" />
-                <form>
+                <form action="consultas/confirmacion_registro.php" method="post">
                     <div class="form-group">
-                        <label for="correo">Nombre de usuario</label>
+                        <label for="user">Nombre de usuario</label>
                         <input id="user" name="user"
                             class="form-control" type="text"
                             placeholder="User_123">
                     </div>
                     <div class="form-group">
-                        <label for="palabraSecreta">Nombre y apellido</label>
+                        <label for="name"><b>Nombre y apellido</b></label>
                         <input id="name" name="name"
                             class="form-control" type="text"
                             placeholder="first name - last name">
                     </div>
                     <div class="form-group">
-                        <label for="palabraSecreta">Correo</label>
+                        <label for="direccion"><b>Dirección</b></label>
+                        <input id="direccion" name="direccion"
+                            class="form-control" type="text"
+                            placeholder="pais, ciudad, #domicilio">
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
                         <input id="correo" name="correo"
                             class="form-control" type="email"
                             placeholder="correo_electronico@uc.cl">
                     </div>
                     <div class="form-group">
-                        <label for="palabraSecreta">Contraseña</label>
+                        <label for="pwd">Contraseña</label>
                         <input id="pwd" name="pwd"
                             class="form-control" type="password"
                             placeholder="password">
