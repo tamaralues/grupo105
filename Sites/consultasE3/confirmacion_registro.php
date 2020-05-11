@@ -65,17 +65,24 @@ if ($username && $correo) {
 </table>
 <?php
     if ($username==True){
-        echo "usuario: True";
+        echo "usuario_repetido: True";
     }
     else {
-        echo "usuario: False";
+        echo "usuario_repetido: False";
     }
     echo "\n";
     if ($correo==True){
-        echo "cuentas: True";
+        echo "correo_repetido: True";
     }
     else {
-        echo "cuentas: False";
+        echo "correo_repetido: False";
+    }
+    echo "\n";
+    if ($bool_cuentas==True){
+        echo "bool_query: True";
+    }
+    else {
+        echo "bool_query: False";
     }
 ?>
 </body>
