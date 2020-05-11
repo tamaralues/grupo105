@@ -35,6 +35,7 @@
  #id del usuario que se debe añadir
  $last_uid +=1;
 if (!$bool_username && !$bool_correo) {
+    echo "ejecutando inserciones";
   #Se construye la consulta como un string
     $query_usuario = "INSERT INTO usuarios(uid, username, correo, password) VALUES ('$last_uid', '$user', '$correo', '$pwd');";
     $query_cuentas = "INSERT INTO cuentas(nombreusuario, username, direccionusuario) VALUES ('$name', '$user', '$direccion');";
