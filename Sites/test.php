@@ -42,6 +42,7 @@
                         Primera vez en Splinter?
                     </p>
                     <button type="submit" class="btn btn-sm btn-primary mb-2 btn-dark" style="width: 250px;">Registrarme</button>
+                    <a href="consultas/username_correo.php" class="btn btn-sm btn-primary mb-2 btn-dark" role="button" style="width: 250px;">Registrarme</a>
                 </div>
             </div>
         </div>
