@@ -1,90 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrapE3.css" rel="stylesheet">
+    <link href="css/style_usuarioE3.css" rel="stylesheet">
+    <title>iniciar sesion</title>
+</head>
 <body>
-<?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../configuracion/conexion_db_stored2.php");
-
-  #Se obtiene el valor del input del usuario
-  $altura = $_POST["altura"];
-  $altura = intval($altura);
-
-  #Se construye la consulta como un string
- 	$query = "SELECT uid, username, correo, password, nombreusuario, direccionusuario FROM usuarios NATURAL JOIN cuentas order by uid desc;";
-
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result = $db -> prepare($query);
-	$result -> execute();
-	$pokemones = $result -> fetchAll();
-  ?>
-
-  <table>
-    <tr>
-      <th>UID</th>
-      <th>Username</th>
-      <th>correo</th>
-      <th>password</th>
-    </tr>
-  
-      <?php
-        $last_uid = 0;
-        foreach ($pokemones as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td><td>$p[3]</td></tr>";
-          if ($last_uid < $p[0]){
-            $last_uid=$p[0];
-          }
-      }
-      $last_uid +=1;
-      ?>
-
-      
-  </table>
-<?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../configuracion/conexion_db_stored2.php");
-
-  #Se obtiene el valor del input del usuario
-  $nombre = $_POST["nombre"];
-  $direccion = $_POST["direccion"];
-  $usuario = $_POST["usuario"];
-  $correo = $_POST["correo"];
-  $pwd = $_POST["pwd"];
-
-  #Se construye la consulta como un string
-    $query_usuario = "INSERT INTO usuarios(uid, username, correo, password) VALUES ('$last_uid', '$usuario', '$correo', '$pwd');";
-    $query_cuentas = "INSERT INTO cuentas(nombreusuario, username, direccionusuario) VALUES ('$nombre', '$usuario', '$direccion');";
-
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result_usuario = $db -> prepare($query_usuario);
-    $bool_usuario = $result_usuario -> execute();
-    
-    $result_cuentas = $db -> prepare($query_cuentas);
-    $bool_cuentas = $result_cuentas -> execute();
-
-?>
-<p> insertando </p>
-<table>
-    <tr>
-      <th>UID</th>
-      <th>Username</th>
-      <th>correo</th>
-      <th>password</th>
-    </tr>
-  
-<?php
-    echo "<tr><td>$last_uid</td><td>$usuario</td><td>$correo</td><td>$pwd</td></tr>";
-?>
-</table>
-<?php
-    if ($bool_usuario==True){
-        echo "usuario: True";
-    }
-    else {
-        echo "usuario: False";
-    }
-    if ($bool_cuentas==True){
-        echo "cuentas: True";
-    }
-    else {
-        echo "cuentas: False";
-    }
-?>
+    <main role="main" class="container my-auto pt-3 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
+        <div class="row">
+            <div id="login" class="col-sm-8 offset-sm-2
+                col-12">
+                <h2 class="text-center">Regístrate</h2>
+                <img class="img-fluid mx-auto d-block rounded" style="width: 40%;"
+                    src="https://www.simplyhealth.co.uk/shcore/sh/furniture/images/svgs/top-nav-account-icon.svg" />
+                <form>
+                    <div class="form-group">
+                        <label for="correo">Nombre de usuario</label>
+                        <input id="user" name="user"
+                            class="form-control" type="text"
+                            placeholder="User_123">
+                    </div>
+                    <div class="form-group">
+                        <label for="palabraSecreta">Nombre y apellido</label>
+                        <input id="name" name="name"
+                            class="form-control" type="text"
+                            placeholder="first name - last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="palabraSecreta">Correo</label>
+                        <input id="correo" name="correo"
+                            class="form-control" type="email"
+                            placeholder="correo_electronico@uc.cl">
+                    </div>
+                    <div class="form-group">
+                        <label for="palabraSecreta">Contraseña</label>
+                        <input id="pwd" name="pwd"
+                            class="form-control" type="password"
+                            placeholder="password">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block mb-2">
+                        Registrarme
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="css/bootstrapE3.js"></script>
 </body>
+</html>

@@ -1,0 +1,9 @@
+body {
+    background: url("https://i.pinimg.com/originals/6a/08/8f/6a088f8c17c8e8b629c9adc47ab17615.jpg");
+    background-size: cover;
+    padding-top: 30px;
+}
+
+.container {
+    background-color: rgba(246, 246, 246, 0.5);
+}
