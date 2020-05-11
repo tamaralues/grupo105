@@ -70,7 +70,7 @@ if ($username && $correo) {
     else {
         echo "usuario: False";
     }
-    <br>
+    echo "\n";
     if ($correo==True){
         echo "cuentas: True";
     }
