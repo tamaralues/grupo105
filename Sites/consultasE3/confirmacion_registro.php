@@ -1,7 +1,7 @@
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../configuracion/conexion_db_stored2.php");
+  require("../configuracion/conexion_db_e3.php");
 
   #Se obtiene el valor del input del usuario
   $name = $_POST["name"];
@@ -27,11 +27,9 @@
      }
      if ($p[1] == $user){
          $username = TRUE;
-         echo "usuario ocupado";
      }
      if ($p[2] == $correo) {
          $correo = TRUE;
-         echo "correo ocupado";
      }
  }
  #id del usuario que se debe añadir
@@ -62,17 +60,18 @@ if ($username && $correo) {
     </tr>
   
 <?php
-    echo "<tr><td>$last_uid</td><td>$user</td><td>$name</td><td>$direccion</td><td>$correo</td><td>$pwd</td></tr>";
+    echo "<tr><td>$last_uid</td><td>$user</td><td>$name</td><td>$correo</td><td>$direccion</td><td>$pwd</td></tr>";
 ?>
 </table>
 <?php
-    if ($bool_usuario==True){
+    if ($username==True){
         echo "usuario: True";
     }
     else {
         echo "usuario: False";
     }
-    if ($bool_cuentas==True){
+    <br>
+    if ($correo==True){
         echo "cuentas: True";
     }
     else {
