@@ -48,7 +48,7 @@ if (!$bool_username && !$bool_correo) {
     $bool_cuentas = $result_cuentas -> execute();
 }
 
-?>
+?><!--
 <p> insertando </p>
 <table>
     <tr>
@@ -58,13 +58,15 @@ if (!$bool_username && !$bool_correo) {
       <th>correo</th>
       <th>Direccion</th>
       <th>password</th>
-    </tr>
+    </tr> 
+-->
   
 <?php
-    echo "<tr><td>$last_uid</td><td>$user</td><td>$name</td><td>$correo</td><td>$direccion</td><td>$pwd</td></tr>";
+    // echo "<tr><td>$last_uid</td><td>$user</td><td>$name</td><td>$correo</td><td>$direccion</td><td>$pwd</td></tr>";
 ?>
 </table>
 <?php
+     /* por si quiero revisar lo que se esta ingresando
     if ($bool_username==True){
         echo "usuario_repetido: True";
     }
@@ -91,6 +93,7 @@ if (!$bool_username && !$bool_correo) {
     else {
         echo "bool_usuarios: False";
     }
+    */
     header("Location: ../test.php");
     die();
 ?>
