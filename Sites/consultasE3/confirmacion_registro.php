@@ -19,17 +19,17 @@
    $fetch_uid = $result_uid -> fetchAll();
 
    $last_uid = 0;
-   $correo = FALSE;
-   $username = FALSE;
+   $bool_correo = FALSE;
+   $bool_username = FALSE;
    foreach ($fetch_uid as $p) {
      if ($last_uid < $p[0]){
        $last_uid=$p[0];
      }
      if ($p[1] == $user){
-         $username = TRUE;
+         $bool_username = TRUE;
      }
      if ($p[2] == $correo) {
-         $correo = TRUE;
+         $bool_correo = TRUE;
      }
  }
  #id del usuario que se debe añadir
@@ -64,14 +64,14 @@ if ($username && $correo) {
 ?>
 </table>
 <?php
-    if ($username==True){
+    if ($bool_username==True){
         echo "usuario_repetido: True";
     }
     else {
         echo "usuario_repetido: False";
     }
     echo "\n";
-    if ($correo==True){
+    if ($bool_correo==True){
         echo "correo_repetido: True";
     }
     else {

@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label for="correo"><b>Correo</b></label>
                         <input id="correo" name="correo"
-                            class="form-control" type="text"
+                            class="form-control" type="email"
                             placeholder="correo_electronico@uc.cl">
                     </div>
                     <div class="form-group">
