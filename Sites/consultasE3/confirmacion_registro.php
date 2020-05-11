@@ -50,5 +50,4 @@ if (!$bool_username && !$bool_correo) {
     header("Location: ../test.php");
     exit();
 ?>
-
 </body>
