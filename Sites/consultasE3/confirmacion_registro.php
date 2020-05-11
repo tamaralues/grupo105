@@ -47,55 +47,8 @@ if (!$bool_username && !$bool_correo) {
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
 }
-
-?><!--
-<p> insertando </p>
-<table>
-    <tr>
-      <th>UID</th>
-      <th>Username</th>
-      <th>Nombre y apellido</th>
-      <th>correo</th>
-      <th>Direccion</th>
-      <th>password</th>
-    </tr> 
--->
-  
-<?php
-    // echo "<tr><td>$last_uid</td><td>$user</td><td>$name</td><td>$correo</td><td>$direccion</td><td>$pwd</td></tr>";
-?>
-</table>
-<?php
-     /* por si quiero revisar lo que se esta ingresando
-    if ($bool_username==True){
-        echo "usuario_repetido: True";
-    }
-    else {
-        echo "usuario_repetido: False";
-    }
-    echo "\n";
-    if ($bool_correo==True){
-        echo "correo_repetido: True";
-    }
-    else {
-        echo "correo_repetido: False";
-    }
-    echo "\n";
-    if ($bool_cuentas==True){
-        echo "bool_cuentas: True";
-    }
-    else {
-        echo "bool_cuentas: False";
-    }
-    if ($bool_usuario==True){
-        echo "bool_usuarios: True";
-    }
-    else {
-        echo "bool_usuarios: False";
-    }
-    */
     header("Location: ../test.php");
-    die();
+    exit();
 ?>
 
 </body>
