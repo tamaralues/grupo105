@@ -14,7 +14,7 @@
  $query_uid = "SELECT uid, username, correo, password, nombreusuario, direccionusuario FROM usuarios NATURAL JOIN cuentas order by uid desc;";
 
  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-   $result_uid = $db -> prepare($query);
+   $result_uid = $db -> prepare($query_uid);
    $result_uid -> execute();
    $fetch_uid = $result_uid -> fetchAll();
 
