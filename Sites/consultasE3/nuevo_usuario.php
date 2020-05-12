@@ -109,11 +109,10 @@ if (!$bool_username && !$bool_correo) {
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
     }
-
+}
     if(isset($_POST['button_registro']))
 {
    registrar();
 } 
-}
 ?>
 </html>
