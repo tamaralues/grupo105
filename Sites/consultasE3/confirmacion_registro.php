@@ -46,10 +46,10 @@ if (!$bool_username && !$bool_correo) {
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
 
-    header("../test.php");
+    header("Location: ../test.php");
     exit();
   }
   else {
-    header("nuevo_usuario.php");
+    header("Location: nuevo_usuario.php");
   }
 ?>
