@@ -1,4 +1,3 @@
-<body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../configuracion/conexion_db_e3.php");
@@ -46,8 +45,11 @@ if (!$bool_username && !$bool_correo) {
     
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
-}
-    require("../test.php");
+
+    header("../test.php");
     exit();
+  }
+  else {
+    header("nuevo_usuario.php");
+  }
 ?>
-</body>
