@@ -37,6 +37,9 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <button class="dropdown-item" type="button">Artista1</button>
                         <button class="dropdown-item" type="button">artista2</button>
                         <button class="dropdown-item" type="button">artista3</button>
+                        <button class="dropdown-item" type="button">Artista1</button>
+                        <button class="dropdown-item" type="button">artista2</button>
+                        <button class="dropdown-item" type="button">artista3</button>
                     </div>
                 </div>
                 <div class="btn-group" role="group">
@@ -67,7 +70,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <?php
                             foreach ($fetch_drop1 as $f1) {
                                 echo "
-                                    <button class=\"$f1[0]\" type=\"button\">lugar1</button>
+                                    <button class=\"dropdown-item\" type=\"button\">$f1[0]</button>
                                 ";
                             }
                         ?>
