@@ -11,6 +11,20 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop1 = $db -> prepare($query_drop1);
  $result_drop1 -> execute();
  $fetch_drop1 = $result_drop1 -> fetchAll();
+
+ $query_drop2 = "SELECT nombreciudad, cid FROM ciudades;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop2 = $db -> prepare($query_drop2);
+ $result_drop2 -> execute();
+ $fetch_drop2 = $result_drop2 -> fetchAll();
+
+ $query_drop3 = "SELECT cid, pid FROM ciudades;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop3 = $db -> prepare($query_drop3);
+ $result_drop3 -> execute();
+ $fetch_drop3 = $result_drop3 -> fetchAll();
 ?>
 
 
@@ -30,41 +44,8 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="artista" aria-haspopup="true" aria-expanded="false">
-                        Artistas
-                    </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="artista">
-                        <button class="dropdown-item" type="button">Artista1</button>
-                        <button class="dropdown-item" type="button">artista2</button>
-                        <button class="dropdown-item" type="button">artista3</button>
-                        <button class="dropdown-item" type="button">Artista1</button>
-                        <button class="dropdown-item" type="button">artista2</button>
-                        <button class="dropdown-item" type="button">artista3</button>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="obra" aria-haspopup="true" aria-expanded="false">
-                        Obras
-                    </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="obra">
-                        <button class="dropdown-item" type="button">obra1</button>
-                        <button class="dropdown-item" type="button">obra2</button>
-                        <button class="dropdown-item" type="button">obra3</button>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="lugar" aria-haspopup="true" aria-expanded="false">
-                        Lugares
-                    </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="lugar">
-                        <button class="dropdown-item" type="button">lugar1</button>
-                        <button class="dropdown-item" type="button">lugar2</button>
-                        <button class="dropdown-item" type="button">lugar3</button>
-                    </div>
-                </div>
-                <div class="btn-group" role="group">
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown1" aria-haspopup="true" aria-expanded="false">
-                        drop1
+                        Artistas
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown1">
                         <?php
@@ -75,6 +56,35 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                             }
                         ?>
                     </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown2" aria-haspopup="true" aria-expanded="false">
+                        Obras
+                    </button>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown2">
+                        <?php
+                            foreach ($fetch_drop2 as $f2) {
+                                echo "
+                                    <button class=\"dropdown-item\" type=\"button\">$f2[0]</button>
+                                ";
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
+                        Lugares
+                    </button>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
+                        <?php
+                            foreach ($fetch_drop3 as $f3) {
+                                echo "
+                                    <button class=\"dropdown-item\" type=\"button\">$f3[0]</button>
+                                ";
+                            }
+                        ?>
+                    </div>
+                </div>
             </div>
         </nav>
         <div class="dropdown mr-1">
