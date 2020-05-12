@@ -47,7 +47,7 @@
                             class="form-control" type="password"
                             placeholder="password">
                     </div>
-                    <button type="submit" class="btn btn-dark btn-block mb-2" name="button_registro" value="button_registro">
+                    <button type="submit" class="btn btn-dark btn-block mb-2" name="button_registro" value="click">
                         Registrarme
                     </button>
                 </form>
