@@ -1,6 +1,7 @@
 <?php
 #validar formulario de sesion
 function validarForm($user, $correo, $pwd){
+    require("consultasE3/nuevo_usuario.php");
     if(form_OK($user, $correo, $pwd)){
       return true;}
     else{
