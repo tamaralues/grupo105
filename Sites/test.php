@@ -49,16 +49,45 @@ function form_OK($user, $correo, $pwd) {
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-white" href="#">Artistas</a>
-          <a class="p-2 text-white" href="#">Obras</a>
-          <a class="p-2 text-white" href="#">Lugares</a>
+        <div class="btn-group">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="artista" aria-haspopup="true" aria-expanded="false">
+                        Artistas
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="artista">
+                        <button class="dropdown-item" type="button">Artista1</button>
+                        <button class="dropdown-item" type="button">artista2</button>
+                        <button class="dropdown-item" type="button">artista3</button>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="obra" aria-haspopup="true" aria-expanded="false">
+                        Obras
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="obra">
+                        <button class="dropdown-item" type="button">obra1</button>
+                        <button class="dropdown-item" type="button">obra2</button>
+                        <button class="dropdown-item" type="button">obra3</button>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="lugar" aria-haspopup="true" aria-expanded="false">
+                        Lugares
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lugar">
+                        <button class="dropdown-item" type="button">lugar1</button>
+                        <button class="dropdown-item" type="button">lugar2</button>
+                        <button class="dropdown-item" type="button">lugar3</button>
+                    </div>
+                </div>
+            </div>
         </nav>
         <div class="dropdown mr-1">
             <button type="button" class="btn btn-outline-light dropdown" id="inicio_sesion" data-toggle="dropdown" data-offset="10,20">
                 Iniciar Sesión
             </button>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
-                <form class="px-4 py-3" action="consultasE3/home_login.php" method="post" onsubmit="return validarForm(username, correo, pwd);">
+                <form class="px-4 py-3" action="consultasE3/home_login.php" method="post" onsubmit="return validarForm(this.elements);">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="exampleDropdownFormEmail1">
                             Usuario:
