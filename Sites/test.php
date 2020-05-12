@@ -8,7 +8,7 @@ function validarForm($user, $correo, $pwd){
 }
 function form_OK($user, $correo, $pwd) {
     require("configuracion/conexion_db_e3.php");
-}
+
     $query = "SELECT username, correo, password FROM usuarios";
     $result = $db -> prepare($query);
     $result -> execute();
@@ -30,6 +30,7 @@ function form_OK($user, $correo, $pwd) {
         return FALSE;
     }
  }
+}
 ?>
 
 
