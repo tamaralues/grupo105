@@ -65,11 +65,11 @@ function registrar(){
   require("../configuracion/conexion_db_e3.php");
 
   #Se obtiene el valor del input del usuario
-  $name = $_POST["name"];
-  $direccion = $_POST["direccion"];
-  $user = $_POST["user"];
-  $correo = $_POST["correo"];
-  $pwd = $_POST["pwd"];
+  $name = .$_POST["name"];
+  $direccion = .$_POST["direccion"];
+  $user = .$_POST["user"];
+  $correo = .$_POST["correo"];
+  $pwd = .$_POST["pwd"];
 
  #Consulta para saber si existe el usuario/correo, y cual UID correspondería
  $query_uid = "SELECT uid, username, correo, password, nombreusuario, direccionusuario FROM usuarios NATURAL JOIN cuentas order by uid desc;";
@@ -114,4 +114,5 @@ if (!$bool_username && !$bool_correo) {
    registrar();
 } 
 }
+?>
 </html>
