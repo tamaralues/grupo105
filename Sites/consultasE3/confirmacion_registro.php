@@ -47,7 +47,7 @@ if (!$bool_username && !$bool_correo) {
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
 }
-    header("Location: ../test.php");
+    require("../test.php");
     exit();
 ?>
 </body>
