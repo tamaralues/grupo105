@@ -1,3 +1,38 @@
+<?php
+#validar formulario de sesion
+function validarForm($user, $correo, $pwd){
+    if(form_OK($user, $correo, $pwd)){
+      return true;}
+    else{
+      return false;}
+}
+function form_OK($user, $correo, $pwd) {
+    require("configuracion/conexion_db_e3.php");
+}
+    $query = "SELECT username, correo, password FROM usuarios";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $fetch = $result -> fetchAll();
+
+    $bool_username = FALSE;
+    $bool_correo = FALSE;
+    foreach ($fetch as $p) {
+         if ($p[1] == $user){
+            $bool_username = TRUE;
+        }
+         if ($p[2] == $correo) {
+            $bool_correo = TRUE;
+        }
+    if ($bool_correo && $bool_username){
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
+ }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +56,12 @@
                 Iniciar Sesión
             </button>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
-                <form class="px-4 py-3" action="consultasE3/home_login.php">
+                <form class="px-4 py-3" action="consultasE3/home_login.php" method="post" onsubmit="return validarForm(username, correo, pwd);">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="exampleDropdownFormEmail1">
                             Usuario:
                         </label>
-                      <input type="text" class="form-control" id="username" placeholder="username" style="width: 250px;">
+                      <input type="text" class="form-control" id="username" placeholder="User_123" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
                       <label for="exampleDropdownFormPassword1">Email:</label>
