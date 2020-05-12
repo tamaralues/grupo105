@@ -10,7 +10,7 @@
     <title>iniciar sesion</title>
 </head>
 <body>
-    <main role="main" class="container my-auto pt-3 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
+    <main role="main" class="container my-auto pt-2 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
         <div class="row">
             <div id="login" class="col-sm-8 offset-sm-2
                 col-12">
