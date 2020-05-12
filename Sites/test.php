@@ -1,37 +1,16 @@
 <?php
-#validar formulario de sesion
-function validarForm($user, $correo, $pwd){
-    require("consultasE3/nuevo_usuario.php");
-    if(form_OK($user, $correo, $pwd)){
-      return true;}
-    else{
-      return false;}
-}
-function form_OK($user, $correo, $pwd) {
-    require("configuracion/conexion_db_e3.php");
+#generar elementos dropdown 
+require("../configuracion/conexion_db_e3.php");
 
-    $query = "SELECT username, correo, password FROM usuarios";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $fetch = $result -> fetchAll();
+#Se obtiene el valor del input del usuario
 
-    $bool_username = FALSE;
-    $bool_correo = FALSE;
-    foreach ($fetch as $p) {
-         if ($p[1] == $user){
-            $bool_username = TRUE;
-        }
-         if ($p[2] == $correo) {
-            $bool_correo = TRUE;
-        }
-    if ($bool_correo && $bool_username){
-        return TRUE;
-    }
-    else {
-        return FALSE;
-    }
- }
-}
+#Consulta primer meno dropdown
+$query_drop1 = "SELECT nombrepais, pid FROM paises;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop1 = $db -> prepare($query_drop1);
+ $result_drop1 -> execute();
+ $fetch_drop1 = $result_drop1 -> fetchAll();
 ?>
 
 
@@ -54,7 +33,7 @@ function form_OK($user, $correo, $pwd) {
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="artista" aria-haspopup="true" aria-expanded="false">
                         Artistas
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="artista">
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="artista">
                         <button class="dropdown-item" type="button">Artista1</button>
                         <button class="dropdown-item" type="button">artista2</button>
                         <button class="dropdown-item" type="button">artista3</button>
@@ -64,7 +43,7 @@ function form_OK($user, $correo, $pwd) {
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="obra" aria-haspopup="true" aria-expanded="false">
                         Obras
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="obra">
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="obra">
                         <button class="dropdown-item" type="button">obra1</button>
                         <button class="dropdown-item" type="button">obra2</button>
                         <button class="dropdown-item" type="button">obra3</button>
@@ -74,12 +53,25 @@ function form_OK($user, $correo, $pwd) {
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="lugar" aria-haspopup="true" aria-expanded="false">
                         Lugares
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lugar">
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="lugar">
                         <button class="dropdown-item" type="button">lugar1</button>
                         <button class="dropdown-item" type="button">lugar2</button>
                         <button class="dropdown-item" type="button">lugar3</button>
                     </div>
                 </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown1" aria-haspopup="true" aria-expanded="false">
+                        drop1
+                    </button>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown1">
+                        <?php
+                            foreach ($fetch_drop1 as $f1) {
+                                echo "
+                                    <button class=\"$f1[0]\" type=\"button\">lugar1</button>
+                                ";
+                            }
+                        ?>
+                    </div>
             </div>
         </nav>
         <div class="dropdown mr-1">
