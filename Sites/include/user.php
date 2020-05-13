@@ -18,13 +18,7 @@ class User {
         foreach ($fetch as $f){
             $number+=1;
         }
-        if ($result){
-            echo "<p>$f[1]</p>";
-            echo "<p>query exitosa</p>";
-        } else {
-            echo "<p>query fallida</p>";
-        }
-        echo "<p>$number</p>";
+
         if ($number){
             return TRUE;
         } else {
@@ -33,13 +27,14 @@ class User {
     }
 
     public function setUser($user){
-        $query = "SELECT * FROM usuarios WHERE username=:user";
+        $query = "SELECT username, nombreusuario FROM usuarios NATURAL JOIN cuentas WHERE username='$user'";
         $result = $this->db -> prepare($query);
-        $result ->execute(['user'=>$user]);
+        $result ->execute();
+        $fetch = $result -> fetchAll();
 
-        foreach($result as $r){
-            $this->nombre_usuario = $r['nombreusuario'];
-            $this->username = $r['username'];
+        foreach($fetch as $r){
+            $this->nombre_usuario = $r[1];
+            $this->username = $r[0];
         }
     }
 
