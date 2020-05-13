@@ -91,8 +91,24 @@ $user = new User();
                         <?php
                         foreach ($fetch_drop1 as $f1) {
                             echo "
-                            <form action =\"consultasE3/consulta_Lugares.php\" method=\"post\">
+                            <form action =\"consultasE3/consulta_lugares.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
+                            </form>
+                            ";
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
+                        Reservas
+                    </button>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
+                        <?php
+                        foreach ($fetch_drop1 as $f1) {
+                            echo "
+                            <form action =\"consultasE3/consulta_reservas.php\" method=\"post\">
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"reservas\">$f1[0]</button>
                             </form>
                             ";
                         }
