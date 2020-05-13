@@ -16,6 +16,7 @@ class User {
         $result ->execute();
         $fetch = $result -> fetchall();
         $number = $fetch['total'];
+        echo "<p>$number</p>";
 
         if ($number){
             return TRUE;
