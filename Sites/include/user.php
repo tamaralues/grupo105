@@ -14,8 +14,12 @@ class User {
         $query = "SELECT * FROM usuarios NATURAL JOIN cuentas WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
+        $fetch = $result -> fetchAll();
 
         if ($result->rowCount()){
+            foreach ($fetch as $f){
+                echo "<p>$f[0]</p>"
+            }
             return TRUE;
         } else {
             return FALSE;
