@@ -107,12 +107,12 @@ $user = new User($db);
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
                         Sesion iniciada
-                    </button> "
+                    </button> ";
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
                         Iniciar Sesión
-                    </button> "
+                    </button> ";
                 }
             ?>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
