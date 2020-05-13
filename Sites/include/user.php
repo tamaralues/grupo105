@@ -16,10 +16,7 @@ class User {
         $result ->execute();
         $fetch = $result -> fetchAll();
 
-        if ($result->rowCount()){
-            foreach ($fetch as $f){
-                echo "<p>$f[0]</p>";
-            }
+        if ($fetch->rowCount()){
             return TRUE;
         } else {
             return FALSE;
