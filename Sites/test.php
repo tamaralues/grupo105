@@ -89,10 +89,10 @@ $user = new User($db);
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop1 as $f1) {
+                        foreach ($fetch_drop3 as $f3) {
                             echo "
                             <form action =\"consultasE3/consulta_Lugares.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f3[0] name=\"lugares\">$f3[0]</button>
                             </form>
                             ";
                         }
@@ -102,9 +102,19 @@ $user = new User($db);
             </div>
         </nav>
         <div class="dropdown mr-1">
-            <button type="button" class="btn btn-outline-light dropdown" id="inicio_sesion" data-toggle="dropdown" data-offset="10,20">
-                Iniciar Sesión
-            </button>
+            <?php
+                if(isset($_SESSION['user'])){
+                    echo "
+                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
+                        Sesion iniciada
+                    </button> "
+                } else {
+                    echo "
+                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
+                        Iniciar Sesión
+                    </button> "
+                }
+            ?>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
