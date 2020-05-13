@@ -13,10 +13,15 @@ class User {
         $query = "SELECT uid FROM usuarios WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
-        $fetch = $result -> fetchall();
+        $fetch = $result -> fetchAll();
         $number = 0;
         foreach ($fetch as $f){
             $number+=1;
+        }
+        if ($result){
+            echo "<p>query exitosa</p>";
+        } else {
+            echo "<p>query fallida</p>";
         }
         echo "<p>$number</p>";
         if ($number){
