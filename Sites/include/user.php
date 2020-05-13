@@ -1,5 +1,5 @@
 <?php
-require("../configuracion/conexion_db_e3.php");
+include_once "../configuracion/conexion_db_e3.php";
 
 class User {
     private $nombre_usuario;
