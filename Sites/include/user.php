@@ -10,7 +10,7 @@ class User {
     }
 
     public function userExists($user, $pass) {
-        $query = "SELECT uid, username FROM usuarios WHERE username='$user'";
+        $query = "SELECT uid, username FROM usuarios WHERE username='$user' AND password='$pass'";
         $result = $this->db -> prepare($query);
         $result ->execute();
         $fetch = $result -> fetchAll();
