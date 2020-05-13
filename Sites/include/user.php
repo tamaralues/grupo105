@@ -3,6 +3,11 @@ include 'configuracion/conexion_db_e3.php';
 class User {
     private $nombre_usuario;
     private $username;
+    private $db;
+
+    public function __construct($db){
+        $this->db=$db;
+    }
 
     public function userExists($user, $pass) {
         

@@ -34,7 +34,7 @@ include_once 'include/user.php';
 include_once 'include/user_session.php';
 
 $user_session = new userSession();
-$user = new User();
+$user = new User($db);
 ?>
 
 
