@@ -10,7 +10,7 @@ class User {
     }
 
     public function userExists($user, $pass) {
-        
+        echo "<p>ejecutando userexists</p>";
         $query = "SELECT count(uid) as total FROM usuarios WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
