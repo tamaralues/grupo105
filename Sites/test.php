@@ -1,5 +1,5 @@
 <?php
-#generar elementos dropdown
+#generar elementos dropdown 
 require("configuracion/conexion_db_e3.php");
 
 #Se obtiene el valor del input del usuario
@@ -28,13 +28,13 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
 
  #inicio de sesion
-
+ 
 #inicio sesion
 include_once 'include/user.php';
 include_once 'include/user_session.php';
 
 $user_session = new userSession();
-$user = new User();
+$user = new User($db);
 ?>
 
 
@@ -89,7 +89,7 @@ $user = new User();
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop1 as $f1) {
+                        foreach ($fetch_drop3 as $f3) {
                             echo "
                             <form action =\"consultasE3/consulta_lugares.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
@@ -118,9 +118,19 @@ $user = new User();
             </div>
         </nav>
         <div class="dropdown mr-1">
-            <button type="button" class="btn btn-outline-light dropdown" id="inicio_sesion" data-toggle="dropdown" data-offset="10,20">
-                Iniciar Sesión
-            </button>
+            <?php
+                if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
+                    echo "
+                    <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
+                        Log Out
+                    </button> ";
+                } else {
+                    echo "
+                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
+                        Iniciar Sesión
+                    </button> ";
+                }
+            ?>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
@@ -156,14 +166,17 @@ $user = new User();
 #testeo inicio de sesion
 if (isset($_SESSION['user'])){
     echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());
 } else if (isset($_POST['username']) && isset($_POST['pwd'])){
-    echo "<p>validando login</p>";
     $user_form = $_POST['username'];
     $pwd_form = $_POST['pwd'];
-
+    echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
     if ($user->userExists($user_form, $pwd_form)) {
         echo "<p>usuario validado</p>";
+        $user_session -> setCurrentUser($user_form);
+        $user -> setUser($user_form);
     } else {
+        $error_login = "nombre, correo o pwd incorrecto";
         echo "<p>algo salio mal</p>";
     }
 } else {
