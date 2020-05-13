@@ -1,5 +1,5 @@
 <?php
-#generar elementos dropdown 
+#generar elementos dropdown
 require("configuracion/conexion_db_e3.php");
 
 #Se obtiene el valor del input del usuario
@@ -28,7 +28,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
 
  #inicio de sesion
- 
+
 #inicio sesion
 include_once 'include/user.php';
 include_once 'include/user_session.php';
@@ -107,7 +107,7 @@ $user = new User($db);
                         <?php
                         foreach ($fetch_drop1 as $f1) {
                             echo "
-                            <form action =\"consultasE3/consulta_reservas.php\" method=\"post\">
+                            <form action =\"consultasE3/consultas_reservas.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"reservas\">$f1[0]</button>
                             </form>
                             ";
