@@ -10,7 +10,7 @@ class User {
     }
 
     public function userExists($user, $pass) {
-        $query = "SELECT uid, username FROM usuarios WHERE username='$user' AND password='$pwd'";
+        $query = "SELECT uid, username FROM usuarios WHERE username='$user'";
         $result = $this->db -> prepare($query);
         $result ->execute();
         $fetch = $result -> fetchAll();
@@ -19,6 +19,7 @@ class User {
             $number+=1;
         }
         if ($result){
+            echo "<p>$f[1]</p>";
             echo "<p>query exitosa</p>";
         } else {
             echo "<p>query fallida</p>";
