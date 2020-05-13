@@ -103,7 +103,7 @@ $user = new User($db);
         </nav>
         <div class="dropdown mr-1">
             <?php
-                if(isset($_SESSION['user'])){
+                if(isset($_SESSION['user']) || (isset($_POST['username']) && isset($_POST['pwd'])){
                     echo "
                     <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
                         Log Out
