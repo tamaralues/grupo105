@@ -25,6 +25,16 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 = $db -> prepare($query_drop3);
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
+
+
+ #inicio de sesion
+ 
+#inicio sesion
+include_once 'include/user.php';
+include_once 'include/user_session.php';
+
+$user_session = new userSession();
+$user = new User();
 ?>
 
 
@@ -123,6 +133,18 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
             </div>
         </div>
     </div>
+
+<?php
+#testeo inicio de sesion
+if (isset($_SESSION['user'])){
+    echo "<p>hay sesion iniciada</p>";
+} else if (isset($_POST['username']) && isset($_POST['pwd'])){
+    echo "<p>validando login</p>";
+} else {
+    echo "<p>hay que logear</p>";
+}
+?>
+
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
