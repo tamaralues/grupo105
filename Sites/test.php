@@ -1,5 +1,5 @@
 <?php
-#generar elementos dropdown
+#generar elementos dropdown 
 require("configuracion/conexion_db_e3.php");
 
 #Se obtiene el valor del input del usuario
@@ -28,7 +28,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
 
  #inicio de sesion
-
+ 
 #inicio sesion
 include_once 'include/user.php';
 include_once 'include/user_session.php';
@@ -84,16 +84,18 @@ $user = new User();
                     </div>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="submit" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
                         Lugares
                     </button>
-                </div>
-                <div class="btn-group" role="group">
-                  <form action="confirmacion_registro.php" method="post">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown2" aria-haspopup="true" aria-expanded="false">
-                        Reservas
-                    </button>
-                  </form>
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
+                        <?php
+                            foreach ($fetch_drop3 as $f3) {
+                                echo "
+                                    <button class=\"dropdown-item\" type=\"button\">$f3[0]</button>
+                                ";
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </nav>
