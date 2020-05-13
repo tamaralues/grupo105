@@ -24,7 +24,7 @@ class User {
 
     public function setUser($user){
         $query = "SELECT * FROM usuarios WHERE username=:user";
-        $result = $db -> prepare($query);
+        $result = $this->db -> prepare($query);
         $result ->execute(['user'=>$user]);
 
         foreach($result as $r){
