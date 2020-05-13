@@ -5,9 +5,9 @@ class User {
     private $username;
 
     public function userExists($user, $pass){
-        $query = "SELECT * FROM usuarios NATURAL JOIN cuentas WHERE username=:user AND password=:pass";
+        $query = "SELECT * FROM usuarios NATURAL JOIN cuentas WHERE username=$user AND password=$pass";
         $result = $db -> prepare($query);
-        $result ->execute(['user'=>$user, 'pass'=>$pass]);
+        $result ->execute();
 
         if ($result->rowCount()){
             return TRUE;
