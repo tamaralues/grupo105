@@ -104,7 +104,7 @@ $user = new User();
                 Iniciar Sesión
             </button>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
-                <form class="px-4 py-3" action="consultasE3/home_login.php" method="post" onsubmit="return validarForm(this.elements);">
+                <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="exampleDropdownFormEmail1">
                             Usuario:
