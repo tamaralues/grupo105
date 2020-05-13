@@ -18,7 +18,7 @@ class User {
 
         if ($result->rowCount()){
             foreach ($fetch as $f){
-                echo "<p>$f[0]</p>"
+                echo "<p>$f[0]</p>";
             }
             return TRUE;
         } else {
