@@ -20,6 +20,7 @@ class User {
         if ($number){
             return TRUE;
         } else {
+            echo "$number";
             return FALSE;
         }
     }
