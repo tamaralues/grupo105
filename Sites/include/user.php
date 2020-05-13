@@ -10,18 +10,18 @@ class User {
     }
 
     public function userExists($user, $pass) {
-        echo "<p>ejecutando userexists</p>";
-        $query = "SELECT count(uid) as total FROM usuarios WHERE username=$user AND password=$pass";
+        $query = "SELECT uid FROM usuarios WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
         $fetch = $result -> fetchall();
-        $number = $fetch['total'];
+        $number = 0;
+        foreach ($fetch as $f){
+            $number+=1;
+        }
         echo "<p>$number</p>";
-
         if ($number){
             return TRUE;
         } else {
-            echo "$number";
             return FALSE;
         }
     }
