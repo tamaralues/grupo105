@@ -10,13 +10,14 @@ class User {
     }
 
     public function userExists($user, $pass) {
-        $query = "SELECT uid FROM usuarios WHERE username=$user AND password=$pass";
+        $query = "SELECT uid, username FROM usuarios WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
         $fetch = $result -> fetchAll();
         $number = 0;
         foreach ($fetch as $f){
             $number+=1;
+            echo "<p>$f[1]</p>";
         }
         if ($result){
             echo "<p>query exitosa</p>";
