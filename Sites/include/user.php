@@ -11,12 +11,13 @@ class User {
 
     public function userExists($user, $pass) {
         
-        $query = "SELECT count(uid) FROM usuarios NATURAL JOIN cuentas WHERE username=$user AND password=$pass";
+        $query = "SELECT count(uid) as total FROM usuarios WHERE username=$user AND password=$pass";
         $result = $this->db -> prepare($query);
         $result ->execute();
-        $fetch = $result -> fetchAll();
+        $fetch = $result -> fetchall();
+        $number = $fetch['total'];
 
-        if ($fetch){
+        if ($number){
             return TRUE;
         } else {
             return FALSE;
