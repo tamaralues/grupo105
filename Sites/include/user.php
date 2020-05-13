@@ -12,7 +12,7 @@ class User {
     public function userExists($user, $pass) {
         
         $query = "SELECT * FROM usuarios NATURAL JOIN cuentas WHERE username=$user AND password=$pass";
-        $result = $db -> prepare($query);
+        $result = $this->db -> prepare($query);
         $result ->execute();
 
         if ($result->rowCount()){
