@@ -105,8 +105,8 @@ $user = new User($db);
             <?php
                 if(isset($_SESSION['user'])){
                     echo "
-                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
-                        Sesion iniciada
+                    <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
+                        Log Out
                     </button> ";
                 } else {
                     echo "
