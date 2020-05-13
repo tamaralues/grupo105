@@ -1,10 +1,11 @@
 <?php
-
+include_once 'configuracion/conexion_db_e3.php';
 class User {
     private $nombre_usuario;
     private $username;
 
-    public function userExists($user, $pass){
+    public function userExists($user, $pass) {
+        
         $query = "SELECT * FROM usuarios NATURAL JOIN cuentas WHERE username=$user AND password=$pass";
         $result = $db -> prepare($query);
         $result ->execute();
