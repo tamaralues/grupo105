@@ -89,11 +89,13 @@ $user = new User();
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                            foreach ($fetch_drop3 as $f3) {
-                                echo "
-                                    <button class=\"dropdown-item\" type=\"button\">$f3[0]</button>
-                                ";
-                            }
+                        foreach ($fetch_drop1 as $f1) {
+                            echo "
+                            <form action =\"consultasE3/consulta_Lugares.php\" method=\"post\">
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
+                            </form>
+                            ";
+                        }
                         ?>
                     </div>
                 </div>
