@@ -4,6 +4,7 @@
   $name = $_POST["reservas"];
 ?>
 
+<?php echo "<p>$name</p>"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,8 @@
     <li><h6 class="my-0 font-weight-normal"> retorna una lista con todos los países en que se ha hospedado el usuario ingresado</h6></li>
     </ul>
     <form align="center" action="consultas/username_hospedajes.php" method="post">
-      <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="ingrese el username">
+      <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso (yyyy-mm-dd)">
+      <input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida (yyyy-mm-dd)">
       <br>
       <button type="submit" class="btn btn-lg btn-block btn-primary">Consultar</button>
     </form>
@@ -32,5 +34,3 @@
 </div>
 
 <body>
-
-    <?php echo "<p>$name</p>"; ?>
