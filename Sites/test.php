@@ -26,7 +26,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
- $query_drop4 = "SELECT hip FROM hoteles;";
+ $query_drop4 = "SELECT hid FROM hoteles;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_drop4 = $db -> prepare($query_drop4);
@@ -107,14 +107,15 @@ $user = new User($db);
                     </div>
                 </div>
                 <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
                         Reservas
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop4  as $f4 ) {
+                        foreach ($fetch_drop4 as $f4) {
                             echo "
                             <form action =\"consultasE3/consultas_reservas.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f4 [0] name=\"hoteles\">$f4 [0]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[0] name=\"reservas\">$f4[0]</button>
                             </form>
                             ";
                         }
