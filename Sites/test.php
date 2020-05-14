@@ -26,7 +26,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
- $query_drop4 = "SELECT hid FROM hoteles;";
+ $query_drop4 = "SELECT nombrehotel FROM hoteles;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_drop4 = $db -> prepare($query_drop4);
