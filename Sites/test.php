@@ -112,10 +112,10 @@ $user = new User($db);
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop1 as $f1) {
+                        foreach ($fetch_drop4  as $f4 ) {
                             echo "
                             <form action =\"consultasE3/consultas_reservas.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"reservas\">$f1[0]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f4 [0] name=\"reservas\">$f4 [0]</button>
                             </form>
                             ";
                         }
