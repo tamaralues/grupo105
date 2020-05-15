@@ -33,15 +33,6 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop4 -> execute();
  $fetch_drop4 = $result_drop4 -> fetchAll();
 
-
- #inicio de sesion
-
-#inicio sesion
-include_once 'include/user.php';
-include_once 'include/user_session.php';
-
-$user_session = new userSession();
-$user = new User($db);
 ?>
 
 
