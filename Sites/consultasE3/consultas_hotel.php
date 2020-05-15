@@ -43,8 +43,8 @@
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
-        <?php echo "<p>$print_user</p>"; ?>
-        <?php echo "<p>$print_uid</p>"; ?>
+        <?php echo "<p>usuario: $print_user</p>"; ?>
+        <?php echo "<p>uid: $print_uid</p>"; ?>
         <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
         </div>
       <div class="card-body">
