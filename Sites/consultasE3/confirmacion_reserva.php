@@ -5,7 +5,7 @@
   <div class="card-body">
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
-    <form align="center" action="confirmacion_reserva.php" method="post">
+    <form align="center" action="realizacion_reserva.php" method="post">
       <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
       <input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
       <br>
