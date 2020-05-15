@@ -116,49 +116,6 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                 </div>
             </div>
         </nav>
-        <div class="dropdown mr-1">
-            <?php
-                if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
-                    echo "
-                    <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
-                        Log Out
-                    </button> ";
-                } else {
-                    echo "
-                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
-                        Iniciar Sesión
-                    </button> ";
-                }
-            ?>
-        <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
-                <form class="px-4 py-3" action="test.php" method="post">
-                    <div class="form-group col-md-4 col-md-offset-4">
-                        <label for="exampleDropdownFormEmail1">
-                            Usuario:
-                        </label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
-                    </div>
-                    <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="exampleDropdownFormPassword1">Email:</label>
-                      <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
-                    </div>
-                    <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="exampleDropdownFormPassword1">Contraseña:</label>
-                      <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
-                    </div>
-                    <div class="col text-center">
-                        <button type="submit" class="btn btn-sm btn-primary btn-dark" style="width: 250px;">Ingresar</button>
-                    </div>
-                </form>
-                <div class="dropdown-divider"></div>
-                <div class="col text-center" >
-                    <p>
-                        Primera vez en Splinter?
-                    </p>
-                    <a href="consultasE3/nuevo_usuario.php" class="btn btn-sm btn-primary mb-2 btn-dark" role="button" style="width: 250px;">Registrarme</a>
-                </div>
-            </div>
-        </div>
     </div>
 
 
