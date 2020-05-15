@@ -3,7 +3,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
     $hotel = $_POST["hotel"];
-		$hip = "SELECT  hid FROM hoteles where nombrehotel =  $hotel;";
+		$hip = "SELECT  hid FROM hoteles where nombrehotel = $hotel;";
 
 ?>
 
@@ -13,6 +13,7 @@
     <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
     </div>
   <div class="card-body">
+		<?php echo "<p>$hotel</p>"; ?>
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
     <form align="center" action="realizacion_reserva.php" method="post">
