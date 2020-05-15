@@ -26,9 +26,10 @@
         $last_cmid += 1;
     }
 
-    $query_comentarios = "INSERT INTO Comentarios VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
+    $query_comentarios = "INSERT INTO comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
     $result_comentarios = $db -> prepare($query_comentarios);
     $bool_comentarios = $result_comentarios -> execute();
+
 
 ?>
 
