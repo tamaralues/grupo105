@@ -130,13 +130,12 @@ $user = new User($db);
             <?php
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
-                    <button class=\"btn btn-outline-light btn-circle dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
-                    <span class=\"glyphicon glyphicon-user\"></span>
+                    <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
+                        <span class=\"glyphicon glyphicon-user\"></span>
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
-
                         </button>
                     </div>";
 
