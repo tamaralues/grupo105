@@ -145,22 +145,21 @@ $user = new User($db);
                     </button> ";
                 }
             ?>
-        </div>
-        <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
+            <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="user">
                             Usuario:
                         </label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="mail">Email:</label>
-                      <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
+                    <label for="mail">Email:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="password">Contraseña:</label>
-                      <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-sm btn-primary btn-dark" style="width: 250px;">Ingresar</button>
