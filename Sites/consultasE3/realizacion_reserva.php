@@ -11,6 +11,7 @@
     $uid = $_SESSION['id'];
 
     $query_rid = "SELECT rid FROM reservas;";
+
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result_rid = $db -> prepare($query_rid);
       $result_rid -> execute();
@@ -35,7 +36,6 @@
     $result_uid = $db -> prepare($query_uid);
     $result_uid -> execute();
     $fetch_uid= $result_uid -> fetchAll();
-
 
 ?>
 
