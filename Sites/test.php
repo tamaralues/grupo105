@@ -131,7 +131,7 @@ $user = new User($db);
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
-                        <span class=\"glyphicon glyphicon-user\"></span>
+                        perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
@@ -189,8 +189,7 @@ if (isset($_SESSION['user'])){
     $pwd_form = $_POST['pwd'];
     echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
     if ($user->userExists($user_form, $pwd_form)) {
-        echo "<p>usuario validado</p>";
-        echo "<p>User icon: <span class=\"glyphicon glyphicon-user\"></span></p>";
+        echo "<p>usuario validado</p>"
         $user_session -> setCurrentUser($user_form);
         $user -> setUser($user_form);
     } else {
