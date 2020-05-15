@@ -46,11 +46,12 @@
         <thead class="thread-dark">
           <tr>
             <th>ID del usuario</th>
+
           </tr>
         </thead>
         <?php
           foreach ($reservas as $p) {
-            echo "<tr><td>$p[0]</td>";
+            echo "<tr><td>$p[0]</td></tr>";
         }
         ?>
       </table>

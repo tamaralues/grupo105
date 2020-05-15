@@ -3,8 +3,8 @@
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
-    $name = $_POST["reservas"];
-    $user = $_POST["name"];
+    $name = $_POST["hoteles"];
+    $user = $_POST["value"];
 ?>
 
   <!DOCTYPE html>
@@ -22,6 +22,7 @@
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$name</p>"; ?>
+        <?php echo "<p>$value</p>"; ?>
         <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
         </div>
       <div class="card-body">
