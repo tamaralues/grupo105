@@ -30,7 +30,18 @@
     $result_comentarios = $db -> prepare($query_comentarios);
     $bool_comentarios = $result_comentarios -> execute();
 
+    if( !( isset( $_SESSION['loggedin'] ) || $_SESSION['loggedin']==true ) ){
+      $query = "INSERT INTO Comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario')";
+      echo "SQL Query to execute: $query"; # Debug Message
+      $success = mysql_query( $query );
 
+  if( $success ){
+
+  }else{
+    echo mysql_error();
+  }
+
+}
 
 
 ?>
