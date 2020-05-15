@@ -1,7 +1,7 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   #Se obtiene el valor del input del usuario
-  $name = $_POST["artista"];
+  $name = $_POST["hotel"];
 ?>
 
 <!DOCTYPE html>

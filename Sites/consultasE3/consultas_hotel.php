@@ -24,7 +24,7 @@
   <div class="card-body">
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
-    <form align="center" action="consultas/confirmacion_reserva.php" method="post">
+    <form align="center" action="consultasE3/confirmacion_reserva.php" method="post">
       <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
       <input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
       <br>
@@ -40,9 +40,8 @@
   <div class="card-body">
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
-    <form align="center" action="consultas/comentario_recibido.php" method="post">
+    <form align="center" action="consultasE3/comentario_recibido.php" method="post">
       <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
-
       <br>
       <button type="submit" class="btn btn-lg btn-block btn-primary">Comentar</button>
     </form>
