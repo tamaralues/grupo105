@@ -34,7 +34,6 @@
            die("QUERY FAILED.".mysqli_error());
        }
 
-}
 
 
 ?>
