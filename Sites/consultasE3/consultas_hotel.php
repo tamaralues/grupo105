@@ -4,6 +4,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
     $hid = $_POST["hotel"];
+    require("../configuracion/conexion_db_e3.php");
 
     $query = "SELECT hid, nombrehotel FROM hoteles ;";
 
