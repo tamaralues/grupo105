@@ -10,7 +10,14 @@
 
 		$result = $db -> prepare($query);
     $result -> execute();
-    $hid = $result -> fetchAll();
+    $hid1 = $result -> fetchAll();
+
+		$hid = 0;
+
+		foreach ($hid1 as $p) {
+			if ($hid = $p[0]){
+				$hid=$p[0];
+			}
 
 ?>
 
@@ -21,7 +28,7 @@
     </div>
   <div class="card-body">
 		<?php echo "<p>$hotel</p>"; ?>
-		<?php echo "<p>$hid[0]</p>"; ?>
+		<?php echo "<p>$hid</p>"; ?>
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
     <form align="center" action="realizacion_reserva.php" method="post">
