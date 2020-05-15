@@ -1,6 +1,8 @@
 <?php
+    require("../configuracion/conexion_db_e3.php");
     $fechainicio = $_POST["fechainicio"];
     $fechatermino = $_POST["fechatermino"];
+    session_start();
     $user = $_SESSION['user'];
     $uid = $_SESSION['uid'];
 ?>
