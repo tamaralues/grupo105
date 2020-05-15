@@ -40,13 +40,19 @@ if (!$bool_username && !$bool_correo) {
     $query_cuentas = "INSERT INTO cuentas(nombreusuario, username, direccionusuario) VALUES ('$name', '$user', '$direccion');";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result_usuario = $db -> prepare($query_usuario);
+	  $result_usuario = $db -> prepare($query_usuario);
     $bool_usuario = $result_usuario -> execute();
 
     $result_cuentas = $db -> prepare($query_cuentas);
     $bool_cuentas = $result_cuentas -> execute();
 
+    session_start();
+    $_SESSION["loggedin"] = true;
+    $_SESSION["id"] = $last_uid;
+    $_SESSION["username"] = $user;
+
     header("Location: ../test.php");
+
     exit();
   }
   else {
