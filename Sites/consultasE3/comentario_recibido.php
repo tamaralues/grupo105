@@ -26,13 +26,9 @@
         $last_cmid += 1;
     }
 
-    $query ="INSERT INTO comentarios(cmid, hid, uid, comentario) ";
-    $query .= "VALUES('".$last_cmid."','".$hid."','".$uid."','".$comentario."')";
-
-    $result=mysqli_query($connection,$query);
-    if(!$result){
-           die("QUERY FAILED.".mysqli_error());
-       }
+    $query_comentarios = "INSERT INTO comentarios VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
+    $result_comentarios = $db -> prepare($query_comentarios);
+    $bool_comentarios = $result_comentarios -> execute();
 
 
 
