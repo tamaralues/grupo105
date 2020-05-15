@@ -52,8 +52,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
          <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
          <nav class="my-2 my-md-0 mr-md-3">
            <?php
-           		session_start();
-           		echo '
+            '
            		<div class="container body-content" style="margin-top:50px">
            			<h2>Bienvenido '.$_SESSION['user'].'</h2>
            			<p class="lead"></p>
