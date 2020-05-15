@@ -28,7 +28,6 @@
   <div class="card-body">
 		<?php echo "<p>$hotel</p>"; ?>
 		<?php echo "<p>$hid</p>"; ?>
-		<?php echo "<p>$hid1</p>"; ?>
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
     <form align="center" action="realizacion_reserva.php" method="post">
