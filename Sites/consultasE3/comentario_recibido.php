@@ -26,20 +26,13 @@
         $last_cmid += 1;
     }
 
-    $query_comentarios = "INSERT INTO comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
-    $result_comentarios = $db -> prepare($query_comentarios);
-    $bool_comentarios = $result_comentarios -> execute();
+    $query ="INSERT INTO comentarios(cmid, hid, uid, comentario) ";
+    $query .= "VALUES('".$last_cmid."','".$hid."','".$uid."','".$comentario."')";
 
-    if( !( isset( $_SESSION['loggedin'] ) || $_SESSION['loggedin']==true ) ){
-      $query = "INSERT INTO comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario')";
-      echo "SQL Query to execute: $query"; # Debug Message
-      $success = mysql_query( $query );
-
-  if( $success ){
-
-  }else{
-    echo mysql_error();
-  }
+    $result=mysqli_query($connection,$query);
+    if(!$result){
+           die("QUERY FAILED.".mysqli_error());
+       }
 
 }
 
