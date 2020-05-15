@@ -130,13 +130,17 @@ $user = new User($db);
             <?php
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
-                    <button class=\"btn btn-outline-light btn-circle btn-md dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
+                    <button class=\"btn btn-outline-light btn-circle dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\"
+                    style=\"width: 50px; height: 50px; border-radius: 25px; text-align: center;\">
                         Perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
-                        </button>";
+
+                        </button>
+                    </div>";
+
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
@@ -144,21 +148,23 @@ $user = new User($db);
                     </button> ";
                 }
             ?>
-        <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
+            <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="user">
                             Usuario:
                         </label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="mail">Email:</label>
-                      <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
+
+                    <label for="mail">Email:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="password">Contraseña:</label>
-                      <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
+
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-sm btn-primary btn-dark" style="width: 250px;">Ingresar</button>
