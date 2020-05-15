@@ -188,6 +188,26 @@ if (isset($_SESSION['user'])){
 } else if (isset($_POST['username']) && isset($_POST['pwd'])){
     $user_form = $_POST['username'];
     $pwd_form = $_POST['pwd'];
+
+    session_start();
+
+    $_SESSION["loggedin"] = true;
+
+    $query = "SELECT uid, username FROM usuarios ;";
+
+		$result = $db -> prepare($query);
+    $result -> execute();
+    $username = $result -> fetchAll();
+
+		foreach ($username as $p){
+			if($p[1] == $user_form){
+				$uid = $p[0];
+			}
+		}
+
+    $_SESSION["id"] = uid;
+    $_SESSION["username"] = $user_form;
+
     echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
     if ($user->userExists($user_form, $pwd_form)) {
         echo "<p>usuario validado</p>";
