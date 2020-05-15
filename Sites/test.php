@@ -26,7 +26,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
- $query_drop4 = "SELECT nombrehotel FROM hoteles;";
+ $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_drop4 = $db -> prepare($query_drop4);
@@ -55,6 +55,7 @@ $user = new User($db);
     <link href="css/estiloE3.css" rel="stylesheet">
     <title>Documento random</title>
 </head>
+
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
@@ -115,7 +116,8 @@ $user = new User($db);
                         foreach ($fetch_drop4 as $f4) {
                             echo "
                             <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[0] name=\"reservas\">$f4[0]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[1] name=\"hotel\"> $f4[0] </button>
+
                             </form>
                             ";
                         }
@@ -128,9 +130,13 @@ $user = new User($db);
             <?php
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
-                    <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
-                        Log Out
-                    </button> ";
+                    <button class=\"btn btn-outline-light btn-circle btn-md dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
+                        Perfil
+                    </button>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
+                        <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
+                            Log Out
+                        </button>";
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
@@ -141,17 +147,17 @@ $user = new User($db);
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
-                        <label for="exampleDropdownFormEmail1">
+                        <label for="user">
                             Usuario:
                         </label>
                       <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="exampleDropdownFormPassword1">Email:</label>
+                      <label for="mail">Email:</label>
                       <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
-                      <label for="exampleDropdownFormPassword1">Contraseña:</label>
+                      <label for="password">Contraseña:</label>
                       <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
                     </div>
                     <div class="col text-center">
@@ -190,7 +196,6 @@ if (isset($_SESSION['user'])){
     echo "<p>hay que logear</p>";
 }
 ?>
-
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
