@@ -1,6 +1,6 @@
 <?php
 #generar elementos dropdown
-require("../configuracion/conexion_db_e3.php");
+require("configuracion/conexion_db_e3.php");
 
 #Se obtiene el valor del input del usuario
 
