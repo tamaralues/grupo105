@@ -3,8 +3,22 @@
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
-    $name = $_POST["hoteles"];
-    $user = $_POST["value"];
+    $hid = $_POST["hoteles"];
+
+    $query = "SELECT hid , nombrehotel FROM hoteles ;";
+
+		$result = $db -> prepare($query);
+    $result -> execute();
+    $hid1 = $result -> fetchAll();
+
+		foreach ($hid1 as $p){
+			if($p[0] == $hid){
+				$hotel = $p[1];
+			}
+		}
+
+
+
 ?>
 
   <!DOCTYPE html>
@@ -21,8 +35,7 @@
   <body>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <?php echo "<p>$name</p>"; ?>
-        <?php echo "<p>$value</p>"; ?>
+        <?php echo "<p>$hotel</p>"; ?>
         <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
         </div>
       <div class="card-body">
