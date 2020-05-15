@@ -204,7 +204,7 @@ if (isset($_SESSION['user'])){
 			}
 		}
 
-    $_SESSION["id"] = uid;
+    $_SESSION["id"] = $uid;
     $_SESSION["username"] = $user_form;
 
     echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
