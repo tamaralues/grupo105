@@ -3,7 +3,9 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
     $hotel = $_POST["hotel"];
-		$query = "SELECT  hid FROM hoteles where nombrehotel = $hotel;";
+
+		$query = "SELECT hid FROM hoteles where nombrehotel = $hotel;";
+
 		$result = $db -> prepare($query);
     $result -> execute();
     $hid = $result -> fetchAll();
