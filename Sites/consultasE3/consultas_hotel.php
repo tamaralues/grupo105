@@ -4,8 +4,6 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
     $hid = $_POST["hotel"];
-    $print_user = $_SESSION['username'];
-    $print_uid = $_SESSION['id'];
     require("../configuracion/conexion_db_e3.php");
 
     $query = "SELECT hid, nombrehotel FROM hoteles ;";
@@ -20,7 +18,7 @@
 			}
 		}
 
-    $query_comentarios = "SELECT uid, comentario FROM Comentarios WHERE hid = '$hid ' ";
+    $query_comentarios = "SELECT uid, comentario FROM Comentarios WHERE hid = '$hid' ";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
     $comentarios_escritos = $result_cm -> fetchAll();
@@ -43,8 +41,6 @@
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
-        <?php echo "<p>usuario: $print_user</p>"; ?>
-        <?php echo "<p>uid: $print_uid</p>"; ?>
         <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
         </div>
       <div class="card-body">

@@ -48,6 +48,7 @@ if (!$bool_username && !$bool_correo) {
     $bool_cuentas = $result_cuentas -> execute();
 
     session_start();
+
     $_SESSION["loggedin"] = true;
     $_SESSION["id"] = $last_uid;
     $_SESSION["username"] = $user;

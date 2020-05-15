@@ -52,7 +52,7 @@ $user = new User($db);
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrapE3.css" rel="stylesheet">
-    <link href="css/styleE3.css" rel="stylesheet">
+    <link href="css/estiloE3.css" rel="stylesheet">
     <title>Documento random</title>
 </head>
 
@@ -117,6 +117,7 @@ $user = new User($db);
                             echo "
                             <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f4[1] name=\"hotel\"> $f4[0] </button>
+
                             </form>
                             ";
                         }
@@ -129,8 +130,13 @@ $user = new User($db);
             <?php
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
+<<<<<<< HEAD
                     <button type=\"button\" class=\"btn btn-outline-light btn-circle btn-md dropdown\" id=\"perfil\" data-toggle=\"dropdown\" data-offset=\"10,20\">
                         Iniciar Sesión
+=======
+                    <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"inicio_sesion\" data-offset=\"10,20\">
+                        Log Out
+>>>>>>> 0c00b6ec6d10bc4e7b368899c3dfbcb5c3033c1b
                     </button> ";
                     ?>
                     <div class="dropdown-menu" aria-labelledby="perfil">
