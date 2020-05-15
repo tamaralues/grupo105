@@ -131,7 +131,7 @@ $user = new User($db);
                 if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
                     echo "
                     <button class=\"btn btn-outline-light btn-circle dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\"
-                    style=\"width: 50px; height: 50px; border-radius: 25px;\">
+                    style=\"width: 50px; height: 50px; border-radius: 25px; text-align: center;\">
                         Perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
