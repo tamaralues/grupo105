@@ -20,7 +20,7 @@
 
       foreach ($fetch_rid as $p) {
         if ($last_rid < $p[0]){
-          $last_rid=$p[0];
+          $last_rid = $p[0];
         }
     }
 
@@ -46,12 +46,11 @@
         <thead class="thread-dark">
           <tr>
             <th>ID del usuario</th>
-
           </tr>
         </thead>
         <?php
           foreach ($reservas as $p) {
-            echo "<tr><td>$p[0]</td></tr>";
+            echo "<tr><td>$p[0]</td>";
         }
         ?>
       </table>
