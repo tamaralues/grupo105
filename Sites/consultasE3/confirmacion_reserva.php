@@ -15,7 +15,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <nav>
-          <a href="header.php" class="my-2 my-md-0 mr-md-3">NebStore</a>
+					<div w3-include-html='header.php'></div>
         </nav>
       </div>
     </div>
