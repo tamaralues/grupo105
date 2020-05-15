@@ -18,11 +18,12 @@
 			}
 		}
 
-    $query_comentarios = "SELECT uid, comentario FROM Comentarios WHERE hid = '$hid' ";
+
+    $query_comentarios = "SELECT uid FROM reservas; ";
+
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
     $comentarios_escritos = $result_cm -> fetchAll();
-
 
 ?>
 
@@ -89,6 +90,7 @@
         </div>
       </div>
     </div>
+
   </body>
 
     <body>
