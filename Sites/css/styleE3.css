@@ -4,6 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
  */
  .btn-circle { 
+  width: 50px;
+  height: 50px;
   border-radius: 50%; 
   text-align: center; 
 } 
