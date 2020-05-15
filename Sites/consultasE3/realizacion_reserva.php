@@ -4,7 +4,7 @@
 
     $fechainicio = $_POST["fechainicio"];
     $fechatermino = $_POST["fechatermino"];
-    $hotel = $_POST["hotel"];
+    $hotel = $_POST["hotel1"];
     $hid = $_POST["hid"];
 
     $user = $_SESSION['username'];
