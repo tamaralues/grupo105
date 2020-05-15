@@ -7,7 +7,6 @@
     $user = $_POST["name"];
 ?>
 
-
   <!DOCTYPE html>
   <html lang="en">
 
@@ -18,6 +17,7 @@
       <link href="css/estiloE3.css" rel="stylesheet">
       <title>Documento random</title>
   </head>
+
   <body>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
