@@ -26,13 +26,9 @@
 
     $last_rid += 1;
 
-    $query_hoteles = "INSERT INTO reservas(rid,hid, uid_reserva,fechainicio, fechatermino) VALUES ('$last_rid', '$hid', '$uid', '$fechainicio','$fechatermino');";
-
-    $query = "SELECT uid_reserva FROM reservas WHERE uid_reserva = '$uid' ;";
-    $result = $db -> prepare($query);
-    $result -> execute();
-    $reservas = $result -> fetchAll();
-
+    $query_hoteles = "INSERT INTO reservas(rid, hid, uid_reserva, fechainicio, fechatermino) VALUES ('$last_rid', '$hid', '$uid', '$fechainicio','$fechatermino');";
+    $result_hoteles = $db -> prepare($query_hoteles);
+    $bool_hoteles = $result_hoteles -> execute();
 ?>
 
 
