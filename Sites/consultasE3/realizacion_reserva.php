@@ -33,7 +33,6 @@
     $result -> execute();
     $reservas = $result -> fetchAll();
 
-
 ?>
 
 
