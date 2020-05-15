@@ -116,7 +116,7 @@ $user = new User($db);
                         foreach ($fetch_drop4 as $f4) {
                             echo "
                             <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[0] name=\"reservas\">$f4[0] </button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[0] name= "<?php echo $f4[0];?>" </button>
                             </form>
                             ";
                         }
