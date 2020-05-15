@@ -9,5 +9,7 @@
     <title>Documento random</title>
 </head>
 
+<div class="card mb-4 shadow-sm">
 <?php include '../header.php';
 ?>
+</div>
