@@ -31,7 +31,7 @@
     $bool_hoteles = $result_hoteles -> execute();
 
 
-    $query_uid = "SELECT uid_reserva FROM reservas where hid = '$hid';";
+    $query_uid = "SELECT uid_reserva FROM reservas where hid = '$hid' ;";
     $result_uid = $db -> prepare($query_uid);
     $result_uid -> execute();
     $fetch_uid= $result_uid -> fetchAll();
