@@ -1,5 +1,5 @@
 <?php
-#generar elementos dropdown 
+#generar elementos dropdown
 require("configuracion/conexion_db_e3.php");
 
 #Se obtiene el valor del input del usuario
@@ -26,9 +26,16 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
+ $query_drop4 = "SELECT nombrehotel FROM hoteles;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop4 = $db -> prepare($query_drop4);
+ $result_drop4 -> execute();
+ $fetch_drop4 = $result_drop4 -> fetchAll();
+
 
  #inicio de sesion
- 
+
 #inicio sesion
 include_once 'include/user.php';
 include_once 'include/user_session.php';
@@ -101,14 +108,14 @@ $user = new User($db);
                 </div>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
-                        Reservas
+                        Hoteles
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop1 as $f1) {
+                        foreach ($fetch_drop4 as $f4) {
                             echo "
-                            <form action =\"consultasE3/consulta_reservas.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"reservas\">$f1[0]</button>
+                            <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f4[0] name=\"reservas\">$f4[0]</button>
                             </form>
                             ";
                         }

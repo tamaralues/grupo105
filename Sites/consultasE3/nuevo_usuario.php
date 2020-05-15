@@ -1,6 +1,5 @@
 <?php
     $user = $_POST["username"];
-    
 ?>
 
 
