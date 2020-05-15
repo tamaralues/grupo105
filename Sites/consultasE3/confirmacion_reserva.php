@@ -3,7 +3,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
     $hotel = $_POST["hotel"];
-		$hip = "SELECT  hid FROM hoteles where nombrehotel = $hotel;";
+		$hid = "SELECT  hid FROM hoteles where nombrehotel = $hotel;";
 
 ?>
 
