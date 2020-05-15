@@ -132,13 +132,11 @@ $user = new User($db);
                     echo "
                     <button onclick=\"location.href='include/logout.php'\" class=\"btn btn-outline-light\" id=\"perfil\" data-offset=\"10,20\">
                         Log Out
-                    </button> ";
-                    ?>
-                    <div class="dropdown-menu" aria-labelledby="perfil">
-                        <button onclick="location.href='include/logout.php'" class="dropdown-item">
+                    </button>
+                    <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
+                        <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Perfil
-                        </button>
-                    <?php
+                        </button>";
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
