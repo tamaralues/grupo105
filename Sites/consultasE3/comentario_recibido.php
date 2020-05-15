@@ -35,4 +35,5 @@
 <?php echo "<p>$user</p>"; ?>
 <?php echo "<p>$uid</p>"; ?>
 <?php echo "<p>$hid </p>"; ?>
+<?php echo "<p>$last_cmid</p>"; ?>
 <?php echo "<p>$comentario</p>"; ?>
