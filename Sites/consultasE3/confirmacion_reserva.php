@@ -6,7 +6,7 @@
 
     $hotel = $_POST["hotel"];
 
-		$query = "SELECT hid FROM hoteles where nombrehotel = '$hotel';";
+		$query = "SELECT hid , nombrehotel FROM hoteles ;";
 
 		$result = $db -> prepare($query);
     $result -> execute();
@@ -14,9 +14,10 @@
 
 
 		foreach ($hid1 as $p){
-			$hid = $p[0];
+			if($p[1] == $hotel){
+				$hid = $p[0];
+			}
 		}
-
 ?>
 
 
