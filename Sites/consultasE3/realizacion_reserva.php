@@ -64,6 +64,6 @@
 <?php echo "<p>$uid</p>"; ?>
 <?php echo "<p>$last_rid</p>"; ?>
 <?php echo "<p>$hotel</p>"; ?>
-<?php echo "<p>$hid</p>"; ?>
+<?php echo "<p>$hid </p>"; ?>
 <?php echo "<p>$fechainicio</p>"; ?>
 <?php echo "<p>$fechatermino</p>"; ?>
