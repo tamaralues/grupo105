@@ -1,8 +1,8 @@
 <?php
     $fechainicio = $_POST["fechainicio"];
     $fechatermino = $_POST["fechatermino"];
-    $user = $_SESSION['user']
-    $uid = $_SESSION['uid']
+    $user = $_SESSION['user'];
+    $uid = $_SESSION['uid'];
 ?>
 
 <?php echo "<p>$user</p>"; ?>
