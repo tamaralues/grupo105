@@ -137,8 +137,10 @@ $user = new User($db);
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
+
                         </button>
                     </div>";
+
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
@@ -155,12 +157,14 @@ $user = new User($db);
                     <input type="text" class="form-control" id="username" name="username" placeholder="User_123" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
+
                     <label for="mail">Email:</label>
                     <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo123@gmail.com" style="width: 250px;">
                     </div>
                     <div class="form-group col-md-4 col-md-offset-4">
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" style="width: 250px;">
+
                     </div>
                     <div class="col text-center">
                         <button type="submit" class="btn btn-sm btn-primary btn-dark" style="width: 250px;">Ingresar</button>
