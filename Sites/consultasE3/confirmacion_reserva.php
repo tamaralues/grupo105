@@ -1,3 +1,13 @@
+
+<?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+    #Se obtiene el valor del input del usuario
+    $hotel = $_POST["hotel"];
+		$hip = "SELECT  hid FROM hoteles where nombrehotel =  $hotel;";
+
+?>
+
+
 <div class="card mb-4 shadow-sm">
   <div class="card-header">
     <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
@@ -8,6 +18,8 @@
     <form align="center" action="realizacion_reserva.php" method="post">
       <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
       <input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
+			<input type="hidden" name="hotel" value=<?php echo "<p>$hotel</p>"; ?> >
+			<input type="hidden" name="hid" value=<?php echo "<p>$hid</p>"; ?> >
       <br>
       <button type="submit" class="btn btn-lg btn-block btn-primary">Reservar</button>
     </form>

@@ -20,6 +20,7 @@
    $last_uid = 0;
    $bool_correo = FALSE;
    $bool_username = FALSE;
+
    foreach ($fetch_uid as $p) {
      if ($last_uid < $p[0]){
        $last_uid=$p[0];

@@ -28,6 +28,7 @@
         <ul class="list-unstyled mt-3 mb-4">
         </ul>
         <form align="center" action="confirmacion_reserva.php" method="post">
+          <input type="hidden" name="hotel" value= <?php echo "<p>$name</p>"; ?> >
           <br>
           <button type="submit" class="btn btn-lg btn-block btn-primary">Reservar</button>
         </form>
