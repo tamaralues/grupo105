@@ -136,7 +136,8 @@ $user = new User($db);
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
-                        </button>";
+                        </button>
+                    </div>";
                 } else {
                     echo "
                     <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
@@ -144,6 +145,7 @@ $user = new User($db);
                     </button> ";
                 }
             ?>
+        </div>
         <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
                 <form class="px-4 py-3" action="test.php" method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
