@@ -31,3 +31,8 @@
     $bool_comentarios = $result_comentarios -> execute();
 
 ?>
+
+<?php echo "<p>$user</p>"; ?>
+<?php echo "<p>$uid</p>"; ?>
+<?php echo "<p>$hid </p>"; ?>
+<?php echo "<p>$comentario</p>"; ?>
