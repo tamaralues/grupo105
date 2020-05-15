@@ -189,7 +189,7 @@ if (isset($_SESSION['user'])){
     $pwd_form = $_POST['pwd'];
     echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
     if ($user->userExists($user_form, $pwd_form)) {
-        echo "<p>usuario validado</p>"
+        echo "<p>usuario validado</p>";
         $user_session -> setCurrentUser($user_form);
         $user -> setUser($user_form);
     } else {
