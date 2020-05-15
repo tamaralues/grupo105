@@ -15,10 +15,8 @@
 		$hid = 0;
 
 		foreach ($hid1 as $p){
-			if ($p[0] == $hid ){
-				$hid = $p[0];
-			}
-			}
+			$hid = $p[0];
+		}
 
 ?>
 
