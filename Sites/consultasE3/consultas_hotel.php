@@ -80,7 +80,7 @@
             </thead>
             <?php
               foreach ($result_cm as $p) {
-                echo "<tr><td>$p[0]</tr>";
+                echo "<tr><td>$p[0]<td></tr>";
             }
             ?>
           </table>
