@@ -29,10 +29,6 @@
     $result_add = $db  -> prepare($query_add);
     $result_add -> execute();
 
-    $query_comentarios = "SELECT comentario FROM comentarios;";
-    $result_cm = $db -> prepare($query_comentarios );
-    $result_cm -> execute();
-    $consulta = $result_cm -> fetchAll();
 
 ?>
 
@@ -41,22 +37,3 @@
 <?php echo "<p>$hid </p>"; ?>
 <?php echo "<p>$last_cmid</p>"; ?>
 <?php echo "<p>$comentario</p>"; ?>
-
-<div class="container">
-  <div class="card-deck mb-3 text-center" style="align-self:center">
-    <div class="table-responsive" style="align-self:center">
-      <table class="table table-striped table-bordered" style="width:70%; margin:auto">
-        <thead class="thread-dark">
-          <tr>
-            <th>uid</th>
-          </tr>
-        </thead>
-        <?php
-          foreach ($consulta as $p) {
-            echo "<tr><td>$p[0]<td></tr>";
-        }
-        ?>
-      </table>
-    </div>
-  </div>
-</div>
