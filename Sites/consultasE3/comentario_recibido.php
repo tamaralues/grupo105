@@ -29,11 +29,8 @@
 
     $query_comentarios = "INSERT INTO comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
     $result_comentarios = $db -> prepare($query_comentarios);
-    $bool_comentarios = $result_comentarios -> execute();
-
-
-?>
-
+    $result_comentarios -> execute();
+    
 <?php echo "<p>$user</p>"; ?>
 <?php echo "<p>$uid</p>"; ?>
 <?php echo "<p>$hid </p>"; ?>
