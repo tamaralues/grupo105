@@ -31,7 +31,6 @@
     $result_hoteles = $db -> prepare($query_hoteles);
     $result_hoteles -> execute();
 
-
     $query_uid = "SELECT uid_reserva FROM reservas where hid = '$hid';";
     $result_uid = $db -> prepare($query_uid);
     $result_uid -> execute();
