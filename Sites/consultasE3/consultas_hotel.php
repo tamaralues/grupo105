@@ -18,10 +18,12 @@
 			}
 		}
 
-    $query_comentarios = "SELECT comentario FROM comentarios;";
+
+
+    $query_comentarios = "SELECT username, comentario FROM comentarios natural join usuarios WHERE hid = '$hid';";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
-    $result_cm -> fetchAll();
+    $consulta = $result_cm -> fetchAll();
 
 ?>
 
@@ -75,12 +77,13 @@
           <table class="table table-striped table-bordered" style="width:70%; margin:auto">
             <thead class="thread-dark">
               <tr>
-                <th>uid</th>
+                <th>username</th>
+                <th>comentario</th>
               </tr>
             </thead>
             <?php
-              foreach ($result_cm as $p) {
-                echo "<tr><td>$p[0]<td></tr>";
+              foreach ($consulta as $p) {
+                echo "<tr><td>$p[0]<td><td>$p[1]<td></tr>";
             }
             ?>
           </table>
