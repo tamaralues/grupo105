@@ -18,7 +18,7 @@
 			}
 		}
 
-    $query_comentarios = "SELECT * FROM comentarios";
+    $query_comentarios = "SELECT comentario FROM comentarios";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
     $result_cm -> fetchAll();
