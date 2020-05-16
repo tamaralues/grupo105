@@ -9,7 +9,7 @@
     $user = $_SESSION['username'];
     $uid = $_SESSION['id'];
 
-    $query_cmid = "SELECT cmid FROM comentarios;";
+    $query_cmid = "SELECT * FROM comentarios";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result_cmid = $db -> prepare($query_cmid);
       $result_cmid -> execute();
