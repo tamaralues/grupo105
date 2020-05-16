@@ -76,12 +76,11 @@
             <thead class="thread-dark">
               <tr>
                 <th>uid</th>
-                <th>comentario</th>
               </tr>
             </thead>
             <?php
-              foreach ($comentarios_escritos as $p) {
-                echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+              foreach ($result_cm as $p) {
+                echo "<tr><td>$p[0]</tr>";
             }
             ?>
           </table>
