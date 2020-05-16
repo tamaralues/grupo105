@@ -27,9 +27,11 @@
         $last_cmid += 1;
     }
 
+
     $query_add = "INSERT INTO comentarios VALUES ('$last_cmid', '$hid', '$uid', '$comentario')";
     $result_add = $db  -> prepare($query_add);
     $result_add -> execute();
+
 ?>
 
 <?php echo "<p>$user</p>"; ?>
