@@ -18,11 +18,9 @@
 			}
 		}
 
-
-    $query_comentarios = "SELECT uid, comentario FROM Comentarios; ";
+    $query_comentarios = "SELECT uid, comentario FROM comentarios; ";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
-
     $comentarios_escritos = $result_cm -> fetchAll();
 
 ?>
