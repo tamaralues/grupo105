@@ -19,7 +19,7 @@
 		}
 
 
-    $query_comentarios = "SELECT uid FROM reservas; ";
+    $query_comentarios = "SELECT uid, comentarios FROM comentarios; ";
 
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
