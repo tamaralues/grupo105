@@ -23,7 +23,7 @@
      $fetch_drop4 = $result_drop4 -> fetchAll();
 
      $count = 0;
-     $did = 0
+     $did = 0;
      $capacidad_ocupada = 0;
      $asiento = 0;
 
