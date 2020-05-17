@@ -36,7 +36,7 @@
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option class=\"dropdown-item\"  value=$f4[1] name=\"hotel\"> $f4[0] </option>
+                                <option value=$f4[1] > $f4[0] </option>
                             ";
                         }
                         ?>
