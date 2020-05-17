@@ -21,7 +21,7 @@
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
 
-     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino', cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
+     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_origen = '$origen', cid_destino = '$destino', horasalida = '$horasalida', medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
@@ -34,7 +34,7 @@
 
      foreach ($fetch_drop4 as $f4) {
        # obtengo la cantida de tickets comprados
-       $capacidad_ocupada += 1;
+       $capacidad_ocupada = $capacidad_ocupada + 1;
      }
 
      foreach ($fetch_drop4 as $f4) {
