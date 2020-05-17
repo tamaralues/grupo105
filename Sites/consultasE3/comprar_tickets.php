@@ -82,7 +82,7 @@
                 </div>
                 <div class="btn-group" role="group">
 
-                    <select name="hora salida" >
+                    <select name="horasalida" >
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
