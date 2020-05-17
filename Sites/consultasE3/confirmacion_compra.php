@@ -28,7 +28,8 @@
 
      foreach ($fetch_drop4 as $f4) {
        # obtengo la cantida de tickets comprados
-       $capacidad_ocupada = $capacidad_ocupada + 1;
+       $capacidad_ocupada++ ;
+       echo "<p> aqui </p>";
      }
 
      foreach ($fetch_drop4 as $f4) {
@@ -55,7 +56,6 @@
        foreach ($fetch_tick as $p) {
          if ($last_tick < $p[0]){
            $last_tick = $p[0];
-           echo "<p>$last_tick tick </p>";
          }
          if ($asiento < $p[1]){
            $asiento = $p[1] + 1 ;
