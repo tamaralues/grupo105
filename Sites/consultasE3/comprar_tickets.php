@@ -33,13 +33,11 @@
                 <div class="btn-group" role="group">
 
                     <select name="hotel" >
-                      <option value= "hola" > hola </option>
-
+      
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option value=$f4[1] > $f4[0] </option>
-
+                                <option value = '$f4[1]' > $f4[0] </option>
                             ";
                         }
                         ?>
