@@ -18,7 +18,7 @@
       $result_drop5 -> execute();
       $fetch_drop5 = $result_drop5 -> fetchAll();
 
-      $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid ';";
+      $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_drop6 = $db -> prepare($query_drop6);
        $result_drop6 -> execute();
