@@ -43,9 +43,8 @@
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
-          <form action ="confirmacion_compra.php" method=\"post\">
+          <form action ="confirmacion_compra.php" method="POST">
                 <div class="btn-group" role="group">
-
                     <select name="origen" >
                         <?php
                         foreach ($fetch_drop5 as $f5) {
@@ -69,7 +68,6 @@
                     </select>
                 </div>
                 <div class="btn-group" role="group">
-
                     <select name="medio" >
                         <?php
                         foreach ($fetch_drop4 as $f4) {
