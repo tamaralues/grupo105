@@ -15,7 +15,7 @@
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
 
-     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
+     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje natural join tickets_comprados where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
@@ -25,6 +25,7 @@
      $did = 0;
      $capacidad_ocupada = 0;
      $asiento = 0;
+
 
      foreach ($fetch_drop4 as $f4) {
        # obtengo la cantida de tickets comprados
