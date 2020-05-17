@@ -92,7 +92,9 @@
                         ?>
                     </select>
                 </div>
+
                 <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
+                <br>
                 <button type="submit" class="btn btn-dark btn-block mb-2">
                     Comprar
                 </button>

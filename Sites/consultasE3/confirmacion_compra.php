@@ -12,7 +12,9 @@
     $user = $_SESSION['username'];
     $uid = $_SESSION['id'];
 
-    $fechacompra =  getdate();
+
+    $fechacompra = date('Y-m-d');
+    echo  $fechacompra ;
 
      $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino'   ,cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
