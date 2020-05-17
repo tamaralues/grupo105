@@ -36,8 +36,8 @@
        if($f4[1] = $origen && $capacidad_ocupada < $f4[2] ){
          $count = 1;
          $did = $f4[0];
-         echo "<p>$did did</p>";
-
+         echo "<p>$did did </p>";
+         
        }else{
          $count = 0;
        }
@@ -81,3 +81,4 @@
 <?php echo "<p>$did</p>"; ?>
 <?php echo "<p>$asiento</p>"; ?>
 <?php echo "<p>$fechacompra</p>"; ?>
+<?php echo "<p>$horasalida</p>"; ?>
