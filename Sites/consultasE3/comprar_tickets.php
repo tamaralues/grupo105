@@ -17,7 +17,7 @@
       $result_drop5 -> execute();
       $fetch_drop5 = $result_drop5 -> fetchAll();
 
-      $query_drop6 = "SELECT uid FROM tickets_comprados ;";
+      $query_drop6 = "SELECT uid , tid FROM tickets_comprados ;";
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_drop6 = $db -> prepare($query_drop6);
        $result_drop6 -> execute();
@@ -112,7 +112,7 @@
           </thead>
           <?php
             foreach ($fetch_drop6 as $p) {
-              echo "<tr><td>$p[0]</td></tr>";
+              echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
           }
           ?>
         </table>
