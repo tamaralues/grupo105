@@ -9,33 +9,7 @@
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    $cid_origen =  0;
-    $cid_destino = 0;
-
-    $query_drop1 = "SELECT cid FROM ciudades  where nombreciudad = '$destino';";
-   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop1 = $db -> prepare($query_drop1);
-    $result_drop1 -> execute();
-    $fetch_drop1 = $result_drop1 -> fetchAll();
-
-    foreach ($fetch_drop1 as $f1) {
-      # obtengo la cantida de tickets comprados
-      $cid_destino = $f1[0];
-    }
-
-    $query_drop2 = "SELECT cid FROM ciudades where nombreciudad = '$origen';";
-   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop2 = $db -> prepare($query_drop2);
-    $result_drop2 -> execute();
-    $fetch_drop2 = $result_drop2 -> fetchAll();
-
-    foreach ($fetch_drop2 as $f2) {
-      # obtengo la cantida de tickets comprados
-      $cid_origen = $f2[0];
-    }
-
-
-    $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$cid_destino',cid_origen = '$cid_origen', horasalida = '$horasalida', medio = '$medio' ;";
+    $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino',cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop4 = $db -> prepare($query_drop4);
     $result_drop4 -> execute();
@@ -47,7 +21,7 @@
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
 
-     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino',cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
+     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino', cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
@@ -114,7 +88,5 @@
 <?php echo "<p>$asiento asiento </p>"; ?>
 <?php echo "<p>$fechacompra fecha compra </p>"; ?>
 <?php echo "<p>$horasalida hora salida</p>"; ?>
-<?php echo "<p>$cid_origen cid origen</p>"; ?>
-<?php echo "<p>$cid_destino cid destino</p>"; ?>
 <?php echo "<p>$origen origen </p>"; ?>
 <?php echo "<p>$destino destino </p>"; ?>
