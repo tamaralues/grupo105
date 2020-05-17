@@ -4,14 +4,12 @@
     require("../configuracion/conexion_db_e3.php");
 
 
-    $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
+    $query_drop4 = "SELECT cid_origen , cid_destino, medio, horasalida, capacidad FROM datos_viaje ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
      $fetch_drop4 = $result_drop4 -> fetchAll();
-
-
 ?>
 
 
@@ -31,19 +29,59 @@
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
-
+          <form action ="consultasE3/consulta_lugares.php" method=\"post\">
                 <div class="btn-group" role="group">
 
-                    <select name="hotel" >
+                    <select name="origen" >
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option value = '$f4[1]' > $f4[0] </option>
+                                <option value = '$f4[0]' > $f4[0] </option>
                             ";
                         }
                         ?>
                     </select>
                 </div>
+                <div class="btn-group" role="group">
+
+                    <select name="destino" >
+                        <?php
+                        foreach ($fetch_drop4 as $f4) {
+                            echo "
+                                <option value = '$f4[1]' > $f4[1] </option>
+                            ";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="btn-group" role="group">
+
+                    <select name="medio" >
+                        <?php
+                        foreach ($fetch_drop4 as $f4) {
+                            echo "
+                                <option value = '$f4[2]' > $f4[2] </option>
+                            ";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="btn-group" role="group">
+
+                    <select name="hora salida" >
+                        <?php
+                        foreach ($fetch_drop4 as $f4) {
+                            echo "
+                                <option value = '$f4[3]' > $f4[3] </option>
+                            ";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-dark btn-block mb-2">
+                    Comprar
+                </button>
+                </form>
             </div>
     </div>
 
