@@ -37,7 +37,7 @@
          $count = 1;
          $did = $f4[0];
          echo "<p>$did did </p>";
-         
+
        }else{
          $count = 0;
        }
@@ -75,10 +75,11 @@
      }
 ?>
 
-<?php echo "<p>$capacidad_ocupada</p>"; ?>
-<?php echo "<p>$fechaviaje</p>"; ?>
-<?php echo "<p>$uid</p>"; ?>
-<?php echo "<p>$did</p>"; ?>
-<?php echo "<p>$asiento</p>"; ?>
-<?php echo "<p>$fechacompra</p>"; ?>
-<?php echo "<p>$horasalida</p>"; ?>
+<?php echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
+<?php echo "<p>$fechaviaje fecha viaje </p>"; ?>
+<?php echo "<p>$uid uid </p>"; ?>
+<?php echo "<p>$did did </p>"; ?>
+<?php echo "<p>$asiento asiento </p>"; ?>
+<?php echo "<p>$fechacompra fecha compra </p>"; ?>
+<?php echo "<p>$horasalida hora salida</p>"; ?>
+<?php echo "<p>$medio medio</p>"; ?>
