@@ -30,15 +30,14 @@
      foreach ($fetch_drop4 as $f4) {
        # obtengo la cantida de tickets comprados
        $capacidad_ocupada++ ;
-       echo "<p> aqui </p>";
      }
 
      foreach ($fetch_drop4 as $f4) {
        if($f4[1] = $origen){
          if ($capacidad_ocupada < $f4[2] ) {
            $did = $f4[0];
-           echo "<p>$did did </p>";
            $count = 1;
+           $capacidad = $f4[2]
          }
         }
        else{
@@ -46,7 +45,7 @@
        }
      }
 
-     $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
+       $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
        #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_tick = $db -> prepare($query_tick);
        $result_tick -> execute();
@@ -62,6 +61,8 @@
            $asiento = $p[1] + 1 ;
          }
      }
+
+     $last_tick += 1;
 
      if($count = 1){
 
@@ -85,3 +86,4 @@
 <?php echo "<p>$horasalida hora salida</p>"; ?>
 <?php echo "<p>$origen origen </p>"; ?>
 <?php echo "<p>$destino destino </p>"; ?>
+<?php echo "<p>$last_tick destino </p>"; ?>
