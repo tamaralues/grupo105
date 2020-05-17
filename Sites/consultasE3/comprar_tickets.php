@@ -3,11 +3,13 @@
 
     require("../configuracion/conexion_db_e3.php");
 
+
+    $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
+
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
      $fetch_drop4 = $result_drop4 -> fetchAll();
-
 
 
 ?>
@@ -33,7 +35,6 @@
                 <div class="btn-group" role="group">
 
                     <select name="hotel" >
-      
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
