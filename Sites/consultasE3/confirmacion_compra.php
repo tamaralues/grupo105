@@ -33,11 +33,14 @@
      }
 
      foreach ($fetch_drop4 as $f4) {
-       if($f4[1] = $origen && $capacidad_ocupada < $f4[2] ){
-         $count = 1;
-         $did = $f4[0];
-         echo "<p>$did did </p>";
+       if($f4[1] = $origen){
+         if ($capacidad_ocupada < $f4[2] ) {
+           $did = $f4[0];
+           echo "<p>$did did </p>";
+           $count = 1;
+         }
 
+       }
        }else{
          $count = 0;
        }
@@ -76,6 +79,7 @@
 ?>
 
 <?php echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
+<?php echo "<p>$capacidad capacidad </p>"; ?>
 <?php echo "<p>$fechaviaje fecha viaje </p>"; ?>
 <?php echo "<p>$uid uid </p>"; ?>
 <?php echo "<p>$did did </p>"; ?>
