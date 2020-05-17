@@ -32,7 +32,7 @@
 
                 <div class="btn-group" role="group">
 
-                    <select name=\"hotel\" class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
+                    <select name="hotel" >
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
