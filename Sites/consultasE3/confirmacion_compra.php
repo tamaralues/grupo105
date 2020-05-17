@@ -25,6 +25,7 @@
      $count = 0;
      $did = 0
      $capacidad_ocupada = 0;
+     $asiento = 0;
 
      foreach ($fetch_drop4 as $f4) {
        $capacidad_ocupada += 1;
@@ -39,27 +40,26 @@
        }
      }
 
-     $query_tick = "SELECT tid FROM tickets_comprados;";
+     $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_tick = $db -> prepare($query_tick);
        $result_tick -> execute();
        $fetch_tick = $result_tick -> fetchAll();
 
-       $last_cmid = 0;
+       $last_tick = 0;
 
        foreach ($fetch_tick as $p) {
          if ($last_tick < $p[0]){
            $last_tick = $p[0];
          }
+         if ($asiento < $p[1]){
+           $asiento = $p[1] + 1 ;
+         }
      }
-
-     $last_tick += 1;
-
-
 
      if($count = 1){
        echo "<p>La compra fue realizada con exito </p>";
-       $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid', '$fechacompra', '$fechaviaje ');";
+       $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
      }else{

@@ -22,7 +22,7 @@
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_drop6 = $db -> prepare($query_drop6);
-       $result_drop& -> execute();
+       $result_drop -> execute();
        $fetch_drop6 = $result_drop6 -> fetchAll();
 ?>
 
