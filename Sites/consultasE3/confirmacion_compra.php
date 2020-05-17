@@ -65,8 +65,6 @@
      }else{
        echo "<p>lo siento no se pudo realizar la compra</p>";
      }
-
-
 ?>
 
 <?php echo "<p>$capacidad_ocupada</p>"; ?>
