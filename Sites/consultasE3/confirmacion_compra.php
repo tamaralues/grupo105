@@ -39,9 +39,8 @@
            echo "<p>$did did </p>";
            $count = 1;
          }
-
-       }
-       }else{
+        }
+       else{
          $count = 0;
        }
      }
@@ -59,7 +58,6 @@
          if ($last_tick < $p[0]){
            $last_tick = $p[0];
            echo "<p>$last_tick tick </p>";
-
          }
          if ($asiento < $p[1]){
            $asiento = $p[1] + 1 ;
@@ -71,9 +69,9 @@
        $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
-
        echo "<p>La compra fue realizada con exito </p>";
-     }else{
+     }
+     else{
        echo "<p>lo siento no se pudo realizar la compra</p>";
      }
 ?>
