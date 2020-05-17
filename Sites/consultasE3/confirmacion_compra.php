@@ -15,7 +15,17 @@
      $result_drop4 -> execute();
      $fetch_drop4 = $result_drop4 -> fetchAll();
 
-     if($fetch_drop4[1] = $origen ){
+     $count = 0;
+
+     foreach ($fetch_drop4 as $f4) {
+       if($fetch_drop4[1] = $origen ){
+         $count = 1;
+       }else{
+         $count = 0;
+       }
+     }
+
+     if($count = 1){
        echo "<p>La compra fue realizada con exito </p>";
      }else{
        echo "<p>lo siento no se pudo realizar la compra</p>";
