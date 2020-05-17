@@ -4,12 +4,19 @@
     require("../configuracion/conexion_db_e3.php");
 
 
-    $query_drop4 = "SELECT cid_origen , cid_destino, medio, horasalida, capacidad FROM datos_viaje ;";
+    $query_drop4 = "SELECT nombreciudad, cid_destino, horasalida, capacidad FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
      $fetch_drop4 = $result_drop4 -> fetchAll();
+
+     $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida, capacidad FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
+
+     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+      $result_drop5 = $db -> prepare($query_drop5);
+      $result_drop5 -> execute();
+      $fetch_drop5 = $result_drop4 -> fetchAll();
 ?>
 
 
@@ -34,9 +41,9 @@
 
                     <select name="origen" >
                         <?php
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_drop5 as $f5) {
                             echo "
-                                <option value = '$f4[0]' > $f4[0] </option>
+                                <option value = '$f5[1]' > $f5[0] </option>
                             ";
                         }
                         ?>
@@ -48,7 +55,7 @@
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option value = '$f4[1]' > $f4[1] </option>
+                                <option value = '$f4[1]' > $f4[0] </option>
                             ";
                         }
                         ?>
