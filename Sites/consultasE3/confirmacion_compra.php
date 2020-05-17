@@ -60,9 +60,9 @@
          if ($asiento < $p[1]){
            $asiento = $p[1] + 1 ;
          }
-     }
+       }
 
-     $last_tick += 1;
+     
 
      if($count = 1){
 
@@ -86,4 +86,4 @@
 <?php echo "<p>$horasalida hora salida</p>"; ?>
 <?php echo "<p>$origen origen </p>"; ?>
 <?php echo "<p>$destino destino </p>"; ?>
-<?php echo "<p>$last_tick destino </p>"; ?>
+<?php echo "<p>$last_tick last_tick </p>"; ?>
