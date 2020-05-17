@@ -36,7 +36,7 @@
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
-          <form action ="consultasE3/consulta_lugares.php" method=\"post\">
+          <form action ="consultasE3/confirmacion_compra.php" method=\"post\">
                 <div class="btn-group" role="group">
 
                     <select name="origen" >
