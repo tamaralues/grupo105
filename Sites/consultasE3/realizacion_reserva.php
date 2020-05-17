@@ -27,7 +27,7 @@
 
     $last_rid += 1;
 
-    $query_hoteles = "INSERT INTO reservas VALUES ('$last_rid', '$hid', '$uid', '$fechainicio','$fechatermino');";
+    $query_hoteles = "INSERT INTO reservas VALUES ('$last_rid', '$uid', '$fechainicio','$fechatermino', '$hid');";
     $result_hoteles = $db -> prepare($query_hoteles);
     $result_hoteles -> execute();
 
