@@ -8,7 +8,7 @@
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
 
-    $query_drop4 = "SELECT did, cid_origen FROM datos_viaje  where cid_destino = '$destino'   ,cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
+    $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino'   ,cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
@@ -16,9 +16,14 @@
      $fetch_drop4 = $result_drop4 -> fetchAll();
 
      $count = 0;
+     $capacidad_ocupada = 0;
 
      foreach ($fetch_drop4 as $f4) {
-       if($fetch_drop4[1] = $origen ){
+       $capacidad_ocupada += 1;
+     }
+
+     foreach ($fetch_drop4 as $f4) {
+       if($fetch_drop4[1] = $origen && $capacidad_ocupada != $capacidad){
          $count = 1;
        }else{
          $count = 0;
