@@ -12,18 +12,17 @@
      $fetch_drop4 = $result_drop4 -> fetchAll();
 
      $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
-
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result_drop5 = $db -> prepare($query_drop5);
       $result_drop5 -> execute();
       $fetch_drop5 = $result_drop5 -> fetchAll();
 
       $query_drop6 = "SELECT uid FROM tickets_comprados ;";
-
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_drop6 = $db -> prepare($query_drop6);
-       $result_drop -> execute();
+       $result_drop6 -> execute();
        $fetch_drop6 = $result_drop6 -> fetchAll();
+
 ?>
 
 
