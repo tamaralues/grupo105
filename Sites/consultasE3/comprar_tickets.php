@@ -17,6 +17,13 @@
       $result_drop5 = $db -> prepare($query_drop5);
       $result_drop5 -> execute();
       $fetch_drop5 = $result_drop5 -> fetchAll();
+
+      $query_drop6 = "SELECT uid FROM tickets_comprados ;";
+
+      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+       $result_drop6 = $db -> prepare($query_drop6);
+       $result_drop -> execute();
+       $fetch_drop6 = $result_drop6 -> fetchAll();
 ?>
 
 
@@ -85,12 +92,35 @@
                         ?>
                     </select>
                 </div>
+                <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
                 <button type="submit" class="btn btn-dark btn-block mb-2">
                     Comprar
                 </button>
                 </form>
             </div>
     </div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h3 class="display-4">Resultado inserción</h3>
+    </div>
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead class="thread-dark">
+            <tr>
+              <th>ID del usuario</th>
+            </tr>
+          </thead>
+          <?php
+            foreach ($fetch_drop6 as $p) {
+              echo "<tr><td>$p[0]</td></tr>";
+          }
+          ?>
+        </table>
+      </div>
+    </div>
+
+
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
