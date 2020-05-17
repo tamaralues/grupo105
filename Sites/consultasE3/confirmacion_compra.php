@@ -3,7 +3,7 @@
 
     require("../configuracion/conexion_db_e3.php");
 
-    $origen = $_POST["name"];
+    $origen = $_POST["origen"];
     $destino = $_POST["destino"];
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
@@ -14,9 +14,7 @@
 
     $fechacompra =  getdate();
 
-
-    $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino'   ,cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
-
+     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_destino = '$destino'   ,cid_origen = '$origen', horasalida = '$horasalida', medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop4 = $db -> prepare($query_drop4);
      $result_drop4 -> execute();
@@ -28,20 +26,23 @@
      $asiento = 0;
 
      foreach ($fetch_drop4 as $f4) {
+       # obtengo la cantida de tickets comprados
        $capacidad_ocupada += 1;
      }
 
      foreach ($fetch_drop4 as $f4) {
-       if($f4[1] = $origen && $capacidad_ocupada != $capacidad){
+       if($f4[1] = $origen && $capacidad_ocupada < $f4[2] ){
          $count = 1;
          $did = $f4[0];
+
        }else{
          $count = 0;
        }
      }
 
+
      $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
-     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_tick = $db -> prepare($query_tick);
        $result_tick -> execute();
        $fetch_tick = $result_tick -> fetchAll();
@@ -68,4 +69,4 @@
 ?>
 
 <?php echo "<p>$capacidad_ocupada</p>"; ?>
-<?php echo "<p>$capacidad</p>"; ?>
+<?php echo "<p>$fechaviaje</p>"; ?>
