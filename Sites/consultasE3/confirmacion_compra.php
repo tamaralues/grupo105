@@ -34,6 +34,7 @@
        if($f4[1] = $origen && $capacidad_ocupada < $f4[2] ){
          $count = 1;
          $did = $f4[0];
+         echo "<p>$did did</p>";
 
        }else{
          $count = 0;
@@ -52,6 +53,8 @@
        foreach ($fetch_tick as $p) {
          if ($last_tick < $p[0]){
            $last_tick = $p[0];
+           echo "<p>$last_tick tick </p>";
+
          }
          if ($asiento < $p[1]){
            $asiento = $p[1] + 1 ;
@@ -59,10 +62,12 @@
      }
 
      if($count = 1){
-       echo "<p>La compra fue realizada con exito </p>";
+
        $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
+
+       echo "<p>La compra fue realizada con exito </p>";
      }else{
        echo "<p>lo siento no se pudo realizar la compra</p>";
      }
@@ -70,3 +75,7 @@
 
 <?php echo "<p>$capacidad_ocupada</p>"; ?>
 <?php echo "<p>$fechaviaje</p>"; ?>
+<?php echo "<p>$uid</p>"; ?>
+<?php echo "<p>$did</p>"; ?>
+<?php echo "<p>$asiento</p>"; ?>
+<?php echo "<p>$fechacompra</p>"; ?>

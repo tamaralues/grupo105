@@ -2,6 +2,7 @@
     session_start();
 
     require("../configuracion/conexion_db_e3.php");
+    $uid = $_SESSION['id'];
 
 
     $query_drop4 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
@@ -17,7 +18,7 @@
       $result_drop5 -> execute();
       $fetch_drop5 = $result_drop5 -> fetchAll();
 
-      $query_drop6 = "SELECT uid , tid FROM tickets_comprados ;";
+      $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid ';";
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_drop6 = $db -> prepare($query_drop6);
        $result_drop6 -> execute();
