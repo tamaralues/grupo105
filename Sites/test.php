@@ -117,7 +117,6 @@ $user = new User($db);
                             echo "
                             <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f4[1] name=\"hotel\"> $f4[0] </button>
-
                             </form>
                             ";
                         }
