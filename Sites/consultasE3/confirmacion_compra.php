@@ -9,17 +9,17 @@
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    $query_drop4 = "SELECT did, cid_origen , cid destino FROM datos_viaje  where cid_origen = '$origen' , cid_destino = '$destino' ;";
-   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop4 = $db -> prepare($query_drop4);
-    $result_drop4 -> execute();
-    $fetch_drop4 = $result_drop4 -> fetchAll();
-
     $user = $_SESSION['username'];
     $uid = $_SESSION['id'];
 
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
+
+     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje  where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+     $result_drop4 = $db -> prepare($query_drop4);
+     $result_drop4 -> execute();
+     $fetch_drop4 = $result_drop4 -> fetchAll();
 
      $count = 0;
      $did = 0;
