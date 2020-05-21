@@ -125,7 +125,7 @@ $user = new User($db);
                 </div>
                 <div class="btn-group" role="group">
                     <button type="button" onclick="location.href='consultasE3/comprar_tickets.php'" class="btn btn-dark">
-                        <p>Comprar tickets</p>
+                        Comprar tickets
                     </button>
                 </div>
             </div>
