@@ -191,9 +191,10 @@ $user = new User($db);
 if (isset($_SESSION['user'])){
     echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());
-} else if (isset($_POST['username']) && isset($_POST['pwd'])){
+} else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['correo'])){
     $user_form = $_POST['username'];
     $pwd_form = $_POST['pwd'];
+    $email_form = $_POST['correo'];
 
     session_start();
 
