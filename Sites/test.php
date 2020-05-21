@@ -174,6 +174,7 @@ if (isset($_SESSION['user'])){
                             Comprar tickets
                         </button>
                     </div>";
+                }
                 ?>
             </div>
         </nav>
