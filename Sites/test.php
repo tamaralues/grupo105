@@ -215,8 +215,8 @@ if (isset($_SESSION['user'])){
     $_SESSION["id"] = $uid;
     $_SESSION["username"] = $user_form;
 
-    echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>";
-    if ($user->userExists($user_form, $pwd_form)) {
+    echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>, correo - $correo_form";
+    if ($user->userExists($user_form, $pwd_form, $correo_form)) {
         echo "<p>usuario validado</p>";
         $user_session -> setCurrentUser($user_form);
         $user -> setUser($user_form);
