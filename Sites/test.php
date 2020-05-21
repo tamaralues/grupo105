@@ -181,12 +181,13 @@ if (isset($_SESSION['user'])){
         <div class="dropdown mr-1">
             <?php
                 if(isset($_SESSION['user'])){
+                    $post_user = $_SESSION['username'];
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
                         perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
-                        <button onclick=\"location.href='consultasE3/cerrar_cuenta.php'\" class=\"dropdown-item\" value=$_SESSION['username'] name=\"username\">
+                        <button onclick=\"location.href='consultasE3/cerrar_cuenta.php'\" class=\"dropdown-item\" value=$post_user name=\"username\">
                             Cerrar Cuenta
                         </button>
 
