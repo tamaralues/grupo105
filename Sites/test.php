@@ -187,7 +187,7 @@ if (isset($_SESSION['user'])){
                         perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
-                        <form action=\"consultaE3/cerrar_cuenta.php\" method=\"post\">
+                        <form action=\"consultasE3/cerrar_cuenta.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
                                 Cerrar Cuenta
                             </button>
