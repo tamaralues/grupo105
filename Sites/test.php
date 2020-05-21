@@ -168,6 +168,7 @@ if (isset($_SESSION['user'])){
                 </div>
                 <?php
                 if(isset($_SESSION['user'])){
+                    $post_user = $_SESSION['username'];
                     echo "
                     <div class=\"btn-group\" role=\"group\">
                         <button type=\"button\" onclick=\"location.href='consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
@@ -186,7 +187,7 @@ if (isset($_SESSION['user'])){
                         perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
-                        <button onclick=\"location.href='consultasE3/cerrar_cuenta.php'\" class=\"dropdown-item\">
+                        <button onclick=\"location.href='consultasE3/cerrar_cuenta.php'\" class=\"dropdown-item\" value=$post_user name=\"username\">
                             Cerrar Cuenta
                         </button>
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
