@@ -9,6 +9,8 @@ $query = "UPDATE usuarios SET activos=FALSE WHERE username='$username'";
 $result = $db -> prepare($query);
 $result -> execute();
 
+echo "<p>username: $username</p>";
+
 $user_session = new userSession();
 $user_session->closeSesion();
 
