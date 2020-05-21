@@ -2,7 +2,7 @@
 include_once '../include/user_session.php';
 include_once '../configuracion/conexion_db_e3.php';
 
-$username = $_SESSION['username'];
+$username = $_GET['username'];
 
 $query = "UPDATE usuarios SET activos=FALSE WHERE username='$username'";
 
