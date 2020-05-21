@@ -168,7 +168,6 @@ if (isset($_SESSION['user'])){
                 </div>
                 <?php
                 if(isset($_SESSION['user'])){
-                    $post_user = $_SESSION['username'];
                     echo "
                     <div class=\"btn-group\" role=\"group\">
                         <button type=\"button\" onclick=\"location.href='consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
@@ -182,6 +181,7 @@ if (isset($_SESSION['user'])){
         <div class="dropdown mr-1">
             <?php
                 if(isset($_SESSION['user'])){
+                    $post_user = $_SESSION['username'];
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
                         perfil
