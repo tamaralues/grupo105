@@ -12,6 +12,7 @@ $query = "UPDATE usuarios SET activos=FALSE WHERE username='$username'";
 $result = $db -> prepare($query);
 $result -> execute();
 
-header('location: ../test.php')
+echo "<p>$username</p>";
+#header('location: ../test.php')
 
 ?>
