@@ -132,7 +132,7 @@ $user = new User($db);
         </nav>
         <div class="dropdown mr-1">
             <?php
-                if((isset($_SESSION['user']))||(isset($_POST['username']) && isset($_POST['pwd']))){
+                if(isset($_SESSION['user'])){#)||(isset($_POST['username']) && isset($_POST['pwd']))
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
                         perfil
@@ -222,7 +222,9 @@ if (isset($_SESSION['user'])){
         $user -> setUser($user_form);
     } else {
         $error_login = "nombre, correo o pwd incorrecto";
-        echo "<p>algo salio mal</p>";
+        echo "<p>algo salio mal: $error_login</p>";
+        session_unset();
+        session_destroy();
     }
 } else {
     echo "<p>hay que logear</p>";
