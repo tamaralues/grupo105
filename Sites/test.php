@@ -166,16 +166,20 @@ if (isset($_SESSION['user'])){
                         ?>
                     </div>
                 </div>
-                <div class="btn-group" role="group">
-                    <button type="button" onclick="location.href='consultasE3/comprar_tickets.php'" class="btn btn-dark">
-                        Comprar tickets
-                    </button>
-                </div>
+                <?php
+                if(isset($_SESSION['user'])){
+                    echo "
+                    <div class=\"btn-group\" role=\"group\">
+                        <button type=\"button\" onclick=\"location.href='consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
+                            Comprar tickets
+                        </button>
+                    </div>";
+                ?>
             </div>
         </nav>
         <div class="dropdown mr-1">
             <?php
-                if(isset($_SESSION['user'])){#)||(isset($_POST['username']) && isset($_POST['pwd']))
+                if(isset($_SESSION['user'])){
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
                         perfil
