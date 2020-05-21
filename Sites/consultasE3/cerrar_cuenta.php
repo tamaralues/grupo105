@@ -12,5 +12,5 @@ $result -> execute();
 $user_session = new userSession();
 $user_session->closeSesion();
 
-#header('location: ../test.php')
+header('location: ../test.php')
 ?>
