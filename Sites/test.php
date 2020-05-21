@@ -124,8 +124,8 @@ $user = new User($db);
                     </div>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="submit" class="btn btn-dark" id="dropdown3" aria-haspopup="true" aria-expanded="false">
-                        <p><a href="consultasE3/comprar_tickets.php">Comprar tickets</a></p>
+                    <button type="submit" onclick="location.href='consultasE3/comprar_tickets.php'" class="btn btn-dark" id="dropdown3" aria-haspopup="true" aria-expanded="false">
+                        <p>Comprar tickets</p>
                     </button>
                 </div>
             </div>
