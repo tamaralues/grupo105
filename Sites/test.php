@@ -194,7 +194,7 @@ if (isset($_SESSION['user'])){
 } else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['correo'])){
     $user_form = $_POST['username'];
     $pwd_form = $_POST['pwd'];
-    $email_form = $_POST['correo'];
+    $correo_form = $_POST['correo'];
 
     session_start();
 
