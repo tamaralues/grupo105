@@ -138,6 +138,9 @@ $user = new User($db);
                         perfil
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
+                        <button onclick=\"location.href='consultasE3/cerrar_cuenta.php'\" class=\"dropdown-item\">
+                            Cerrar Cuenta
+                        </button>
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
                         </button>
