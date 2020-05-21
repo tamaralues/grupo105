@@ -7,6 +7,10 @@ $user_session->closeSesion();
 
 $username = $_POST['username'];
 
+$query = "UPDATE usuarios SET activos=FALSE WHERE username='$username'";
+
+$result = $db -> prepare($query);
+$result -> execute();
 
 header('location: ../test.php')
 

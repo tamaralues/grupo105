@@ -60,7 +60,7 @@ if (isset($_SESSION['user'])){
 
     $query = "SELECT uid, username FROM usuarios ;";
 
-		$result = $db -> prepare($query);
+	$result = $db -> prepare($query);
     $result -> execute();
     $username = $result -> fetchAll();
 
