@@ -220,6 +220,7 @@ if (isset($_SESSION['user'])){
         echo "<p>usuario validado</p>";
         $user_session -> setCurrentUser($user_form);
         $user -> setUser($user_form);
+        header("Refresh:0")
     } else {
         $error_login = "nombre, correo o pwd incorrecto";
         echo "<p>algo salio mal: $error_login</p>";
