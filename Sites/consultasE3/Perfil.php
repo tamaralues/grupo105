@@ -16,9 +16,14 @@ $user_session -> setCurrentUser($post_username);
 $user -> setUser($post_username);}
 
 $query_museos ='';
-$query_reservas ='';
+$query_reservas ="SELECT hid, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas WHERE username='$post_username';";
 $query_tickets = '';
+
+$result_reservas = $db -> prepare($query_reservas);
+$result_reservas -> execute();
+$fetch_reservas = $result_reservas -> fetchAll();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +40,9 @@ $query_tickets = '';
     <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
+    echo "<p>estamos en el perfil de {$post_username}</p>";
     ?>
-    <p>estamos en el perfil</p>
+    
 
     <div class="container">
         <div class="card-deck mb-3 text-center">
@@ -57,12 +63,20 @@ $query_tickets = '';
                     <h4 class="my-0 font-weight-normal">Reservas de Alojamiento</h4>
                 </div>
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Kyrie ignis domine</li>
-                    </ul>
+                    <table class="table table-striped table-bordered">
+                        <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
+                        <?php
+                        foreach($fetch_reservas as $f){
+                            $query_hotel = "SELECT nombrehotel, direccionhotel FROM reservas NATURAL JOIN hoteles WHERE hid='$f[0]';";
+                            $result_hotel = $db -> prepare($query_hotel);
+                            $result_hotel -> execute();
+                            $fetch_hotel = $result_hotel -> fetchAll();
+                            foreach($fetch_hotel as $g){
+                                echo "<tr><td>$g[0]</td><td>$g[1]</td><td>$f[1]</td><td>$f[2]</td></tr>";
+                            }
+                        }
+                        ?>
+                    </table>
                 </div>
             </div>
             <div class="card mb-4 box-shadow">
