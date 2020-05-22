@@ -10,10 +10,11 @@ $post_username = $_POST['username'];
 
 if (isset($_SESSION['user'])){
     #echo "<p>hay sesion iniciada</p>";
-    $user->setUser($user_session->getCurrentUser());
+    $user->setUser($user_session->getCurrentUser());}
 else{
 $user_session -> setCurrentUser($post_username);
-$user -> setUser($post_username);}
+$user -> setUser($post_username);
+}
 
 $user_query=$_SESSION['user'];
 
