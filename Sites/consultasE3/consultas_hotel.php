@@ -1,12 +1,10 @@
-
-
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
-    $hid = $_POST["hotel"];
-    require("../configuracion/conexion_db_e3.php");
 
-  include_once '../include/user.php';
+require("../configuracion/conexion_db_e3.php");
+
+include_once '../include/user.php';
 include_once '../include/user_session.php';
 
 $user_session = new userSession();
@@ -21,6 +19,8 @@ else{
 $user_session -> setCurrentUser($post_username);
 $user -> setUser($post_username);
 }
+
+    $hid = $_POST["hotel"];
     $query = "SELECT hid, nombrehotel FROM hoteles ;";
 
 		$result = $db -> prepare($query);
