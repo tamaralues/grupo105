@@ -8,9 +8,16 @@ $user = new User($db);
 
 $post_username = $_POST['username'];
 
+if (isset($_SESSION['user'])){
+    #echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());}
+else{
 $user_session -> setCurrentUser($post_username);
-$user -> setUser($post_username);
+$user -> setUser($post_username);}
 
+$query_museos ='';
+$query_reservas ='';
+$query_tickets = '';
 ?>
 
 <!DOCTYPE html>
