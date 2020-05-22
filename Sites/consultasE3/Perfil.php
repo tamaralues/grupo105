@@ -89,15 +89,15 @@ $fetch_tickets = $result_tickets -> fetchAll();
 
                                 foreach($fetch_origen as $fo){
                                     $g=$fo[0];
-                                }
+                                };
                                 foreach($fetch_destino as $fd){
                                     $h=$fd[0];
-                                }
+                                };
 
                                 $result_destino = $db -> prepare($query_destino);
                                 $result_destino -> execute();
                                 $fetch_destino = $result_destino -> fetchAll();
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$f[4]</td></tr>";
                             }
                             ?>
                         </table>
