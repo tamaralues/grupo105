@@ -85,9 +85,9 @@ $user -> setUser($post_username);
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-                        <option value = 'Avión' > avion  </option>
-                        <option value = 'Bus' > bus  </option>
-                        <option value = 'Tren' > tren  </option>
+                        <option value = 'Avión' > Avión  </option>
+                        <option value = 'Bus' > Bus  </option>
+                        <option value = 'Tren' > Tren  </option>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
