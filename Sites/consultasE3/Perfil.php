@@ -50,29 +50,25 @@ $fetch_reservas = $result_reservas -> fetchAll();
     <div class="container">
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
-                <div class="card-header">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="alojamiento" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="transporte" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
-                        </li>
-                <div class="card-body">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento">
-                            <table class="table table-striped table-bordered">
-                                <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
-                                <?php
-                                foreach($fetch_reservas as $f){
-                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
-                                }
-                                ?>
-                            </table>
-                        </div>
-                        <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte">aqui ira algo</div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
+                    </li>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
+                        <table class="table table-striped table-bordered">
+                            <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
+                            <?php
+                            foreach($fetch_reservas as $f){
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
+                            }
+                            ?>
+                        </table>
                     </div>
-                    
+                    <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">aqui ira algo</div>
                 </div>
             </div>
             <div class="card mb-4 box-shadow">
@@ -105,7 +101,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">texto 2</div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">texto 3</div>
 </div>
-
+<h5>texto pa rellenar</h5>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="../css/bootstrap.js"></script>
