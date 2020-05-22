@@ -80,8 +80,8 @@ $fetch_tickets = $result_tickets -> fetchAll();
                             <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
                             <?php
                             foreach($fetch_tickets as $f){
-                                $query_origen = "SELECT nombreciudad, cid from ciudades WHERE uid='$f[3]';";
-                                $query_destino = "SELECT nombreciudad, cid from ciudades WHERE uid='$f[4]';";
+                                $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
+                                $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
 
                                 $result_origen = $db -> prepare($query_origen);
                                 $result_origen -> execute();
