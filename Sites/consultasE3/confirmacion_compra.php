@@ -72,14 +72,3 @@
        echo "<p>La compra no fue realizada con exito </p>";
      }
 ?>
-
-<?php echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
-<?php echo "<p>$capacidad capacidad </p>"; ?>
-<?php echo "<p>$fechaviaje fecha viaje </p>"; ?>
-<?php echo "<p>$uid uid </p>"; ?>
-<?php echo "<p>$did did </p>"; ?>
-<?php echo "<p>$asiento asiento </p>"; ?>
-<?php echo "<p>$fechacompra fecha compra </p>"; ?>
-<?php echo "<p>$horasalida hora salida</p>"; ?>
-<?php echo "<p>$origen origen </p>"; ?>
-<?php echo "<p>$destino destino </p>"; ?>
