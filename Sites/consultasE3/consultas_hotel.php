@@ -37,6 +37,10 @@
   </head>
 
   <body>
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+    ?>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
