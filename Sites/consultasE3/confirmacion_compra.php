@@ -37,7 +37,6 @@
          if ($capacidad_ocupada < $f4[2] ) {
            $did = $f4[0];
            $count = 1;
-           echo "<p>La compra fue realizada con exito </p>";
          }
         }
        else{
@@ -68,6 +67,7 @@
        $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
+        echo "<p>La compra fue realizada con exito </p>";
      }
 ?>
 
