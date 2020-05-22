@@ -10,13 +10,15 @@ $post_username = $_POST['username'];
 
 if (isset($_SESSION['user'])){
     #echo "<p>hay sesion iniciada</p>";
-    $user->setUser($user_session->getCurrentUser());}
+    $user->setUser($user_session->getCurrentUser());
 else{
 $user_session -> setCurrentUser($post_username);
 $user -> setUser($post_username);}
 
+$user_query=$_SESSION['user'];
+
 $query_museos ='';
-$query_reservas ="SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$post_username';";
+$query_reservas ="SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$user_query';";
 $query_tickets = '';
 
 $result_reservas = $db -> prepare($query_reservas);
@@ -40,7 +42,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
     <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
-    echo "<p>estamos en el perfil de {$post_username}</p>";
+    echo "<p>estamos en el perfil de {$_SESSION['user']}</p>";
     ?>
     
 
@@ -63,7 +65,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
                     <h4 class="my-0 font-weight-normal">Reservas de Alojamiento</h4>
                 </div>
                 <div class="card-body">
-                
+
                     <table class="table table-striped table-bordered">
                         <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
                         <?php
