@@ -1,7 +1,23 @@
 <?php
     session_start();
 
-    require("../configuracion/conexion_db_e3.php");
+require("../configuracion/conexion_db_e3.php");
+
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+    #echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());}
+else{
+$user_session -> setCurrentUser($post_username);
+$user -> setUser($post_username);
+}
     $uid = $_SESSION['id'];
 
 
