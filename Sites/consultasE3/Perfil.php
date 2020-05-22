@@ -51,15 +51,15 @@ $fetch_reservas = $result_reservas -> fetchAll();
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <ul class="nav nav-tabs card-header-tabs pull-right">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link" id="alojamiento" data-toggle="tab" href="#alojamiento" 
                             role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" id="transporte" data-toggle="tab" href="#transporte" role="tab"
-                         aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
-            </li>
+                            <a class="nav-link" id="transporte" data-toggle="tab" href="#transporte" role="tab"
+                             aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
+                        </li>
                 <div class="card-body">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento">
