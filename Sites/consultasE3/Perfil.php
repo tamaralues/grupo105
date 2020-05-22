@@ -51,22 +51,14 @@ $fetch_reservas = $result_reservas -> fetchAll();
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Entradas a museos</h4>
-                </div>
+                    <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Reservas de Alojamiento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <a class="list-group-item text-dark" href="../test.php" style ="text-decoration:none;">Cras justo odio</a>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card mb-4 box-shadow">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Reservas de Alojamiento</h4>
-                </div>
-                <div class="card-body">
-
                     <table class="table table-striped table-bordered">
                         <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
                         <?php
