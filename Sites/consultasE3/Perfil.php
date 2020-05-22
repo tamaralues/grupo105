@@ -99,7 +99,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
                                     $h=$fd[0];
                                 }
 
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$result_destino</td><td>$h</td></tr>";
                             }
                             ?>
                         </table>
