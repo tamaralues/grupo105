@@ -243,6 +243,7 @@ if (isset($_SESSION['user'])){
         </div>
     </div> -->
     <?php
+    $path_navbar ='';
     include_once 'nav_bar.php';
     ?>
 
