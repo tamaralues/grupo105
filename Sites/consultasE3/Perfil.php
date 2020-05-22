@@ -53,7 +53,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link" id="alojamiento" data-toggle="tab" href="#'alojamiento'" 
+                            <a class="nav-link" id="alojamiento" data-toggle="tab" href="#alojamiento" 
                             role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
                         </li>
                         <li class="nav-item">
@@ -61,7 +61,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
                              aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
                         </li>
                 <div class="card-body">
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content">
                         <div class="tab-pane fade" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento">
                             <table class="table table-striped table-bordered">
                                 <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
@@ -90,6 +90,22 @@ $fetch_reservas = $result_reservas -> fetchAll();
                 </div>
             </div>       
         </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
