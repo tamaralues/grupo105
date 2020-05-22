@@ -1,106 +1,4 @@
-<?php
-#generar elementos dropdown
-require("configuracion/conexion_db_e3.php");
-
-#Se obtiene el valor del input del usuario
-
-#Consulta primer meno dropdown
-$query_drop1 = "SELECT nombrepais, pid FROM paises;";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop1 = $db -> prepare($query_drop1);
- $result_drop1 -> execute();
- $fetch_drop1 = $result_drop1 -> fetchAll();
-
- $query_drop2 = "SELECT nombreciudad, cid FROM ciudades;";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop2 = $db -> prepare($query_drop2);
- $result_drop2 -> execute();
- $fetch_drop2 = $result_drop2 -> fetchAll();
-
- $query_drop3 = "SELECT cid, pid FROM ciudades;";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop3 = $db -> prepare($query_drop3);
- $result_drop3 -> execute();
- $fetch_drop3 = $result_drop3 -> fetchAll();
-
- $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
-
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop4 = $db -> prepare($query_drop4);
- $result_drop4 -> execute();
- $fetch_drop4 = $result_drop4 -> fetchAll();
-
-
- #inicio de sesion
-
-#inicio sesion
-include_once 'include/user.php';
-include_once 'include/user_session.php';
-
-$user_session = new userSession();
-$user = new User($db);
-?>
-
-<?php
-#testeo inicio de sesion
-if (isset($_SESSION['user'])){
-    #echo "<p>hay sesion iniciada</p>";
-    $user->setUser($user_session->getCurrentUser());
-} else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['correo'])){
-    $user_form = $_POST['username'];
-    $pwd_form = $_POST['pwd'];
-    $correo_form = $_POST['correo'];
-
-    session_start();
-
-    $_SESSION["loggedin"] = true;
-
-    $query = "SELECT uid, username FROM usuarios ;";
-
-	$result = $db -> prepare($query);
-    $result -> execute();
-    $username = $result -> fetchAll();
-
-		foreach ($username as $p){
-			if($p[1] == $user_form){
-				$uid = $p[0];
-			}
-		}
-
-    $_SESSION["id"] = $uid;
-    $_SESSION["username"] = $user_form;
-
-   # echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>, correo - $correo_form";
-    if ($user->userExists($user_form, $pwd_form, $correo_form)) {
-       # echo "<p>usuario validado</p>";
-        $user_session -> setCurrentUser($user_form);
-        $user -> setUser($user_form);
-    } else {
-        $error_login = "nombre, correo o pwd incorrecto";
-        #echo "<p>algo salio mal: $error_login</p>";
-        session_unset();
-        session_destroy();
-    }
-} else {
-    #echo "<p>hay que logear</p>";
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset='UTF-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/bootstrapE3.css" rel="stylesheet">
-    <link href="css/estiloE3.css" rel="stylesheet">
-    <title>Documento random</title>
-</head>
-
-<body> <!--
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <div class="btn-group">
@@ -109,7 +7,7 @@ if (isset($_SESSION['user'])){
                         Artistas
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown1">
-                        <#?php
+                        <?php
                             foreach ($fetch_drop1 as $f1) {
                                 echo "
                                 <form action =\"consultasE3/consulta_artista.php\" method=\"post\">
@@ -125,7 +23,7 @@ if (isset($_SESSION['user'])){
                         Obras
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown2">
-                        <#?php
+                        <?php
                             foreach ($fetch_drop2 as $f2) {
                                 echo "
                                     <button class=\"dropdown-item\" type=\"button\">$f2[0]</button>
@@ -139,7 +37,7 @@ if (isset($_SESSION['user'])){
                         Lugares
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
-                        <#?php
+                        <?php
                         foreach ($fetch_drop3 as $f3) {
                             echo "
                             <form action =\"consultasE3/consulta_lugares.php\" method=\"post\">
@@ -155,7 +53,7 @@ if (isset($_SESSION['user'])){
                         Hoteles
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
-                        <#?php
+                        <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
                             <form action =\"consultasE3/consultas_hotel.php\" method=\"post\">
@@ -166,7 +64,7 @@ if (isset($_SESSION['user'])){
                         ?>
                     </div>
                 </div>
-                <#?php
+                <?php
                 if(isset($_SESSION['user'])){
                     echo "
                     <div class=\"btn-group\" role=\"group\">
@@ -179,7 +77,7 @@ if (isset($_SESSION['user'])){
             </div>
         </nav>
         <div class="dropdown mr-1">
-            <#?php
+            <?php
                 if(isset($_SESSION['user'])){
                     $post_user = $_SESSION['username'];
                     echo "
@@ -241,13 +139,4 @@ if (isset($_SESSION['user'])){
                 </div>
             </div>
         </div>
-    </div> -->
-    <?php
-    include_once 'nav_bar.php';
-    ?>
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-      <script src="css/bootstrap.js"></script>
-</body>
-</html>
+    </div>

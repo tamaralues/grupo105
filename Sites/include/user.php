@@ -1,5 +1,4 @@
 <?php
-#include 'configuracion/conexion_db_e3.php';
 class User {
     private $nombre_usuario;
     private $username;
