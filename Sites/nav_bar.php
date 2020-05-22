@@ -32,7 +32,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
-        <a class="my-0 mr-md-auto font-weight-normal text-white" href=<?php echo"{$path_nabvar}test.php"?>><h5>Splinter S.A.</h5></a>
+        <a class="my-0 mr-md-auto font-weight-normal text-white" href=<?php echo"{$path_navbar}test.php"?>><h5>Splinter S.A.</h5></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <div class="btn-group">
                 <div class="btn-group" role="group">
