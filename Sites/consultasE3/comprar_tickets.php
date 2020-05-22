@@ -22,9 +22,9 @@ $user -> setUser($post_username);
     $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-     $result_drop7 = $db -> prepare($query_drop4);
+     $result_drop7 = $db -> prepare($query_drop7);
      $result_drop7 -> execute();
-     $fetch_drop7 = $result_drop4 -> fetchAll();
+     $fetch_drop7 = $result_drop7 -> fetchAll();
 
      $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
