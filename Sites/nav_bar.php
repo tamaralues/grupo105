@@ -1,3 +1,36 @@
+<?php
+#Consulta primer meno dropdown
+$query_drop1 = "SELECT nombrepais, pid FROM paises;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop1 = $db -> prepare($query_drop1);
+ $result_drop1 -> execute();
+ $fetch_drop1 = $result_drop1 -> fetchAll();
+
+ $query_drop2 = "SELECT nombreciudad, cid FROM ciudades;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop2 = $db -> prepare($query_drop2);
+ $result_drop2 -> execute();
+ $fetch_drop2 = $result_drop2 -> fetchAll();
+
+ $query_drop3 = "SELECT cid, pid FROM ciudades;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop3 = $db -> prepare($query_drop3);
+ $result_drop3 -> execute();
+ $fetch_drop3 = $result_drop3 -> fetchAll();
+
+ $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop4 = $db -> prepare($query_drop4);
+ $result_drop4 -> execute();
+ $fetch_drop4 = $result_drop4 -> fetchAll();
+
+?>
+
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
@@ -40,7 +73,7 @@
                         <?php
                         foreach ($fetch_drop3 as $f3) {
                             echo "
-                            <form action =\"$path_navbar consultasE3/consulta_lugares.php\" method=\"post\">
+                            <form action =\"consultasE3/consulta_lugares.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
                             </form>
                             ";
