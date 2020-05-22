@@ -21,7 +21,7 @@ $user -> setUser($post_username);
 }
 
     $hid = $_POST["hotel"];
-    $query = "SELECT hid, nombrehotel FROM hoteles ;";
+    $query = "SELECT hid, nombrehotel FROM hoteles;";
 
 		$result = $db -> prepare($query);
     $result -> execute();

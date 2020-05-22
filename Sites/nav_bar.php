@@ -103,11 +103,14 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                 ?>
                 <?php
                 if(isset($_SESSION['user'])){
+                    $post_user = $_SESSION['username'];
                     echo "
                     <div class=\"btn-group\" role=\"group\">
-                        <button type=\"button\" onclick=\"location.href='{$path_navbar}consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
-                            Comprar tickets
-                        </button>
+                        <form action=\"{$path_navbar}consultasE3/comprar_tickets.php\" method=\"post\">
+                            <button type=\"submit\" class=\"btn btn-dark\" value=$post_user name=\"username\">
+                                Comprar tickets
+                            </button>
+                        </form>
                     </div>";
                 }
                 ?>

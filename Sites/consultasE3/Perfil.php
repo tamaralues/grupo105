@@ -3,6 +3,7 @@ require("../configuracion/conexion_db_e3.php");
 include_once '../include/user.php';
 include_once '../include/user_session.php';
 
+#mantener sesion iniciada
 $user_session = new userSession();
 $user = new User($db);
 
@@ -16,6 +17,7 @@ $user_session -> setCurrentUser($post_username);
 $user -> setUser($post_username);
 }
 
+#consultas del perfil
 $user_query=$_SESSION['user'];
 
 $query_museos ='';
