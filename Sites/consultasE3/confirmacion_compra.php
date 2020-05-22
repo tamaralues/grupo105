@@ -74,6 +74,23 @@
      }
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../css/bootstrapE3.css" rel="stylesheet">
+    <link href="../css/estiloE3.css" rel="stylesheet">
+    <title>Compra tickets</title>
+</head>
+
+<body>
+<?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+    ?>
+
 <?php echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
 <?php echo "<p>$capacidad capacidad </p>"; ?>
 <?php echo "<p>$fechaviaje fecha viaje </p>"; ?>
@@ -84,3 +101,5 @@
 <?php echo "<p>$horasalida hora salida</p>"; ?>
 <?php echo "<p>$origen origen </p>"; ?>
 <?php echo "<p>$destino destino </p>"; ?>
+
+</body>
