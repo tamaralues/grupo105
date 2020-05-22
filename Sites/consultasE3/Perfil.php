@@ -93,6 +93,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
 
                                 foreach($fetch_origen as $fo){
                                     $g=$fo[0];
+                                    echo "<tr><td>fo0</td><td>fo1</td><td>fo2</td><td>$f[3]</td><td>$f[4]</td></tr>";
                                 }
                                 foreach($fetch_destino as $fd){
                                     $h=$fd[0];
