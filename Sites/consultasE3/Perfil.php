@@ -52,58 +52,55 @@ $fetch_tickets = $result_tickets -> fetchAll();
     
 
     <div class="container">
-        <div class="card-deck mb-3 text-center">
-            <div class="card mb-4 box-shadow">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active text-dark" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true" style="text-decoration:none;">Reservas de Alojamiento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Visitas Museos</a>
-                    </li>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
-                        <table class="table table-striped table-bordered" style="width:90%; margin:auto">
-                            <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
-                            <?php
-                            foreach($fetch_reservas as $f){
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
-                            }
-                            ?>
-                        </table>
-                    </div>
-                    <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
-                        <table class="table table-striped table-bordered" style="width:90%; margin:auto">
-                            <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
-                            <?php
-                            foreach($fetch_tickets as $f){
-                                $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
-                                $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active text-dark" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true" style="text-decoration:none;">Reservas de Alojamiento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Visitas Museos</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
+                <table class="table table-striped table-bordered" style="width:90%; margin:auto">
+                    <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
+                    <?php
+                    foreach($fetch_reservas as $f){
+                        echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
+                    }
+                    ?>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
+                <table class="table table-striped table-bordered" style="width:90%; margin:auto">
+                    <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
+                    <?php
+                    foreach($fetch_tickets as $f){
+                        $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
+                        $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
 
-                                $result_origen = $db -> prepare($query_origen);
-                                $result_origen -> execute();
-                                $fetch_origen = $result_origen -> fetchAll();
+                        $result_origen = $db -> prepare($query_origen);
+                        $result_origen -> execute();
+                        $fetch_origen = $result_origen -> fetchAll();
 
-                                $result_destino = $db -> prepare($query_destino);
-                                $result_destino -> execute();
-                                $fetch_destino = $result_destino -> fetchAll();
+                        $result_destino = $db -> prepare($query_destino);
+                        $result_destino -> execute();
+                        $fetch_destino = $result_destino -> fetchAll();
 
-                                foreach($fetch_origen as $fo){
-                                    $g=$fo[0];
-                                }
-                                foreach($fetch_destino as $fd){
-                                    $h=$fd[0];
-                                }
+                        foreach($fetch_origen as $fo){
+                            $g=$fo[0];
+                        }
+                        foreach($fetch_destino as $fd){
+                            $h=$fd[0];
+                        }
 
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
-                            }
-                            ?>
-                        </table>
-                    </div>
-                </div>
+                        echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </div>
