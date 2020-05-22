@@ -15,27 +15,27 @@
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
 
-     $query_drop4 = "SELECT did, cid_origen, capacidad FROM datos_viaje natural join tickets_comprados where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
+     $query_drop8 = "SELECT did, cid_origen, capacidad FROM datos_viaje natural join tickets_comprados where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-     $result_drop4 = $db -> prepare($query_drop4);
-     $result_drop4 -> execute();
-     $fetch_drop4 = $result_drop4 -> fetchAll();
+     $result_drop8 = $db -> prepare($query_drop8);
+     $result_drop8 -> execute();
+     $fetch_drop8 = $result_drop8 -> fetchAll();
 
      $count = -1;
      $did = 0;
      $capacidad_ocupada = 0;
      $asiento = 0;
 
-     foreach ($fetch_drop4 as $f4) {
+     foreach ($fetch_drop8 as $f8) {
        # obtengo la cantida de tickets comprados
        $capacidad_ocupada++ ;
-       $capacidad = $f4[2];
+       $capacidad = $f8[2];
      }
 
-     foreach ($fetch_drop4 as $f4) {
+     foreach ($fetch_drop8 as $f8) {
        if($f4[1] = $origen){
-         if ($capacidad_ocupada < $f4[2] ) {
-           $did = $f4[0];
+         if ($capacidad_ocupada < $f8[2] ) {
+           $did = $f8[0];
            $count = 1;
          }
         }
@@ -61,6 +61,7 @@
          }
      }
       $last_tick += 1;
+      $asiento += 1 ;
 
      if($count != -1){
        $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
