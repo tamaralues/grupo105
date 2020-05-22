@@ -61,6 +61,9 @@ $fetch_tickets = $result_tickets -> fetchAll();
                     <li class="nav-item">
                         <a class="nav-link" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Visitas Museos</a>
+                    </li>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
                         <table class="table table-striped table-bordered">
