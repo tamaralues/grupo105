@@ -54,11 +54,11 @@ $fetch_reservas = $result_reservas -> fetchAll();
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
                             <a class="nav-link active" id="alojamiento" data-toggle="tab" href="#alojamiento" 
-                            role="tab" aria-controls="home" aria-selected="true">Reservas de Alojamiento</a>
+                            role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" id="transporte" data-toggle="tab" href="#transporte" role="tab"
-                         aria-controls="profile" aria-selected="false">Tickets de Transporte</a>
+                         aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
             </li>
                 <div class="card-body">
                     <div class="tab-content" id="myTabContent">
