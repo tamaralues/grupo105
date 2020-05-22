@@ -16,7 +16,7 @@ $user_session -> setCurrentUser($post_username);
 $user -> setUser($post_username);}
 
 $query_museos ='';
-$query_reservas ="SELECT hid, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas WHERE username='$post_username';";
+$query_reservas ="SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$post_username';";
 $query_tickets = '';
 
 $result_reservas = $db -> prepare($query_reservas);
@@ -63,17 +63,12 @@ $fetch_reservas = $result_reservas -> fetchAll();
                     <h4 class="my-0 font-weight-normal">Reservas de Alojamiento</h4>
                 </div>
                 <div class="card-body">
+                
                     <table class="table table-striped table-bordered">
                         <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
                         <?php
                         foreach($fetch_reservas as $f){
-                            $query_hotel = "SELECT nombrehotel, direccionhotel FROM reservas NATURAL JOIN hoteles WHERE hid='$f[0]';";
-                            $result_hotel = $db -> prepare($query_hotel);
-                            $result_hotel -> execute();
-                            $fetch_hotel = $result_hotel -> fetchAll();
-                            foreach($fetch_hotel as $g){
-                                echo "<tr><td>$g[0]</td><td>$g[1]</td><td>$f[1]</td><td>$f[2]</td></tr>";
-                            }
+                            echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
                         }
                         ?>
                     </table>
