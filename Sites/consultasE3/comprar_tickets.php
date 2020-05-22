@@ -19,12 +19,12 @@ $user -> setUser($post_username);
     $uid = $_SESSION['id'];
 
 
-    $query_drop4 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+    $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-     $result_drop4 = $db -> prepare($query_drop4);
-     $result_drop4 -> execute();
-     $fetch_drop4 = $result_drop4 -> fetchAll();
+     $result_drop7 = $db -> prepare($query_drop4);
+     $result_drop7 -> execute();
+     $fetch_drop7 = $result_drop4 -> fetchAll();
 
      $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -76,9 +76,9 @@ $user -> setUser($post_username);
 
                     <select name="destino" >
                         <?php
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_drop7 as $f7) {
                             echo "
-                                <option value = '$f4[1]' > $f4[0] </option>
+                                <option value = '$f7[1]' > $f7[0] </option>
                             ";
                         }
                         ?>
@@ -86,21 +86,19 @@ $user -> setUser($post_username);
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-                        <?php
-                        foreach ($fetch_drop4 as $f4) {
-                            echo "
-                                <option value = '$f4[3]' > $f4[3] </option>
-                            ";
-                        }
-                        ?>
+
+                        <option value = 'avion' > avion  </option>
+                        <option value = 'bus' > bus  </option>
+                        <option value = 'tren' > tren  </option>
+
                     </select>
                 </div>
                 <div class="btn-group" role="group">
                     <select name="horasalida" >
                         <?php
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_drop7 as $f7) {
                             echo "
-                                <option value = '$f4[2]' > $f4[2] </option>
+                                <option value = '$f7[2]' > $f7[2] </option>
                             ";
                         }
                         ?>
