@@ -41,7 +41,7 @@
         }
        else{
          $count = -1;
-         echo "<p>La compra no fue realizada con exito </p>";
+
        }
      }
 
@@ -67,6 +67,9 @@
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
        echo "<p>La compra fue realizada con exito </p>";
+     }
+     else{
+       echo "<p>La compra no fue realizada con exito </p>";
      }
 ?>
 
