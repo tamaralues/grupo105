@@ -182,7 +182,6 @@ if (isset($_SESSION['user'])){
             <?php
                 if(isset($_SESSION['user'])){
                     $post_user = $_SESSION['username'];
-                    $post_session = $_SESSION;
                     echo "
                     <button class=\"btn btn-outline-light dropdown\" data-toggle=\"dropdown\" id=\"perfil\" data-offset=\"10,20\">
                         Mi Cuenta
@@ -191,11 +190,6 @@ if (isset($_SESSION['user'])){
                         <form action=\"consultasE3/cerrar_cuenta.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
                                 Cerrar Cuenta
-                            </button>
-                        </form>
-                        <form action=\"consultasE3/ver_perfil.php\" method=\"post\">
-                            <button type=\"submit\" class=\"dropdown-item\" value=$post_session name=\"username\">
-                                Ver Perfil
                             </button>
                         </form>
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
