@@ -53,20 +53,28 @@ $fetch_reservas = $result_reservas -> fetchAll();
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Reservas de Alojamiento</a>
+                            <a class="nav-link active" id="alojamiento" data-toggle="tab" href="#alojamiento" 
+                            role="tab" aria-controls="home" aria-selected="true">Reservas de Alojamiento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                        <a class="nav-link" id="transporte" data-toggle="tab" href="#transporte" role="tab"
+                         aria-controls="profile" aria-selected="false">Tickets de Transporte</a>
+            </li>
                 <div class="card-body">
-                    <table class="table table-striped table-bordered">
-                        <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
-                        <?php
-                        foreach($fetch_reservas as $f){
-                            echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
-                        }
-                        ?>
-                    </table>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento">
+                            <table class="table table-striped table-bordered">
+                                <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
+                                <?php
+                                foreach($fetch_reservas as $f){
+                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
+                                }
+                                ?>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte">aqui ira algo</div>
+                    </div>
+                    
                 </div>
             </div>
             <div class="card mb-4 box-shadow">
