@@ -81,22 +81,26 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         ?>
                     </div>
                 </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
+                <?php
+                if(isset($_SESSION['user'])){ 
+                  echo "
+                <div class=\"btn-group\" role=\"group\">
+                    <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"dropdown\" id=\"dropdown3\" aria-haspopup=\"true\" aria-expanded=\"false\">
                         Hoteles
                     </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
-                        <?php
+                    <div class=\"dropdown-menu dropdown-menu\" aria-labelledby=\"dropdown3\"> ";
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                            <form action =\"$path_navbar consultasE3/consultas_hotel.php\" method=\"post\">
+                            <form action =\"{$path_navbar}consultasE3/consultas_hotel.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f4[1] name=\"hotel\"> $f4[0] </button>
                             </form>
                             ";
                         }
-                        ?>
+                        echo "
                     </div>
-                </div>
+                </div>";
+                  }
+                ?>
                 <?php
                 if(isset($_SESSION['user'])){
                     echo "
