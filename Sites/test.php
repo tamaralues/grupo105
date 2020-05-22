@@ -195,6 +195,9 @@ if (isset($_SESSION['user'])){
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
                         </button>
+                        <button onclick=\"location.href='Perfil.php'\" class=\"dropdown-item\">
+                            Ir a perfil
+                        </button>
                     </div>";
 
                 } else {

@@ -26,7 +26,6 @@
      $capacidad_ocupada = 0;
      $asiento = 0;
 
-
      foreach ($fetch_drop4 as $f4) {
        # obtengo la cantida de tickets comprados
        $capacidad_ocupada++ ;
@@ -38,14 +37,16 @@
          if ($capacidad_ocupada < $f4[2] ) {
            $did = $f4[0];
            $count = 1;
+           echo "<p>La compra fue realizada con exito </p>";
          }
         }
        else{
          $count = 0;
+         echo "<p>La compra no fue realizada con exito </p>";
        }
      }
 
-     $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
+       $query_tick = "SELECT tid, asiento FROM tickets_comprados;";
        #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
        $result_tick = $db -> prepare($query_tick);
        $result_tick -> execute();
@@ -64,14 +65,9 @@
       $last_tick += 1;
 
      if($count = 1){
-
        $query_add = "INSERT INTO tickets_comprados VALUES ('$last_tick ', '$did', '$uid','$asiento', '$fechacompra', '$fechaviaje' );";
        $result_add = $db  -> prepare($query_add);
        $result_add -> execute();
-       echo "<p>La compra fue realizada con exito </p>";
-     }
-     else{
-       echo "<p>lo siento no se pudo realizar la compra</p>";
      }
 ?>
 

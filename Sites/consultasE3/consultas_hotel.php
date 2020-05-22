@@ -18,7 +18,6 @@
 			}
 		}
 
-
     $query_comentarios = "SELECT username, comentario FROM comentarios natural join usuarios WHERE hid = '$hid';";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
