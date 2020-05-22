@@ -1,5 +1,4 @@
 <?php
-include 'configuracion/conexion_db_e3.php';
 class User {
     private $nombre_usuario;
     private $username;
@@ -9,8 +8,8 @@ class User {
         $this->db=$db;
     }
 
-    public function userExists($user, $pass) {
-        $query = "SELECT uid, username FROM usuarios WHERE username='$user' AND password='$pass'";
+    public function userExists($user, $pass, $email) {
+        $query = "SELECT uid, username, correo FROM usuarios WHERE username='$user' AND password='$pass' AND correo='$email' AND activos=TRUE";
         $result = $this->db -> prepare($query);
         $result ->execute();
         $fetch = $result -> fetchAll();

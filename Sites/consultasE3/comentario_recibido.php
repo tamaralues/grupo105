@@ -9,7 +9,7 @@
     $user = $_SESSION['username'];
     $uid = $_SESSION['id'];
 
-    $query_cmid = "SELECT cmid FROM comentarios;";
+    $query_cmid = "SELECT * FROM comentarios;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result_cmid = $db -> prepare($query_cmid);
       $result_cmid -> execute();
@@ -23,13 +23,11 @@
         }
     }
 
-    if ($last_cmid != 0){
-        $last_cmid += 1;
-    }
+    $last_cmid += 1;
 
-    $query_comentarios = "INSERT INTO comentarios(cmid, hid, uid, comentario) VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
-    $result_comentarios = $db -> prepare($query_comentarios);
-    $bool_comentarios = $result_comentarios -> execute();
+    $query_add = "INSERT INTO comentarios VALUES ('$last_cmid', '$hid', '$uid', '$comentario');";
+    $result_add = $db  -> prepare($query_add);
+    $result_add -> execute();
 
 
 ?>

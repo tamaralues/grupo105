@@ -1,11 +1,26 @@
-
-
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
-    $hid = $_POST["hotel"];
-    require("../configuracion/conexion_db_e3.php");
 
+require("../configuracion/conexion_db_e3.php");
+
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+    #echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());}
+else{
+$user_session -> setCurrentUser($post_username);
+$user -> setUser($post_username);
+}
+
+    $hid = $_POST["hotel"];
     $query = "SELECT hid, nombrehotel FROM hoteles ;";
 
 		$result = $db -> prepare($query);
@@ -18,12 +33,10 @@
 			}
 		}
 
-
-    $query_comentarios = "SELECT uid FROM reservas; ";
-
+    $query_comentarios = "SELECT username, comentario FROM comentarios natural join usuarios WHERE hid = '$hid';";
     $result_cm = $db -> prepare($query_comentarios );
     $result_cm -> execute();
-    $comentarios_escritos = $result_cm -> fetchAll();
+    $consulta = $result_cm -> fetchAll();
 
 ?>
 
@@ -33,12 +46,16 @@
   <head>
       <meta charset='UTF-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link href="css/bootstrapE3.css" rel="stylesheet">
-      <link href="css/estiloE3.css" rel="stylesheet">
+      <link href="../css/bootstrapE3.css" rel="stylesheet">
+      <link href="../css/estiloE3.css" rel="stylesheet">
       <title>Documento random</title>
   </head>
 
   <body>
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+    ?>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
@@ -77,13 +94,13 @@
           <table class="table table-striped table-bordered" style="width:70%; margin:auto">
             <thead class="thread-dark">
               <tr>
-                <th>uid</th>
+                <th>username</th>
                 <th>comentario</th>
               </tr>
             </thead>
             <?php
-              foreach ($comentarios_escritos as $p) {
-                echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
+              foreach ($consulta as $p) {
+                echo "<tr><td>$p[0]<td><td>$p[1]<td></tr>";
             }
             ?>
           </table>
