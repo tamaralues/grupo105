@@ -65,7 +65,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
-                <table class="table table-striped table-bordered" style="width:90%; margin:auto">
+                <table class="table table-striped table-bordered" style="width:100%; margin:auto">
                     <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
                     <?php
                     foreach($fetch_reservas as $f){
