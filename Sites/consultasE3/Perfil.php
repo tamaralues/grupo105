@@ -68,21 +68,11 @@ $fetch_reservas = $result_reservas -> fetchAll();
                             ?>
                         </table>
                     </div>
-                    <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">aqui ira algo</div>
+                    <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
+                        aqui ira algo
+                    </div>
                 </div>
             </div>
-            <div class="card mb-4 box-shadow">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Tickets de transporte</h4>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                </div>
-            </div>       
         </div>
     </div>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
