@@ -87,10 +87,17 @@ $fetch_tickets = $result_tickets -> fetchAll();
                                 $result_origen -> execute();
                                 $fetch_origen = $result_origen -> fetchAll();
 
+                                foreach($fetch_origen as $fo){
+                                    $g=$fo[0];
+                                }
+                                foreach($fetch_destino as $fd){
+                                    $h=$fd[0];
+                                }
+
                                 $result_destino = $db -> prepare($query_destino);
                                 $result_destino -> execute();
                                 $fetch_destino = $result_destino -> fetchAll();
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$fetch_origen[0]</td><td>$fetch_destino[0]</td></tr>";
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
                             }
                             ?>
                         </table>
