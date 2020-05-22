@@ -46,7 +46,7 @@ $query_tickets = '';
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <a class="list-group-item" href="../test.php" style ="text-decoration:none;">Cras justo odio</a>
+                        <a class="list-group-item text-dark" href="../test.php" style ="text-decoration:none;">Cras justo odio</a>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
