@@ -53,7 +53,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link" id="alojamiento" data-toggle="tab" href="#alojamiento" 
+                            <a class="nav-link" id="alojamiento" data-toggle="tab" href="#'alojamiento'" 
                             role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
                         </li>
                         <li class="nav-item">
