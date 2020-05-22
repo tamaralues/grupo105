@@ -32,7 +32,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
+        <a class="my-0 mr-md-auto font-weight-normal text-white" href=<?php echo"{$path_nabvar}test.php"?>><h5>Splinter S.A.</h5></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <div class="btn-group">
                 <div class="btn-group" role="group">
@@ -86,7 +86,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                   echo "
                 <div class=\"btn-group\" role=\"group\">
                     <button type=\"button\" class=\"btn btn-dark\" data-toggle=\"dropdown\" id=\"dropdown3\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                        Hoteles
+                        Reservar Hotel
                     </button>
                     <div class=\"dropdown-menu dropdown-menu\" aria-labelledby=\"dropdown3\"> ";
                         foreach ($fetch_drop4 as $f4) {
