@@ -187,16 +187,19 @@ if (isset($_SESSION['user'])){
                         Mi Cuenta
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
+                        <form action=\"consultasE3/Perfil.php\" method=\"post\">
+                            <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
+                                Ir al perfil
+                            </button>
+                        </form>
                         <form action=\"consultasE3/cerrar_cuenta.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
                                 Cerrar Cuenta
                             </button>
                         </form>
+                        <div class=\"dropdown-divider\"></div>
                         <button onclick=\"location.href='include/logout.php'\" class=\"dropdown-item\">
                             Log Out
-                        </button>
-                        <button onclick=\"location.href='Perfil.php'\" class=\"dropdown-item\">
-                            Ir a perfil
                         </button>
                     </div>";
 
