@@ -43,7 +43,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <?php
                             foreach ($fetch_drop1 as $f1) {
                                 echo "
-                                <form action =\"consultasE3/consulta_artista.php\" method=\"post\">
+                                <form action =\"{$path_navbar}consultasE3/consulta_artista.php\" method=\"post\">
                                     <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"artista\">$f1[0]</button>
                                 </form>
                                 ";
@@ -73,7 +73,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <?php
                         foreach ($fetch_drop3 as $f3) {
                             echo "
-                            <form action =\"$path_navbar consultasE3/consulta_lugares.php\" method=\"post\">
+                            <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
                             </form>
                             ";
@@ -101,7 +101,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                 if(isset($_SESSION['user'])){
                     echo "
                     <div class=\"btn-group\" role=\"group\">
-                        <button type=\"button\" onclick=\"location.href='$path_navbar consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
+                        <button type=\"button\" onclick=\"location.href='{$path_navbar}consultasE3/comprar_tickets.php'\" class=\"btn btn-dark\">
                             Comprar tickets
                         </button>
                     </div>";
@@ -118,18 +118,18 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         Mi Cuenta
                     </button>
                     <div class=\"dropdown-menu\" aria-labelledby=\"perfil\">
-                        <form action=\"$path_navbar consultasE3/Perfil.php\" method=\"post\">
+                        <form action=\"{$path_navbar}consultasE3/Perfil.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
                                 Ir al perfil
                             </button>
                         </form>
-                        <form action=\"$path_navbar consultasE3/cerrar_cuenta.php\" method=\"post\">
+                        <form action=\"{$path_navbar}consultasE3/cerrar_cuenta.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
                                 Cerrar Cuenta
                             </button>
                         </form>
                         <div class=\"dropdown-divider\"></div>
-                        <button onclick=\"location.href='$path_navbar include/logout.php'\" class=\"dropdown-item\">
+                        <button onclick=\"location.href='{$path_navbar}include/logout.php'\" class=\"dropdown-item\">
                             Log Out
                         </button>
                     </div>";
@@ -142,7 +142,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                 }
             ?>
             <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">
-                <form class="px-4 py-3" <?php echo "action=\"$path_navbar test.php\"" ?> method="post">
+                <form class="px-4 py-3" <?php echo "action=\"{$path_navbar}test.php\"" ?> method="post">
                     <div class="form-group col-md-4 col-md-offset-4">
                         <label for="user">
                             Usuario:
@@ -168,7 +168,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     <p>
                         Primera vez en Splinter?
                     </p>
-                    <a <?php echo" href=\"consultasE3/nuevo_usuario.php\""?> class="btn btn-sm btn-primary mb-2 btn-dark" role="button" style="width: 250px;">Registrarme</a>
+                    <a <?php echo" href=\"{$path_navbar}consultasE3/nuevo_usuario.php\""?> class="btn btn-sm btn-primary mb-2 btn-dark" role="button" style="width: 250px;">Registrarme</a>
                 </div>
             </div>
         </div>
