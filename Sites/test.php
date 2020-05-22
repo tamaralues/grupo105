@@ -47,7 +47,7 @@ $user = new User($db);
 <?php
 #testeo inicio de sesion
 if (isset($_SESSION['user'])){
-    #echo "<p>hay sesion iniciada</p>";
+    echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());
 } else if (isset($_POST['username']) && isset($_POST['pwd']) && isset($_POST['correo'])){
     $user_form = $_POST['username'];
@@ -73,9 +73,9 @@ if (isset($_SESSION['user'])){
     $_SESSION["id"] = $uid;
     $_SESSION["username"] = $user_form;
 
-    #echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>, correo - $correo_form";
+    echo "<p>validando login: username - $user_form, pwd - $pwd_form</p>, correo - $correo_form";
     if ($user->userExists($user_form, $pwd_form, $correo_form)) {
-        #echo "<p>usuario validado</p>";
+        echo "<p>usuario validado</p>";
         $user_session -> setCurrentUser($user_form);
         $user -> setUser($user_form);
     } else {
