@@ -89,7 +89,7 @@ $user -> setUser($post_username);
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option value = '$f4[3]' > $f4[3] </option>
+                                <option value = '$f4[3]' > $f4[0] </option>
                             ";
                         }
                         ?>
@@ -100,7 +100,7 @@ $user -> setUser($post_username);
                         <?php
                         foreach ($fetch_drop4 as $f4) {
                             echo "
-                                <option value = '$f4[2]' > $f4[2] </option>
+                                <option value = '$f4[2]' > $f4[0] </option>
                             ";
                         }
                         ?>
