@@ -1,12 +1,27 @@
-
-
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
-    $hid = $_POST["hotel"];
-    require("../configuracion/conexion_db_e3.php");
 
-    $query = "SELECT hid, nombrehotel FROM hoteles ;";
+require("../configuracion/conexion_db_e3.php");
+
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+    #echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());}
+else{
+$user_session -> setCurrentUser($post_username);
+$user -> setUser($post_username);
+}
+
+    $hid = $_POST["hotel"];
+    $query = "SELECT hid, nombrehotel FROM hoteles;";
 
 		$result = $db -> prepare($query);
     $result -> execute();
@@ -31,12 +46,16 @@
   <head>
       <meta charset='UTF-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link href="css/bootstrapE3.css" rel="stylesheet">
-      <link href="css/estiloE3.css" rel="stylesheet">
+      <link href="../css/bootstrapE3.css" rel="stylesheet">
+      <link href="../css/estiloE3.css" rel="stylesheet">
       <title>Documento random</title>
   </head>
 
   <body>
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+    ?>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
@@ -94,6 +113,6 @@
     <body>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-      <script src="css/bootstrap.js"></script>
+      <script src="../css/bootstrap.js"></script>
   </body>
   </html>

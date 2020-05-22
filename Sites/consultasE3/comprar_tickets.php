@@ -1,16 +1,29 @@
 <?php
-    session_start();
+require("../configuracion/conexion_db_e3.php");
+include_once '../include/user.php';
+include_once '../include/user_session.php';
 
-    require("../configuracion/conexion_db_e3.php");
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+   # echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());}
+else{
+    #echo "<p>iniciando sesion: $post_username</p>";
+$user_session -> setCurrentUser($post_username);
+$user -> setUser($post_username);
+}
     $uid = $_SESSION['id'];
 
-
-    $query_drop4 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+    $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-     $result_drop4 = $db -> prepare($query_drop4);
-     $result_drop4 -> execute();
-     $fetch_drop4 = $result_drop4 -> fetchAll();
+     $result_drop7 = $db -> prepare($query_drop7);
+     $result_drop7 -> execute();
+     $fetch_drop7 = $result_drop7 -> fetchAll();
 
      $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -33,14 +46,17 @@
 <head>
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="css/bootstrapE3.css" rel="stylesheet">
-    <link href="css/estiloE3.css" rel="stylesheet">
-    <title>Documento random</title>
+    <link href="../css/bootstrapE3.css" rel="stylesheet">
+    <link href="../css/estiloE3.css" rel="stylesheet">
+    <title>Compra de tickets</title>
 </head>
 
 <body>
+<?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+    ?>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal text-white">Splinter S.A.</h5>
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
           <form action ="confirmacion_compra.php" method="POST">
@@ -59,9 +75,9 @@
 
                     <select name="destino" >
                         <?php
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_drop7 as $f7) {
                             echo "
-                                <option value = '$f4[1]' > $f4[0] </option>
+                                <option value = '$f7[1]' > $f7[0] </option>
                             ";
                         }
                         ?>
@@ -69,21 +85,17 @@
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-                        <?php
-                        foreach ($fetch_drop4 as $f4) {
-                            echo "
-                                <option value = '$f4[3]' > $f4[3] </option>
-                            ";
-                        }
-                        ?>
+                        <option value = 'Avión' > Avión  </option>
+                        <option value = 'Bus' > Bus  </option>
+                        <option value = 'Tren' > Tren  </option>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
                     <select name="horasalida" >
                         <?php
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_drop7 as $f7) {
                             echo "
-                                <option value = '$f4[2]' > $f4[2] </option>
+                                <option value = '$f7[2]' > $f7[2] </option>
                             ";
                         }
                         ?>
@@ -123,6 +135,6 @@
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-      <script src="css/bootstrap.js"></script>
+      <script src="../css/bootstrap.js"></script>
 </body>
 </html>
