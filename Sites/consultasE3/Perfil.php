@@ -19,12 +19,16 @@ $user -> setUser($post_username);
 $user_query=$_SESSION['user'];
 
 $query_museos ='';
-$query_reservas ="SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$user_query';";
-$query_tickets = '';
+$query_reservas = "SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$user_query';";
+$query_tickets = "SELECT asiento, fechacompra, fechaviaje, cid_origen, cid_destino FROM datos_viaje NATURAL JOIN tickets_comprados NATURAL JOIN usuarios WHERE username='$user_query';";
 
 $result_reservas = $db -> prepare($query_reservas);
 $result_reservas -> execute();
 $fetch_reservas = $result_reservas -> fetchAll();
+
+$result_tickets = $db -> prepare($query_tickets);
+$result_tickets -> execute();
+$fetch_tickets = $result_tickets -> fetchAll();
 ?>
 
 
@@ -60,7 +64,7 @@ $fetch_reservas = $result_reservas -> fetchAll();
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
                         <table class="table table-striped table-bordered">
-                            <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th>
+                            <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
                             <?php
                             foreach($fetch_reservas as $f){
                                 echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
@@ -69,7 +73,24 @@ $fetch_reservas = $result_reservas -> fetchAll();
                         </table>
                     </div>
                     <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
-                        aqui ira algo
+                        <table class="table table-striped table-bordered">
+                            <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
+                            <?php
+                            foreach($fetch_tickets as $f){
+                                $query_origen = "SELECT nombreciudad, cid from ciudades WHERE uid='$f[3]';";
+                                $query_destino = "SELECT nombreciudad, cid from ciudades WHERE uid='$f[4]';";
+
+                                $result_origen = $db -> prepare($query_origen);
+                                $result_origen -> execute();
+                                $fetch_origen = $result_origen -> fetchAll();
+
+                                $result_destino = $db -> prepare($query_destino);
+                                $result_destino -> execute();
+                                $fetch_destino = $result_destino -> fetchAll();
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$fetch_origen[0]</td><td>$fetch_destino[0]</td></tr>";
+                            }
+                            ?>
+                        </table>
                     </div>
                 </div>
             </div>
