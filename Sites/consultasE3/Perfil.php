@@ -56,10 +56,10 @@ $fetch_tickets = $result_tickets -> fetchAll();
             <div class="card mb-4 box-shadow">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true">Reservas de Alojamiento</a>
+                        <a class="nav-link active" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true" style="text-decoration:none;">Reservas de Alojamiento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
+                        <a class="nav-link text-dark" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Tickets de Transporte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="transporte-tab" data-toggle="tab" href="#transporte" role="tab" aria-controls="transporte" aria-selected="false">Visitas Museos</a>
@@ -90,7 +90,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
                                 $result_destino = $db -> prepare($query_destino);
                                 $result_destino -> execute();
                                 $fetch_destino = $result_destino -> fetchAll();
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$fetch_origen[0]</td><td>$fetch_destino[0]</td></tr>";
+                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$fetch_origen[0]</td><td>$fetch_destino[0]</td></tr>";
                             }
                             ?>
                         </table>
