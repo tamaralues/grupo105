@@ -80,7 +80,7 @@ if (isset($_SESSION['user'])){
         $user -> setUser($user_form);
     } else {
         $error_login = "nombre, correo o pwd incorrecto";
-        #echo "<p>algo salio mal: $error_login</p>";
+        echo "<p>algo salio mal: $error_login</p>";
         session_unset();
         session_destroy();
     }
