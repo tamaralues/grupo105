@@ -18,7 +18,6 @@ $user -> setUser($post_username);
 }
     $uid = $_SESSION['id'];
 
-
     $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -86,11 +85,9 @@ $user -> setUser($post_username);
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-
-                        <option value = 'avion' > avion  </option>
-                        <option value = 'bus' > bus  </option>
-                        <option value = 'tren' > tren  </option>
-
+                        <option value = 'Avión' > avion  </option>
+                        <option value = 'Bus' > bus  </option>
+                        <option value = 'Tren' > tren  </option>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
