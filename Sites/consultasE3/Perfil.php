@@ -44,8 +44,6 @@ $user -> setUser($post_username);
                     <li class="list-group-item">Vestibulum at eros</li>
                 </ul>
             </div>
-        </div>
-        <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Reservas de Alojamiento</h4>
@@ -57,8 +55,6 @@ $user -> setUser($post_username);
                     <li class="list-group-item">Vestibulum at eros</li>
                 </ul>
             </div>
-        </div>
-        <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Tickets de transporte</h4>
