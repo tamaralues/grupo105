@@ -8,6 +8,8 @@ $user = new User($db);
 
 $post_username = $_POST['username'];
 
+
+
 if (isset($_SESSION['user'])){
    # echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());}
@@ -18,25 +20,38 @@ $user -> setUser($post_username);
 }
     $uid = $_SESSION['id'];
 
+    $origen = $_POST["origen"];
+    $destino = $_POST["destino"];
+
+    $horasalida = $_POST["horasalida"];
+    $medio =  $_POST["medio"];
+    $fechaviaje = $_POST["fechaviaje"];
+
     $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
 
-    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-     $result_drop7 = $db -> prepare($query_drop7);
-     $result_drop7 -> execute();
-     $fetch_drop7 = $result_drop7 -> fetchAll();
 
-     $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-      $result_drop5 = $db -> prepare($query_drop5);
-      $result_drop5 -> execute();
-      $fetch_drop5 = $result_drop5 -> fetchAll();
+    $result_drop7 = $db -> prepare($query_drop7);
+    $result_drop7 -> execute();
+    $fetch_drop7 = $result_drop7 -> fetchAll();
 
-      $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
-      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-       $result_drop6 = $db -> prepare($query_drop6);
-       $result_drop6 -> execute();
-       $fetch_drop6 = $result_drop6 -> fetchAll();
+    $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_drop5 = $db -> prepare($query_drop5);
+    $result_drop5 -> execute();
+    $fetch_drop5 = $result_drop5 -> fetchAll();
 
+    $query_filtro1 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = $origen and datos_viaje.cid_destino = $destino;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_filtro1  = $db -> prepare($query_filtro1 );
+    $result_filtro1  -> execute();
+    $fetch_filtro1  = $result_filtro1  -> fetchAll();
+
+    $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_drop6 = $db -> prepare($query_drop6);
+    $result_drop6 -> execute();
+    $fetch_drop6 = $result_drop6 -> fetchAll();
 ?>
 
 
@@ -55,19 +70,23 @@ $user -> setUser($post_username);
 <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
-    ?>
+
+?>
+
+
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
-          <form action ="confirmacion_compra.php" method="POST">
+          <form action ="comprar_tickets.php" method="POST">
                 <div class="btn-group" role="group">
                     <select name="origen" >
                         <?php
+
                         foreach ($fetch_drop5 as $f5) {
                             echo "
                                 <option value = '$f5[1]' > $f5[0] </option>
                             ";
-                        }
+                           }
                         ?>
                     </select>
                 </div>
@@ -79,37 +98,52 @@ $user -> setUser($post_username);
                             echo "
                                 <option value = '$f7[1]' > $f7[0] </option>
                             ";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="btn-group" role="group">
-                    <select name="medio" >
-                        <option value = 'Avión' > Avión  </option>
-                        <option value = 'Bus' > Bus  </option>
-                        <option value = 'Tren' > Tren  </option>
-                    </select>
-                </div>
-                <div class="btn-group" role="group">
-                    <select name="horasalida" >
-                        <?php
-                        foreach ($fetch_drop7 as $f7) {
-                            echo "
-                                <option value = '$f7[2]' > $f7[2] </option>
-                            ";
-                        }
+
+                          }
                         ?>
                     </select>
                 </div>
 
-                <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
                 <br>
                 <button type="submit" class="btn btn-dark btn-block mb-2">
-                    Comprar
+                    Revisar disponibilidad
                 </button>
                 </form>
+
+    <?php
+    if ($origen != "x")){
+
+              "
+                <form action =\"confirmacion_compra.php\" method=\"POST\">
+                      <div class=\"btn-group\" role=\"group\">
+                          <select name=\"medio\" >
+                              <option value = 'Avión' > Avión  </option>
+                              <option value = 'Bus' > Bus  </option>
+                              <option value = 'Tren' > Tren  </option>
+                          </select>
+                      </div>
+                      <div class=\"btn-group\" role=\"group\">
+                          <select name=\"horasalida\" >
+                          "
+                              foreach ($fetch_filtro1  as $f9) {
+                                  echo "
+                                      <option value = '$f9[2]' > $f9[2] </option>
+                                  ";
+                              }
+                          "
+                          </select>
+                      </div>
+
+                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
+                      <br>
+                      <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                          Comprar
+                      </button>
+                 </form>
             </div>
     </div>
+    ";}
+    ?>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h3 class="display-4">Resultado inserción</h3>
