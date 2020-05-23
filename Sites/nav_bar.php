@@ -108,13 +108,11 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     <div class=\"btn-group\" role=\"group\">
                         <form action=\"{$path_navbar}consultasE3/comprar_tickets.php\" method=\"post\">
 
-                        
-                            <input type=\"hidden\" name=\"horasalida\" value= \"x\" >
-                            <input type=\"hidden\" name=\"medio\" value= \"x\"      >
-                            <input type=\"hidden\" name=\"horasalida\" value= \"x\" >
-                            <input type=\"hidden\" name=\"origen\" value= \"x\"     >
-                            <input type=\"hidden\" name=\"destino\" value= \"x\"    >
-
+                            <input type=\"hidden\" name=\"horasalida\" value= \"'x'\" >
+                            <input type=\"hidden\" name=\"medio\" value= \"'x'\"      >
+                            <input type=\"hidden\" name=\"horasalida\" value= \"'x'\" >
+                            <input type=\"hidden\" name=\"origen\" value= \"'x'\"     >
+                            <input type=\"hidden\" name=\"destino\" value= \"'x'\"    >
 
                             <button type=\"submit\" class=\"btn btn-dark\" value=$post_user name=\"username\">
                                 Comprar tickets
@@ -190,4 +188,3 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
         </div>
 
     </div>
-
