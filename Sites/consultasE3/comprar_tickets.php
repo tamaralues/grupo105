@@ -6,7 +6,6 @@ include_once '../include/user_session.php';
 $user_session = new userSession();
 $user = new User($db);
 
-
 $post_username = $_POST['username'];
 
 
@@ -29,6 +28,7 @@ $user -> setUser($post_username);
     $fechaviaje = $_POST["fechaviaje"];
 
     $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+
 
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop7 = $db -> prepare($query_drop7);
@@ -70,7 +70,9 @@ $user -> setUser($post_username);
 <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
+
 ?>
+
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <nav class="my-2 my-md-0 mr-md-3">
@@ -96,10 +98,12 @@ $user -> setUser($post_username);
                             echo "
                                 <option value = '$f7[1]' > $f7[0] </option>
                             ";
+
                           }
                         ?>
                     </select>
                 </div>
+
                 <br>
                 <button type="submit" class="btn btn-dark btn-block mb-2">
                     Revisar disponibilidad
