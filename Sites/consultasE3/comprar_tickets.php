@@ -104,7 +104,7 @@ $user -> setUser($post_username);
 
                       <?php
                       if($destino){
-
+                        echo
                             "
                             <option value = 'Avión' > Avión  </option>
                             <option value = 'Bus' > Bus  </option>
@@ -121,7 +121,8 @@ $user -> setUser($post_username);
                       <?php
                       if($destino){
                         foreach ($fetch_filtro1 as $f8) {
-                            echo "
+                            echo
+                            "
                                 <option value = '$f8[2]' > $f8[2] </option>
                             ";
                         }
@@ -132,6 +133,7 @@ $user -> setUser($post_username);
 
                 <?php
                 if($destino){
+                  echo
                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
 
@@ -141,13 +143,16 @@ $user -> setUser($post_username);
                 ?>
 
                 <?php
+
                 if($destino){
+                  echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
                         </button>
                       ";
                   }
                 else{
+                  echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                       Comprar
