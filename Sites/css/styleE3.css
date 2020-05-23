@@ -3,12 +3,6 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-small-business/blob/master/LICENSE)
  */
- .btn-circle { 
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; 
-  text-align: center; 
-} 
 body {
   background: url("https://wallpaperplay.com/walls/full/d/e/1/41439.jpg");
   background-size: cover;
