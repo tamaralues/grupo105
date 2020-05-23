@@ -54,7 +54,6 @@ $user -> setUser($post_username);
     $fetch_drop6 = $result_drop6 -> fetchAll();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,21 +89,31 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="destino" >
                         <?php
-                        if($destino != "x"){
+
                           foreach ($fetch_drop7 as $f7) {
                               echo "
                                   <option value = '$f7[1]' > $f7[0] </option>
                               ";
                             }
-                        }
+
                         ?>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-                        <option value = 'Avión' > Avión  </option>
-                        <option value = 'Bus' > Bus  </option>
-                        <option value = 'Tren' > Tren  </option>
+
+                      <?php
+                      if($destino != "x"){
+
+                            "
+                            <option value = 'Avión' > Avión  </option>
+                            <option value = 'Bus' > Bus  </option>
+                            <option value = 'Tren' > Tren  </option>
+                            ";
+
+                      }
+                      ?>
+
                     </select>
                 </div>
                 <div class="btn-group" role="group">
