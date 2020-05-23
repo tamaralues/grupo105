@@ -111,7 +111,7 @@ $user -> setUser($post_username);
                 </form>
 
     <?php
-    if ($origen != "x")){
+    if ($origen != "x"){
 
               "
                 <form action =\"confirmacion_compra.php\" method=\"POST\">
