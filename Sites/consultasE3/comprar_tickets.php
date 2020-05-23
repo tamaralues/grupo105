@@ -24,13 +24,12 @@ $user -> setUser($post_username);
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
 
-    if($direccion){
+    if($destino){
       $direccion = "confirmacion_compra.php";
     }
     else {
       $direccion = "comprar_tickets.php";
     }
-
 
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
