@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])){
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrapE3.css" rel="stylesheet">
-    <link href="css/estiloE3.css" rel="stylesheet">
+    <link href="css/styleE3.css" rel="stylesheet">
     <title>Documento random</title>
 </head>
 
@@ -70,9 +70,8 @@ if (isset($_SESSION['user'])){
     $path_navbar ='';
     include_once 'nav_bar.php';
     $abc ='abc';
-    echo "<p>texto:{$abc}abc</p>"
     ?>
-    
+
 <main role="main" class="container container-carrusel">
 
 </main>
