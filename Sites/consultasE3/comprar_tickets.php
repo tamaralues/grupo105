@@ -120,39 +120,25 @@ $user -> setUser($post_username);
                       ?>
                     </select>
                 </div>
+
                 <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
                 <br>
-                <button type="submit" class="btn btn-dark btn-block mb-2">
-                    Revisar disponibilidad
-                </button>
+                <?php
+                if($destino != "x"){
+                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                         Revisar disponibilidad
+                        </button>
+                      ";
+                  }
+                else{
+                  "
+                  <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                      Comprar
+                  </button>
+                  ";
+                 }
+                ?>
                 </form>
-
-                <form action ="confirmacion_compra.php" method="POST">
-                      <div class="btn-group" role="group">
-                          <select name="medio" >
-                              <option value = 'Avión' > Avión  </option>
-                              <option value = 'Bus' > Bus  </option>
-                              <option value = 'Tren' > Tren  </option>
-                          </select>
-                      </div>
-                      <div class="btn-group" role="group">
-                          <select name="horasalida" >
-                              <?php
-                              foreach ($fetch_drop7 as $f7) {
-                                  echo "
-                                      <option value = '$f7[2]' > $f7[2] </option>
-                                  ";
-                              }
-                              ?>
-                          </select>
-                      </div>
-
-                      <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
-                      <br>
-                      <button type="submit" class="btn btn-dark btn-block mb-2">
-                          Comprar
-                      </button>
-                 </form>
             </div>
     </div>
 
