@@ -91,15 +91,22 @@
     include_once '../nav_bar.php';
     ?>
 
-<?php echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
-<?php echo "<p>$capacidad capacidad </p>"; ?>
-<?php echo "<p>$fechaviaje fecha viaje </p>"; ?>
-<?php echo "<p>$uid uid </p>"; ?>
-<?php echo "<p>$did did </p>"; ?>
-<?php echo "<p>$asiento asiento </p>"; ?>
-<?php echo "<p>$fechacompra fecha compra </p>"; ?>
-<?php echo "<p>$horasalida hora salida</p>"; ?>
-<?php echo "<p>$origen origen </p>"; ?>
-<?php echo "<p>$destino destino </p>"; ?>
+<?php #echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
+<?php #echo "<p>$capacidad capacidad </p>"; ?>
+<?php #echo "<p>$fechaviaje fecha viaje </p>"; ?>
+<?php #echo "<p>$uid uid </p>"; ?>
+<?php #echo "<p>$did did </p>"; ?>
+<?php #echo "<p>$asiento asiento </p>"; ?>
+<?php #echo "<p>$fechacompra fecha compra </p>"; ?>
+<?php #echo "<p>$horasalida hora salida</p>"; ?>
+<?php #echo "<p>$origen origen </p>"; ?>
+<?php #echo "<p>$destino destino </p>"; ?>
+
+<form action ="comprar_tickets.php" method="POST">
+      <br>
+      <button type="submit" class="btn btn-dark btn-block mb-2">
+          Volver
+      </button>
+</form>
 
 </body>
