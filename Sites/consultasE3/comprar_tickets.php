@@ -23,6 +23,7 @@ $user -> setUser($post_username);
 
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
+    $direccion = "comprar_tickets.php";
 
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
@@ -73,7 +74,7 @@ $user -> setUser($post_username);
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
-          <form action ="comprar_tickets.php" method="POST">
+          <form action = <?php echo $direccion ;?> method="POST">
                 <div class="btn-group" role="group">
                     <select name="origen" >
                         <?php
@@ -144,7 +145,8 @@ $user -> setUser($post_username);
 
                 <?php
 
-                if($destino){
+                if(!$destino){
+                  $direccion = "comprar_tickets.php";
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
@@ -152,6 +154,7 @@ $user -> setUser($post_username);
                       ";
                   }
                 else{
+                  $direccion = "confirmacion_compra.php";
                   echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
