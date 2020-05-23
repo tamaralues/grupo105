@@ -104,13 +104,11 @@ $user -> setUser($post_username);
 
                       <?php
                       if($destino != "x"){
-
                             "
                             <option value = 'Avión' > Avión  </option>
                             <option value = 'Bus' > Bus  </option>
                             <option value = 'Tren' > Tren  </option>
                             ";
-
                       }
                       ?>
 
@@ -130,25 +128,28 @@ $user -> setUser($post_username);
                     </select>
                 </div>
 
-                <input type="date" class="form-control" name="fechaviaje" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
+                <?php
+                if($destino != "x"){
+                     "
+                     <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
+
+                      ";
+                  }
+
+                ?>
+
                 <br>
                 <?php
-                if($destino == "x"){
+                if($destino != "x"){
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
                         </button>
                       ";
                   }
-                else{
-                  "
-                  <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
-                      Comprar
-                  </button>
-                  ";
-                 }
+
                 ?>
                 </form>
-            </div>
+          </div>
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
