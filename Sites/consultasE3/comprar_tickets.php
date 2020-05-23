@@ -114,6 +114,7 @@ $user -> setUser($post_username);
 
                     </select>
                 </div>
+
                 <div class="btn-group" role="group">
                     <select name="horasalida" >
                       <?php
@@ -127,26 +128,29 @@ $user -> setUser($post_username);
                       ?>
                     </select>
                 </div>
-
                 <?php
+
                 if($destino != "x"){
-                     "
+                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
 
                       ";
-                  }
-
                 ?>
 
                 <br>
+
                 <?php
-                if($destino != "x"){
+                if($destino == "x"){
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
                         </button>
                       ";
-                  }
-
+                }else{
+                  " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                      Revisar disponibilidad
+                     </button>
+                   ";
+                }
                 ?>
                 </form>
           </div>
