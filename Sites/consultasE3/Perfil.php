@@ -53,7 +53,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
     ?>
     
 
-    <div class="container" style="width:90%; margin-top: 67px;">
+    <div class="container px-2 py-2" style="width:90%; margin-top: 67px;">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active text-dark" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true" style="text-decoration:none;">Reservas de Alojamiento</a>
