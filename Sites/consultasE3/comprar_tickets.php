@@ -103,7 +103,7 @@ $user -> setUser($post_username);
                     <select name="medio" >
 
                       <?php
-                      if($destino != "x"){
+                      if($destino){
 
                             "
                             <option value = 'Avión' > Avión  </option>
@@ -119,7 +119,7 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="horasalida" >
                       <?php
-                      if($destino != "x"){
+                      if($destino){
                         foreach ($fetch_filtro1 as $f8) {
                             echo "
                                 <option value = '$f8[2]' > $f8[2] </option>
@@ -131,7 +131,7 @@ $user -> setUser($post_username);
                 </div>
 
                 <?php
-                if($destino != "x"){
+                if($destino){
                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
 
@@ -141,7 +141,7 @@ $user -> setUser($post_username);
                 ?>
 
                 <?php
-                if($destino == "x"){
+                if($destino){
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
                         </button>
