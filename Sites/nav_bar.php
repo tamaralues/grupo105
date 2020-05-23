@@ -22,11 +22,16 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
  $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
-
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_drop4 = $db -> prepare($query_drop4);
  $result_drop4 -> execute();
  $fetch_drop4 = $result_drop4 -> fetchAll();
+
+ $query_drop10 = "SELECT nombrelugar ,idlugar  FROM lugares;";
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_drop10 = $db -> prepare($query_drop10);
+ $result_drop10 -> execute();
+ $fetch_drop10 = $result_drop10 -> fetchAll();
 
 ?>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
@@ -69,10 +74,10 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop3 as $f3) {
+                        foreach ($fetch_drop10 as $f10) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f10[0] name=\"lugares\">$f10[1]</button>
                             </form>
                             ";
                         }
