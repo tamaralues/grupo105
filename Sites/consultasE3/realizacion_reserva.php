@@ -38,6 +38,17 @@
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../css/bootstrapE3.css" rel="stylesheet">
+    <link href="../css/estiloE3.css" rel="stylesheet">
+    <title>Compra de tickets</title>
+</head>
+
 <body>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4">Reservas</h3>
@@ -65,7 +76,7 @@
             Volver
         </button>
   </form>
-</body>
+
 
 
 <?php echo "<p>$user</p>"; ?>
@@ -75,3 +86,9 @@
 <?php echo "<p>$hid </p>"; ?>
 <?php echo "<p>$fechainicio</p>"; ?>
 <?php echo "<p>$fechatermino</p>"; ?>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="../css/bootstrap.js"></script>
+</body>
+</html>
