@@ -41,7 +41,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../css/bootstrapE3.css" rel="stylesheet">
-    <link href="../css/estiloE3.css" rel="stylesheet">
+    <link href="../css/styleE3.css" rel="stylesheet">
     <title>Mi Perfil</title>
 </head>
 
@@ -53,7 +53,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
     ?>
     
 
-    <div class="container" style="width:90%;">
+    <div class="container" style="width:90%; margin-top: 67px;">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active text-dark" id="alojamiento-tab" data-toggle="tab" href="#alojamiento" role="tab" aria-controls="alojamiento" aria-selected="true" style="text-decoration:none;">Reservas de Alojamiento</a>
