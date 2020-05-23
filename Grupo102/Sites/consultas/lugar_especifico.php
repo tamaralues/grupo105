@@ -13,7 +13,7 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
   $lugares = $result -> fetchAll();
-
+  
   $query2 = "SELECT DISTINCT precio, horaapertura, horacierre from museos where idlugar = $idlugar;";
 	$result2 = $db -> prepare($query2);
 	$result2 -> execute();
@@ -48,7 +48,7 @@
 	}
   ?>
   </table>
-
+  
   <?php
 if(!empty($lugares2)){
 	foreach($lugares2 as $a){
@@ -63,7 +63,7 @@ elseif(!empty($lugares3)){
 		echo "<p align=left>Tipo: Iglesia</p>";
 		echo "<p align=left>Hora Apertura: $a[0]</p>";
     echo "<p align=left>Hora Cierre: $a[1]</p>";
-
+		
 	}
 }
 
@@ -91,7 +91,7 @@ else{
     <tr>
       <th>Nombre artista</th>
     </tr>
-
+  
 	<?php foreach ($artistas as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td>  <td>
           <form  align="left" action="artista_especifico.php" method="post">
