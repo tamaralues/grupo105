@@ -192,7 +192,7 @@ $user -> setUser($post_username);
                         }
                         else {
                           echo "
-                              <option value = '$medio' > $medio </option>
+                              <option value = '$horasalida' > $horasalida </option>
                           ";
                         }
                       }
