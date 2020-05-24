@@ -57,10 +57,12 @@ $user -> setUser($post_username);
       include_once '../nav_bar.php';
     ?>
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
-  <?php echo "<h4>$hotel</h4>"; ?>
-    <div class="card mb-4 shadow-sm">
+  <?php echo "<h3 class=\"my-0 font-weight-normal\">$hotel</h3>"; ?>
+
+
       <div class="card-header">
-        <h3 class="my-0 font-weight-normal">Realizar reserva</h3>
+        <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
+        <br>
         </div>
       <div class="card-body">
         <ul class="list-unstyled mt-3 mb-4">
@@ -71,23 +73,7 @@ $user -> setUser($post_username);
           <button type="submit" class="btn btn-dark">Reservar</button>
         </form>
       </div>
-    </div>
 
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Dejar comentario</h4>
-        </div>
-      <div class="card-body">
-        <ul class="list-unstyled mt-3 mb-4">
-        </ul>
-        <form align="center" action="comentario_recibido.php" method="post">
-          <input type="hidden" name="hid" value= "<?php echo $hid ;?>"  >
-          <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
-          <br>
-          <button type="submit" class="btn btn-dark">Comentar</button>
-        </form>
-      </div>
-    </div>
 
     <div class="container">
       <div class="card-deck mb-3 text-center" style="align-self:center">
@@ -102,13 +88,30 @@ $user -> setUser($post_username);
               foreach ($consulta as $p) {
                 echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
             }
-
             ?>
           </table>
-
       </div>
     </div>
+
+
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Cuentanos tu experiencia</h4>
+        </div>
+      <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+        </ul>
+        <form align="center" action="comentario_recibido.php" method="post">
+          <input type="hidden" name="hid" value= "<?php echo $hid ;?>"  >
+          <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
+          <br>
+          <button type="submit" class="btn btn-dark">Comentar</button>
+        </form>
       </div>
+    </div>
+
+    
+  </div>
 
   </body>
 
