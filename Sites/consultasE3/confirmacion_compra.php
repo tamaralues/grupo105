@@ -106,12 +106,12 @@
 </head>
 
 <body>
-
+<header>
   <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
   ?>
-
+</header>
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
     <main role="main" class="container container-carrusel">
