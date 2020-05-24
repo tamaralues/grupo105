@@ -118,7 +118,8 @@
       <h3>Información de compra</h3>
       <br>
       <div >
-        <?php echo "<p> Nombre usuario: $post_username </p>"; ?>
+        <?php $variable = $user_session->getCurrentUser(); ?>
+        <?php echo "<p> Nombre usuario: $variable </p>"; ?>
         <?php echo "<p>Fecha compra: $fechacompra </p>"; ?>
         <?php echo "<p>Ciudad de origen: $nombre_origen </p>"; ?>
         <?php echo "<p>Ciudad de destino: $nombre_destino </p>"; ?>

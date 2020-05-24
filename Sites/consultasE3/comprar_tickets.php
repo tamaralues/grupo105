@@ -115,9 +115,7 @@ else{
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-
-       <?php $variable = $user_session->getCurrentUser(); ?>
-       <h3 class="display-4">Comprar Tickets, usuario:<?php echo "$variable"; ?></h3>
+        <h3 class="display-4">Comprar Tickets</h3>
        </div>
 
           <form action = <?php echo $direccion ;?> method="POST">
