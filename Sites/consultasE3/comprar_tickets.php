@@ -22,17 +22,17 @@ $user -> setUser($post_username);
 
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
+
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    if($horasalida){
+    if($fechaviaje){
       $direccion = "confirmacion_compra.php";
     }
     else {
       $direccion  = "comprar_tickets.php";
     }
-
 
     ## Obtenemos el nombre destino
     $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = '$origen' ;";
@@ -109,12 +109,6 @@ $user -> setUser($post_username);
                               ";
                             }
                         }
-                        else{
-                          echo "
-                              <option value = '$origen' > $origen </option>
-                          ";
-                        }
-
                         ?>
 
                     </select>
@@ -129,11 +123,6 @@ $user -> setUser($post_username);
                                   <option value = '$f7[1]' > $f7[0] </option>
                               ";
                             }
-                        }
-                        else{
-                          echo "
-                              <option value = '$destino' > $destino </option>
-                          ";
                         }
                       }
                       ?>
@@ -179,7 +168,7 @@ $user -> setUser($post_username);
                 </div>
                <div class="btn-group" role="group">
                 <?php
-                if($medio){
+                if($horasalida){
                   echo
                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
@@ -187,6 +176,7 @@ $user -> setUser($post_username);
                   }
                 ?>
                 </div>
+
                 <?php
 
                 if(!$destino){
@@ -203,7 +193,7 @@ $user -> setUser($post_username);
                         </button>
                       ";
                 }
-                elseif ($medio) {
+                elseif (!$horasalida) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
@@ -242,6 +232,7 @@ $user -> setUser($post_username);
                 </form>
             </div>
     </div>
+
     <?php echo "<p>$medio medio </p>"; ?>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
