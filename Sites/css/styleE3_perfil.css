@@ -18,9 +18,7 @@ body {
     max-height:200px;
 }
 
-.table-curved {
-    border-collapse: separate;
-}
+
 .table-curved {
     border: solid #ccc 1px;
     border-radius: 6px;
