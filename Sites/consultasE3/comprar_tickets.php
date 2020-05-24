@@ -12,12 +12,12 @@ $post_username = $_POST['username'];
 if (isset($_SESSION['user'])){
    # echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());
-    $_SESSION['username']=$post_username;}
+    }
 else{
     #echo "<p>iniciando sesion: $post_username</p>";
   $user_session -> setCurrentUser($post_username);
   $user -> setUser($post_username);
-  $_SESSION['username']=$post_username;
+
 }
     $uid = $_SESSION['id'];
 
@@ -116,7 +116,7 @@ else{
 
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
-       <h3 class="display-4">Comprar Tickets, usuario:<?php echo "$post_username" ?></h3>
+       <h3 class="display-4">Comprar Tickets, usuario:<?php echo "$user_session->getCurrentUser()" ?></h3>
        </div>
 
           <form action = <?php echo $direccion ;?> method="POST">
