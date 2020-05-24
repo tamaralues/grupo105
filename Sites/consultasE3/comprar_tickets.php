@@ -34,21 +34,6 @@ $user -> setUser($post_username);
       $direccion  = "comprar_tickets.php";
     }
 
-    ## Obtenemos el nombre destino
-    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = '$origen' ;";
-     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop01 = $db -> prepare($query_drop01);
-    $result_drop01 -> execute();
-    $fetch_drop01 = $result_drop01 -> fetchAll();
-
-    ## eliminamos duplicados
-    $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
-
-    foreach ($fetch_drop01 as $p ) {
-      if ($p[1] == $destino ) {
-        $destino_nombre = $p[0];
-      }
-    }
 
     ## Obtenemos el nombre origen
     $query_drop02 = "SELECT nombreciudad, cid_origen  FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
@@ -63,6 +48,22 @@ $user -> setUser($post_username);
     foreach ($fetch_drop02 as $p ) {
       if ($p[1] == $origen ) {
         $origen_nombre = $p[0];
+      }
+    }
+
+    ## Obtenemos el nombre destino
+    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = '$origen' ;";
+     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_drop01 = $db -> prepare($query_drop01);
+    $result_drop01 -> execute();
+    $fetch_drop01 = $result_drop01 -> fetchAll();
+
+    ## eliminamos duplicados
+    $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
+
+    foreach ($fetch_drop01 as $d ) {
+      if ($d[1] == $destino ) {
+        $destino_nombre = $d[0];
       }
     }
 
