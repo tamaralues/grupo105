@@ -185,14 +185,14 @@ $user -> setUser($post_username);
                         </button>
                       ";
                 }
-                elseif (condition) {
+                elseif ($horasalida) {
                   echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                       Comprar
                   </button>
                   ";
-                  // code...
+        
                 }
                 else{
                   echo
