@@ -109,8 +109,7 @@ $user -> setUser($post_username);
     include_once '../nav_bar.php';
     ?>
 
-    <main role="main" class="container my-auto pt-2 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
-        <div class="row">
+     <div class="row">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
                     <select name="origen" >
@@ -263,7 +262,6 @@ $user -> setUser($post_username);
                 ?>
                 </form>
             </div>
-    </main>
 
 
     <?php echo "<p>$medio medio </p>"; ?>
