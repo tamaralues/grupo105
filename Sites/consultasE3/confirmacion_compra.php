@@ -14,7 +14,8 @@
 
     $post_username = $_POST['username'];
 
-    $user = $_SESSION['username'];
+    $user_session = new userSession();
+    $user = new User($db);
     $uid = $_SESSION['id'];
 
     $fechacompra = date('Y-m-d H:i:s');

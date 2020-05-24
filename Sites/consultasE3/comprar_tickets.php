@@ -17,6 +17,7 @@ else{
     #echo "<p>iniciando sesion: $post_username</p>";
   $user_session -> setCurrentUser($post_username);
   $user -> setUser($post_username);
+  $_SESSION['username']=$post_username;
 }
     $uid = $_SESSION['id'];
 
