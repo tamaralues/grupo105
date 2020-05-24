@@ -59,7 +59,7 @@ $user -> setUser($post_username);
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
   <?php echo "<h3 class=\"my-0 font-weight-normal\">$hotel</h3>"; ?>
 
-      <div class="card-header">
+      <div >
         <br>
         <h4 >Realizar reserva</h4>
         </div>
@@ -100,11 +100,9 @@ $user -> setUser($post_username);
                   </tr>
                 </thead>
                 <?php
-
                   foreach ($consulta as $p) {
-
                     echo "
-                    <tr><td><img class=\"img-fluid d-block rounded\" style=\"width: 40%;\"
+                    <tr><td><img class=\"img-fluid d-block rounded\" style=\"width: 10%;\"
                     src=\"https://s.ppy.sh/a/\" />
                     $p[0]</td><td>$p[1]</td></tr>";
                 }
