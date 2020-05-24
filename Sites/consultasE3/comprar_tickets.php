@@ -10,7 +10,6 @@ $user = new User($db);
 $post_username = $_POST['username'];
 
 
-
 if (isset($_SESSION['user'])){
    # echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());}
@@ -24,45 +23,56 @@ $user -> setUser($post_username);
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
 
-    if($destino){
+    if($medio){
       $direccion = "confirmacion_compra.php";
     }
     else {
-      $direccion = "comprar_tickets.php";
+      $medio = "comprar_tickets.php";
     }
 
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    $query_drop7 = "SELECT nombreciudad, cid_destino, horasalida, medio FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
-
+    ## Obtenemos el nombre destino
+    $query_drop01 = "SELECT nombreciudad FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop7 = $db -> prepare($query_drop7);
-    $result_drop7 -> execute();
-    $fetch_drop7 = $result_drop7 -> fetchAll();
+    $result_drop01 = $db -> prepare($query_drop01);
+    $result_drop01 -> execute();
+    $fetch_drop01 = $result_drop01 -> fetchAll();
 
-    $query_drop11 = "SELECT nombreciudad FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+    ## eliminamos duplicados
+    $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
 
-     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop11 = $db -> prepare($query_drop11);
-    $result_drop11 -> execute();
-    $fetch_drop11 = $result_drop11 -> fetchAll();
-
-    $paises_origen = array_unique($fetch_drop11 , SORT_REGULAR);
-
-
-    $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
+    ## Obtenemos el nombre origen
+    $query_drop02 = "SELECT nombreciudad FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_drop5 = $db -> prepare($query_drop5);
-    $result_drop5 -> execute();
-    $fetch_drop5 = $result_drop5 -> fetchAll();
+    $result_drop02 = $db -> prepare($query_drop02);
+    $result_drop02 -> execute();
+    $fetch_drop02 = $result_drop02 -> fetchAll();
 
-    $query_filtro1 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = $origen and datos_viaje.cid_destino = $destino;";
+    ## eliminamos duplicados
+    $paises_origen = array_unique($fetch_drop02 , SORT_REGULAR);
+
+    ## Obtenemos el medio, según la disponibilidad por origen y destino
+    $query_filtro03 = "SELECT medio FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = '$origen' and datos_viaje.cid_destino = '$destino';";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-    $result_filtro1  = $db -> prepare($query_filtro1 );
-    $result_filtro1  -> execute();
-    $fetch_filtro1  = $result_filtro1  -> fetchAll();
+    $result_filtro03  = $db -> prepare($query_filtro03);
+    $result_filtro03  -> execute();
+    $fetch_filtro03  = $result_filtro03  -> fetchAll();
+
+    ## eliminamos duplicados
+    $medios = array_unique($fetch_filtro1, SORT_REGULAR);
+
+    ## Obtenemos el medio, según la disponibilidad por origen y destino
+    $query_filtro04 = "SELECT horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = '$origen' and datos_viaje.cid_destino = '$destino' and medio = '$medio' ;";
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result_filtro04  = $db -> prepare($query_filtro04);
+    $result_filtro04  -> execute();
+    $fetch_filtro04  = $result_filtro04  -> fetchAll();
+
+    ## eliminamos duplicados
+    $horarios = array_unique($fetch_drop5 , SORT_REGULAR);
 
     $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -100,19 +110,23 @@ $user -> setUser($post_username);
                             ";
                           }
                         ?>
+
                     </select>
                 </div>
                 <div class="btn-group" role="group">
                     <select name="destino" >
-                        <?php
+                      <?php
+                      if($destino){
+                        foreach ($paises_destino as $f7) {
+                            echo "
+                                <option value = '$f7[1]' > $f7[0] </option>
+                            ";
+                          }
 
-                          foreach ($fetch_drop7 as $f7) {
-                              echo "
-                                  <option value = '$f7[1]' > $f7[0] </option>
-                              ";
-                            }
-
-                        ?>
+                      }
+                      else{
+                      }
+                      ?>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
@@ -121,12 +135,12 @@ $user -> setUser($post_username);
                       <?php
                       if($destino){
                         echo
+                        foreach ($medio as $f8) {
+                            echo
                             "
-                            <option value = 'Avión' > Avión  </option>
-                            <option value = 'Bus' > Bus  </option>
-                            <option value = 'Tren' > Tren  </option>
+                                <option value = '$f8[2]' > $f8[2] </option>
                             ";
-
+                        }
                       }
                       ?>
 
@@ -135,8 +149,8 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="horasalida" >
                       <?php
-                      if($destino){
-                        foreach ($fetch_filtro1 as $f8) {
+                      if($medio){
+                        foreach ($horasalida as $f8) {
                             echo
                             "
                                 <option value = '$f8[2]' > $f8[2] </option>
@@ -148,12 +162,11 @@ $user -> setUser($post_username);
                 </div>
 
                 <?php
-                if($destino){
+                if($medio){
                   echo
                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
-
-                      ";
+                     ";
                   }
 
                 ?>
@@ -167,14 +180,41 @@ $user -> setUser($post_username);
                         </button>
                       ";
                   }
-                else{
+                elseif (!$medio) {
+                  echo
+                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                         Ver horarios disponibles
+                        </button>
+                      ";
+                }
+                elseif (condition) {
                   echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                       Comprar
                   </button>
                   ";
-                 }
+                  // code...
+                }
+                else{
+                  echo
+                  "
+                  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                  Lo sentimos, no hay tickets disponibles
+                  </div>
+
+                  <input type=\"hidden\" name=\"horasalida\" value= \"\" >
+                  <input type=\"hidden\" name=\"medio\" value= \"\"      >
+                  <input type=\"hidden\" name=\"horasalida\" value= \"\" >
+                  <input type=\"hidden\" name=\"origen\" value= \"\"     >
+                  <input type=\"hidden\" name=\"destino\" value= \"\"    >
+
+                  <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                      Realizar otra búsqueda
+                  </button>
+
+                  ";
+                }
                 ?>
                 </form>
             </div>
