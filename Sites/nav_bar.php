@@ -22,19 +22,14 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
  $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
+
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_drop4 = $db -> prepare($query_drop4);
  $result_drop4 -> execute();
  $fetch_drop4 = $result_drop4 -> fetchAll();
 
- $query_drop10 = "SELECT nombrelugar ,idlugar  FROM lugares;";
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop10 = $db -> prepare($query_drop10);
- $result_drop10 -> execute();
- $fetch_drop10 = $result_drop10 -> fetchAll();
-
 ?>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm" style="position: absolute; top: 0; width: 100%; height: 70px;">
         <a class="my-0 mr-md-auto font-weight-normal text-white" href=<?php echo"{$path_navbar}test.php"?> style="text-decoration: none;"><h5>Splinter S.A.</h5></a>
         <nav class="my-2 my-md-0 mr-md-3">
             <div class="btn-group">
@@ -74,10 +69,10 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_drop10 as $f10) {
+                        foreach ($fetch_drop3 as $f3) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f10[0] name=\"lugares\">$f10[1]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"lugares\">$f1[0]</button>
                             </form>
                             ";
                         }
@@ -155,9 +150,9 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
                 } else {
                     echo "
-                    <button type=\"button\" class=\"btn btn-outline-light dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
-                        Iniciar Sesión
-                    </button> ";
+                    <button type=\"button\" class=\"btn btn-dark dropdown\" id=\"inicio_sesion\" data-toggle=\"dropdown\" data-offset=\"10,20\">
+                        <img src=\"https://getdrawings.com/free-icon-bw/white-icons-png-19.png\" width=\"30\" />  Iniciar Sesión
+                    </button>";
                 }
             ?>
             <div class="dropdown-menu" aria-labelledby="inicio_sesion" style="min-width: 300px;">

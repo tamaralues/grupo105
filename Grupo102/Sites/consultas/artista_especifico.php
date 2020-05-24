@@ -85,7 +85,7 @@
   $obras = $result3 -> fetchAll();
 
   $muerte = "-";
-
+  
   foreach($artista2 as $a){
     $muerte = "$a[0]";
   }
@@ -133,3 +133,5 @@ foreach ($artista as $a) {
   </form>
 
 <?php include('../templates/footer.html'); ?>
+
+

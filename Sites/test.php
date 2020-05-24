@@ -1,7 +1,6 @@
 <?php
 #generar elementos dropdown
 require("configuracion/conexion_db_e3.php");
-require("configuracion/conexion.php");
 
 #inicio sesion
 include_once 'include/user.php';
@@ -62,7 +61,7 @@ if (isset($_SESSION['user'])){
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrapE3.css" rel="stylesheet">
-    <link href="css/estiloE3.css" rel="stylesheet">
+    <link href="css/styleE3.css" rel="stylesheet">
     <title>Documento random</title>
 </head>
 
@@ -71,9 +70,47 @@ if (isset($_SESSION['user'])){
     $path_navbar ='';
     include_once 'nav_bar.php';
     $abc ='abc';
-    echo "<p>texto:{$abc}abc</p>"
     ?>
 
+<main role="main" class="container container-carrusel">
+
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <hr class="light">
+                <h6>Contáctanos</h6>
+                <hr class="light">
+                <p style="line-height: 10pt;">+569 8765 4321</p>
+                <p style="line-height: 10pt;">contacto@splinter.cl</p>
+                <p style="line-height: 10pt;">Grimmauld Place 12</p>
+                <p style="line-height: 10pt;">London, England</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h6>Horario de atención</h6>
+                <hr class="light">
+                <p style="line-height: 10pt;">Lunes a Viernes: 09:00 - 18:00</p>
+                <p style="line-height: 10pt;">Sábado: 10:00 - 14:00</p>
+                <p style="line-height: 10pt;">Domingos y festivos: cerrado</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h6>Nosotros</h6>
+                <hr class="light">
+                <p style="line-height: 10pt;"><a href="#" class="text-dark">Centro de ayuda</a></p>
+                <p style="line-height: 10pt;"><a href="#" class="text-dark">Términos y condiciones</a></p>
+                <p style="line-height: 10pt;"><a href="#" class="text-dark">Trabaja con nosotros</a></p>
+            </div>
+            <div class="col-12">
+                <hr class="light">
+                <h6>&copy; splinter S.A.</h6>
+            </div>
+        </div>
+    </div>
+</footer>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
       <script src="css/bootstrap.js"></script>

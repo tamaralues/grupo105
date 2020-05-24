@@ -42,6 +42,17 @@ $user -> setUser($post_username);
     $result_drop7 -> execute();
     $fetch_drop7 = $result_drop7 -> fetchAll();
 
+    $paises_origen = $fetch_drop7 ;
+    $last = '';
+    foreach ($data as $i => $x) {
+      if ($x[0] == $last) {
+        $data[$i][0] = '';
+      } else {
+        $last = $x[0];
+      }
+    }
+
+
     $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop5 = $db -> prepare($query_drop5);
@@ -84,8 +95,7 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="origen" >
                         <?php
-
-                        foreach ($fetch_drop5 as $f5) {
+                        foreach ($paises_origen as $f5) {
                             echo "
                                 <option value = '$f5[1]' > $f5[0] </option>
                             ";
