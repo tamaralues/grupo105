@@ -89,22 +89,22 @@
     $path_navbar ='../';
     include_once '../nav_bar.php';
     ?>
+<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
     <main role="main" class="container container-carrusel">
-      
+      <h3>Información reserva</h3>
+      <div >
+        <?php echo "<p> Nombre usuario: $user  </p>"; ?>
+        <?php echo "<p>Fecha compra: $fechacompra </p>"; ?>
+        <?php echo "<p>Ciudad de origen: $origen </p>"; ?>
+        <?php echo "<p>Ciudad de destino: $destino </p>"; ?>
+        <?php echo "<p>Fecha de viaje: $fechaviaje </p>"; ?>
+        <?php echo "<p>Hora salida: $horasalida </p>"; ?>
+        <?php echo "<p>Asiento: $asiento</p>"; ?>
+        <?php echo "<p>Id Ticket: $last_tick </p>"; ?>
+      </div>
     </main>
 
-
-<?php #echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
-<?php #echo "<p>$capacidad capacidad </p>"; ?>
-<?php #echo "<p>$fechaviaje fecha viaje </p>"; ?>
-<?php #echo "<p>$uid uid </p>"; ?>
-<?php #echo "<p>$did did </p>"; ?>
-<?php #echo "<p>$asiento asiento </p>"; ?>
-<?php #echo "<p>$fechacompra fecha compra </p>"; ?>
-<?php #echo "<p>$horasalida hora salida</p>"; ?>
-<?php #echo "<p>$origen origen </p>"; ?>
-<?php #echo "<p>$destino destino </p>"; ?>
 
 <form action ="comprar_tickets.php" method="POST">
       <br>
@@ -112,5 +112,7 @@
           Volver
       </button>
 </form>
+
+</div>
 
 </body>
