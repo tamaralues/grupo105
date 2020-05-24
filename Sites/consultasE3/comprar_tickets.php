@@ -35,7 +35,7 @@ $user -> setUser($post_username);
 
 
     ## Obtenemos el nombre destino
-    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = '$origen' ;";
+    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = $origen ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop01 = $db -> prepare($query_drop01);
     $result_drop01 -> execute();
@@ -55,7 +55,7 @@ $user -> setUser($post_username);
     $paises_origen = array_unique($fetch_drop02 , SORT_REGULAR);
 
     ## Obtenemos el medio, según la disponibilidad por origen y destino
-    $query_filtro03 = "SELECT medio FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = '$origen' and datos_viaje.cid_destino = '$destino';";
+    $query_filtro03 = "SELECT medio FROM datos_viaje where cid_origen = $origen and  cid_destino = $destino ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_filtro03  = $db -> prepare($query_filtro03);
     $result_filtro03  -> execute();
@@ -122,15 +122,12 @@ $user -> setUser($post_username);
                                 <option value = '$f7[1]' > $f7[0] </option>
                             ";
                           }
-
                       }
-
                       ?>
                     </select>
                 </div>
                 <div class="btn-group" role="group">
                     <select name="medio" >
-
                       <?php
                       if($destino){
                         foreach ($medio as $f8) {
@@ -170,7 +167,6 @@ $user -> setUser($post_username);
                 ?>
                 </div>
                 <?php
-
 
                 if(!$destino){
                   echo
