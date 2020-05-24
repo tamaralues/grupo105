@@ -135,19 +135,14 @@ $user -> setUser($post_username);
                           ";
                         }
                         ?>
-
                     </select>
                 </div>
                 <div class="form-group">
                     <select name="destino" >
                       <?php
                       if($origen){
-                        echo
-                        "
-                        <p>Seleccione la cuidad de destino: </p>
-
-                        ";
-
+                        "<p>$user1</p>"
+                  
                         if(!$destino){
                           foreach ($paises_destino as $f7) {
                               echo "
