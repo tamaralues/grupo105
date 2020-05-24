@@ -30,9 +30,8 @@ $user -> setUser($post_username);
       $direccion = "confirmacion_compra.php";
     }
     else {
-      $medio = "comprar_tickets.php";
+      $direccion  = "comprar_tickets.php";
     }
-
 
 
     ## Obtenemos el nombre destino
@@ -159,7 +158,7 @@ $user -> setUser($post_username);
                       ?>
                     </select>
                 </div>
-
+               <div>
                 <?php
                 if($medio){
                   echo
@@ -169,8 +168,9 @@ $user -> setUser($post_username);
                   }
 
                 ?>
-
+                </div>
                 <?php
+
 
                 if(!$destino){
                   echo
