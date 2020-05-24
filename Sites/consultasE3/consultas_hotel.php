@@ -52,10 +52,12 @@ $user -> setUser($post_username);
   </head>
 
   <body>
-  <?php
-    $path_navbar ='../';
-    include_once '../nav_bar.php';
+    <?php
+    $path_navbar ='';
+    include_once 'nav_bar.php';
     ?>
+    <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
         <?php echo "<p>$hotel</p>"; ?>
@@ -67,7 +69,7 @@ $user -> setUser($post_username);
         <form align="center" action="confirmacion_reserva.php" method="post">
           <input type="hidden" name="hotel" value= "<?php echo $hotel ;?>"  >
           <br>
-          <button type="submit" class="btn btn-lg btn-block btn-primary">Reservar</button>
+          <button type="submit" class="btn btn-lg">Reservar</button>
         </form>
       </div>
     </div>
@@ -83,7 +85,7 @@ $user -> setUser($post_username);
           <input type="hidden" name="hid" value= "<?php echo $hid ;?>"  >
           <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
           <br>
-          <button type="submit" class="btn btn-lg btn-block btn-primary">Comentar</button>
+          <button type="submit" class="btn btn-lg">Comentar</button>
         </form>
       </div>
     </div>
@@ -107,6 +109,7 @@ $user -> setUser($post_username);
         </div>
       </div>
     </div>
+      </div>
 
   </body>
 
