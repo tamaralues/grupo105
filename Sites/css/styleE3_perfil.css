@@ -14,6 +14,10 @@ body {
     background-color: rgba(246, 246, 246, 0.95);;
     
 }
+.table-responsive {
+    max-height:200px;
+}
+
 .table-curved {
     border-collapse: separate;
 }

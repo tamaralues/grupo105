@@ -90,50 +90,54 @@ $fetch_tickets = $result_tickets -> fetchAll();
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="alojamiento" role="tabpanel" aria-labelledby="alojamiento-tab">
-                        <table class="table table-test table-curved table-hover" style="width:100%; margin:auto;">
-                            <thead class="thead-light">
-                                <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach($fetch_reservas as $f){
-                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-test table-curved table-hover" style="width:100%; margin:auto;">
+                                <thead class="thead-white">
+                                    <tr><th>Nombre Hotel</th><th>Direccion Hotel</th><th>Fecha inicio</th><th>Fecha Termino</th></tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach($fetch_reservas as $f){
+                                        echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td></tr>";
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
-                        <table class="table table-test table-curved table-hover" style="width:100%; margin:auto;">
-                            <thead class="thead-light">
-                                <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
-                            </thead>
-                            <tbody>
-                           <?php
-                            foreach($fetch_tickets as $f){
-                                $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
-                                $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
+                        <div class="table-responsive">
+                            <table class="table table-test table-curved table-hover" style="width:100%; margin:auto;">
+                                <thead class="thead-white">
+                                    <tr><th>Asiento</th><th>Fecha Compra</th><th>Fecha Viaje</th><th>Ciudad origen</th><th>Ciudad destino</th></tr>
+                                </thead>
+                                <tbody>
+                            <?php
+                                foreach($fetch_tickets as $f){
+                                    $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
+                                    $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
 
-                                $result_origen = $db -> prepare($query_origen);
-                                $result_origen -> execute();
-                                $fetch_origen = $result_origen -> fetchAll();
+                                    $result_origen = $db -> prepare($query_origen);
+                                    $result_origen -> execute();
+                                    $fetch_origen = $result_origen -> fetchAll();
 
-                                $result_destino = $db -> prepare($query_destino);
-                                $result_destino -> execute();
-                                $fetch_destino = $result_destino -> fetchAll();
+                                    $result_destino = $db -> prepare($query_destino);
+                                    $result_destino -> execute();
+                                    $fetch_destino = $result_destino -> fetchAll();
 
-                                foreach($fetch_origen as $fo){
-                                    $g=$fo[0];
+                                    foreach($fetch_origen as $fo){
+                                        $g=$fo[0];
+                                    }
+                                    foreach($fetch_destino as $fd){
+                                        $h=$fd[0];
+                                    }
+
+                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
                                 }
-                                foreach($fetch_destino as $fd){
-                                    $h=$fd[0];
-                                }
-
-                                echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
-                            }
-                            ?>
-                            </tbody>
-                        </table>
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
