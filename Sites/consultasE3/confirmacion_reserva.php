@@ -46,7 +46,7 @@
 
   <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
 
-	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
     <form action="realizacion_reserva.php" method="POST">
 			<div class="btn-group" role="group">
 		  Fecha de entrada
@@ -65,7 +65,7 @@
       <br>
       <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
-  </div>
+
 
 	<form action ="consultas_hotel.php" method="POST">
 				<input type="hidden" name="hotel" value= "<?php echo $hid ;?>"  >
