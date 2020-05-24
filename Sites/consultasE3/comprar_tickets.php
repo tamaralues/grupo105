@@ -103,11 +103,11 @@ $user -> setUser($post_username);
 </head>
 
 <body>
-<?php
+  <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
-?>
-    <div class="card mb-4 shadow-sm">
+    ?>
+    <div class="card-body">
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
           <form action = <?php echo $direccion ;?> method="POST">
