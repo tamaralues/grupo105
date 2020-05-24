@@ -16,6 +16,7 @@
 		foreach ($hid1 as $p){
 			if($p[1] == $hotel){
 				$hid = $p[0];
+				$hotel = $p[1];
 			}
 		}
 ?>
@@ -59,8 +60,7 @@
 			<br>
 			<input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
 			</div>
-			<input type="hidden" name="hotel" value="<?php echo $hotel ;?>" >
-
+			<input type="hidden" name="hotel1" value="<?php echo $hotel ;?>" >
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
 			 </div>
       <br>
