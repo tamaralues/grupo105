@@ -113,8 +113,13 @@ $user -> setUser($post_username);
 
 
      <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+       <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+       <h3 class="display-4">Comprar Tickets</h3>
+       </div>
+
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
+                  Seleccione la cuidad de origen:
                     <select name="origen" >
                         <?php
                         if(!$origen){
@@ -137,6 +142,12 @@ $user -> setUser($post_username);
                     <select name="destino" >
                       <?php
                       if($origen){
+                        echo
+                        "
+                        <div> Seleccione la cuidad de destino: </div>
+
+                        ";
+
                         if(!$destino){
                           foreach ($paises_destino as $f7) {
                               echo "
@@ -158,6 +169,11 @@ $user -> setUser($post_username);
                     <select name="medio" >
                       <?php
                       if($destino){
+                        echo
+                        "
+                        <div> Seleccione el medio de transporte: </div>
+
+                        ";
                         if(!$medio){
                           foreach ($medios as $f8) {
                               echo
@@ -182,6 +198,11 @@ $user -> setUser($post_username);
                     <select name="horasalida" >
                       <?php
                       if($medio){
+                        echo
+                        "
+                        <div> Seleccione la hora de salida: </div>
+
+                        ";
                         if(!$horasalida){
                           foreach ($fetch_filtro04 as $f9) {
                               echo
