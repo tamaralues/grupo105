@@ -232,12 +232,12 @@ $user -> setUser($post_username);
            echo
            "
                <div class=\"btn-group\" role=\"group\">
-               <h3>Paso 5</h3>
+                <h3>Paso 5</h3>
                 Seleccione la fecha de salida:
-                  <br>
+                </div>
+                </div>
                 <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
-
-               </div>";
+                </div>";
         }
      ?>
     <?php
