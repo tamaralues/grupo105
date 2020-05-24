@@ -144,12 +144,12 @@ $user -> setUser($post_username);
                               ";
                             }
                         }
-                      }
-                      else {
-                        echo "
-                            <option value = '$destino' > $destino_nombre </option>
-                        ";
+                        else {
+                          echo "
+                              <option value = '$destino' > $destino_nombre </option>
+                          ";
 
+                        }
                       }
                       ?>
                     </select>
@@ -166,12 +166,14 @@ $user -> setUser($post_username);
                               ";
                           }
                         }
-                        else{
-                          echo "
-                              <option value = '$medio' > $medio </option>
-                          ";
+                          else{
+                            echo "
+                                <option value = '$medio' > $medio </option>
+                            ";
+                          }
+
                         }
-                      }
+
                       ?>
 
                     </select>
@@ -188,12 +190,13 @@ $user -> setUser($post_username);
                               ";
                           }
                         }
+                        else {
+                          echo "
+                              <option value = '$medio' > $medio </option>
+                          ";
+                        }
                       }
-                      else {
-                        echo "
-                            <option value = '$medio' > $medio </option>
-                        ";
-                      }
+
                       ?>
                     </select>
                 </div>
