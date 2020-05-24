@@ -231,7 +231,7 @@ $user -> setUser($post_username);
         if($horasalida){
            echo
            "
-               <div class="btn-group" role="group">
+               <div class=\"btn-group\" role=\"group\">
                <h3>Paso 5</h3>
                 Seleccione la fecha de salida:
                 <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
@@ -276,8 +276,8 @@ $user -> setUser($post_username);
                   ";
                 }
                 ?>
-                </form>
-            </div>
+        </form>
+    </div>
 
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
