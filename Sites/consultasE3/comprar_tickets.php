@@ -15,8 +15,8 @@ if (isset($_SESSION['user'])){
     $user->setUser($user_session->getCurrentUser());}
 else{
     #echo "<p>iniciando sesion: $post_username</p>";
-$user_session -> setCurrentUser($post_username);
-$user -> setUser($post_username);
+  $user_session -> setCurrentUser($post_username);
+  $user -> setUser($post_username);
 }
     $uid = $_SESSION['id'];
 
@@ -258,12 +258,14 @@ $user -> setUser($post_username);
               ";
          }
         elseif(!$fechaviaje) {
+            $post_user = $_SESSION['username'];
             echo
                 "
                 <br>
                 <br>
                 <input type=\"hidden\" name=\"nombre_origen\" value= $origen_nombre >
                 <input type=\"hidden\" name=\"nombre_destino\" value= $destino_nombre >
+                <input type=\"hidden\" name=\"username\" value= $post_user >
                 <button type=\"submit\" class=\"btn btn-dark\">
                     Comprar
                   </button>
