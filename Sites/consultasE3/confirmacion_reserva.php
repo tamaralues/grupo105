@@ -53,13 +53,16 @@
 		  Fecha de entrada
 			<br>
       <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
-      Fecha de salida
+			</div>
+			<div class="btn-group" role="group">
+			Fecha de salida
 			<br>
 			<input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
+			</div>
 			<input type="hidden" name="hotel" value="<?php echo $hotel ;?>" >
 
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
-			  </div>
+			 </div>
       <br>
       <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
