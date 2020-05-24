@@ -44,9 +44,9 @@ $user -> setUser($post_username);
 
     $paises_origen = $fetch_drop7 ;
     $last = '';
-    foreach ($data as $i => $x) {
+    foreach ($paises_origen as $i => $x) {
       if ($x[0] == $last) {
-        $data[$i][0] = '';
+        $paises_origen[$i][0] = '';
       } else {
         $last = $x[0];
       }
