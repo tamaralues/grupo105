@@ -26,7 +26,7 @@ $user -> setUser($post_username);
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    if($medio){
+    if($horasalida){
       $direccion = "confirmacion_compra.php";
     }
     else {
