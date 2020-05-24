@@ -27,7 +27,7 @@ $user -> setUser($post_username);
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
 
-    if($fechaviaje){
+    if($horasalida){
       $direccion = "confirmacion_compra.php";
     }
     else {
@@ -195,10 +195,13 @@ $user -> setUser($post_username);
           }
 
       ?>
+
       <?php
           if($medio){
             echo "
                 <div class=\"form-group\" >
+                <h3>Paso 4</h3>
+                 Seleccione la hora de salida:
                     <select name=\"horasalida\" >
 
                   ";
@@ -223,49 +226,36 @@ $user -> setUser($post_username);
                 </div>";
             }
         ?>
+
+    <?php
+        if($horasalida){
+           echo
+           "
                <div class="btn-group" role="group">
-                <?php
-                if($medio){
-                  echo
-                     "
-                     <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
-                     ";
-                  }
-                ?>
-                </div>
+               <h3>Paso 5</h3>
+                Seleccione la fecha de salida:
+                <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
 
-                <?php
-
-                if(!$destino and !$origen ){
-                  echo
-                     " <button type=\"submit\" class=\"btn btn-dark\">
-                         Revisar disponibilidad
-                        </button>
-                      ";
-                  }
-                elseif (!$medio) {
-                  echo
-                     " <button type=\"submit\" class=\"btn btn-dark\">
-                         Ver horarios disponibles
-                        </button>
-                      ";
-                }
-                elseif (!$horasalida and $medio and $destino and $origen) {
-                  echo
-                     " <button type=\"submit\" class=\"btn btn-dark\">
-                         Ver horarios disponibles
-                        </button>
-                      ";
-                }
-                elseif ($horasalida and !$fechaviaje) {
-                  echo
-                  "
-                  <button type=\"submit\" class=\"btn btn-dark\">
-                      Comprar
+               </div>";
+        }
+     ?>
+    <?php
+        if(!$destino or !$origen or !$medio or !$horasalida ){
+            echo
+              " <button type=\"submit\" class=\"btn btn-dark\">
+                  Siguiente
+              </button>
+              ";
+         }
+        elseif(!$fechaviaje) {
+            echo
+                " <button type=\"submit\" class=\"btn btn-dark\">
+                    Comprar
                   </button>
-                  ";
-                }
-                else{
+                ";
+          }
+
+       else{
                   echo
 
                   "
