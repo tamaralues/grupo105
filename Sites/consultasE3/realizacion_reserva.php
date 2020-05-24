@@ -73,6 +73,7 @@
       </main>
 
   <form action ="consultas_hotel.php" method="POST">
+        <input type="hidden" name="hotel" value= "<?php echo $hid ;?>"  >
         <br>
         <button type="submit" class="btn btn-dark">
             Volver
