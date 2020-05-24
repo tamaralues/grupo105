@@ -112,7 +112,7 @@ $user -> setUser($post_username);
   ?>
 
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
-      
+
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
        <h3 class="display-4">Comprar Tickets</h3>
@@ -260,6 +260,9 @@ $user -> setUser($post_username);
             echo
                 "
                 <br>
+                <br>
+                <input type=\"hidden\" name=\"nombre_origen\" value= $origen_nombre >
+                <input type=\"hidden\" name=\"nombre_destino\" value= $destino_nombre >
                 <button type=\"submit\" class=\"btn btn-dark\">
                     Comprar
                   </button>

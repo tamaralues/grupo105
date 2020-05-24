@@ -8,6 +8,8 @@
     $horasalida = $_POST["horasalida"];
     $medio =  $_POST["medio"];
     $fechaviaje = $_POST["fechaviaje"];
+    $nombre_origen = $_POST["nombre_origen"];
+    $nombre_destino = $_POST["nombre_destino"];
 
     $user = $_SESSION['username'];
     $uid = $_SESSION['id'];
@@ -72,6 +74,8 @@
      else{
        echo "<p>La compra no fue realizada con exito </p>";
      }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -93,18 +97,18 @@
 
     <main role="main" class="container container-carrusel">
       <h3>Información reserva</h3>
+      <br>
       <div >
         <?php echo "<p> Nombre usuario: $user  </p>"; ?>
         <?php echo "<p>Fecha compra: $fechacompra </p>"; ?>
-        <?php echo "<p>Ciudad de origen: $origen </p>"; ?>
-        <?php echo "<p>Ciudad de destino: $destino </p>"; ?>
+        <?php echo "<p>Ciudad de origen: $nombre_origen </p>"; ?>
+        <?php echo "<p>Ciudad de destino: $nombre_destino </p>"; ?>
         <?php echo "<p>Fecha de viaje: $fechaviaje </p>"; ?>
         <?php echo "<p>Hora salida: $horasalida </p>"; ?>
         <?php echo "<p>Asiento: $asiento</p>"; ?>
         <?php echo "<p>Id Ticket: $last_tick </p>"; ?>
       </div>
     </main>
-
 
 <form action ="comprar_tickets.php" method="POST">
       <br>
