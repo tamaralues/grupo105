@@ -6,13 +6,13 @@ include_once '../include/user_session.php';
 $user_session = new userSession();
 $user = new User($db);
 
-
 $post_username = $_POST['username'];
 
 
 if (isset($_SESSION['user'])){
    # echo "<p>hay sesion iniciada</p>";
     $user->setUser($user_session->getCurrentUser());}
+    $_SESSION['username']=$post_username;
 else{
     #echo "<p>iniciando sesion: $post_username</p>";
   $user_session -> setCurrentUser($post_username);

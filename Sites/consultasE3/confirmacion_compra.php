@@ -26,8 +26,10 @@
 
     #configurar inicio de sesion
     if (isset($_SESSION['user'])){
+      $_SESSION['username']=$post_username;
        $user->setUser($user_session->getCurrentUser());}
    else{
+    $_SESSION['username']=$post_username;
     $user_session -> setCurrentUser($post_username);
     $user -> setUser($post_username);
    }
@@ -116,7 +118,7 @@
       <h3>Información de compra</h3>
       <br>
       <div >
-        <?php echo "<p> Nombre usuario: $post_username  </p>"; ?>
+        <?php echo "<p> Nombre usuario: $post_username </p>"; ?>
         <?php echo "<p>Fecha compra: $fechacompra </p>"; ?>
         <?php echo "<p>Ciudad de origen: $nombre_origen </p>"; ?>
         <?php echo "<p>Ciudad de destino: $nombre_destino </p>"; ?>
