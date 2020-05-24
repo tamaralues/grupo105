@@ -82,7 +82,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../css/bootstrapE3.css" rel="stylesheet">
     <link href="../css/estiloE3.css" rel="stylesheet">
-    <title>Compra tickets</title>
 </head>
 
 <body>
@@ -90,6 +89,11 @@
     $path_navbar ='../';
     include_once '../nav_bar.php';
     ?>
+
+    <main role="main" class="container container-carrusel">
+      
+    </main>
+
 
 <?php #echo "<p>$capacidad_ocupada capacidad ocupada</p>"; ?>
 <?php #echo "<p>$capacidad capacidad </p>"; ?>
@@ -104,7 +108,7 @@
 
 <form action ="comprar_tickets.php" method="POST">
       <br>
-      <button type="submit" class="btn btn-dark btn-block mb-2">
+      <button type="submit" class="btn btn-dark">
           Volver
       </button>
 </form>
