@@ -106,8 +106,14 @@ $user -> setUser($post_username);
 
 <body>
 
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+  ?>
 
-     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
+
+     <div class="pricing-header px-3 py-300 pt-md-5 pb-md-4 mx-auto text-center">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
                     <select name="origen" >
