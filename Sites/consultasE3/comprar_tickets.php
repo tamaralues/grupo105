@@ -202,7 +202,7 @@ $user -> setUser($post_username);
                 </div>
                <div class="btn-group" role="group">
                 <?php
-                if(!$horasalida){
+                if($medio){
                   echo
                      "
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
