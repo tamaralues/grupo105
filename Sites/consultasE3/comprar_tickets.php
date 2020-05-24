@@ -44,6 +44,12 @@ $user -> setUser($post_username);
     ## eliminamos duplicados
     $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
 
+    foreach ($fetch_drop01 as $p ) {
+      if ($p[1] == $origen ) {
+        $destino_nombre = $p[0];
+      }
+    }
+
     ## Obtenemos el nombre origen
     $query_drop02 = "SELECT nombreciudad, cid_origen  FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -53,6 +59,12 @@ $user -> setUser($post_username);
 
     ## eliminamos duplicados
     $paises_origen = array_unique($fetch_drop02 , SORT_REGULAR);
+
+    foreach ($fetch_drop02 as $p ) {
+      if ($p[1] == $origen ) {
+        $origen_nombre = $p[0];
+      }
+    }
 
     ## Obtenemos el medio, según la disponibilidad por origen y destino
     $query_filtro03 = "SELECT medio FROM datos_viaje where cid_origen = '$origen' and cid_destino = '$destino' ;";
@@ -109,6 +121,12 @@ $user -> setUser($post_username);
                               ";
                             }
                         }
+                        else {
+                          echo "
+                              <option value = '$origen' > $origen_nombre </option>
+                          ";
+
+                        }
                         ?>
 
                     </select>
@@ -124,6 +142,12 @@ $user -> setUser($post_username);
                               ";
                             }
                         }
+                      }
+                      else {
+                        echo "
+                            <option value = '$destino' > $destino_nombre </option>
+                        ";
+
                       }
                       ?>
                     </select>
@@ -162,6 +186,11 @@ $user -> setUser($post_username);
                               ";
                           }
                         }
+                      }
+                      else {
+                        echo "
+                            <option value = '$medio' > $medio </option>
+                        ";
                       }
                       ?>
                     </select>
