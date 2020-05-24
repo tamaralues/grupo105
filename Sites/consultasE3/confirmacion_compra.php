@@ -5,6 +5,7 @@
     include_once '../include/user.php';
     include_once '../include/user_session.php';
 
+
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
     $horasalida = $_POST["horasalida"];
@@ -17,7 +18,7 @@
 
     $user_session = new userSession();
     $user = new User($db);
-
+    #$user1 = $_SESSION['username'];
     $uid = $_SESSION['id'];
 
     $fechacompra = date('Y-m-d H:i:s');
@@ -115,7 +116,7 @@
       <h3>Información de compra</h3>
       <br>
       <div >
-        <?php echo "<p> Nombre usuario: $user  </p>"; ?>
+        <?php echo "<p> Nombre usuario: $post_username  </p>"; ?>
         <?php echo "<p>Fecha compra: $fechacompra </p>"; ?>
         <?php echo "<p>Ciudad de origen: $nombre_origen </p>"; ?>
         <?php echo "<p>Ciudad de destino: $nombre_destino </p>"; ?>
