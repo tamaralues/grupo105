@@ -73,7 +73,8 @@ if (isset($_SESSION['user'])){
     ?>
 
 <main role="main" class="container container-carrusel">
-    <h5>Usuario: <?php echo "$$user_session->getCurrentUser()";?></h5>
+    <?php $variable = $user_session->getCurrentUser(); ?>
+    <h5>Usuario1: <?php echo "$variable";?></h5>
 </main>
 
 <footer class="footer" role="contentinfo">
