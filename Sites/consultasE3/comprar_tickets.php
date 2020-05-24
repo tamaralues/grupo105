@@ -145,10 +145,10 @@ $user -> setUser($post_username);
                     <select name="horasalida" >
                       <?php
                       if($medio){
-                        foreach ($horarios as $f8) {
+                        foreach ($horarios as $f9) {
                             echo
                             "
-                                <option value = '$f8[0]' > $f8[0] </option>
+                                <option value = '$f9[0]' > $f9[0] </option>
                             ";
                         }
                       }
