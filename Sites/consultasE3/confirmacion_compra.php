@@ -2,7 +2,8 @@
     session_start();
 
     require("../configuracion/conexion_db_e3.php");
-
+    include_once '../include/user.php';
+    include_once '../include/user_session.php';
 
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
@@ -16,6 +17,7 @@
 
     $user_session = new userSession();
     $user = new User($db);
+
     $uid = $_SESSION['id'];
 
     $fechacompra = date('Y-m-d H:i:s');
