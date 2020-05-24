@@ -233,9 +233,11 @@ $user -> setUser($post_username);
            "
                <div class=\"btn-group\" role=\"group\">
                 <h3>Paso 5</h3>
+                </div>
+                <div class=\"btn-group\" role=\"group\">
                 Seleccione la fecha de salida:
                 </div>
-                </div>
+                <div class=\"btn-group\" role=\"group\">
                 <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
                 </div>";
         }
