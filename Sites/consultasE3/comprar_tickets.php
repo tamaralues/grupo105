@@ -42,15 +42,7 @@ $user -> setUser($post_username);
     $result_drop7 -> execute();
     $fetch_drop7 = $result_drop7 -> fetchAll();
 
-    $paises_origen = $fetch_drop7 ;
-    $last = '';
-    foreach ($paises_origen as $i => $x) {
-      if ($x[0] == $last) {
-        $paises_origen[$i][0] = '';
-      } else {
-        $last = $x[0];
-      }
-    }
+    $paises_origen = array_unique($fetch_drop7 , SORT_REGULAR);
 
 
     $query_drop5 = "SELECT nombreciudad, cid_origen, horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
