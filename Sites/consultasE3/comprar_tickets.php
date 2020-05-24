@@ -117,6 +117,7 @@ $user -> setUser($post_username);
 
        <h3 class="display-4">Comprar Tickets</h3>
        </div>
+
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
                   <h3>Paso 1</h3>
