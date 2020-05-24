@@ -56,12 +56,11 @@ $user -> setUser($post_username);
       $path_navbar ='../';
       include_once '../nav_bar.php';
     ?>
-    <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
-
+<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+  <?php echo "<h4>$hotel</h4>"; ?>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <?php echo "<p>$hotel</p>"; ?>
-        <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
+        <h3 class="my-0 font-weight-normal">Realizar reserva</h3>
         </div>
       <div class="card-body">
         <ul class="list-unstyled mt-3 mb-4">
@@ -69,7 +68,7 @@ $user -> setUser($post_username);
         <form align="center" action="confirmacion_reserva.php" method="post">
           <input type="hidden" name="hotel" value= "<?php echo $hotel ;?>"  >
           <br>
-          <button type="submit" class="btn btn-lg">Reservar</button>
+          <button type="submit" class="btn btn-dark">Reservar</button>
         </form>
       </div>
     </div>
@@ -85,7 +84,7 @@ $user -> setUser($post_username);
           <input type="hidden" name="hid" value= "<?php echo $hid ;?>"  >
           <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
           <br>
-          <button type="submit" class="btn btn-lg">Comentar</button>
+          <button type="submit" class="btn btn-dark">Comentar</button>
         </form>
       </div>
     </div>
@@ -96,8 +95,8 @@ $user -> setUser($post_username);
           <table class="table table-striped table-bordered" style="width:70%; margin:auto">
             <thead class="thread-dark">
               <tr>
-                <th>username</th>
-                <th>comentario</th>
+                <th>Username</th>
+                <th>Comentario</th>
               </tr>
             </thead>
             <?php
