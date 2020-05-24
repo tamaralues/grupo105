@@ -48,13 +48,20 @@
 
 
     <form action="realizacion_reserva.php" method="POST">
+
 			<div class="btn-group" role="group">
 		  Fecha de entrada
 			<br>
-      <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
-			</div>
+		  </div>
+			<div class="btn-group" role="group">
+			<br>
+		  <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
+	  	</div>
+
 			<div class="btn-group" role="group">
 			Fecha de salida
+			</div>
+			<div class="btn-group" role="group">
 			<br>
 			<input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
 			</div>
@@ -62,6 +69,7 @@
 			<input type="hidden" name="hotel1" value="<?php echo $hotel ;?>" >
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
 			 </div>
+
       <br>
       <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
