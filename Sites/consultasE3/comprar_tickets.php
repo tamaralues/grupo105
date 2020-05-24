@@ -71,8 +71,6 @@ $user -> setUser($post_username);
     $result_filtro04  -> execute();
     $fetch_filtro04  = $result_filtro04  -> fetchAll();
 
-    ## eliminamos duplicados
-    $horarios = array_unique($fetch_drop04 , SORT_REGULAR);
 
     $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -104,11 +102,19 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="origen" >
                         <?php
-                        foreach ($paises_origen as $f5) {
-                            echo "
-                                <option value = '$f5[1]' > $f5[0] </option>
-                            ";
-                          }
+                        if(!$origen){
+                          foreach ($paises_origen as $f5) {
+                              echo "
+                                  <option value = '$f5[1]' > $f5[0] </option>
+                              ";
+                            }
+                        }
+                        else{
+                          echo "
+                              <option value = '$origen' > $origen </option>
+                          ";
+                        }
+
                         ?>
 
                     </select>
@@ -117,11 +123,18 @@ $user -> setUser($post_username);
                     <select name="destino" >
                       <?php
                       if($origen){
-                        foreach ($paises_destino as $f7) {
-                            echo "
-                                <option value = '$f7[1]' > $f7[0] </option>
-                            ";
-                          }
+                        if(!$destino){
+                          foreach ($paises_destino as $f7) {
+                              echo "
+                                  <option value = '$f7[1]' > $f7[0] </option>
+                              ";
+                            }
+                        }
+                        else{
+                          echo "
+                              <option value = '$destino' > $destino </option>
+                          ";
+                        }
                       }
                       ?>
                     </select>
@@ -130,11 +143,18 @@ $user -> setUser($post_username);
                     <select name="medio" >
                       <?php
                       if($destino){
-                        foreach ($medios as $f8) {
-                            echo
-                            "
-                                <option value = '$f8[0]' > $f8[0] </option>
-                            ";
+                        if(!$medio){
+                          foreach ($medios as $f8) {
+                              echo
+                              "
+                                  <option value = '$f8[0]' > $f8[0] </option>
+                              ";
+                          }
+                        }
+                        else{
+                          echo "
+                              <option value = '$medio' > $medio </option>
+                          ";
                         }
                       }
                       ?>
@@ -145,11 +165,13 @@ $user -> setUser($post_username);
                     <select name="horasalida" >
                       <?php
                       if($medio){
-                        foreach ($fetch_filtro04 as $f9) {
-                            echo
-                            "
-                                <option value = '$f9[0]' > $f9[0] </option>
-                            ";
+                        if(!$horasalida){
+                          foreach ($fetch_filtro04 as $f9) {
+                              echo
+                              "
+                                  <option value = '$f9[0]' > $f9[0] </option>
+                              ";
+                          }
                         }
                       }
                       ?>
@@ -163,7 +185,6 @@ $user -> setUser($post_username);
                      <input type=\"date\" class=\"form-control\" name=\"fechaviaje\" aria-describedby=\"emailHelp\" placeholder=\"ingrese la fecha de salida\">
                      ";
                   }
-
                 ?>
                 </div>
                 <?php
