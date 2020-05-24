@@ -50,8 +50,6 @@
     ?>
 
     <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
-
-
           <br>
           <div >
             Su comentario fue recibido con exito

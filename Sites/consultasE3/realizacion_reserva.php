@@ -50,42 +50,37 @@
 </head>
 
 <body>
-  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h3 class="display-4">Reservas</h3>
-  </div>
-  <div class="container">
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <thead class="thread-dark">
-          <tr>
-            <th>ID del usuario</th>
-          </tr>
-        </thead>
-        <?php
-          foreach ($fetch_uid as $p) {
-            echo "<tr><td>$p[0]</td></tr>";
-        }
-        ?>
-      </table>
-    </div>
-  </div>
-  <form action ="consultas_hotel.php" method="POST">
-        <input type="hidden" name="hotel" value= "<?php echo $hid ;?>"  >
+
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+  ?>
+
+
+  <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+
+      <main role="main" class="container container-carrusel">
+        <h3>Información reserva</h3>
         <br>
-        <button type="submit" class="btn btn-dark btn-block mb-2">
+        <div >
+          <?php echo "<p> Nombre usuario: $user  </p>"; ?>
+          <?php echo "<p>Hotel: $hotel </p>"; ?>
+          <?php echo "<p>Fecha de entrada: $fechainicio </p>"; ?>
+          <?php echo "<p>Fecha de salida: $fechatermino </p>"; ?>
+          <?php echo "<p>Id Reserva : $last_rid </p>"; ?>
+
+        </div>
+      </main>
+
+  <form action ="consultas_hotel.php" method="POST">
+        <br>
+        <button type="submit" class="btn btn-dark">
             Volver
         </button>
   </form>
 
+  </div>
 
-
-<?php #echo "<p>$user</p>"; ?>
-<?php #echo "<p>$uid</p>"; ?>
-<?php #echo "<p>$last_rid</p>"; ?>
-<?php #echo "<p>$hotel</p>"; ?>
-<?php #echo "<p>$hid </p>"; ?>
-<?php #echo "<p>$fechainicio</p>"; ?>
-<?php #echo "<p>$fechatermino</p>"; ?>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
