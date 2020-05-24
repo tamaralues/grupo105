@@ -96,6 +96,7 @@ $user -> setUser($post_username);
 <html lang="en">
 
 <head>
+
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../css/bootstrapE3.css" rel="stylesheet">
@@ -221,8 +222,14 @@ $user -> setUser($post_username);
                         </button>
                       ";
                 }
-    
                 elseif (!$horasalida and $medio and $destino and $origen) {
+                  echo
+                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                         Ver horarios disponibles
+                        </button>
+                      ";
+                }
+                elseif ($horasalida and !$fechaviaje) {
                   echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
