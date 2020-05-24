@@ -46,10 +46,8 @@
 
   <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
 
-  <div class="card-body">
-    <ul class="list-unstyled mt-3 mb-4">
-    </ul>
-    <form align="center" action="realizacion_reserva.php" method="post">
+	<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <form action="realizacion_reserva.php" method="POST">
 			<div class="btn-group" role="group">
 		  Fecha de entrada
 			<br>
@@ -60,6 +58,7 @@
 			<br>
 			<input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
 			</div>
+			<div class="btn-group" role="group">
 			<input type="hidden" name="hotel1" value="<?php echo $hotel ;?>" >
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
 			 </div>
