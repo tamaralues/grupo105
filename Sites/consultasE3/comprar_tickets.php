@@ -155,7 +155,7 @@ $user -> setUser($post_username);
                       ?>
                     </select>
                 </div>
-               <div>
+               <div class="btn-group" role="group">
                 <?php
                 if($medio){
                   echo
@@ -176,6 +176,13 @@ $user -> setUser($post_username);
                       ";
                   }
                 elseif (!$medio) {
+                  echo
+                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                         Ver horarios disponibles
+                        </button>
+                      ";
+                }
+                elseif ($medio) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
