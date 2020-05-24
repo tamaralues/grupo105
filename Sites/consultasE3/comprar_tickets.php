@@ -22,6 +22,9 @@ $user -> setUser($post_username);
 
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
+    $horasalida = $_POST["horasalida"];
+    $medio =  $_POST["medio"];
+    $fechaviaje = $_POST["fechaviaje"];
 
     if($medio){
       $direccion = "confirmacion_compra.php";
@@ -30,9 +33,7 @@ $user -> setUser($post_username);
       $medio = "comprar_tickets.php";
     }
 
-    $horasalida = $_POST["horasalida"];
-    $medio =  $_POST["medio"];
-    $fechaviaje = $_POST["fechaviaje"];
+
 
     ## Obtenemos el nombre destino
     $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
