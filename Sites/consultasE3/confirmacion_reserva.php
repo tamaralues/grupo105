@@ -34,7 +34,13 @@
 
 <body>
 
-<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+<div class="container px-4 py-2" style="width:70%; margin-top: 100px;">
+
+	<?php
+		$path_navbar ='../';
+		include_once '../nav_bar.php';
+	?>
+	
 	<?php echo "<h3 class=\"my-0 font-weight-normal\">$hotel</h3>"; ?>
 
   <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
@@ -43,10 +49,15 @@
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
     <form align="center" action="realizacion_reserva.php" method="post">
+			<div class="btn-group" role="group">
+		  <h3>Fecha de entrada</h3>
       <input type="date" class="form-control" name="fechainicio" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
-      <input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
+      <h3>Fecha de salida</h3>
+			<input type="date" class="form-control" name="fechatermino" aria-describedby="emailHelp" placeholder="ingrese la fecha de salida">
 			<input type="hidden" name="hotel" value="<?php echo $hotel ;?>" >
+
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
+			  </div>
       <br>
       <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
