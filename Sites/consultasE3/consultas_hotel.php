@@ -91,7 +91,7 @@ $user -> setUser($post_username);
 
     <div class="container">
       <div class="card-deck mb-3 text-center" style="align-self:center">
-        <div class="table-responsive" style="align-self:center">
+
           <table class="table table-striped table-bordered" style="width:70%; margin:auto">
             <thead class="thread-dark">
               <tr>
@@ -105,7 +105,7 @@ $user -> setUser($post_username);
             }
             ?>
           </table>
-        </div>
+    
       </div>
     </div>
       </div>
