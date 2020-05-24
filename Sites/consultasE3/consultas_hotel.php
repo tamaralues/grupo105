@@ -52,9 +52,9 @@ $user -> setUser($post_username);
   </head>
 
   <body>
-  <?php
-    $path_navbar ='../';
-    include_once '../nav_bar.php';
+    <?php
+    $path_navbar ='';
+    include_once 'nav_bar.php';
     ?>
     <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
