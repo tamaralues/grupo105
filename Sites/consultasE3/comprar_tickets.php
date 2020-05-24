@@ -208,28 +208,28 @@ $user -> setUser($post_username);
 
                 <?php
 
-                if(!$destino){
+                if(!$destino and !$origen ){
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Revisar disponibilidad
                         </button>
                       ";
                   }
-                elseif (!$medio) {
+                elseif (!$medio and $destino and $origen) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
                         </button>
                       ";
                 }
-                elseif (!$horasalida) {
+                elseif (!$horasalida and $medio and $destino and $origen) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
                         </button>
                       ";
                 }
-                elseif ($horasalida) {
+                elseif ($horasalida and $fechaviaje) {
                   echo
                   "
                   <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
