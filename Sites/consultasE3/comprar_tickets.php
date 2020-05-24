@@ -227,7 +227,7 @@ $user -> setUser($post_username);
                         </button>
                       ";
                 }
-                elseif (!$horasalida and $medio and $destino and $origen) {
+                elseif (!$horasalida and !$medio and $destino and $origen) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
