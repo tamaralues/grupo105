@@ -65,7 +65,7 @@ $user -> setUser($post_username);
     $medios = array_unique($fetch_filtro03, SORT_REGULAR);
 
     ## Obtenemos el medio, según la disponibilidad por origen y destino
-    $query_filtro04 = "SELECT horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = '$origen' and datos_viaje.cid_destino = '$destino' and medio = '$medio' ;";
+    $query_filtro04 = "SELECT horasalida FROM datos_viaje where cid_origen = '$origen' and cid_destino = '$destino' and medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_filtro04  = $db -> prepare($query_filtro04);
     $result_filtro04  -> execute();
