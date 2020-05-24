@@ -45,7 +45,7 @@ $user -> setUser($post_username);
     $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
 
     foreach ($fetch_drop01 as $p ) {
-      if ($p[1] == $origen ) {
+      if ($p[1] == $destino ) {
         $destino_nombre = $p[0];
       }
     }
@@ -107,8 +107,9 @@ $user -> setUser($post_username);
     $path_navbar ='../';
     include_once '../nav_bar.php';
     ?>
+
     <div class="card-body">
-        <nav class="my-2 my-md-0 mr-md-3">
+        <nav class="card-body">
         <div class="btn-group">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="btn-group" role="group">
