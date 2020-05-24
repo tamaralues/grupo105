@@ -141,8 +141,8 @@ $user -> setUser($post_username);
                     <select name="destino" >
                       <?php
                       if($origen){
-                        "<p>$user1</p>"
-                  
+                        "<p>Seleccione la cuidad de destino:</p>"
+
                         if(!$destino){
                           foreach ($paises_destino as $f7) {
                               echo "
@@ -164,11 +164,11 @@ $user -> setUser($post_username);
                     <select name="medio" >
                       <?php
                       if($destino){
-                        echo
-                        "
-                        <div> Seleccione el medio de transporte: </div>
+                  
 
-                        ";
+                        "<p>Seleccione la cuidad de destino:</p>"
+
+                        ;
                         if(!$medio){
                           foreach ($medios as $f8) {
                               echo
