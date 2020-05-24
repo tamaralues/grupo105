@@ -192,12 +192,12 @@ $user -> setUser($post_username);
                       Comprar
                   </button>
                   ";
-        
+
                 }
                 else{
                   echo
                   "
-                  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                  <div class=\"pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center\">
                   Lo sentimos, no hay tickets disponibles
                   </div>
 
