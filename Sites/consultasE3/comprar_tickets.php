@@ -124,8 +124,7 @@ $user -> setUser($post_username);
                           }
 
                       }
-                      else{
-                      }
+
                       ?>
                     </select>
                 </div>
@@ -134,7 +133,6 @@ $user -> setUser($post_username);
 
                       <?php
                       if($destino){
-                        echo
                         foreach ($medio as $f8) {
                             echo
                             "
