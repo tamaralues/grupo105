@@ -257,7 +257,9 @@ $user -> setUser($post_username);
          }
         elseif(!$fechaviaje) {
             echo
-                " <button type=\"submit\" class=\"btn btn-dark\">
+                "
+                <br>
+                <button type=\"submit\" class=\"btn btn-dark\">
                     Comprar
                   </button>
                 ";
@@ -276,7 +278,7 @@ $user -> setUser($post_username);
                   <input type=\"hidden\" name=\"horasalida\" value= \"\" >
                   <input type=\"hidden\" name=\"origen\" value= \"\"     >
                   <input type=\"hidden\" name=\"destino\" value= \"\"    >
-
+                  <br>
                   <button type=\"submit\" class=\"btn btn-dark\">
                       Realizar otra búsqueda
                   </button>
@@ -287,30 +289,22 @@ $user -> setUser($post_username);
         </form>
     </div>
 
-
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h3 class="display-4"> Tickets vendidos</h3>
-    </div>
-    <div class="container">
-      <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-          <thead class="thread-dark">
-            <tr>
-              <th>ID del usuario</th>
-            </tr>
-          </thead>
-          <?php
-            foreach ($fetch_drop6 as $p) {
-              echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-          }
-          ?>
-        </table>
-      </div>
-    </div>
+    <form action ="comprar_tickets.php" method="POST">
+          <br>
+          <button type="submit" class="btn btn-dark ">
+            <input type="hidden" name="horasalida" value= "" >
+            <input type="hidden" name="medio" value= ""      >
+            <input type="hidden" name="horasalida" value= "" >
+            <input type="hidden" name="origen" value= ""     >
+            <input type="hidden" name="destino" value= ""    >
+            <input type="hidden" name="fechaviaje" value= "" >
+              Reiniciar búsqueda
+          </button>
+    </form>
 
     <form action ="../test.php" method="POST">
           <br>
-          <button type="submit" class="btn btn-dark btn-block mb-2">
+          <button type="submit" class="btn btn-dark ">
               Volver
           </button>
     </form>
