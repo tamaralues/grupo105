@@ -109,8 +109,8 @@ $user -> setUser($post_username);
     include_once '../nav_bar.php';
     ?>
 
-    <div class="container">
-        <div class="btn-group">
+
+        <div class="container">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="btn-group" role="group">
                     <select name="origen" >
@@ -126,7 +126,6 @@ $user -> setUser($post_username);
                           echo "
                               <option value = '$origen' > $origen_nombre </option>
                           ";
-
                         }
                         ?>
 
@@ -264,7 +263,7 @@ $user -> setUser($post_username);
                 ?>
                 </form>
             </div>
-    </div>
+
 
     <?php echo "<p>$medio medio </p>"; ?>
 
