@@ -118,6 +118,7 @@ $user -> setUser($post_username);
        </div>
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
+                  <h3>Paso 1</h3>
                   Seleccione la cuidad de origen:
                     <select name="origen" >
                         <?php
@@ -141,7 +142,8 @@ $user -> setUser($post_username);
            if($origen){
              echo
                 "<div class=\"form-group\">
-                    Seleccione la cuidad de origen:
+                    <h3>Paso 2</h3>
+                    Seleccione la cuidad de destino:
                     <select name=\"destino\" >
                       ";
                       if(!$destino){
@@ -153,47 +155,55 @@ $user -> setUser($post_username);
                         }
                         else {
                           echo "
-                              <option value = $destino > $destino_nombre </option>
+                              <option value = '$destino' > $destino_nombre </option>
                           ";
 
                         }
-          echo 
+          echo
               "</select>
           </div>";
          }
-
         ?>
-
-                <div class="form-group">
-                    <select name="medio" >
-                      <?php
-                      if($destino){
-
-                        if(!$medio){
+        <?php
+            if($destino){
+              echo
+              "
+                <div class=\"form-group\">
+                  <h3>Paso 3</h3>
+                   Seleccione el medio de transporte:
+                    <select name=\"medio\" >
+                ";
+                      if(!$medio){
                           foreach ($medios as $f8) {
                               echo
                               "
                                   <option value = '$f8[0]' > $f8[0] </option>
                               ";
-                          }
+                            }
                          }
-                          else{
+                        else{
                             echo "
                                 <option value = '$medio' > $medio </option>
                             ";
                           }
-                        }
 
-                      ?>
+          echo
+          "     </select>
+              </div>
 
-                    </select>
-                </div>
-                <div class="form-group" >
-                    <select name="horasalida" >
-                      <?php
-                      if($medio){
+          ";
+          }
 
-                        if(!$horasalida){
+      ?>
+      <?php
+          if($medio){
+            echo "
+                <div class=\"form-group\" >
+                    <select name=\"horasalida\" >
+
+                  ";
+                  if(!$horasalida){
+
                           foreach ($fetch_filtro04 as $f9) {
                               echo
                               "
@@ -206,10 +216,13 @@ $user -> setUser($post_username);
                               <option value = '$horasalida' > $horasalida </option>
                           ";
                         }
-                      }
-                      ?>
+
+              echo
+                "
                     </select>
-                </div>
+                </div>";
+            }
+        ?>
                <div class="btn-group" role="group">
                 <?php
                 if($medio){
