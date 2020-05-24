@@ -130,7 +130,7 @@ $user -> setUser($post_username);
                     <select name="medio" >
                       <?php
                       if($destino){
-                        foreach ($medio as $f8) {
+                        foreach ($medios as $f8) {
                             echo
                             "
                                 <option value = '$f8[2]' > $f8[2] </option>
