@@ -113,6 +113,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                             <input type=\"hidden\" name=\"horasalida\" value= \"\" >
                             <input type=\"hidden\" name=\"origen\" value= \"\"     >
                             <input type=\"hidden\" name=\"destino\" value= \"\"    >
+                            <input type=\"hidden\" name=\"fechaviaje\" value= \"\"    >
 
                             <button type=\"submit\" class=\"btn btn-dark\" value=$post_user name=\"username\">
                                 Comprar tickets
