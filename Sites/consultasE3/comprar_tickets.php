@@ -112,6 +112,10 @@ $user -> setUser($post_username);
   ?>
 
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+    <div class="col-2">
+      <img class="img-fluid d-block rounded" style="width: 100%;"
+      src="https://s.ppy.sh/a/" />
+      </div>
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
        <h3 class="display-4">Comprar Tickets</h3>
