@@ -35,7 +35,7 @@ $user -> setUser($post_username);
     $fechaviaje = $_POST["fechaviaje"];
 
     ## Obtenemos el nombre destino
-    $query_drop01 = "SELECT nombreciudad FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop01 = $db -> prepare($query_drop01);
     $result_drop01 -> execute();
@@ -45,7 +45,7 @@ $user -> setUser($post_username);
     $paises_destino = array_unique($fetch_drop01 , SORT_REGULAR);
 
     ## Obtenemos el nombre origen
-    $query_drop02 = "SELECT nombreciudad FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
+    $query_drop02 = "SELECT nombreciudad, ciudad  FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop02 = $db -> prepare($query_drop02);
     $result_drop02 -> execute();
