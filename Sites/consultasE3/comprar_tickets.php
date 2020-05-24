@@ -106,8 +106,8 @@ $user -> setUser($post_username);
 <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
-    ?>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm">
+?>
+    <div class="card mb-4 shadow-sm">
         <nav class="my-2 my-md-0 mr-md-3">
         <div class="btn-group">
           <form action = <?php echo $direccion ;?> method="POST">
@@ -215,7 +215,7 @@ $user -> setUser($post_username);
                         </button>
                       ";
                   }
-                elseif (!$medio and $destino and $origen) {
+                elseif (!$medio) {
                   echo
                      " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
                          Ver horarios disponibles
