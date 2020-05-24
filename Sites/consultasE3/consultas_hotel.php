@@ -59,10 +59,9 @@ $user -> setUser($post_username);
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
   <?php echo "<h3 class=\"my-0 font-weight-normal\">$hotel</h3>"; ?>
 
-
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
         <br>
+        <h4 >Realizar reserva</h4>
         </div>
       <div class="card-body">
         <ul class="list-unstyled mt-3 mb-4">
@@ -73,25 +72,6 @@ $user -> setUser($post_username);
           <button type="submit" class="btn btn-dark">Reservar</button>
         </form>
       </div>
-
-
-    <div class="container">
-      <div class="card-deck mb-3 text-center" style="align-self:center">
-          <table class="table table-striped table-bordered" style="width:70%; margin:auto">
-            <thead class="thread-dark">
-              <tr>
-                <th>Username</th>
-                <th>Comentario</th>
-              </tr>
-            </thead>
-            <?php
-              foreach ($consulta as $p) {
-                echo "<tr><td>$p[0]</td><td>$p[1]</td></tr>";
-            }
-            ?>
-          </table>
-      </div>
-    </div>
 
 
     <div class="card mb-4 shadow-sm">
@@ -110,7 +90,30 @@ $user -> setUser($post_username);
       </div>
     </div>
 
-    
+        <div class="container">
+          <div class="card-deck mb-3 text-center" style="align-self:center">
+              <table class="table table-striped table-bordered" style="width:70%; margin:auto">
+                <thead class="thread-dark">
+                  <tr>
+                    <th>Username</th>
+                    <th>Comentario</th>
+                  </tr>
+                </thead>
+                <?php
+
+                  foreach ($consulta as $p) {
+
+                    echo "
+                    <tr><td><img class=\"img-fluid d-block rounded\" style=\"width: 40%;\"
+                    src=\"https://s.ppy.sh/a/\" />
+                    $p[0]</td><td>$p[1]</td></tr>";
+                }
+                ?>
+              </table>
+          </div>
+        </div>
+
+
   </div>
 
   </body>
