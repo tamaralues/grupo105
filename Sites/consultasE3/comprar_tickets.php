@@ -62,7 +62,7 @@ $user -> setUser($post_username);
     $fetch_filtro03  = $result_filtro03  -> fetchAll();
 
     ## eliminamos duplicados
-    $medios = array_unique($fetch_filtro1, SORT_REGULAR);
+    $medios = array_unique($fetch_filtro03, SORT_REGULAR);
 
     ## Obtenemos el medio, según la disponibilidad por origen y destino
     $query_filtro04 = "SELECT horasalida FROM datos_viaje natural join ciudades where datos_viaje.cid_origen = ciudades.cid and datos_viaje.cid_origen = '$origen' and datos_viaje.cid_destino = '$destino' and medio = '$medio' ;";
@@ -72,7 +72,7 @@ $user -> setUser($post_username);
     $fetch_filtro04  = $result_filtro04  -> fetchAll();
 
     ## eliminamos duplicados
-    $horarios = array_unique($fetch_drop5 , SORT_REGULAR);
+    $horarios = array_unique($fetch_drop04 , SORT_REGULAR);
 
     $query_drop6 = "SELECT uid , tid FROM tickets_comprados where uid = '$uid';";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
