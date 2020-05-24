@@ -112,8 +112,7 @@ $user -> setUser($post_username);
   ?>
 
 
-
-     <div class="pricing-header px-3 py-300 pt-md-5 pb-md-4 mx-auto text-center">
+     <div class="pricing-header px-3 py-0 pt-md-5 pb-md-4 mx-auto">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
                     <select name="origen" >
