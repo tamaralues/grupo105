@@ -102,7 +102,7 @@ $user -> setUser($post_username);
                 <?php
                   foreach ($consulta as $p) {
                     echo "
-                    <tr><td><img class=\"img-fluid d-block rounded\" style=\"width: 10%;\"
+                    <tr><td><img class=\"img-fluid d-block rounded\" style=\"width: 20%;\"
                     src=\"https://s.ppy.sh/a/\" />
                     $p[0]</td><td>$p[1]</td></tr>";
                 }

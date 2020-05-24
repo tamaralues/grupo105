@@ -34,12 +34,12 @@
 
 <body>
 
-<div class="card mb-4 shadow-sm">
-  <div class="card-header">
-    <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
-    </div>
+<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+	<?php echo "<h3 class=\"my-0 font-weight-normal\">$hotel</h3>"; ?>
+
+  <h4 class="my-0 font-weight-normal">Realizar reserva</h4>
+
   <div class="card-body">
-		<?php echo "<p>$hotel</p>"; ?>
     <ul class="list-unstyled mt-3 mb-4">
     </ul>
     <form align="center" action="realizacion_reserva.php" method="post">
@@ -48,14 +48,14 @@
 			<input type="hidden" name="hotel" value="<?php echo $hotel ;?>" >
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
       <br>
-      <button type="submit" class="btn btn-lg btn-block btn-primary">Reservar</button>
+      <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
   </div>
 
 	<form action ="consultas_hotel.php" method="POST">
 				<input type="hidden" name="hotel" value= "<?php echo $hid ;?>"  >
 				<br>
-				<button type="submit" class="btn btn-dark btn-block mb-2">
+				<button type="submit" class="btn btn-dark">
 						Volver
 				</button>
 	</form>
