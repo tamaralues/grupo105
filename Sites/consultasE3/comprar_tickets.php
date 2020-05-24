@@ -112,7 +112,7 @@ $user -> setUser($post_username);
   ?>
 
 
-     <div class="container px-4 py-2" style="width:90%; margin-top: 67px;">
+     <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
           <form action = <?php echo $direccion ;?> method="POST">
                 <div class="form-group">
                     <select name="origen" >
