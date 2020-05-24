@@ -110,11 +110,9 @@ $user -> setUser($post_username);
     $path_navbar ='../';
     include_once '../nav_bar.php';
   ?>
-
+<main role="main" class="container my-auto pt-2 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
 <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
     <div class="col-2">
-      <img class="img-fluid mx-auto d-block rounded" style="width: 35%;"
-          src="https://www.simplyhealth.co.uk/shcore/sh/furniture/images/svgs/top-nav-account-icon.svg" />
 
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
@@ -314,6 +312,7 @@ $user -> setUser($post_username);
     </form>
 
     </div>
+  </main>    
 
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
