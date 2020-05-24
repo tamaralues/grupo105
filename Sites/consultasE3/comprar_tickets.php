@@ -144,7 +144,7 @@ $user -> setUser($post_username);
                       if($origen){
                         echo
                         "
-                        Seleccione la cuidad de destino: 
+                        <p>Seleccione la cuidad de destino: </p>
 
                         ";
 
