@@ -35,7 +35,7 @@ $user -> setUser($post_username);
 
 
     ## Obtenemos el nombre destino
-    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid ;";
+    $query_drop01 = "SELECT nombreciudad, cid_destino FROM datos_viaje natural join ciudades where datos_viaje.cid_destino = ciudades.cid and datos_viaje.cid_origen = '$origen' ;";
      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result_drop01 = $db -> prepare($query_drop01);
     $result_drop01 -> execute();
@@ -116,7 +116,7 @@ $user -> setUser($post_username);
                 <div class="btn-group" role="group">
                     <select name="destino" >
                       <?php
-                      if($destino){
+                      if($origen){
                         foreach ($paises_destino as $f7) {
                             echo "
                                 <option value = '$f7[1]' > $f7[0] </option>
