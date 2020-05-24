@@ -112,7 +112,7 @@ $user -> setUser($post_username);
     <main role="main" class="container my-auto pt-2 pb-3" style="border:1px solid #cecece; max-width: 500px; border-radius: 6px;">
         <div class="row">
           <form action = <?php echo $direccion ;?> method="POST">
-                <div class="btn-group" role="group">
+                <div class="form-group">
                     <select name="origen" >
                         <?php
                         if(!$origen){
@@ -131,7 +131,7 @@ $user -> setUser($post_username);
 
                     </select>
                 </div>
-                <div class="btn-group" role="group">
+                <div class="form-group">
                     <select name="destino" >
                       <?php
                       if($origen){
@@ -152,7 +152,7 @@ $user -> setUser($post_username);
                       ?>
                     </select>
                 </div>
-                <div class="btn-group" role="group">
+                <div class="form-group">
                     <select name="medio" >
                       <?php
                       if($destino){
@@ -176,7 +176,7 @@ $user -> setUser($post_username);
 
                     </select>
                 </div>
-                <div class="btn-group" role="group">
+                <div class="form-group" >
                     <select name="horasalida" >
                       <?php
                       if($medio){
@@ -263,7 +263,7 @@ $user -> setUser($post_username);
                 ?>
                 </form>
             </div>
-            </main>
+    </main>
 
 
     <?php echo "<p>$medio medio </p>"; ?>
