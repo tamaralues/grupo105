@@ -115,10 +115,8 @@ $user -> setUser($post_username);
        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
        <h3 class="display-4">Comprar Tickets</h3>
-
        </div>
           <form action = <?php echo $direccion ;?> method="POST">
-            
                 <div class="form-group">
                   Seleccione la cuidad de origen:
                     <select name="origen" >
@@ -138,12 +136,15 @@ $user -> setUser($post_username);
                         ?>
                     </select>
                 </div>
-                <div class="form-group">
-                    <select name="destino" >
-                      <?php
-                      if($origen){
 
-                        if(!$destino){
+        <?php
+           if($origen){
+             echo
+                "<div class=\"form-group\">
+                    Seleccione la cuidad de origen:
+                    <select name=\"destino\" >
+                      ";
+                      if(!$destino){
                           foreach ($paises_destino as $f7) {
                               echo "
                                   <option value = '$f7[1]' > $f7[0] </option>
@@ -152,19 +153,21 @@ $user -> setUser($post_username);
                         }
                         else {
                           echo "
-                              <option value = '$destino' > $destino_nombre </option>
+                              <option value = $destino > $destino_nombre </option>
                           ";
 
                         }
-                      }
-                      ?>
-                    </select>
-                </div>
+          echo 
+              "</select>
+          </div>";
+         }
+
+        ?>
+
                 <div class="form-group">
                     <select name="medio" >
                       <?php
                       if($destino){
-
 
                         if(!$medio){
                           foreach ($medios as $f8) {
@@ -173,13 +176,12 @@ $user -> setUser($post_username);
                                   <option value = '$f8[0]' > $f8[0] </option>
                               ";
                           }
-                        }
+                         }
                           else{
                             echo "
                                 <option value = '$medio' > $medio </option>
                             ";
                           }
-
                         }
 
                       ?>
@@ -205,7 +207,6 @@ $user -> setUser($post_username);
                           ";
                         }
                       }
-
                       ?>
                     </select>
                 </div>
@@ -224,21 +225,21 @@ $user -> setUser($post_username);
 
                 if(!$destino and !$origen ){
                   echo
-                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                     " <button type=\"submit\" class=\"btn btn-dark\">
                          Revisar disponibilidad
                         </button>
                       ";
                   }
                 elseif (!$medio) {
                   echo
-                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                     " <button type=\"submit\" class=\"btn btn-dark\">
                          Ver horarios disponibles
                         </button>
                       ";
                 }
                 elseif (!$horasalida and $medio and $destino and $origen) {
                   echo
-                     " <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                     " <button type=\"submit\" class=\"btn btn-dark\">
                          Ver horarios disponibles
                         </button>
                       ";
@@ -246,11 +247,10 @@ $user -> setUser($post_username);
                 elseif ($horasalida and !$fechaviaje) {
                   echo
                   "
-                  <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                  <button type=\"submit\" class=\"btn btn-dark\">
                       Comprar
                   </button>
                   ";
-
                 }
                 else{
                   echo
@@ -266,7 +266,7 @@ $user -> setUser($post_username);
                   <input type=\"hidden\" name=\"origen\" value= \"\"     >
                   <input type=\"hidden\" name=\"destino\" value= \"\"    >
 
-                  <button type=\"submit\" class=\"btn btn-dark btn-block mb-2\">
+                  <button type=\"submit\" class=\"btn btn-dark\">
                       Realizar otra búsqueda
                   </button>
 
@@ -277,10 +277,8 @@ $user -> setUser($post_username);
             </div>
 
 
-    <?php echo "<p>$medio medio </p>"; ?>
-
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h3 class="display-4">Tickets vendidos</h3>
+    <h3 class="display-4"> Tickets vendidos</h3>
     </div>
     <div class="container">
       <div class="table-responsive">
