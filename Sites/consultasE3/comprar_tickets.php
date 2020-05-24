@@ -145,7 +145,7 @@ $user -> setUser($post_username);
                     <select name="horasalida" >
                       <?php
                       if($medio){
-                        foreach ($horarios as $f9) {
+                        foreach ($fetch_filtro04 as $f9) {
                             echo
                             "
                                 <option value = '$f9[0]' > $f9[0] </option>
