@@ -129,22 +129,25 @@
     </div>
 
 
-
 <br>
-<table>
+
+
+<div class="container">
+  <table class="table table-striped table-bordered" style="width:60%; margin:auto">
     <tr>
       <th>Nombre obra</th>
     </tr>
+    <?php foreach ($obras as $a): ?>
+      <tr> <td><?php echo "$a[1]"?></td> <td>
+            <form  align="center" action="obra_especificae3.php" method="post">
+            <input type=hidden name="artista" value=<?php echo "$idartista"?>>
+        <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
+            </form>
+      </td> </tr>
+    <?php endforeach;?>
+  </table>
+</div>
 
-<?php foreach ($obras as $a): ?>
-  <tr> <td><?php echo "$a[1]"?></td> <td>
-        <form  align="center" action="obra_especificae3.php" method="post">
-        <input type=hidden name="artista" value=<?php echo "$idartista"?>>
-    <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
-        </form>
-  </td> </tr>
-<?php endforeach;?>
-</table>
 
 <img src= "<?php echo $artista_imagen;?>" height="200" width="200";>
 
