@@ -1,4 +1,7 @@
 <?php
+
+require("configuracion/conexion.php");
+
 #Consulta primer meno dropdown
 $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 
