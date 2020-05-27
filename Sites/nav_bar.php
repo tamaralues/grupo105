@@ -1,6 +1,6 @@
 <?php
 
-require("configuracion/conexion.php");
+
 require("configuracion/conexion_db_e3.php");
 
 #Consulta primer meno dropdown
@@ -32,6 +32,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_hoteles -> execute();
  $fetch_hoteles = $result_hoteles -> fetchAll();
 
+ require("configuracion/conexion.php");
 
  $query_lugares = "SELECT nombrelugar , idlugar FROM lugares;";
 
