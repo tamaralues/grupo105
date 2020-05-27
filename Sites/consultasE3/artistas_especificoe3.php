@@ -13,10 +13,10 @@
 <body>
 
   <?php
-  $path_navbar ='';
-  include_once 'nav_bar.php';
-
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
   ?>
+
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../configuracion/conexion.php");
