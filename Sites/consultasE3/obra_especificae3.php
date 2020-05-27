@@ -177,24 +177,23 @@
    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
     <img src= "<?php echo $obra_imagen;?>" height="200" width="200";>
-    <br>
     <?php
     if(!empty($obras2)){
     	foreach($obras2 as $a){
-    		echo "<p align=left>Tipo: Pintura</p>";
-    		echo "<p align=left>Técnica: $a[0]</p>";
+    		echo "<h3>Tipo:</h3> <p>Tipo: Pintura</p>";
+    		echo "<h3>Técnica:</h3> <p>Técnica: $a[0]</p>";
     	}
     }
     elseif(!empty($obras3)){
     	foreach($obras3 as $a){
-    		echo "<p align=left>Tipo: Escultura</p>";
-    		echo "<p align=left> Material: $a[0]</p>";
+    		echo "<h3>Tipo:</h3> <p>Tipo: Escultura</p>";
+    		echo "<h3>Material:</h3> <p> Material: $a[0]</p>";
 
     	}
     }
 
     else{
-    	echo "<p align=left>Tipo: Fresco</p>";
+    	echo "<h3>Tipo:</h3> <p> Fresco</p>";
     }
     ?>
    </div>
