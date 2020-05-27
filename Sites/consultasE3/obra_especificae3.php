@@ -180,20 +180,20 @@
     <?php
     if(!empty($obras2)){
     	foreach($obras2 as $a){
-    		echo "<h1>Tipo:</h1> <p>Pintura</p>";
-    		echo "<h1>Técnica:</h1> <p>$a[0]</p>";
+    		echo "<h5>Tipo:</h5> <p>Pintura</p>";
+    		echo "<h5>Técnica:</h5> <p>$a[0]</p>";
     	}
     }
     elseif(!empty($obras3)){
     	foreach($obras3 as $a){
-    		echo "<h1>Tipo:</h1> <p>Escultura</p>";
-    		echo "<h1>Material:</h1> <p> $a[0]</p>";
+    		echo "<h5>Tipo:</h5> <p>Escultura</p>";
+    		echo "<h5>Material:</h5> <p> $a[0]</p>";
 
     	}
     }
 
     else{
-    	echo "<h1>Tipo:</h1> <p> Fresco</p>";
+    	echo "<h5>Tipo:</h5> <p> Fresco</p>";
     }
     ?>
    </div>
