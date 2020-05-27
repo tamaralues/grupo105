@@ -168,8 +168,9 @@
 
 
   foreach($artista2 as $a){
-    $muerte = "$a[0]";
+    $muerte = $a[0];
   }
+
 
   foreach ($obras as $p ) {
     $nombre_obra = $p[1];
