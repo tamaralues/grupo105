@@ -1,5 +1,6 @@
 <?php
 require("../configuracion/conexion_db_e3.php");
+require("../configuracion/conexion.php");
 include_once '../include/user.php';
 include_once '../include/user_session.php';
 
@@ -51,7 +52,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
     include_once '../nav_bar.php';
     echo "<p>estamos en el perfil de {$_SESSION['user']}</p>";
     ?>
-    
+
 
     <div class="container px-4 py-2" style="width:90%; margin-top: 67px;">
         <div class="row justify-content-start py-2">

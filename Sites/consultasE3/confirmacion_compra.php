@@ -2,6 +2,8 @@
     session_start();
 
     require("../configuracion/conexion_db_e3.php");
+    require("../configuracion/conexion.php");
+    
     include_once '../include/user.php';
     include_once '../include/user_session.php';
 
@@ -33,7 +35,7 @@
     $user_session -> setCurrentUser($post_username);
     $user -> setUser($post_username);
    }
-   
+
      $query_drop8 = "SELECT did, cid_origen, capacidad FROM datos_viaje natural join tickets_comprados where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
      $result_drop8 = $db -> prepare($query_drop8);

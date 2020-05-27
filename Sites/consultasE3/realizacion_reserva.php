@@ -1,6 +1,7 @@
 <?php
     session_start();
     require("../configuracion/conexion_db_e3.php");
+    require("../configuracion/conexion.php");
 
     $fechainicio = $_POST["fechainicio"];
     $fechatermino = $_POST["fechatermino"];
