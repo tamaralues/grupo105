@@ -221,8 +221,9 @@
     <br>
     <form  align="center" action="artistas_especificoe3.php" method="post">
         <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn btn-dark">Ir a Artista</button>
-    </form>
 
+    </form>
+    
   </div>
 
 
