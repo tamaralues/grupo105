@@ -1,4 +1,3 @@
-<?php include('../templates/header.html');   ?>
 
 <body>
 
@@ -100,5 +99,3 @@ else{
       </td> </tr>
   <?php endforeach; ?>
   </table>
-
-<?php include('../templates/footer.html'); ?>
