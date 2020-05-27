@@ -138,7 +138,7 @@
       <th>Nombre obra</th>
     </tr>
     <?php foreach ($obras as $a): ?>
-      <tr> <td><?php echo "$a[1]  "?> <img src= "<?php echo $artista_imagen;?>" height="200" width="200";> </td> <td>
+      <tr> <td><?php echo "$a[1]  "?>  <br> <br><img src= "<?php echo $artista_imagen;?>" height="200" width="200";> </td> <td>
             <form  align="center" action="obra_especificae3.php" method="post">
             <input type=hidden name="artista" value=<?php echo "$idartista"?>>
         <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
