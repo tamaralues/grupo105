@@ -46,9 +46,6 @@
 	$result3 -> execute();
 	$obras3 = $result3 -> fetchAll();
 
-  foreach($artista2 as $a){
-    $muerte = $a[0];
-  }
 
   if($idobra == 0){
     $obra_imagen = "https://historiascortas.org/wp-content/uploads/2019/08/A-Apolo-siguiendo-a-Dafne-Historias-Cortas.jpg";
