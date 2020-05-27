@@ -178,6 +178,7 @@
 
   <div class="container">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
+    <h3 class="display-4"><?php echo $idobra;?></h3>
     <img src= "<?php echo $obra_imagen;?>" height="200" width="200";>
    </div>
 
@@ -220,7 +221,6 @@
     ?>
 
   </div>
-
 
 
 <form  align="left" action="consulta_lugares.php" method="post">
