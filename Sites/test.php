@@ -1,6 +1,7 @@
 <?php
 #generar elementos dropdown
 require("configuracion/conexion_db_e3.php");
+require("configuracion/conexion.php");
 
 #inicio sesion
 include_once 'include/user.php';
