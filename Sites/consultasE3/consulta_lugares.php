@@ -4,8 +4,9 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../configuracion/conexion.php");
+
   $idlugar = (int)($_POST["idlugar"]);
-  #echo "$idlugar";
+  echo "$idlugar";
 	#Hacer consulta 1
 
  	$query = "SELECT DISTINCT lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from lugares, ciudades, paises where lugares.idciudad = ciudades.idciudad and ciudades.idpais = paises.idpais and idlugar = $idlugar;";
