@@ -177,26 +177,7 @@
    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
     <img src= "<?php echo $obra_imagen;?>" height="200" width="200";>
-   </div>
-
-    <table class="table table-striped table-bordered" style="width:60%; margin:auto">
-      <tr>
-        <th>Nombre</th>
-    	  <th>Inicio</th>
-    	  <th>Término</th>
-    	  <th>Periodo</th>
-    	  <th>Lugar</th>
-    	  <th>Ciudad</th>
-    	  <th>Pais</th>
-      </tr>
-      <?php
-    	foreach ($obras as $a) {
-    		$idlugar = $a[5];
-      		echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$a[3]</td> <td>$a[4]</td> <td>$a[6]</td>  <td>$a[7]</td> <td>$a[8]</td> </tr>";
-    	}
-      ?>
-    </table>
-
+    <br>
     <?php
     if(!empty($obras2)){
     	foreach($obras2 as $a){
@@ -216,6 +197,25 @@
     	echo "<p align=left>Tipo: Fresco</p>";
     }
     ?>
+   </div>
+
+    <table class="table table-striped table-bordered" style="width:60%; margin:auto">
+      <tr>
+        <th>Nombre</th>
+    	  <th>Inicio</th>
+    	  <th>Término</th>
+    	  <th>Periodo</th>
+    	  <th>Lugar</th>
+    	  <th>Ciudad</th>
+    	  <th>Pais</th>
+      </tr>
+      <?php
+    	foreach ($obras as $a) {
+    		$idlugar = $a[5];
+      		echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$a[3]</td> <td>$a[4]</td> <td>$a[6]</td>  <td>$a[7]</td> <td>$a[8]</td> </tr>";
+    	}
+      ?>
+    </table>
 
   </div>
 
