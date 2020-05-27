@@ -45,7 +45,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_obras = $db -> prepare($query_obras);
  $result_obras -> execute();
- $fetch_lobras = $result_obras -> fetchAll();
+ $fetch_obras = $result_obras -> fetchAll();
 
 
  $query_artista = "SELECT DISTINCT nombreartista , idartista from artistas;";
@@ -78,7 +78,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
                         Obras
                     </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown1">
                         <?php
                         foreach ($fetch_obras as $f) {
                             echo "
