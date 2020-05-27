@@ -82,7 +82,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <?php
                         foreach ($fetch_obras as $f) {
                             echo "
-                            <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
+                            <form action =\"{$path_navbar}consultasE3/obras_especificae3.php\" method=\"post\">
                                   <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"idobra\">$f[0]</button>
                             </form>
                             ";

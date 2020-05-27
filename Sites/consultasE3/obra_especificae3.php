@@ -45,6 +45,126 @@
 	$result3 -> execute();
 	$obras3 = $result3 -> fetchAll();
 
+  if($idobra == 1){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/0/00/Andrea_Mantegna_049_detail_possible_self-portrait.jpg";
+  }
+  elseif($idobra == 2){
+    $idobra_imagen = "https://vignette.wikia.nocookie.net/theassassinscreed/images/6/6a/Andrea-del-verrocchio-1-sized.jpg/revision/latest/top-crop/width/360/height/450?cb=20110422234830&path-prefix=es";
+  }
+  elseif($idobra == 3){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/3/35/Vite_de_pi%C3%B9_eccellenti_pittori_scultori_ed_architetti_%281767%29_%2814597572560%29.jpg";
+  }
+  elseif($idobra == 4){
+    $artista_imagen = "https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydGlzdFwvaW1hZ2VGaWxlXC9iaWxkLW90dGF2aW9fbGVvbmlfY2FyYXZhZ2dpby5qcGciLCJyZXNpemVDcm9wLDQwMCw0MDAsQ1JPUF9FTlRST1BZIl19.1jyWicmcmhjD2HUyZ71ftRHCfe8b7Y/uWLJ-vx_w-Qvk.jpg";
+  }
+  elseif($idobra == 5){
+    $artista_imagen = "https://www.biografiasyvidas.com/biografia/d/fotos/donatello.jpg";
+  }
+  elseif($idobra == 6){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/9/9d/Eugene_delacroix.jpg";
+  }
+  elseif($idobra == 7){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Fede_Galizia_-_Portrait_of_Federico_Zuccari_-_WGA8432.jpg";
+  }
+  elseif($idobra == 8){
+    $artista_imagen = "";
+  }
+  elseif($idobra == 9){
+    $artista_imagen = "https://1.bp.blogspot.com/--KIKtapkO3w/WhmboHFDGqI/AAAAAAABBWQ/-ipO8dWN0e4t2bsjne6ft7t6uISXgZvDQCLcBGAs/s1600/01.jpeg";
+  }
+  elseif($idobra== 10){
+    $artista_imagen = "https://www.biografiasyvidas.com/biografia/b/fotos/bernini.jpg";
+  }
+  elseif($idobra == 11){
+    $artista_imagen = "https://www.descubrirelarte.es/wp-content/uploads/2019/12/DETALLE-RETRATO-VASARI.jpg";
+  }
+  elseif($idobra == 12){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d1/15th-century_unknown_painters_-_Five_Famous_Men_%28detail%29_-_WGA23920.jpg";
+  }
+  elseif($idobra == 13){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/c/c6/David_Self_Portrait.jpg";
+  }
+  elseif($idobra == 14){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Duquesnoy1776.jpg/220px-Duquesnoy1776.jpg";
+  }
+  elseif($idobra == 15){
+    $artista_imagen = "";
+  }
+  elseif($idobra == 16){
+    $artista_imagen = "https://canalhistoria.es/wp-content/uploads/2018/10/da_vinci_thumb.jpg";
+  }
+  elseif($idobra == 17){
+    $artista_imagen = "https://mymodernmet.com/wp/wp-content/uploads/2019/04/michelangelo-facts-7.jpg";
+  }
+  elseif($idobra == 18){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Raffaello_Sanzio.jpg/1200px-Raffaello_Sanzio.jpg";
+  }
+  elseif($idobra == 19){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 20){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 21){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 22){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 23){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 24){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 25){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 26){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 27){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 28){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 29){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 30){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 31){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 32){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 33){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 34){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 35){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 36){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 37){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 38){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+  elseif($idobra == 39){
+    $artista_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+  }
+
+
+
   ?>
 
   <div class="container">
@@ -85,7 +205,7 @@
     	echo "<p align=left>Tipo: Fresco</p>";
     }
     ?>
-    
+
   </div>
 
 
