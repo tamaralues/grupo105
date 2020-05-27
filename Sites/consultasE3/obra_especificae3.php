@@ -29,7 +29,8 @@
   $artista_prev = (int)($_POST["artista"]);
 
 	#Hacer consulta 2
- 	$query = "SELECT DISTINCT obras.idobra, obras.nombreobra, obras.anoinicio, obras.anotermino, obras.periodo, obras.idlugar, lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from artistas, obrasartistas, obras, lugares, ciudades, paises  where  artistas.idartista = obrasartistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = lugares.idlugar and lugares.idciudad = ciudades.idciudad and ciudades.idpais = paises.idpais and obras.idobra = $idobra;";
+ 	$query = "SELECT DISTINCT obras.idobra, obras.nombreobra, obras.anoinicio, obras.anotermino, obras.periodo, obras.idlugar, lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from artistas, obrasartistas, obras,
+   lugares, ciudades, paises  where  artistas.idartista = obrasartistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = lugares.idlugar and lugares.idciudad = ciudades.idciudad and ciudades.idpais = paises.idpais and obras.idobra = $idobra;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$obras = $result -> fetchAll();
@@ -44,6 +45,10 @@
 	$result3 = $db -> prepare($query3);
 	$result3 -> execute();
 	$obras3 = $result3 -> fetchAll();
+
+  foreach($artista2 as $a){
+    $muerte = $a[0];
+  }
 
   if($idobra == 0){
     $obra_imagen = "https://historiascortas.org/wp-content/uploads/2019/08/A-Apolo-siguiendo-a-Dafne-Historias-Cortas.jpg";
@@ -164,11 +169,6 @@
   }
   elseif($idobra == 39){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
-  }
-
-
-  foreach($artista2 as $a){
-    $muerte = $a[0];
   }
 
 
