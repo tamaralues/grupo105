@@ -106,11 +106,26 @@
   foreach($artista2 as $a){
     $muerte = "$a[0]";
   }
+
+  foreach ($artista as $p ) {
+
+    $nombre_artista = $p[1];
+
+  }
+
   ?>
+
+
 
 <br>
 
 
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+     <h3 class="display-4"><?php echo $nombre_artista;?></h3>
+    </div>
+
+    <img src= "<?php echo $artista_imagen;?>" height="200" width="200";>
 
     <div class="container">
       <table class="table table-striped table-bordered" style="width:60%; margin:auto">
@@ -138,7 +153,7 @@
       <th>Nombre obra</th>
     </tr>
     <?php foreach ($obras as $a): ?>
-      <tr> <td><?php echo "$a[1]  "?>  <br> <br><img src= "<?php echo $artista_imagen;?>" height="200" width="200";> </td> <td>
+      <tr> <td><?php echo "$a[1]  "?></td> <td>
             <form  align="center" action="obra_especificae3.php" method="post">
             <input type=hidden name="artista" value=<?php echo "$idartista"?>>
         <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
@@ -147,7 +162,6 @@
     <?php endforeach;?>
   </table>
 </div>
-
 
 
 
