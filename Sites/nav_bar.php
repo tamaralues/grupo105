@@ -80,10 +80,10 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                        foreach ($fetch_lugares as $f3) {
+                        foreach ($fetch_lugares as $f) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f3[1] name=\"lugares\">$f3[1]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"lugares\">$f[1]</button>
                             </form>
                             ";
                         }
