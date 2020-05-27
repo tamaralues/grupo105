@@ -51,10 +51,10 @@
     $obra_imagen = "https://historiascortas.org/wp-content/uploads/2019/08/A-Apolo-siguiendo-a-Dafne-Historias-Cortas.jpg";
   }
   elseif($idobra == 1){
-    $obra_imagen = "https://vignette.wikia.nocookie.net/theassassinscreed/images/6/6a/Andrea-del-verrocchio-1-sized.jpg/revision/latest/top-crop/width/360/height/450?cb=20110422234830&path-prefix=es";
+    $obra_imagen = "https://historiascortas.org/wp-content/uploads/2019/08/A-Apolo-siguiendo-a-Dafne-Historias-Cortas.jpg";
   }
   elseif($idobra == 2){
-    $obra_imagen = "https://vignette.wikia.nocookie.net/theassassinscreed/images/6/6a/Andrea-del-verrocchio-1-sized.jpg/revision/latest/top-crop/width/360/height/450?cb=20110422234830&path-prefix=es";
+    $obra_imagen = "https://arte.laguia2000.com/wp-content/uploads/2013/07/494px-Leonardo_da_Vinci_016.jpg";
   }
   elseif($idobra == 3){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/3/35/Vite_de_pi%C3%B9_eccellenti_pittori_scultori_ed_architetti_%281767%29_%2814597572560%29.jpg";
