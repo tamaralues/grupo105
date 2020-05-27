@@ -70,7 +70,7 @@ else{
     <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn-link">Ir a Lugar</button>
 </form>
 <br>
-<form  align="left" action="artista_especificoe3.php" method="post">
+<form  align="left" action="artistas_especificoe3.php" method="post">
     <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn-link">Ir a Artista</button>
 </form>
 
