@@ -1,6 +1,7 @@
 <?php
 
 require("configuracion/conexion.php");
+require("configuracion/conexion_db_e3.php");
 
 #Consulta primer meno dropdown
 $query_drop1 = "SELECT nombrepais, pid FROM paises;";
@@ -24,12 +25,12 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_drop3 -> execute();
  $fetch_drop3 = $result_drop3 -> fetchAll();
 
- $query_drop4 = "SELECT nombrehotel , hid FROM hoteles;";
+ $query_hoteles = "SELECT nombrehotel , hid FROM hoteles;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
- $result_drop4 = $db -> prepare($query_drop4);
- $result_drop4 -> execute();
- $fetch_drop4 = $result_drop4 -> fetchAll();
+ $result_hoteles = $db -> prepare($query_hoteles);
+ $result_hoteles -> execute();
+ $fetch_hoteles = $result_hoteles -> fetchAll();
 
 
  $query_lugares = "SELECT nombrelugar , idlugar FROM lugares;";
@@ -116,7 +117,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         Reservar Hotel
                     </button>
                     <div class=\"dropdown-menu dropdown-menu\" aria-labelledby=\"dropdown3\"> ";
-                        foreach ($fetch_drop4 as $f4) {
+                        foreach ($fetch_hoteles as $f4) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consultas_hotel.php\" method=\"post\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f4[1] name=\"hotel\"> $f4[0] </button>
