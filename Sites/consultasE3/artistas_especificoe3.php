@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../css/bootstrapE3.css" rel="stylesheet">
@@ -133,7 +132,7 @@ foreach ($artista as $a) {
   <tr> <td><?php echo "$a[1]"?></td> <td>
         <form  align="left" action="obra_especificae3.php" method="post">
         <input type=hidden name="artista" value=<?php echo "$idartista"?>>
-    <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn-link">Ir a Obra</button>
+    <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
         </form>
   </td> </tr>
 <?php endforeach;?>
@@ -145,9 +144,18 @@ foreach ($artista as $a) {
 <form align="center" action="artistase3.php" method="post">
     <br/>
     <br/>
-    <input type="submit" value="Artistas">
+    <button type="submit" class="btn btn-dark">
+        Ver artistas
+    </button>
   </form>
 
+
+  <form action ="../test.php" method="POST">
+        <br>
+        <button type="submit" class="btn btn-dark ">
+            Volver
+        </button>
+  </form>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
