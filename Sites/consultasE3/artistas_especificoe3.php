@@ -1,7 +1,7 @@
 <body>
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("../configuracion/conexion.php");
 
   #Se obtiene el valor del input del usuario
   $idartista = (int)($_POST["artista"]);
