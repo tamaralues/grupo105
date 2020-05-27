@@ -215,11 +215,11 @@
     	}
       ?>
     </table>
-    <form  align="left" action="consulta_lugares.php" method="post">
+    <form  align="center" action="consulta_lugares.php" method="post">
         <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn btn-dark">Ir a Lugar</button>
     </form>
-
-    <form  align="left" action="artistas_especificoe3.php" method="post">
+    <br>
+    <form  align="center" action="artistas_especificoe3.php" method="post">
         <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn btn-dark">Ir a Artista</button>
     </form>
 
