@@ -120,13 +120,14 @@
           <th>Muerte</th>
           <th>Descripción</th>
         </tr>
-
+        <?php
         foreach ($artista as $a) {
           echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$muerte</td> <td>$a[3]</td> </tr>";
         }
-          ?>
+        ?>
       </table>
     </div>
+
 
 
 <br>
