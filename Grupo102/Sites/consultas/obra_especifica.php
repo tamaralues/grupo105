@@ -16,6 +16,7 @@
 	$obras = $result -> fetchAll();
 
 	$query2 = "SELECT DISTINCT tecnica from pinturas where idobra = $idobra;";
+
 	$result2 = $db -> prepare($query2);
 	$result2 -> execute();
 	$obras2 = $result2 -> fetchAll();
@@ -24,6 +25,7 @@
 	$result3 = $db -> prepare($query3);
 	$result3 -> execute();
 	$obras3 = $result3 -> fetchAll();
+
   ?>
 
 	<table>
@@ -56,7 +58,7 @@ elseif(!empty($obras3)){
 	foreach($obras3 as $a){
 		echo "<p align=left>Tipo: Escultura</p>";
 		echo "<p align=left> Material: $a[0]</p>";
-		
+
 	}
 }
 
@@ -73,5 +75,5 @@ else{
     <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn-link">Ir a Artista</button>
 </form>
 
-  
+</body>
 <?php include('../templates/footer.html'); ?>

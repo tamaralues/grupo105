@@ -39,6 +39,20 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_lugares -> execute();
  $fetch_lugares = $result_lugares -> fetchAll();
 
+ $query_obras = "SELECT nombreobra , idobras FROM obras;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_obras = $db -> prepare($query_obras);
+ $result_obras -> execute();
+ $fetch_lobras = $result_obras -> fetchAll();
+
+ $query_artista = "SELECT nombreartista , idartista FROM artistas;";
+
+#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $result_artista = $db -> prepare($query_artista);
+ $result_artista -> execute();
+ $fetch_artista = $result_artista -> fetchAll();
+
 ?>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm" style="position: absolute; top: 0; width: 100%; height: 70px;">
         <a class="my-0 mr-md-auto font-weight-normal text-white" href=<?php echo"{$path_navbar}test.php"?> style="text-decoration: none;"><h5>Splinter S.A.</h5></a>
@@ -50,10 +64,10 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown1">
                         <?php
-                            foreach ($fetch_drop1 as $f1) {
+                            foreach ($fetch_artista as $f1) {
                                 echo "
                                 <form action =\"{$path_navbar}consultasE3/consulta_artista.php\" method=\"post\">
-                                    <button class=\"dropdown-item\" type=\"submit\" value=$f1[0] name=\"artista\">$f1[0]</button>
+                                    <button class=\"dropdown-item\" type=\"submit\" value=$f1[1] name=\"idartista\">$f1[0]</button>
                                 </form>
                                 ";
                             }
@@ -61,16 +75,18 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </div>
                 </div>
                 <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown2" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-dark" data-toggle="dropdown" id="dropdown3" aria-haspopup="true" aria-expanded="false">
                         Obras
                     </button>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown2">
+                    <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdown3">
                         <?php
-                            foreach ($fetch_drop2 as $f2) {
-                                echo "
-                                    <button class=\"dropdown-item\" type=\"button\">$f2[0]</button>
-                                ";
-                            }
+                        foreach ($fetch_obras as $f) {
+                            echo "
+                            <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"idobra\">$f[0]</button>
+                            </form>
+                            ";
+                        }
                         ?>
                     </div>
                 </div>
@@ -83,7 +99,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         foreach ($fetch_lugares as $f) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
-                                <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"idlugar\">$f[1]</button>
+                                <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"idlugar\">$f[0]</button>
                             </form>
                             ";
                         }
