@@ -156,7 +156,7 @@
       <tr> <td><?php echo "$a[1]  "?></td> <td>
             <form  align="center" action="obra_especificae3.php" method="post">
             <input type=hidden name="artista" value=<?php echo "$idartista"?>>
-        <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark ">Ir a Obra</button>
+        <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark "> Conocer más de <?php echo "$a[1]"?> </button>
             </form>
       </td> </tr>
     <?php endforeach;?>
