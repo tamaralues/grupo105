@@ -143,10 +143,10 @@
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
   }
   elseif($idobra == 32){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+    $obra_imagen = "https://photo620x400.mnstatic.com/96ed0ddc23455feb41e8e7f55b599bf0/manneken-pis.jpg";
   }
   elseif($idobra == 33){
-    $obra_imagen = "https://photo620x400.mnstatic.com/96ed0ddc23455feb41e8e7f55b599bf0/manneken-pis.jpg";
+    $obra_imagen = "";
   }
   elseif($idobra == 34){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/f/f2/Jos%C3%A9_de_Ribera_024.jpg";
