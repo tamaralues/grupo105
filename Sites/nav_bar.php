@@ -47,12 +47,11 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_obras -> execute();
  $fetch_lobras = $result_obras -> fetchAll();
 
- $query_artista = "SELECT nombreartista , idartista FROM artistas;";
 
-#Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ $query_artista = "SELECT DISTINCT nombreartista , idartista from artistas;";
  $result_artista = $db -> prepare($query_artista);
  $result_artista -> execute();
- $fetch_artista = $result_artista -> fetchAll();
+ $fetch_artista  = $result_artista -> fetchAll();
 
 ?>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm" style="position: absolute; top: 0; width: 100%; height: 70px;">
