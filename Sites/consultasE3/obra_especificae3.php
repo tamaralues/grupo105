@@ -153,7 +153,7 @@
   }
   elseif($idobra == 35){
     // No encontré
-    $obra_imagen = "";
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/1/14/Pulcin_della_Minerva_2006_n2.jpg";
   }
   elseif($idobra == 36){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/1/14/Pulcin_della_Minerva_2006_n2.jpg";
