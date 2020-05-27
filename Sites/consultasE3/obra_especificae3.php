@@ -65,28 +65,30 @@
     	}
       ?>
     </table>
+
+    <?php
+    if(!empty($obras2)){
+    	foreach($obras2 as $a){
+    		echo "<p align=left>Tipo: Pintura</p>";
+    		echo "<p align=left>Técnica: $a[0]</p>";
+    	}
+    }
+    elseif(!empty($obras3)){
+    	foreach($obras3 as $a){
+    		echo "<p align=left>Tipo: Escultura</p>";
+    		echo "<p align=left> Material: $a[0]</p>";
+
+    	}
+    }
+
+    else{
+    	echo "<p align=left>Tipo: Fresco</p>";
+    }
+    ?>
+    
   </div>
 
 
-<?php
-if(!empty($obras2)){
-	foreach($obras2 as $a){
-		echo "<p align=left>Tipo: Pintura</p>";
-		echo "<p align=left>Técnica: $a[0]</p>";
-	}
-}
-elseif(!empty($obras3)){
-	foreach($obras3 as $a){
-		echo "<p align=left>Tipo: Escultura</p>";
-		echo "<p align=left> Material: $a[0]</p>";
-
-	}
-}
-
-else{
-	echo "<p align=left>Tipo: Fresco</p>";
-}
-?>
 
 <form  align="left" action="consulta_lugares.php" method="post">
     <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn btn-dark">Ir a Lugar</button>
