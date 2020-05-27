@@ -66,8 +66,8 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         <?php
                             foreach ($fetch_artista as $f1) {
                                 echo "
-                                <form action =\"{$path_navbar}consultasE3/consulta_artista.php\" method=\"post\">
-                                    <button class=\"dropdown-item\" type=\"submit\" value=$f1[1] name=\"idartista\">$f1[0]</button>
+                                <form action =\"{$path_navbar}consultasE3/artistas_especificoe3.php\" method=\"post\">
+                                    <button class=\"dropdown-item\" type=\"submit\" value=$f1[1] name=\"artista\">$f1[0]</button>
                                 </form>
                                 ";
                             }
