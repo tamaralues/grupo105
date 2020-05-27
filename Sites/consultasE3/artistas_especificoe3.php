@@ -16,7 +16,7 @@
     include_once '../nav_bar.php';
   ?>
 
-  <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -110,19 +110,24 @@
 
 <br>
 
-<table>
-    <tr>
-      <th>Nombre</th>
-      <th>Nacimiento</th>
-      <th>Muerte</th>
-      <th>Descripción</th>
-    </tr>
-<?php
-foreach ($artista as $a) {
-  echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$muerte</td> <td>$a[3]</td> </tr>";
-}
-?>
-</table>
+
+
+    <div class="container">
+      <table class="table table-striped table-bordered" style="width:60%; margin:auto">
+        <tr>
+          <th>Nombre</th>
+          <th>Nacimiento</th>
+          <th>Muerte</th>
+          <th>Descripción</th>
+        </tr>
+
+        foreach ($artista as $a) {
+          echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$muerte</td> <td>$a[3]</td> </tr>";
+        }
+          ?>
+      </table>
+    </div>
+
 
 <br>
 <table>
