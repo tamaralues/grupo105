@@ -120,7 +120,6 @@
 <br>
 
 
-
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
      <h3 class="display-4"><?php echo $nombre_artista;?></h3>
      <img src= "<?php echo $artista_imagen;?>" height="200" width="200";>
@@ -162,7 +161,6 @@
     <?php endforeach;?>
   </table>
 </div>
-
 
 
 <form align="center" action="artistase3.php" method="post">

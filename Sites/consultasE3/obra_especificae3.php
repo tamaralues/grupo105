@@ -1,5 +1,25 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../css/bootstrapE3.css" rel="stylesheet">
+    <link href="../css/estiloE3.css" rel="stylesheet">
+    <title>Compra de tickets</title>
+</head>
+
 <body>
+
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+  ?>
+
+<div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
+
+
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
@@ -27,24 +47,26 @@
 
   ?>
 
-	<table>
-    <tr>
-	  <th>Nombre</th>
-	  <th>Inicio</th>
-	  <th>Término</th>
-	  <th>Periodo</th>
-	  <th>Lugar</th>
-	  <th>Ciudad</th>
-	  <th>Pais</th>
+  <div class="container">
+    <table class="table table-striped table-bordered" style="width:60%; margin:auto">
+      <tr>
+        <th>Nombre</th>
+    	  <th>Inicio</th>
+    	  <th>Término</th>
+    	  <th>Periodo</th>
+    	  <th>Lugar</th>
+    	  <th>Ciudad</th>
+    	  <th>Pais</th>
+      </tr>
+      <?php
+    	foreach ($obras as $a) {
+    		$idlugar = $a[5];
+      		echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$a[3]</td> <td>$a[4]</td> <td>$a[6]</td>  <td>$a[7]</td> <td>$a[8]</td> </tr>";
+    	}
+      ?>
+    </table>
+  </div>
 
-    </tr>
-  <?php
-	foreach ($obras as $a) {
-		$idlugar = $a[5];
-  		echo "<tr> <td>$a[1]</td> <td>$a[2]</td> <td>$a[3]</td> <td>$a[4]</td> <td>$a[6]</td>  <td>$a[7]</td> <td>$a[8]</td> </tr>";
-	}
-  ?>
-	</table>
 
 <?php
 if(!empty($obras2)){
@@ -67,11 +89,17 @@ else{
 ?>
 
 <form  align="left" action="consulta_lugares.php" method="post">
-    <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn-link">Ir a Lugar</button>
+    <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn btn-dark">Ir a Lugar</button>
 </form>
 <br>
 <form  align="left" action="artistas_especificoe3.php" method="post">
-    <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn-link">Ir a Artista</button>
+    <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn btn-dark">Ir a Artista</button>
 </form>
 
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="../css/bootstrap.js"></script>
 </body>
+</html>
