@@ -40,7 +40,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
  $result_lugares -> execute();
  $fetch_lugares = $result_lugares -> fetchAll();
 
- $query_obras = "SELECT nombreobra , idobras FROM obras;";
+ $query_obras = "SELECT nombreobra , idobra FROM obras;";
 
 #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
  $result_obras = $db -> prepare($query_obras);
