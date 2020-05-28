@@ -24,7 +24,6 @@
 
 		}
 
-
     $hotel = $_POST["hotel"];
 
 		$query = "SELECT hid , nombrehotel FROM hoteles ;";
@@ -98,6 +97,7 @@
 			<input type="hidden" name="hid" value= "<?php echo $hid ;?>" >
 			 </div>
 
+			 <input type="hidden" name="username" value= "<?php echo $post_username;?>">
       <br>
       <button type="submit" class="btn btn-dark">Reservar</button>
     </form>
@@ -105,6 +105,7 @@
 
 	<form action ="consultas_hotel.php" method="POST">
 				<input type="hidden" name="hotel" value= "<?php echo $hid ;?>"  >
+				<input type="hidden" name="username" value= "<?php echo $post_username;?>">
 				<br>
 				<button type="submit" class="btn btn-dark">
 						Volver

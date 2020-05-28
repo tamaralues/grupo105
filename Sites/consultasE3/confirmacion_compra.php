@@ -11,7 +11,6 @@
 
     $post_username = $_POST['username'];
 
-
     if (isset($_SESSION['user'])){
        # echo "<p>hay sesion iniciada</p>";
         $user->setUser($user_session->getCurrentUser());
@@ -100,7 +99,6 @@
        echo "<p>La compra no fue realizada con exito </p>";
      }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -139,6 +137,7 @@
     </main>
 
 <form action ="comprar_tickets.php" method="POST">
+      <input type="hidden" name="username" value= "<?php echo $post_username;?>">
       <br>
       <button type="submit" class="btn btn-dark">
           Volver

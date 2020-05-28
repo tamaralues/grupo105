@@ -68,6 +68,7 @@ $user -> setUser($post_username);
         </ul>
         <form align="center" action="confirmacion_reserva.php" method="post">
           <input type="hidden" name="hotel" value= "<?php echo $hotel ;?>"  >
+          <input type="hidden" name="username" value= "<?php echo $post_username;?>">
           <br>
           <button type="submit" class="btn btn-dark">Reservar</button>
         </form>
@@ -85,6 +86,7 @@ $user -> setUser($post_username);
           <input type="hidden" name="hid" value= "<?php echo $hid ;?>"  >
           <input type="text" class="form-control" name="comentario" aria-describedby="emailHelp" placeholder="">
           <br>
+          <input type="hidden" name="username" value= "<?php echo $post_username;?>">
           <button type="submit" class="btn btn-dark">Comentar</button>
         </form>
       </div>
