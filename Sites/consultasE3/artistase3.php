@@ -4,11 +4,30 @@
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../configuracion/conexion.php");
+
+  $post_username = $_POST['username'];
+
+
+  if (isset($_SESSION['user'])){
+     # echo "<p>hay sesion iniciada</p>";
+      $user->setUser($user_session->getCurrentUser());
+      }
+  else{
+      #echo "<p>iniciando sesion: $post_username</p>";
+    $user_session -> setCurrentUser($post_username);
+    $user -> setUser($post_username);
+
+  }
+
+  
 	#Hacer consulta 1
+
  	$query = "SELECT DISTINCT idartista, nombreartista from artistas;";
 	$result = $db -> prepare($query);
 	$result -> execute();
   $artista = $result -> fetchAll();
+
+
   ?>
 
 	<table>

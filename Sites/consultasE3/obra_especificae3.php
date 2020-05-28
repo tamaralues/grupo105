@@ -27,6 +27,20 @@
   $idobra = (int)($_POST["obra"]);
   $artista_prev = (int)($_POST["artista"]);
 
+  $post_username = $_POST['username'];
+
+
+  if (isset($_SESSION['user'])){
+     # echo "<p>hay sesion iniciada</p>";
+      $user->setUser($user_session->getCurrentUser());
+      }
+  else{
+      #echo "<p>iniciando sesion: $post_username</p>";
+    $user_session -> setCurrentUser($post_username);
+    $user -> setUser($post_username);
+
+  }
+
 	#Hacer consulta 2
  	$query = "SELECT DISTINCT obras.idobra, obras.nombreobra, obras.anoinicio, obras.anotermino, obras.periodo, obras.idlugar, lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from artistas, obrasartistas, obras,
    lugares, ciudades, paises  where  artistas.idartista = obrasartistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = lugares.idlugar and lugares.idciudad = ciudades.idciudad and ciudades.idpais = paises.idpais and obras.idobra = $idobra;";
@@ -80,7 +94,7 @@
     $obra_imagen = "https://www.biografiasyvidas.com/biografia/b/fotos/bernini.jpg";
   }
   elseif($idobra == 11){
-    $obra_imagen = "https://www.descubrirelarte.es/wp-content/uploads/2019/12/DETALLE-RETRATO-VASARI.jpg";
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/8/89/La_Anunciaci%C3%B3n%2C_de_Fra_Angelico.jpg";
   }
   elseif($idobra == 12){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d1/15th-century_unknown_painters_-_Five_Famous_Men_%28detail%29_-_WGA23920.jpg";

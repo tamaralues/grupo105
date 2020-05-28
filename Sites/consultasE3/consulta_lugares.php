@@ -7,6 +7,21 @@
 
   $idlugar = (int)($_POST["idlugar"]);
   echo "$idlugar";
+
+  $post_username = $_POST['username'];
+
+
+  if (isset($_SESSION['user'])){
+     # echo "<p>hay sesion iniciada</p>";
+      $user->setUser($user_session->getCurrentUser());
+      }
+  else{
+      #echo "<p>iniciando sesion: $post_username</p>";
+    $user_session -> setCurrentUser($post_username);
+    $user -> setUser($post_username);
+
+  }
+  
 	#Hacer consulta 1
 
  	$query = "SELECT DISTINCT lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from lugares, ciudades, paises where lugares.idciudad = ciudades.idciudad and ciudades.idpais = paises.idpais and idlugar = $idlugar;";

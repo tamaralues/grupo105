@@ -4,7 +4,20 @@
     #Se obtiene el valor del input del usuario
 		require("../configuracion/conexion_db_e3.php");
 
+		$post_username = $_POST['username'];
 
+
+		if (isset($_SESSION['user'])){
+		   # echo "<p>hay sesion iniciada</p>";
+		    $user->setUser($user_session->getCurrentUser());
+		    }
+		else{
+		    #echo "<p>iniciando sesion: $post_username</p>";
+		  $user_session -> setCurrentUser($post_username);
+		  $user -> setUser($post_username);
+
+		}
+		
     $hotel = $_POST["hotel"];
 
 		$query = "SELECT hid , nombrehotel FROM hoteles ;";
