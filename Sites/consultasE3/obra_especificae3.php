@@ -22,7 +22,7 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  session_start();
+
   require("../configuracion/conexion.php");
 
   $idobra = (int)($_POST["obra"]);
