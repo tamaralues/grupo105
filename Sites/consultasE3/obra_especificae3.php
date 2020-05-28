@@ -193,7 +193,6 @@
 
    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
-      <h3 class="display-4"><?php echo $idobra;?></h3>
     <img src= "<?php echo $obra_imagen;?>" height="200" width="200";>
     <?php
     if(!empty($obras2)){
