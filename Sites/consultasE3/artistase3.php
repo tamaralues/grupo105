@@ -32,9 +32,8 @@
       include_once '../nav_bar.php';
     ?>
 
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+<div class="pricing-header px-3 py-5 pt-md-5 pb-md-4 mx-auto text-center">
   <h3 class="display-4"> Listado artistas</h3>
-
 
 	<table class="table table-striped table-bordered" style="width:60%; margin:auto">
     <tr>
