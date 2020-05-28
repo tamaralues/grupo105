@@ -20,7 +20,6 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  session_start();
   require("../configuracion/conexion.php");
 
   #Se obtiene el valor del input del usuario
