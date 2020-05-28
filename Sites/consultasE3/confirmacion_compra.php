@@ -1,11 +1,27 @@
 <?php
-    session_start();
+
 
     require("../configuracion/conexion_db_e3.php");
 
     include_once '../include/user.php';
     include_once '../include/user_session.php';
 
+    $user_session = new userSession();
+    $user = new User($db);
+
+    $post_username = $_POST['username'];
+
+
+    if (isset($_SESSION['user'])){
+       # echo "<p>hay sesion iniciada</p>";
+        $user->setUser($user_session->getCurrentUser());
+        }
+    else{
+        #echo "<p>iniciando sesion: $post_username</p>";
+      $user_session -> setCurrentUser($post_username);
+      $user -> setUser($post_username);
+
+    }
 
     $origen = $_POST["origen"];
     $destino = $_POST["destino"];
@@ -25,15 +41,6 @@
     $fechacompra = date('Y-m-d H:i:s');
     echo  $fechacompra ;
 
-    #configurar inicio de sesion
-    if (isset($_SESSION['user'])){
-      $_SESSION['username']=$post_username;
-       $user->setUser($user_session->getCurrentUser());}
-   else{
-    $_SESSION['username']=$post_username;
-    $user_session -> setCurrentUser($post_username);
-    $user -> setUser($post_username);
-   }
 
      $query_drop8 = "SELECT did, cid_origen, capacidad FROM datos_viaje natural join tickets_comprados where cid_origen = '$origen' and cid_destino = '$destino'and horasalida = '$horasalida' and  medio = '$medio' ;";
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
