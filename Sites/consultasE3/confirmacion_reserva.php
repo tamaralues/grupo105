@@ -3,8 +3,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
 		require("../configuracion/conexion_db_e3.php");
-		require("../configuracion/conexion.php");
-		
+
 
     $hotel = $_POST["hotel"];
 
