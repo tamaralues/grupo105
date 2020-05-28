@@ -3,10 +3,8 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-    session_start();
+
   require("../configuracion/conexion.php");
-
-
 
 
 	#Hacer consulta 1
@@ -22,7 +20,6 @@
 	<table>
     <tr>
     <th>Nombre </th>
-
     </tr>
 
 	<?php foreach ($artista as $a): ?>
