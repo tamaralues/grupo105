@@ -34,10 +34,6 @@
 	$result5 -> execute();
   $artistas = $result5 -> fetchAll();
 
-  foreach ($artistas as $p ) {
-    $nombre_lugar = $p[2];
-  }
-
   ?>
 
 
@@ -61,7 +57,7 @@
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
-  </div>
+
 
    <table class="table table-striped table-bordered" style="width:60%; margin:auto">
      <tr>
@@ -75,7 +71,7 @@
    	}
      ?>
    </table>
- </div>
+
 
 
   <?php
@@ -109,7 +105,7 @@ else{
     </tr>
 	<?php foreach ($obras as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td> <td><?php echo "$a[1]"?></td> <td><?php echo "$a[2]"?></td> <td>
-          <form  align="left" action="obra_especificae3.php" method="post">
+          <form  align="center" action="obra_especificae3.php" method="post">
     <button type="submit" name="obra" value= <?php echo "$a[3]"?> class="btn-link">Ir a Obra</button>
           </form>
       </td> </tr>
@@ -123,7 +119,7 @@ else{
 
 	<?php foreach ($artistas as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td>  <td>
-          <form  align="left" action="artistas_especificoe3.php" method="post">
+          <form  align="center" action="artistas_especificoe3.php" method="post">
     <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
           </form>
       </td> </tr>
