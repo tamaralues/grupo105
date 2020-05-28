@@ -3,9 +3,7 @@
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     #Se obtiene el valor del input del usuario
 
-
 		require("../configuracion/conexion_db_e3.php");
-		$post_username = $_POST['username'];
 
 		include_once '../include/user.php';
 		include_once '../include/user_session.php';
@@ -25,7 +23,6 @@
 		  $user -> setUser($post_username);
 
 		}
-
 
 
     $hotel = $_POST["hotel"];

@@ -3,7 +3,25 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
   require("../configuracion/conexion.php");
+  include_once '../include/user.php';
+  include_once '../include/user_session.php';
 
+  $user_session = new userSession();
+  $user = new User($db);
+
+  $post_username = $_POST['username'];
+
+  if (isset($_SESSION['user'])){
+     # echo "<p>hay sesion iniciada</p>";
+      $user->setUser($user_session->getCurrentUser());
+      }
+  else{
+      #echo "<p>iniciando sesion: $post_username</p>";
+    $user_session -> setCurrentUser($post_username);
+    $user -> setUser($post_username);
+
+  }
+  
 
 	#Hacer consulta 1
 
