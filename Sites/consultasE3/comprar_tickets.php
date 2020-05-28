@@ -252,6 +252,7 @@ else{
         if(!$destino or !$origen or !$medio or !$horasalida ){
             echo
               "
+              <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
               <br>
               <button type=\"submit\" class=\"btn btn-dark\">
                   Siguiente
@@ -267,6 +268,7 @@ else{
                 <input type=\"hidden\" name=\"nombre_origen\" value= $origen_nombre >
                 <input type=\"hidden\" name=\"nombre_destino\" value= $destino_nombre >
                 <input type=\"hidden\" name=\"username\" value= $post_user >
+                <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
                 <button type=\"submit\" class=\"btn btn-dark\">
                     Comprar
                   </button>
@@ -286,6 +288,7 @@ else{
                   <input type=\"hidden\" name=\"horasalida\" value= \"\" >
                   <input type=\"hidden\" name=\"origen\" value= \"\"     >
                   <input type=\"hidden\" name=\"destino\" value= \"\"    >
+                  <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
                   <br>
                   <button type=\"submit\" class=\"btn btn-dark\">
                       Realizar otra búsqueda
@@ -306,11 +309,13 @@ else{
             <input type="hidden" name="origen" value= ""     >
             <input type="hidden" name="destino" value= ""    >
             <input type="hidden" name="fechaviaje" value= "" >
+            <input type="hidden" name="username" value= "<?php echo $post_username;?>">
               Reiniciar búsqueda
           </button>
     </form>
 
     <form action ="../test.php" method="POST">
+         <input type="hidden" name="username" value= "<?php echo $post_username;?>">
           <br>
           <button type="submit" class="btn btn-dark ">
               Volver

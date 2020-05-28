@@ -1,3 +1,24 @@
+<?php
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+   # echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());
+    }
+else{
+    #echo "<p>iniciando sesion: $post_username</p>";
+  $user_session -> setCurrentUser($post_username);
+  $user -> setUser($post_username);
+
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -233,12 +254,13 @@
       ?>
     </table>
     <form  align="center" action="consulta_lugares.php" method="post">
+        <input type="hidden" name="username" value= "<?php echo $post_username;?>">
         <button type="submit" name="idlugar" value= <?php echo "$idlugar"?> class="btn btn-dark">Ir a Lugar</button>
     </form>
     <br>
     <form  align="center" action="artistas_especificoe3.php" method="post">
+        <input type="hidden" name="username" value= "<?php echo $post_username;?>">
         <button type="submit" name="artista" value= <?php echo "$artista_prev"?> class="btn btn-dark">Ir a Artista</button>
-
     </form>
 
   </div>

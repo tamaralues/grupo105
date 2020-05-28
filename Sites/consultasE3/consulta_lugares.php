@@ -107,7 +107,8 @@ else{
   <?php foreach ($obras as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td> <td><?php echo "$a[1]"?></td> <td><?php echo "$a[2]"?></td> <td>
           <form  align="center" action="obra_especificae3.php" method="post">
-    <button type="submit" name="obra" value= <?php echo "$a[3]"?> class="btn btn-dark">Ir a Obra</button>
+            <input type="hidden" name="username" value= "<?php echo $post_username;?>">
+            <button type="submit" name="obra" value= <?php echo "$a[3]"?> class="btn btn-dark">Ir a Obra</button>
           </form>
       </td> </tr>
   <?php endforeach;?>
@@ -124,7 +125,8 @@ else{
 	<?php foreach ($artistas as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td>  <td>
           <form  align="center" action="artistas_especificoe3.php" method="post">
-    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn btn-dark">Ir a Artista</button>
+             <input type="hidden" name="username" value= "<?php echo $post_username;?>">
+             <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn btn-dark">Ir a Artista</button>
           </form>
       </td> </tr>
   <?php endforeach; ?>

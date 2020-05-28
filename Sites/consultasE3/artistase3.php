@@ -21,7 +21,7 @@
     $user -> setUser($post_username);
 
   }
-  
+
 
 	#Hacer consulta 1
 
@@ -61,7 +61,8 @@
 	<?php foreach ($artista as $a): ?>
   		<tr> <td><?php echo "$a[1]"?></td> <td>
          <form  align="left" action="artistas_especificoe3.php" method="post">
-    <button type="submit" name="artista" value= <?php echo "$a[0]"?> class="btn btn-dark">Ir a Artista</button>
+           <input type="hidden" name="username" value= "<?php echo $post_username;?>">
+           <button type="submit" name="artista" value= <?php echo "$a[0]"?> class="btn btn-dark">Ir a Artista</button>
         </form>
 </td> </tr>
   <?php endforeach; ?>

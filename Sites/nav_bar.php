@@ -68,6 +68,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                             foreach ($fetch_artista as $f1) {
                                 echo "
                                 <form action =\"{$path_navbar}consultasE3/artistas_especificoe3.php\" method=\"post\">
+                                    <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
                                     <button class=\"dropdown-item\" type=\"submit\" value=$f1[1] name=\"artista\">$f1[0]</button>
                                 </form>
                                 ";
@@ -84,6 +85,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         foreach ($fetch_obras as $f) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/obra_especificae3.php\" method=\"post\">
+                                  <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
                                   <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"obra\">$f[0]</button>
                             </form>
                             ";
@@ -100,6 +102,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         foreach ($fetch_lugares as $f) {
                             echo "
                             <form action =\"{$path_navbar}consultasE3/consulta_lugares.php\" method=\"post\">
+                                <input type=\"hidden\" name=\"username\" value= \"<?php echo $post_username;?>\">
                                 <button class=\"dropdown-item\" type=\"submit\" value=$f[1] name=\"idlugar\">$f[0]</button>
                             </form>
                             ";
