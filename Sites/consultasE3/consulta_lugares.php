@@ -97,35 +97,39 @@ else{
 }
 ?>
 
-<table>
-    <tr>
-	    <th>Nombre Obra</th>
-      <th>Año inicio</th>
-      <th>Año término</th>
-    </tr>
-	<?php foreach ($obras as $a): ?>
+
+<table class="table table-striped table-bordered" style="width:60%; margin:auto">
+  <tr>
+    <th>Nombre Obra</th>
+    <th>Año inicio</th>
+    <th>Año término</th>
+  </tr>
+  <?php foreach ($obras as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td> <td><?php echo "$a[1]"?></td> <td><?php echo "$a[2]"?></td> <td>
           <form  align="center" action="obra_especificae3.php" method="post">
-    <button type="submit" name="obra" value= <?php echo "$a[3]"?> class="btn-link">Ir a Obra</button>
+    <button type="submit" name="obra" value= <?php echo "$a[3]"?> class="btn btn-dark">Ir a Obra</button>
           </form>
       </td> </tr>
   <?php endforeach;?>
-  </table>
+</table>
+
+
   <br>
-  <table>
+
+  <table class="table table-striped table-bordered" style="width:60%; margin:auto">
     <tr>
       <th>Nombre artista</th>
     </tr>
 
 	<?php foreach ($artistas as $a): ?>
   		<tr> <td><?php echo "$a[0]"?></td>  <td>
-         entre
           <form  align="center" action="artistas_especificoe3.php" method="post">
-    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
+    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn btn-dark">Ir a Artista</button>
           </form>
       </td> </tr>
   <?php endforeach; ?>
   </table>
+
 
 
   </div>
