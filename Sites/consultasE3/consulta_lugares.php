@@ -54,44 +54,50 @@
 
   <body>
 
+  <?php
+    $path_navbar ='../';
+    include_once '../nav_bar.php';
+  ?>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-     <h3 class="display-4"><?php echo $nombre_lugar;?></h3>
 
-	<table>
-    <tr>
-	    <th>Nombre lugar</th>
-      <th>Ciudad</th>
-      <th>País</th>
-    </tr>
-  <?php
-	foreach ($lugares as $a) {
-  		echo "<tr> <td>$a[0]</td> <td>$a[1]</td> <td>$a[2]</td> </tr>";
-	}
-  ?>
-  </table>
+  </div>
+
+   <table class="table table-striped table-bordered" style="width:60%; margin:auto">
+     <tr>
+       <th>Nombre lugar</th>
+       <th>Ciudad</th>
+       <th>País</th>
+     </tr>
+     <?php
+   	foreach ($lugares as $a) {
+     		echo "<tr> <td>$a[0]</td> <td>$a[1]</td> <td>$a[2]</td> </tr>";
+   	}
+     ?>
+   </table>
+ </div>
 
 
   <?php
 if(!empty($lugares2)){
 	foreach($lugares2 as $a){
-		echo "<p align=center>Tipo: Museo</p>";
-    echo "<p align=center>Precio: $a[0]</p>";
-    echo "<p align=center>Hora Apertura: $a[1]</p>";
-    echo "<p align=center>Hora Cierre: $a[2]</p>";
+		echo "<h5>Tipo: </h5><p>Museo</p>";
+    echo "<h5>Precio: </h5><p>$a[0]</p>";
+    echo "<h5>Hora apertura: </h5><p>$a[1]</p>";
+    echo "<h5>Hora cierre: </h5><p>$a[2]</p>";
 	}
 }
 elseif(!empty($lugares3)){
 	foreach($lugares3 as $a){
-		echo "<p align=center>Tipo: Iglesia</p>";
-		echo "<p align=center>Hora Apertura: $a[0]</p>";
-    echo "<p align=center>Hora Cierre: $a[1]</p>";
+    echo "<h5>Tipo: </h5><p>Iglesia</p>";
+    echo "<h5>Hora apertura: </h5><p>$a[0]</p>";
+    echo "<h5>Hora cierre: </h5><p>$a[1]</p>";
 
 	}
 }
 
 else{
-	echo "<p align=center>Tipo: Plaza</p>";
+  echo "<h5>Tipo: </h5><p>Plaza</p>";
 }
 ?>
 

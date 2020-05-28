@@ -171,7 +171,6 @@
     $obra_imagen = "https://static2.abc.es/media/cultura/2015/11/27/extasis--620x349.jpg";
   }
 
-
   foreach ($obras as $p ) {
     $nombre_obra = $p[1];
   }
