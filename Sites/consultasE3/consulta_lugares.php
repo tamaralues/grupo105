@@ -29,7 +29,7 @@
 	$result4 -> execute();
   $obras = $result4 -> fetchAll();
 
-  $query5 = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas natural join obrasartistas natural join obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
+  $query5 = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
 	$result5 = $db -> prepare($query5);
 	$result5 -> execute();
   $artistas = $result5 -> fetchAll();
@@ -73,26 +73,27 @@
    </table>
 
 
+
   <?php
 if(!empty($lugares2)){
 	foreach($lugares2 as $a){
-		echo "<h7>Tipo: </h7><p>Museo</p>";
-    echo "<h7>Precio: </h7><p>$a[0]</p>";
-    echo "<h7>Hora apertura: </h7><p>$a[1]</p>";
-    echo "<h7>Hora cierre: </h7><p>$a[2]</p>";
+		echo "<h5>Tipo: </h5><p>Museo</p>";
+    echo "<h5>Precio: </h5><p>$a[0]</p>";
+    echo "<h5>Hora apertura: </h5><p>$a[1]</p>";
+    echo "<h5>Hora cierre: </h5><p>$a[2]</p>";
 	}
 }
 elseif(!empty($lugares3)){
 	foreach($lugares3 as $a){
-    echo "<h7>Tipo: </h7><p>Iglesia</p>";
-    echo "<h7>Hora apertura: </h7><p>$a[0]</p>";
-    echo "<h7>Hora cierre: </h7><p>$a[1]</p>";
+    echo "<h5>Tipo: </h5><p>Iglesia</p>";
+    echo "<h5>Hora apertura: </h5><p>$a[0]</p>";
+    echo "<h5>Hora cierre: </h5><p>$a[1]</p>";
 
 	}
 }
 
 else{
-  echo "<h7>Tipo: </h7><p>Plaza</p>";
+  echo "<h5>Tipo: </h5><p>Plaza</p>";
 }
 ?>
 
@@ -117,9 +118,10 @@ else{
     </tr>
 
 	<?php foreach ($artistas as $a): ?>
-  		<tr> <td><?php echo "$a[0]"?></td><td>
+  		<tr> <td><?php echo "$a[0]"?></td>  <td>
+         entre
           <form  align="center" action="artistas_especificoe3.php" method="post">
-            <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
+    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
           </form>
       </td> </tr>
   <?php endforeach; ?>
