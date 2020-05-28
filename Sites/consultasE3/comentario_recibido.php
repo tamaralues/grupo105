@@ -4,7 +4,6 @@
     require("../configuracion/conexion_db_e3.php");
 
 
-
     $comentario = $_POST["comentario"];
     $hid = $_POST["hid"];
 

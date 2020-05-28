@@ -22,24 +22,13 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+  session_start();
   require("../configuracion/conexion.php");
 
   $idobra = (int)($_POST["obra"]);
   $artista_prev = (int)($_POST["artista"]);
 
-  $post_username = $_POST['username'];
 
-
-  if (isset($_SESSION['user'])){
-     # echo "<p>hay sesion iniciada</p>";
-      $user->setUser($user_session->getCurrentUser());
-      }
-  else{
-      #echo "<p>iniciando sesion: $post_username</p>";
-    $user_session -> setCurrentUser($post_username);
-    $user -> setUser($post_username);
-
-  }
 
 	#Hacer consulta 2
  	$query = "SELECT DISTINCT obras.idobra, obras.nombreobra, obras.anoinicio, obras.anotermino, obras.periodo, obras.idlugar, lugares.nombrelugar, ciudades.nombreciudad, paises.nombrepais from artistas, obrasartistas, obras,

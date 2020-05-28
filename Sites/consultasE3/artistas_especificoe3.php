@@ -20,24 +20,11 @@
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+  session_start();
   require("../configuracion/conexion.php");
 
   #Se obtiene el valor del input del usuario
   $idartista = (int)($_POST["artista"]);
-
-  $post_username = $_POST['username'];
-
-
-  if (isset($_SESSION['user'])){
-     # echo "<p>hay sesion iniciada</p>";
-      $user->setUser($user_session->getCurrentUser());
-      }
-  else{
-      #echo "<p>iniciando sesion: $post_username</p>";
-    $user_session -> setCurrentUser($post_username);
-    $user -> setUser($post_username);
-
-  }
 
   $artista_imagen = "";
 
