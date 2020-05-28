@@ -1,10 +1,7 @@
 
-<body>
 
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  session_start();
-  
   require("../configuracion/conexion.php");
 
   $idlugar = (int)($_POST["idlugar"]);
@@ -32,12 +29,34 @@
 	$result4 -> execute();
   $obras = $result4 -> fetchAll();
 
-  $query5 = "SELECT DISTINCT nombreartista, artistas.idartista from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
+  $query5 = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
 	$result5 = $db -> prepare($query5);
 	$result5 -> execute();
   $artistas = $result5 -> fetchAll();
 
+  foreach ($artistas as $p ) {
+    $nombre_lugar = $p[2];
+  }
+
   ?>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset='UTF-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="../css/bootstrapE3.css" rel="stylesheet">
+      <link href="../css/estiloE3.css" rel="stylesheet">
+      <title>Compra de tickets</title>
+  </head>
+
+  <body>
+
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+     <h3 class="display-4"><?php echo $nombre_lugar;?></h3>
 
 	<table>
     <tr>
@@ -52,26 +71,27 @@
   ?>
   </table>
 
+
   <?php
 if(!empty($lugares2)){
 	foreach($lugares2 as $a){
-		echo "<p align=left>Tipo: Museo</p>";
-    echo "<p align=left>Precio: $a[0]</p>";
-    echo "<p align=left>Hora Apertura: $a[1]</p>";
-    echo "<p align=left>Hora Cierre: $a[2]</p>";
+		echo "<p align=center>Tipo: Museo</p>";
+    echo "<p align=center>Precio: $a[0]</p>";
+    echo "<p align=center>Hora Apertura: $a[1]</p>";
+    echo "<p align=center>Hora Cierre: $a[2]</p>";
 	}
 }
 elseif(!empty($lugares3)){
 	foreach($lugares3 as $a){
-		echo "<p align=left>Tipo: Iglesia</p>";
-		echo "<p align=left>Hora Apertura: $a[0]</p>";
-    echo "<p align=left>Hora Cierre: $a[1]</p>";
+		echo "<p align=center>Tipo: Iglesia</p>";
+		echo "<p align=center>Hora Apertura: $a[0]</p>";
+    echo "<p align=center>Hora Cierre: $a[1]</p>";
 
 	}
 }
 
 else{
-	echo "<p align=left>Tipo: Plaza</p>";
+	echo "<p align=center>Tipo: Plaza</p>";
 }
 ?>
 
@@ -103,3 +123,12 @@ else{
       </td> </tr>
   <?php endforeach; ?>
   </table>
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="../css/bootstrap.js"></script>
+</body>
+</html>

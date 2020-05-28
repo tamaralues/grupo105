@@ -178,6 +178,20 @@
 
   ?>
 
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset='UTF-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link href="../css/bootstrapE3.css" rel="stylesheet">
+      <link href="../css/estiloE3.css" rel="stylesheet">
+      <title>Compra de tickets</title>
+  </head>
+
+  <body>
+
+
    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
       <h3 class="display-4"><?php echo $idobra;?></h3>
