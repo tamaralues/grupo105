@@ -1,7 +1,7 @@
 <?php
     session_start();
     require("../configuracion/conexion_db_e3.php");
-  
+
     $fechainicio = $_POST["fechainicio"];
     $fechatermino = $_POST["fechatermino"];
     $hotel = $_POST["hotel1"];
@@ -63,7 +63,6 @@
         <h3>Información reserva</h3>
         <br>
         <div >
-          <?php echo "<p> Nombre usuario: $user  </p>"; ?>
           <?php echo "<p>Hotel: $hotel </p>"; ?>
           <?php echo "<p>Fecha de entrada: $fechainicio </p>"; ?>
           <?php echo "<p>Fecha de salida: $fechatermino </p>"; ?>
