@@ -1,3 +1,27 @@
+<?php
+require("../configuracion/conexion_db_e3.php");
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+   # echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());
+    }
+else{
+    #echo "<p>iniciando sesion: $post_username</p>";
+  $user_session -> setCurrentUser($post_username);
+  $user -> setUser($post_username);
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,6 +177,7 @@
     <?php foreach ($obras as $a): ?>
       <tr> <td><?php echo "$a[1]  "?></td> <td>
             <form  align="center" action="obra_especificae3.php" method="post">
+            <input type="hidden" name="username" value= "<?php echo $post_username;?>">
             <input type=hidden name="artista" value=<?php echo "$idartista"?>>
         <button type="submit" name="obra" value= <?php echo "$a[0]"?> class="btn btn-dark "> Conocer más de <?php echo "$a[1]"?> </button>
             </form>
@@ -165,6 +190,7 @@
 <form align="center" action="artistase3.php" method="post">
     <br/>
     <br/>
+    <input type="hidden" name="username" value= "<?php echo $post_username;?>">
     <button type="submit" class="btn btn-dark">
         Ver artistas
     </button>
@@ -173,6 +199,7 @@
 
   <form action ="../test.php" method="POST">
         <br>
+        <input type="hidden" name="username" value= "<?php echo $post_username;?>">
         <button type="submit" class="btn btn-dark ">
             Volver
         </button>
