@@ -55,6 +55,10 @@ else{
 	$result5 -> execute();
   $artistas = $result5 -> fetchAll();
 
+  foreach ($lugares as $p ) {
+    $nombre_lugar = $p[0];
+  }
+
   ?>
 
 
@@ -77,7 +81,9 @@ else{
   ?>
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-
+    <h3 class="display-4"><?php echo $nombre_lugar;?></h3>
+    <h3 class="display-4"><?php echo $idlugar;?></h3>
+    <img src= "<?php echo $lugar_imagen;?>" height="200" width="200";>
 
 
    <table class="table table-striped table-bordered" style="width:60%; margin:auto">

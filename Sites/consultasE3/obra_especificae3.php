@@ -137,7 +137,7 @@ else{
     $obra_imagen = "https://3minutosdearte.com/wp-content/uploads/2018/06/Caravaggio-Cabeza-de-Medusa-1597-e1536759112183.jpg";
   }
   elseif($idobra == 22){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg/1600px-Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg";
   }
   elseif($idobra == 23){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/600px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg";
@@ -149,27 +149,29 @@ else{
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Transfiguration_Raphael.jpg/600px-Transfiguration_Raphael.jpg";
   }
   elseif($idobra == 26){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+    $obra_imagen = "https://i0.wp.com/plumasatomicas.com/wp-content/uploads/2020/04/Ultima-Cena-Jueves-Santo-Cuadro-Da-Vinci.jpg?resize=1200%2C720&ssl=1";
   }
   elseif($idobra == 27){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+    $obra_imagen = "https://3.bp.blogspot.com/-5IVu-B02BEw/VvJlsEwBF_I/AAAAAAAAFxc/kCPtWO7z5YMHLvhuqOtWh669ezVKsTqhg/s1600/800px-The_Three_Graces%252C_by_Peter_Paul_Rubens%252C_from_Prado_in_Google_Earth.jpg";
   }
   elseif($idobra == 28){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg/600px-RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg";
   }
   elseif($idobra == 29){
     $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/e/e3/Giotto_di_Bondone_090.jpg";
   }
   elseif($idobra == 30){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
-  }
-  elseif($idobra == 31){
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sandro_Botticelli_083.jpg";
-  }
-  elseif($idobra == 32){
     $obra_imagen = "https://photo620x400.mnstatic.com/96ed0ddc23455feb41e8e7f55b599bf0/manneken-pis.jpg";
   }
+  elseif($idobra == 31){
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Jos%C3%A9_de_Ribera_024.jpg/480px-Jos%C3%A9_de_Ribera_024.jpg";
+  }
+  elseif($idobra == 32){
+    // no encontré para esto
+    $obra_imagen = "";
+  }
   elseif($idobra == 33){
+    // no encontré para esto
     $obra_imagen = "";
   }
   elseif($idobra == 34){
@@ -181,7 +183,7 @@ else{
   }
   elseif($idobra == 36){
 
-    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/1/14/Pulcin_della_Minerva_2006_n2.jpg";
+    $obra_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Andrea_Mantegna_088.jpg/440px-Andrea_Mantegna_088.jpg";
   }
   elseif($idobra == 37){
     $obra_imagen = "http://oer2go.org/mods/es-wikipedia-static/content/i/m/piazza_san_pietro2010_01.jpg";
@@ -215,7 +217,6 @@ else{
 
    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_obra;?></h3>
-    <h3 class="display-4"><?php echo $idobra;?></h3>
     <img src= "<?php echo $obra_imagen;?>" height="200" width="200";>
     <?php
     if(!empty($obras2)){
