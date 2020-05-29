@@ -56,7 +56,7 @@ $ciudades = $result1 -> fetchAll();
 ?>
 <div class="row">
 <div class="column">
-<p><table>
+<p><table class="table table-striped table-bordered" style="width:70%; margin:auto">
   <tr>
   <th>Nombre </th>
 
@@ -71,7 +71,7 @@ $ciudades = $result1 -> fetchAll();
 </table></p>
 </div>
 <div class="column">
-<p><table>
+<p><table class="table table-striped table-bordered" style="width:70%; margin:auto">
   <tr>
   <th>Nombre </th>
 
@@ -82,7 +82,7 @@ $ciudades = $result1 -> fetchAll();
 </td> </tr>
 <?php endforeach; ?>
 
-</table></p>
+</table ></p>
 </div>
 </div>
 Ingresar fecha de inicio:
