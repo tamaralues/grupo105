@@ -59,6 +59,74 @@ else{
     $nombre_lugar = $p[0];
   }
 
+
+  if($idlugar == 1){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/0/00/Andrea_Mantegna_049_detail_possible_self-portrait.jpg";
+  }
+  elseif($idlugar == 2){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sistina-interno.jpg/540px-Sistina-interno.jpg";
+  }
+  elseif($idlugar == 3){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Nancy_Musee_des_Beaux-Arts_BW_2015-07-18_13-55-20.jpg/550px-Nancy_Musee_des_Beaux-Arts_BW_2015-07-18_13-55-20.jpg";
+  }
+  elseif($idlugar == 4){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Galleria_borghese_facade.jpg/550px-Galleria_borghese_facade.jpg";
+  }
+  elseif($idlugar== 5){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg/550px-Florence%2C_Italy_Uffizi_Museum_-_panoramio_%285%29.jpg";
+  }
+  elseif($idlugar == 6){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Dresden-Zwinger-Courtyard.11.JPG/550px-Dresden-Zwinger-Courtyard.11.JPG";
+  }
+  elseif($idlugar == 7){
+    $lugar_imagen = "https://www.viajarflorencia.com/wp-content/uploads/interior-academia.jpg";
+  }
+  elseif($idlugar== 8){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Santa_Maria_della_Vittoria_in_Rome_-_Front.jpg/842px-Santa_Maria_della_Vittoria_in_Rome_-_Front.jpg";
+  }
+  elseif($idlugar == 9){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg/540px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg";
+  }
+  elseif($idlugar == 10){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Chateau_de_Chantilly_garden.jpg/550px-Chateau_de_Chantilly_garden.jpg";
+  }
+  elseif($idlugar == 11){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Broodhuis_Bruxelles.jpg/600px-Broodhuis_Bruxelles.jpg";
+  }
+  elseif($idlugar == 12){
+    $lugar_imagen= "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Nuovo_museo_dell%27opera_del_duomo%2C_facciatone_arnolfiano_di_santa_maria_del_fiore%2C_000.jpg/400px-Nuovo_museo_dell%27opera_del_duomo%2C_facciatone_arnolfiano_di_santa_maria_del_fiore%2C_000.jpg";
+  }
+  elseif($idlugar == 13){
+    $lugar_imagen = "https://www.duna.cl/media/2020/03/5be46ffe35d80.jpeg";
+  }
+  elseif($idlugar == 14){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rome_Vatican_Museums.jpg/550px-Rome_Vatican_Museums.jpg";
+  }
+  elseif($idlugar == 15){
+    $lugar_imagen = "https://www.romando.org/wp-content/uploads/2018/06/plaza-navona.jpeg";
+  }
+  elseif($idlugar== 16){
+    $lugar_imagen= "https://upload.wikimedia.org/wikipedia/commons/8/87/Piazza_San_Pietro%2C_Citta_del_Vaticano.jpg";
+  }
+  elseif($idlugar == 17){
+    $lugar_imagen = "http://media.tuescapada.eu/xtras/2017/03/08140246/piazza-della-minerva-y-panteon-roma_tuescapada-eu.jpg?auto=compress&fit=scale&fm=pjpg&h=382&ixlib=php-1.2.1&q=30&w=740&wpsize=large";
+  }
+  elseif($idlugar == 18){
+    $lugar_imagen = "https://mimundoviajero.files.wordpress.com/2014/04/amberes4_editado.jpg";
+  }
+  elseif($idlugar == 19){
+    $lugar_imagen = "https://www.artforum.com/uploads/upload.002/id13146/article00_810x.jpg";
+  }
+  elseif($idlugar == 20){
+    $lugar_imagen = "https://3.bp.blogspot.com/-IWh92cEyH4Q/VMAATaWqC6I/AAAAAAAAVx4/hHVUa5UAyo8/s1600/01.JPG";
+  }
+  elseif($idlugar == 22){
+    $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/View_of_Santa_Maria_del_Fiore_in_Florence.jpg/600px-View_of_Santa_Maria_del_Fiore_in_Florence.jpg";
+  }
+  elseif($idlugar == 21){
+    $lugar_imagen = "https://blog-italia.com/wp-content/uploads/2009/11/santamaria_italia.jpg";
+  }
+
   ?>
 
 
