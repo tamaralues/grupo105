@@ -50,10 +50,10 @@ else{
 	$result4 -> execute();
   $obras = $result4 -> fetchAll();
 
-  $query_artistas = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
-	$result_artistas  = $db -> prepare($query_artistas );
-	$result_artistas  -> execute();
-  $artistas = $result_artistas -> fetchAll();
+  $query_artistas = "SELECT DISTINCT nombreartista, artistas.idartista from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
+	$result_artistas = $db -> prepare($query_artistas);
+	$result_artistas -> execute();
+  $artistas= $result_artistas  -> fetchAll();
 
   foreach ($lugares as $p ) {
     $nombre_lugar = $p[0];
@@ -220,6 +220,20 @@ else{
           <form  align="center" action="artistas_especificoe3.php" method="post">
              <input type="hidden" name="username" value= "<?php echo $post_username;?>">
              <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn btn-dark">Ir a Artista</button>
+          </form>
+      </td> </tr>
+  <?php endforeach; ?>
+  </table>
+
+  <table>
+    <tr>
+      <th>Nombre artista</th>
+    </tr>
+
+	<?php foreach ($artistas as $a): ?>
+  		<tr> <td><?php echo "$a[0]"?></td>  <td>
+          <form  align="left" action="artista_especifico.php" method="post">
+    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
           </form>
       </td> </tr>
   <?php endforeach; ?>
