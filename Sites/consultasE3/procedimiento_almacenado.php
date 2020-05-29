@@ -1,5 +1,6 @@
 
 <?php
+
 require("../configuracion/conexion_db_e3.php");
 include_once '../include/user.php';
 include_once '../include/user_session.php';
@@ -57,7 +58,7 @@ $ciudades = $result1 -> fetchAll();
 <div class="row">
 
 <div class="column">
-<p><table class="table table-striped " style="width:100%; margin:auto">
+<p><table class="table table-striped table-bordered" style="width:100%; margin:auto">
   <tr>
   <th>Nombre artista</th>
 
@@ -70,9 +71,11 @@ $ciudades = $result1 -> fetchAll();
 <?php endforeach; ?>
 
 </table></p>
+<br>
+<br>
 </div>
 <div class="column">
-<p><table class="table table-striped " style="width:100%; margin:auto">
+<p><table class="table table-striped table-bordered" style="width:100%; margin:auto">
   <tr>
   <th>Nombre ciudad </th>
 
