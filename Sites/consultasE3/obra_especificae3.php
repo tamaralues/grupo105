@@ -238,7 +238,7 @@ else{
     }
     ?>
    </div>
-
+     <br>
     <table class="table table-striped table-bordered" style="width:60%; margin:auto">
       <tr>
         <th>Nombre</th>
@@ -267,6 +267,13 @@ else{
     </form>
 
   </div>
+  <form align="center" action ="../test.php" method="POST">
+        <br>
+        <input type="hidden" name="username" value= "<?php echo $post_username;?>">
+        <button type="submit" class="btn btn-dark ">
+            Volver a la página de inicio
+        </button>
+  </form>
 
 
 

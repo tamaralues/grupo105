@@ -153,6 +153,20 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                     </div>";
                 }
                 ?>
+                <?php
+                if(isset($_SESSION['user'])){
+                    $post_user = $_SESSION['username'];
+                    echo "
+                    <div class=\"btn-group\" role=\"group\">
+                        <form action=\"{$path_navbar}consultasE3/procedimiento_almacenado.php\" method=\"post\">
+                            <button type=\"submit\" class=\"btn btn-dark\" value=$post_user name=\"username\">
+                                Hacer itinerario
+                            </button>
+                        </form>
+                    </div>";
+                }
+                ?>
+
             </div>
         </nav>
         <div class="dropdown mr-1">

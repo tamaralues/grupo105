@@ -190,7 +190,7 @@ else{
      ?>
    </table>
 
-
+  <br>
 <table class="table table-striped table-bordered" style="width:60%; margin:auto">
   <tr>
     <th>Nombre Obra</th>
@@ -225,6 +225,13 @@ else{
   <?php endforeach; ?>
   </table>
 
+  <form align="center" action ="../test.php" method="POST">
+        <br>
+        <input type="hidden" name="username" value= "<?php echo $post_username;?>">
+        <button type="submit" class="btn btn-dark ">
+            Volver a la página de inicio
+        </button>
+  </form>
 
   </div>
 
