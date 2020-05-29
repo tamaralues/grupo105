@@ -55,13 +55,14 @@ $result1 -> execute();
 $ciudades = $result1 -> fetchAll();
 ?>
 <div class="row">
+
 <div class="column">
-<p><table class="table table-striped " style="width:70%; margin:auto">
+<p><table class="table table-striped " style="width:100%; margin:auto">
   <tr>
   <th>Nombre artista</th>
 
   </tr>
-<form  align="left" action="itinerario.php" method="post">
+<form  align="center" action="itinerario.php" method="post">
 <?php foreach ($artista as $a): ?>
     <tr>  <td>
   <label><input type="checkbox" name="idartistas[]" value= <?php echo "$a[0]"?>/><?php echo "$a[1]"?></label>
@@ -71,7 +72,7 @@ $ciudades = $result1 -> fetchAll();
 </table></p>
 </div>
 <div class="column">
-<p><table class="table table-striped " style="width:70%; margin:auto">
+<p><table class="table table-striped " style="width:100%; margin:auto">
   <tr>
   <th>Nombre ciudad </th>
 
