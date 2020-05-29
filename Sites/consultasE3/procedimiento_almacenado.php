@@ -2,7 +2,6 @@
 <?php
 require("../configuracion/conexion_db_e3.php");
 
-session_start();
 ?>
 
 <head>
