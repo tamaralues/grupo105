@@ -197,11 +197,11 @@ else{
   </form>
 
 
-  <form action ="../test.php" method="POST">
+  <form align="center" action ="../test.php" method="POST">
         <br>
         <input type="hidden" name="username" value= "<?php echo $post_username;?>">
         <button type="submit" class="btn btn-dark ">
-            Volver
+            Volver a la página de inicio
         </button>
   </form>
 
