@@ -56,9 +56,9 @@ $ciudades = $result1 -> fetchAll();
 ?>
 <div class="row">
 <div class="column">
-<p><table class="table table-striped table-bordered" style="width:70%; margin:auto">
+<p><table class="table table-striped " style="width:70%; margin:auto">
   <tr>
-  <th>Nombre </th>
+  <th>Nombre artista</th>
 
   </tr>
 <form  align="left" action="itinerario.php" method="post">
@@ -71,9 +71,9 @@ $ciudades = $result1 -> fetchAll();
 </table></p>
 </div>
 <div class="column">
-<p><table class="table table-striped table-bordered" style="width:70%; margin:auto">
+<p><table class="table table-striped " style="width:70%; margin:auto">
   <tr>
-  <th>Nombre </th>
+  <th>Nombre ciudad </th>
 
   </tr>
 <?php foreach ($ciudades as $a): ?>
