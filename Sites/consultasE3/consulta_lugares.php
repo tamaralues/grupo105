@@ -50,15 +50,14 @@ else{
 	$result4 -> execute();
   $obras = $result4 -> fetchAll();
 
-  $query5 = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
-	$result5 = $db -> prepare($query5);
-	$result5 -> execute();
-  $artistas = $result5 -> fetchAll();
+  $query_artistas = "SELECT DISTINCT nombreartista, artistas.idartista, nombrelugar from artistas, obrasartistas, obras where  obrasartistas.idartista = artistas.idartista and obrasartistas.idobra = obras.idobra and obras.idlugar = $idlugar;";
+	$result_artistas  = $db -> prepare($query_artistas );
+	$result_artistas  -> execute();
+  $artistas = $result_artistas -> fetchAll();
 
   foreach ($lugares as $p ) {
     $nombre_lugar = $p[0];
   }
-
 
   if($idlugar == 1){
     $lugar_imagen = "https://upload.wikimedia.org/wikipedia/commons/0/00/Andrea_Mantegna_049_detail_possible_self-portrait.jpg";
@@ -150,8 +149,32 @@ else{
 
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h3 class="display-4"><?php echo $nombre_lugar;?></h3>
-    <h3 class="display-4"><?php echo $idlugar;?></h3>
     <img src= "<?php echo $lugar_imagen;?>" height="200" width="200";>
+
+
+
+      <?php
+    if(!empty($lugares2)){
+    	foreach($lugares2 as $a){
+    		echo "<h5>Tipo: </h5><p>Museo</p>";
+        echo "<h5>Precio: </h5><p>$a[0]</p>";
+        echo "<h5>Hora apertura: </h5><p>$a[1]</p>";
+        echo "<h5>Hora cierre: </h5><p>$a[2]</p>";
+    	}
+    }
+    elseif(!empty($lugares3)){
+    	foreach($lugares3 as $a){
+        echo "<h5>Tipo: </h5><p>Iglesia</p>";
+        echo "<h5>Hora apertura: </h5><p>$a[0]</p>";
+        echo "<h5>Hora cierre: </h5><p>$a[1]</p>";
+
+    	}
+    }
+
+    else{
+      echo "<h5>Tipo: </h5><p>Plaza</p>";
+    }
+    ?>
 
 
    <table class="table table-striped table-bordered" style="width:60%; margin:auto">
@@ -166,31 +189,6 @@ else{
    	}
      ?>
    </table>
-
-
-
-  <?php
-if(!empty($lugares2)){
-	foreach($lugares2 as $a){
-		echo "<h5>Tipo: </h5><p>Museo</p>";
-    echo "<h5>Precio: </h5><p>$a[0]</p>";
-    echo "<h5>Hora apertura: </h5><p>$a[1]</p>";
-    echo "<h5>Hora cierre: </h5><p>$a[2]</p>";
-	}
-}
-elseif(!empty($lugares3)){
-	foreach($lugares3 as $a){
-    echo "<h5>Tipo: </h5><p>Iglesia</p>";
-    echo "<h5>Hora apertura: </h5><p>$a[0]</p>";
-    echo "<h5>Hora cierre: </h5><p>$a[1]</p>";
-
-	}
-}
-
-else{
-  echo "<h5>Tipo: </h5><p>Plaza</p>";
-}
-?>
 
 
 <table class="table table-striped table-bordered" style="width:60%; margin:auto">
