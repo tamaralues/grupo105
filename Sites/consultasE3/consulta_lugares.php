@@ -225,20 +225,6 @@ else{
   <?php endforeach; ?>
   </table>
 
-  <table>
-    <tr>
-      <th>Nombre artista</th>
-    </tr>
-
-	<?php foreach ($artistas as $a): ?>
-  		<tr> <td><?php echo "$a[0]"?></td>  <td>
-          <form  align="left" action="artista_especifico.php" method="post">
-    <button type="submit" name="artista" value= <?php echo "$a[1]"?> class="btn-link">Ir a Artista</button>
-          </form>
-      </td> </tr>
-  <?php endforeach; ?>
-  </table>
-
   <form align="center" action ="../test.php" method="POST">
         <br>
         <input type="hidden" name="username" value= "<?php echo $post_username;?>">
