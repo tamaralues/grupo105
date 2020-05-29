@@ -1,6 +1,24 @@
 
 <?php
 require("../configuracion/conexion_db_e3.php");
+include_once '../include/user.php';
+include_once '../include/user_session.php';
+
+$user_session = new userSession();
+$user = new User($db);
+
+$post_username = $_POST['username'];
+
+if (isset($_SESSION['user'])){
+   # echo "<p>hay sesion iniciada</p>";
+    $user->setUser($user_session->getCurrentUser());
+    }
+else{
+    #echo "<p>iniciando sesion: $post_username</p>";
+  $user_session -> setCurrentUser($post_username);
+  $user -> setUser($post_username);
+
+}
 
 ?>
 
@@ -13,12 +31,12 @@ require("../configuracion/conexion_db_e3.php");
 </head>
 
 <body>
-  <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
   <?php
     $path_navbar ='../';
     include_once '../nav_bar.php';
   ?>
+  <div class="container px-4 py-2" style="width:90%; margin-top: 100px;">
 
 
 <?php
