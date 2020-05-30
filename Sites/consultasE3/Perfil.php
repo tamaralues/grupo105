@@ -39,8 +39,10 @@ $result_dinero_tickets -> execute();
 $fetch_dinero_tickets = $result_dinero_tickets -> fetchAll();
 
 $dinero_gastado_tickets = 0;
+$horas_viaje = 0;
 foreach($fetch_dinero_tickets as $f){
     $dinero_gastado_tickets+=$f[0];
+    $horas_viaje+=$f[1];
 }
 ?>
 
@@ -74,12 +76,12 @@ foreach($fetch_dinero_tickets as $f){
                 <div class="row justify-align-start">
                     <div class="col-6">
                         <p style="line-height: 10pt; font-size: 18px;">Dinero gastado en tickets:</p>
-                        <p style="line-height: 10pt; font-size: 18px;">Dinero gastado en hoteles:</p>
+                        <p style="line-height: 10pt; font-size: 18px;">Tiempo utilizado en transportes:</p>
                         <p style="line-height: 10pt; font-size: 18px;">Numero de museos visitados:</p>
                     </div>
                     <div class="col-6">
                         <p style="line-height: 10pt; font-size: 18px;"><?php echo "$$dinero_gastado_tickets";?></p>
-                        <p style="line-height: 10pt; font-size: 18px;">$xxx</p>
+                        <p style="line-height: 10pt; font-size: 18px;"><?php echo "$horas_viaje Hrs.";?></p>
                         <p style="line-height: 10pt; font-size: 18px;">xx</p>
                     </div>
                 </div>
