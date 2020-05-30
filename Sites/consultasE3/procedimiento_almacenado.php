@@ -1,6 +1,4 @@
-
 <?php
-
 require("../configuracion/conexion_db_e3.php");
 include_once '../include/user.php';
 include_once '../include/user_session.php';
