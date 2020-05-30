@@ -129,7 +129,7 @@ foreach($fetch_dinero_tickets as $f){
                                     $int3=intval($f[3]);
                                     $int4=intval($f[4]);
                                     $query_origen = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$int3';";
-                                    $query_destino = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$int4';";
+                                    $query_destino = "SELECT nombreciudad, cid FROM ciudades;";
 
                                     $result_origen = $db -> prepare($query_origen);
                                     $result_origen -> execute();
