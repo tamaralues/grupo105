@@ -126,6 +126,7 @@ foreach($fetch_dinero_tickets as $f){
                                 <tbody>
                             <?php
                                 foreach($fetch_tickets as $f){
+                                    require("../configuracion/conexion_db_e3.php");
                                     $int3=intval($f[3]);
                                     $int4=intval($f[4]);
                                     $query_origen = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$int3';";
