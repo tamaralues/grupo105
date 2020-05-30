@@ -149,7 +149,7 @@ foreach($fetch_dinero_tickets as $f){
                                         $g='salio bien la wea';
                                     }
                                     foreach($fetch_origen as $fo){
-                                        $g='algo';
+                                        $g=$f0[0];
                                     }
                                     foreach($fetch_destino as $fd){
                                         $h=$fd[0];
