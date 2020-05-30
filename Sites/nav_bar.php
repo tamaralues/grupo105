@@ -186,7 +186,7 @@ $query_drop1 = "SELECT nombrepais, pid FROM paises;";
                         </form>
                         <form action=\"{$path_navbar}consultasE3/cerrar_cuenta.php\" method=\"post\">
                             <button type=\"submit\" class=\"dropdown-item\" value=$post_user name=\"username\">
-                                Cerrar Cuenta
+                                Eliminar Cuenta
                             </button>
                         </form>
                         <div class=\"dropdown-divider\"></div>
