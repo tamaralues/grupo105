@@ -138,7 +138,7 @@ foreach($fetch_dinero_tickets as $f){
                                     $fetch_destino = $result_destino -> fetchAll();
 
                                     $g='';
-                                    $h='';
+                                    $h='algo';
                                     foreach($fetch_origen as $fo){
                                         $g='algo';
                                     }
