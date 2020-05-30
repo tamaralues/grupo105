@@ -24,6 +24,7 @@ $user_query=$_SESSION['user'];
 $query_museos ='';
 $query_reservas = "SELECT nombrehotel, direccionhotel, fechainicio, fechatermino FROM usuarios NATURAL JOIN reservas NATURAL JOIN hoteles WHERE username='$user_query';";
 $query_tickets = "SELECT asiento, fechacompra, fechaviaje, cid_origen, cid_destino FROM datos_viaje NATURAL JOIN tickets_comprados NATURAL JOIN usuarios WHERE username='$user_query';";
+$query_dinero_tickets ="SELECT precio, duracion FROM datos_viaje NATURAL JOIN tickets_comprados NATURAL JOIN usuarios WHERE username='$user_query';";
 
 $result_reservas = $db -> prepare($query_reservas);
 $result_reservas -> execute();
@@ -32,12 +33,20 @@ $fetch_reservas = $result_reservas -> fetchAll();
 $result_tickets = $db -> prepare($query_tickets);
 $result_tickets -> execute();
 $fetch_tickets = $result_tickets -> fetchAll();
+
+$result_dinero_tickets = $db -> prepare($query_dinero_tickets);
+$result_dinero_tickets -> execute();
+$fetch_dinero_tickets = $result_dinero_tickets -> fetchAll();
+
+$dinero_gastado_tickets = 0;
+foreach($fetch_dinero_tickets as $f){
+    $dinero_gastado_tickets+=$f[0];
+}
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,7 +78,7 @@ $fetch_tickets = $result_tickets -> fetchAll();
                         <p style="line-height: 10pt; font-size: 18px;">Numero de museos visitados:</p>
                     </div>
                     <div class="col-6">
-                        <p style="line-height: 10pt; font-size: 18px;">$xxx</p>
+                        <p style="line-height: 10pt; font-size: 18px;"><?php echo "$$dinero_gastado_tickets";?></p>
                         <p style="line-height: 10pt; font-size: 18px;">$xxx</p>
                         <p style="line-height: 10pt; font-size: 18px;">xx</p>
                     </div>
