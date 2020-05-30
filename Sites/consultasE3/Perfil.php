@@ -126,8 +126,8 @@ foreach($fetch_dinero_tickets as $f){
                                 <tbody>
                             <?php
                                 foreach($fetch_tickets as $f){
-                                    $query_origen = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[3]';";
-                                    $query_destino = "SELECT nombreciudad, cid from ciudades WHERE cid='$f[4]';";
+                                    $query_origen = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$f[3]';";
+                                    $query_destino = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$f[4]';";
 
                                     $result_origen = $db -> prepare($query_origen);
                                     $result_origen -> execute();
@@ -140,7 +140,7 @@ foreach($fetch_dinero_tickets as $f){
                                     $g='';
                                     $h='';
                                     foreach($fetch_origen as $fo){
-                                        $g=$fo[0];
+                                        $g='algo';
                                     }
                                     foreach($fetch_destino as $fd){
                                         $h=$fd[0];
