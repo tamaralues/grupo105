@@ -144,7 +144,7 @@ foreach($fetch_dinero_tickets as $f){
                                         $h=$fd[0];
                                     }
 
-                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$g</td><td>$h</td></tr>";
+                                    echo "<tr><td>$f[0]</td><td>$f[1]</td><td>$f[2]</td><td>$f[3]</td><td>$h</td></tr>";
                                 }
                                 ?>
                                 </tbody>
