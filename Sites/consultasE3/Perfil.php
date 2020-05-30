@@ -132,7 +132,7 @@ foreach($fetch_dinero_tickets as $f){
                                     $query_destino = "SELECT nombreciudad, cid FROM ciudades WHERE cid='$int4';";
 
                                     $result_origen = $db -> prepare($query_origen);
-                                    $result_origen -> execute();
+                                    $bool_origen = $result_origen -> execute();
                                     $fetch_origen = $result_origen -> fetchAll();
 
                                     $result_destino = $db -> prepare($query_destino);
@@ -141,6 +141,9 @@ foreach($fetch_dinero_tickets as $f){
 
                                     $g='';
                                     $h='algo';
+                                    if (!$bool_origen){
+                                        $g='algo salio mal';
+                                    }
                                     foreach($fetch_origen as $fo){
                                         $g='algo';
                                     }
